@@ -3,14 +3,29 @@
  */
 package net.chrupki;
 
-import javafx.application.Application;
-import javafx.stage.Stage;
 
+import javafx.application.Application;
+import javafx.scene.Parent;
+import javafx.stage.Stage;
+import net.chrupki.database.DatabaseInitializer;
+
+import java.time.LocalDate;
 
 public class Patcher extends Application{
+
+    private Parent parent;
+
     @Override
     public void start(Stage stage) {
-        stage.setTitle("Patcher");
+        DatabaseInitializer.InitDB();
+        stage.setTitle("Text Input App");
+
+
+        // Set the window size
+        stage.setMinWidth(600);
+        stage.setMinHeight(400);
+
+
         stage.show();
     }
 
