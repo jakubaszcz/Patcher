@@ -8,8 +8,8 @@ import javafx.application.Application;
 import javafx.scene.Parent;
 import javafx.stage.Stage;
 import net.chrupki.database.DatabaseInitializer;
+import net.chrupki.project.AppProject;
 
-import java.time.LocalDate;
 
 public class Patcher extends Application{
 
@@ -20,11 +20,12 @@ public class Patcher extends Application{
         DatabaseInitializer.InitDB();
         stage.setTitle("Text Input App");
 
+        // AppPaths.GetDataDir();
 
-        // Set the window size
         stage.setMinWidth(600);
         stage.setMinHeight(400);
 
+        // AppProject.CreateProject("cotv");
 
         stage.show();
     }
