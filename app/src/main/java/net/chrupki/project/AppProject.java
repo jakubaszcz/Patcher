@@ -5,25 +5,56 @@ import net.chrupki.AppPaths;
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
+import java.util.ArrayList;
+import java.util.List;
+
+import static java.lang.System.in;
 
 public class AppProject {
 
-    private static Path path = AppPaths.GetDataDir();
-    private static Path directory = path.resolve("projects");
+    private static List<Path> projects = new ArrayList<>();
+
 
     private AppProject() {
     }
 
+    public static void FetchProject() throws IOException {
+        Path path = AppPaths.GetDataDir().resolve("projects");
+
+        try (var stream = Files.list(path)) {
+            stream
+                    .filter(Files::isDirectory)
+                    .forEach(projects::add);
+        }
+    }
 
     public static void CreateProject(String name) {
+        Path path = AppPaths.GetDataDir();
+        Path directory = path.resolve("projects");
         Path projectPath = directory.resolve(name);
 
         if (!projectPath.isAbsolute()) return;
 
         try {
             Files.createDirectories(projectPath);
+            AddProjects(projectPath);
         } catch (IOException e) {
             throw new RuntimeException(e);
         }
+    }
+
+    public static void AddProjects(Path path) {
+        for (Path p : projects) {
+            if (p.equals(path)) return;
+        }
+        projects.add(path);
+
+        for (var p : projects) {
+            System.out.println(p.toString());
+        }
+    }
+
+    public static List<Path> GetProjects() {
+        return projects;
     }
 }

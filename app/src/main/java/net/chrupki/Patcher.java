@@ -5,10 +5,18 @@ package net.chrupki;
 
 
 import javafx.application.Application;
+import javafx.scene.control.Button;
 import javafx.scene.Parent;
+import javafx.scene.control.TextField;
+import javafx.scene.layout.VBox;
+import javafx.scene.Scene;
 import javafx.stage.Stage;
 import net.chrupki.database.DatabaseInitializer;
 import net.chrupki.project.AppProject;
+
+import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.io.IOException;
 
 
 public class Patcher extends Application{
@@ -16,18 +24,32 @@ public class Patcher extends Application{
     private Parent parent;
 
     @Override
-    public void start(Stage stage) {
+    public void start(Stage stage) throws IOException {
         DatabaseInitializer.InitDB();
-        stage.setTitle("Text Input App");
+        AppProject.FetchProject();
+        AppPaths.GetDataDir();
 
-        // AppPaths.GetDataDir();
 
-        stage.setMinWidth(600);
-        stage.setMinHeight(400);
+        {
+            stage.setTitle("Text Input App");
+            stage.setMinWidth(600);
+            stage.setMinHeight(400);
 
-        // AppProject.CreateProject("cotv");
+            TextField txtf = new TextField("Project");
+            Button btn = new Button("Create Project");
 
-        stage.show();
+            btn.setOnAction(e -> {
+                AppProject.CreateProject(txtf.getText());
+            });
+
+            VBox root = new VBox(10);
+            root.getChildren().addAll(txtf, btn);
+
+            Scene scene = new Scene(root, 400, 200);
+            stage.setScene(scene);
+            stage.show();
+
+        }
     }
 
     public static void main(String[] args) {
