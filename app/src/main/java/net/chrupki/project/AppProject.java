@@ -1,6 +1,7 @@
 package net.chrupki.project;
 
 import net.chrupki.AppPaths;
+import net.chrupki.database.Database;
 
 import java.io.IOException;
 import java.nio.file.Files;
@@ -38,10 +39,14 @@ public class AppProject {
         try {
             Files.createDirectories(projectPath);
             AddProjects(projectPath);
+            Database.CreateProjectDatabase(name);
         } catch (IOException e) {
+            throw new RuntimeException(e);
+        } catch (Exception e) {
             throw new RuntimeException(e);
         }
     }
+
 
     public static void AddProjects(Path path) {
         for (Path p : projects) {
@@ -52,6 +57,24 @@ public class AppProject {
         for (var p : projects) {
             System.out.println(p.toString());
         }
+    }
+
+    public static List<String> FetchAllProjectNames() throws IOException {
+        Path path = AppPaths.GetDataDir().resolve("projects");
+        List<String> projectsName = new ArrayList<>();
+
+        if (!Files.exists(path)) {
+            return projectsName;
+        }
+
+        try (var stream = Files.list(path)) {
+            stream
+                    .filter(Files::isDirectory)
+                    .map(p -> p.getFileName().toString())
+                    .forEach(projectsName::add);
+        }
+
+        return projectsName;
     }
 
     public static List<Path> GetProjects() {

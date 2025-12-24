@@ -1,15 +1,28 @@
 package net.chrupki.database;
 
 
+import net.chrupki.AppPaths;
+import net.chrupki.project.AppProject;
+
+import java.nio.file.Files;
+import java.nio.file.Path;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
 
 
 public class Database {
-    private static final String URL = "jdbc:sqlite:patcher.db";
+    public static Connection CreateProjectDatabase(String name) throws Exception {
 
-    public static Connection getConnection() throws SQLException {
-        return DriverManager.getConnection(URL);
+        Path projectDir = AppPaths.GetDataDir()
+                .resolve("projects")
+                .resolve(name);
+
+        Files.createDirectories(projectDir);
+
+        Path dbPath = projectDir.resolve("project.db");
+        String url = "jdbc:sqlite:" + dbPath.toAbsolutePath();
+
+        return DriverManager.getConnection(url);
     }
 }

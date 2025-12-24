@@ -24,7 +24,7 @@ public class Patcher extends Application{
     private Parent parent;
 
     @Override
-    public void start(Stage stage) throws IOException {
+    public void start(Stage stage) throws Exception {
         DatabaseInitializer.InitDB();
         AppProject.FetchProject();
         AppPaths.GetDataDir();
