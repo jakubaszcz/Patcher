@@ -7,16 +7,14 @@ package net.chrupki;
 import javafx.application.Application;
 import javafx.scene.control.Button;
 import javafx.scene.Parent;
+import javafx.scene.control.ComboBox;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.VBox;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
-import net.chrupki.database.DatabaseInitializer;
 import net.chrupki.project.AppProject;
-
-import java.awt.*;
-import java.awt.event.ActionEvent;
-import java.io.IOException;
+import net.chrupki.utils.AppData;
+import net.chrupki.utils.AppPaths;
 
 
 public class Patcher extends Application{
@@ -25,7 +23,6 @@ public class Patcher extends Application{
 
     @Override
     public void start(Stage stage) throws Exception {
-        DatabaseInitializer.InitDB();
         AppProject.FetchProject();
         AppPaths.GetDataDir();
 
@@ -42,8 +39,18 @@ public class Patcher extends Application{
                 AppProject.CreateProject(txtf.getText());
             });
 
+            ComboBox comboBox = new ComboBox();
+
+            comboBox.getItems().addAll(
+                    AppProject.FetchAllProjectNames()
+            );
+
+            comboBox.setOnAction(e -> {
+                AppData.SetCurrentProject(comboBox.getValue().toString());
+            });
+
             VBox root = new VBox(10);
-            root.getChildren().addAll(txtf, btn);
+            root.getChildren().addAll(txtf, btn, comboBox);
 
             Scene scene = new Scene(root, 400, 200);
             stage.setScene(scene);

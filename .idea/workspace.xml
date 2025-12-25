@@ -4,11 +4,14 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="c1aa160e-de6c-484d-8c28-5409cf16dc62" name="Changes" comment="Add UI to create projects">
+    <list default="true" id="c1aa160e-de6c-484d-8c28-5409cf16dc62" name="Changes" comment="Add database in each project folder">
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/net/chrupki/database/DatabaseConnection.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/net/chrupki/utils/AppData.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/net/chrupki/AppPaths.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/net/chrupki/utils/AppPaths.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/net/chrupki/Patcher.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/net/chrupki/Patcher.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/net/chrupki/database/Database.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/net/chrupki/database/Database.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/net/chrupki/database/DatabaseInitializer.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/net/chrupki/database/DatabaseInitializer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/net/chrupki/database/DatabaseInitializer.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/net/chrupki/project/AppProject.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/net/chrupki/project/AppProject.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -80,21 +83,22 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;Gradle.Patcher [build].executor&quot;: &quot;Run&quot;,
-    &quot;ModuleVcsDetector.initialDetectionPerformed&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
-    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;/home/jakub/Documents/Patcher&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;Facets&quot;,
-    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Gradle.Download Sources.executor": "Run",
+    "Gradle.Patcher [build].executor": "Run",
+    "ModuleVcsDetector.initialDetectionPerformed": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252": "true",
+    "RunOnceActivity.git.unshallow": "true",
+    "git-widget-placeholder": "main",
+    "kotlin-language-version-configured": "true",
+    "last_opened_file_path": "/home/jakub/Documents/Patcher",
+    "project.structure.last.edited": "Modules",
+    "project.structure.proportion": "0.0",
+    "project.structure.side.proportion": "0.2"
   }
-}</component>
+}]]></component>
   <component name="RunManager">
     <configuration name="Patcher [build]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
@@ -192,7 +196,15 @@
       <option name="project" value="LOCAL" />
       <updated>1766513120084</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="Add database in each project folder">
+      <option name="closed" value="true" />
+      <created>1766573542015</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1766573542015</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
@@ -201,6 +213,7 @@
     <MESSAGE value="Add working sqlite locally" />
     <MESSAGE value="Add data directory" />
     <MESSAGE value="Add UI to create projects" />
-    <option name="LAST_COMMIT_MESSAGE" value="Add UI to create projects" />
+    <MESSAGE value="Add database in each project folder" />
+    <option name="LAST_COMMIT_MESSAGE" value="Add database in each project folder" />
   </component>
 </project>

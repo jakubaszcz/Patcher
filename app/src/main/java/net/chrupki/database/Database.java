@@ -1,14 +1,12 @@
 package net.chrupki.database;
 
 
-import net.chrupki.AppPaths;
-import net.chrupki.project.AppProject;
+import net.chrupki.utils.AppPaths;
 
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.sql.Connection;
 import java.sql.DriverManager;
-import java.sql.SQLException;
 
 
 public class Database {

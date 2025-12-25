@@ -1,15 +1,14 @@
 package net.chrupki.project;
 
-import net.chrupki.AppPaths;
+import net.chrupki.utils.AppPaths;
 import net.chrupki.database.Database;
+import net.chrupki.database.DatabaseConnection;
 
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.util.ArrayList;
 import java.util.List;
-
-import static java.lang.System.in;
 
 public class AppProject {
 
@@ -40,6 +39,7 @@ public class AppProject {
             Files.createDirectories(projectPath);
             AddProjects(projectPath);
             Database.CreateProjectDatabase(name);
+            DatabaseConnection.ConnectProjectDB(name);
         } catch (IOException e) {
             throw new RuntimeException(e);
         } catch (Exception e) {
