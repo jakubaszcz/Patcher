@@ -1,5 +1,9 @@
 package net.chrupki.project;
 
+import javafx.beans.property.SimpleStringProperty;
+import javafx.beans.property.StringProperty;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import net.chrupki.utils.AppPaths;
 import net.chrupki.database.Database;
 import net.chrupki.database.DatabaseConnection;
@@ -72,6 +76,24 @@ public class AppProject {
                     .filter(Files::isDirectory)
                     .map(p -> p.getFileName().toString())
                     .forEach(projectsName::add);
+        }
+
+        return projectsName;
+    }
+
+    public static ObservableList<StringProperty> FetchAllProjectPropertiesName() throws IOException {
+        Path path = AppPaths.GetDataDir().resolve("projects");
+        ObservableList<StringProperty> projectsName = FXCollections.observableArrayList();;
+
+        if (!Files.exists(path)) {
+            return projectsName;
+        }
+
+        try (var stream = Files.list(path)) {
+            stream
+                    .filter(Files::isDirectory)
+                    .map(p -> p.getFileName().toString())
+                    .forEach(name -> projectsName.add(new SimpleStringProperty(name)));
         }
 
         return projectsName;

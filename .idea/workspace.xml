@@ -4,15 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="c1aa160e-de6c-484d-8c28-5409cf16dc62" name="Changes" comment="Add database in each project folder">
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/net/chrupki/database/DatabaseConnection.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/net/chrupki/utils/AppData.java" afterDir="false" />
+    <list default="true" id="c1aa160e-de6c-484d-8c28-5409cf16dc62" name="Changes" comment="Add combo box to change current project">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/net/chrupki/AppPaths.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/net/chrupki/utils/AppPaths.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/net/chrupki/Patcher.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/net/chrupki/Patcher.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/net/chrupki/database/Database.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/net/chrupki/database/Database.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/net/chrupki/database/DatabaseInitializer.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/net/chrupki/project/AppProject.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/net/chrupki/project/AppProject.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/net/chrupki/utils/AppData.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/net/chrupki/utils/AppData.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -204,7 +200,15 @@
       <option name="project" value="LOCAL" />
       <updated>1766573542015</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="Add combo box to change current project">
+      <option name="closed" value="true" />
+      <created>1766683972568</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1766683972568</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
@@ -214,6 +218,7 @@
     <MESSAGE value="Add data directory" />
     <MESSAGE value="Add UI to create projects" />
     <MESSAGE value="Add database in each project folder" />
-    <option name="LAST_COMMIT_MESSAGE" value="Add database in each project folder" />
+    <MESSAGE value="Add combo box to change current project" />
+    <option name="LAST_COMMIT_MESSAGE" value="Add combo box to change current project" />
   </component>
 </project>
