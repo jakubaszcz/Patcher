@@ -24,7 +24,7 @@ public class AppProject {
 
     public static void FetchProject() throws IOException {
         Path path = AppPaths.GetDataDir().resolve("projects");
-
+        Files.createDirectories(path);
         try (var stream = Files.list(path)) {
             stream
                     .filter(Files::isDirectory)
