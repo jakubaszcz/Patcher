@@ -1,7 +1,8 @@
 package net.chrupki.database;
 
-import java.sql.Connection;
-import java.sql.Statement;
+import net.chrupki.utils.AppData;
+
+import java.sql.*;
 
 public class DatabaseConnection {
 
@@ -28,6 +29,23 @@ public class DatabaseConnection {
         ) {
             stmt.execute(createVersionTable);
             stmt.execute(createPatchTable);
+        }
+    }
+
+    public static void CreateVersion() {
+        String sql = "INSERT INTO version (version) VALUES (?)";
+
+        try (Connection conn = Database.CreateProjectDatabase(AppData.GetCurrentProjectName());
+             PreparedStatement stmt = conn.prepareStatement(sql)) {
+
+            stmt.setString(1, "x.y.z");
+
+            stmt.executeUpdate();
+
+        } catch (SQLException ex) {
+            ex.printStackTrace();
+        } catch (Exception e) {
+            throw new RuntimeException(e);
         }
     }
 

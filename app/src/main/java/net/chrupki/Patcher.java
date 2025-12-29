@@ -1,6 +1,7 @@
 package net.chrupki;
 
 import javafx.application.Application;
+import javafx.beans.InvalidationListener;
 import javafx.beans.property.StringProperty;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
@@ -9,6 +10,7 @@ import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
+import net.chrupki.database.DatabaseConnection;
 import net.chrupki.project.AppProject;
 import net.chrupki.utils.AppData;
 import net.chrupki.utils.AppPaths;
@@ -72,6 +74,9 @@ public class Patcher extends Application {
                         .otherwise("Create version"));
 
 
+        projectButtonVersion.setOnAction(event -> {
+            DatabaseConnection.CreateVersion();
+        });
         projectBox = new VBox(10, projectLabel, projectButtonVersion);
 
         projectBox.visibleProperty().bind(
