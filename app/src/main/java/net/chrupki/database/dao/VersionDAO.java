@@ -1,6 +1,7 @@
 package net.chrupki.database.dao;
 
 import net.chrupki.database.Database;
+import net.chrupki.ui.model.ProjectModel;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -16,12 +17,12 @@ public class VersionDAO {
     }
 
     public static void insert(String projectName, String version) {
-        String sql = "INSERT INTO version (version) VALUES (?)";
+        String sql = "INSERT INTO versions (version) VALUES (?)";
 
         try (Connection conn = Database.getConnection(projectName);
              PreparedStatement stmt = conn.prepareStatement(sql)) {
 
-            stmt.setString(1, "x.y.z");
+            stmt.setString(1, version);
 
             stmt.executeUpdate();
 
@@ -36,7 +37,7 @@ public class VersionDAO {
         List<String> versions = new ArrayList<>();
         String sql = """
                 SELECT version
-                FROM version
+                FROM versions
                 WHERE id
                 ORDER BY id ASC
                 """;
