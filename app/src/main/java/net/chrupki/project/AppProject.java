@@ -4,9 +4,9 @@ import javafx.beans.property.SimpleStringProperty;
 import javafx.beans.property.StringProperty;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
-import net.chrupki.utils.AppPaths;
+import net.chrupki.app.AppPath;
 import net.chrupki.database.Database;
-import net.chrupki.database.DatabaseConnection;
+import net.chrupki.database.DatabaseInitializer;
 
 import java.io.IOException;
 import java.nio.file.Files;
@@ -23,7 +23,7 @@ public class AppProject {
     }
 
     public static void FetchProject() throws IOException {
-        Path path = AppPaths.GetDataDir().resolve("projects");
+        Path path = AppPath.getDataDir().resolve("projects");
         Files.createDirectories(path);
         try (var stream = Files.list(path)) {
             stream
@@ -33,7 +33,7 @@ public class AppProject {
     }
 
     public static void CreateProject(String name) {
-        Path path = AppPaths.GetDataDir();
+        Path path = AppPath.getDataDir();
         Path directory = path.resolve("projects");
         Path projectPath = directory.resolve(name);
 
@@ -42,8 +42,8 @@ public class AppProject {
         try {
             Files.createDirectories(projectPath);
             AddProjects(projectPath);
-            Database.CreateProjectDatabase(name);
-            DatabaseConnection.ConnectProjectDB(name);
+            Database.getConnection(name);
+            DatabaseInitializer.init(name);
         } catch (IOException e) {
             throw new RuntimeException(e);
         } catch (Exception e) {
@@ -64,7 +64,7 @@ public class AppProject {
     }
 
     public static List<String> FetchAllProjectNames() throws IOException {
-        Path path = AppPaths.GetDataDir().resolve("projects");
+        Path path = AppPath.getDataDir().resolve("projects");
         List<String> projectsName = new ArrayList<>();
 
         if (!Files.exists(path)) {
@@ -82,7 +82,7 @@ public class AppProject {
     }
 
     public static ObservableList<StringProperty> FetchAllProjectPropertiesName() throws IOException {
-        Path path = AppPaths.GetDataDir().resolve("projects");
+        Path path = AppPath.getDataDir().resolve("projects");
         ObservableList<StringProperty> projectsName = FXCollections.observableArrayList();;
 
         if (!Files.exists(path)) {

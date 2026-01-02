@@ -1,18 +1,20 @@
 package net.chrupki.database;
 
 
-import net.chrupki.utils.AppPaths;
+import net.chrupki.app.AppData;
+import net.chrupki.app.AppPath;
+import net.chrupki.database.schema.Tables;
 
 import java.nio.file.Files;
 import java.nio.file.Path;
-import java.sql.Connection;
-import java.sql.DriverManager;
-
+import java.sql.*;
+import java.util.ArrayList;
+import java.util.List;
 
 public class Database {
-    public static Connection CreateProjectDatabase(String name) throws Exception {
+    public static Connection getConnection(String name) throws Exception {
 
-        Path projectDir = AppPaths.GetDataDir()
+        Path projectDir = AppPath.getDataDir()
                 .resolve("projects")
                 .resolve(name);
 

@@ -1,14 +1,14 @@
-package net.chrupki.utils;
+package net.chrupki.app;
 
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 
-public class AppPaths {
+public class AppPath {
 
     private static String APP_NAME = "patcher";
 
-    private AppPaths() {
+    private AppPath() {
     }
 
     private enum OS {
@@ -17,28 +17,28 @@ public class AppPaths {
         Windows
     }
 
-    public static Path GetDataDir() {
-        Path base = GetBaseDataDir();
+    public static Path getDataDir() {
+        Path base = getBaseDataDir();
         Path appDir = base.resolve(APP_NAME);
-        CreateIfMissing(appDir);
+        createIfMissing(appDir);
         return appDir;
     }
 
-    public static Path GetConfigDir() {
-        Path base = GetBaseConfigDir();
+    public static Path getConfigDir() {
+        Path base = getBaseConfigDir();
         Path appDir = base.resolve(APP_NAME);
-        CreateIfMissing(appDir);
+        createIfMissing(appDir);
         return appDir;
     }
 
-    public static Path GetCacheDir() {
-        Path base = GetBaseCacheDir();
+    public static Path getCacheDir() {
+        Path base = getBaseCacheDir();
         Path appDir = base.resolve(APP_NAME);
-        CreateIfMissing(appDir);
+        createIfMissing(appDir);
         return appDir;
     }
 
-    private static OS GetOS() {
+    private static OS getOS() {
         String os = System.getProperty("os.name").toLowerCase();
         if (os.contains("win")) return OS.Windows;
         if (os.contains("lin")) return OS.Linux;
@@ -46,8 +46,8 @@ public class AppPaths {
         return null;
     }
 
-    private static Path GetBaseDataDir() {
-        OS os = GetOS();
+    private static Path getBaseDataDir() {
+        OS os = getOS();
 
         return switch (os) {
             case Windows -> Paths.get(System.getenv("APPDATA"));
@@ -70,8 +70,8 @@ public class AppPaths {
         };
     }
 
-    private static Path GetBaseConfigDir() {
-        OS os = GetOS();
+    private static Path getBaseConfigDir() {
+        OS os = getOS();
 
         return switch (os) {
             case Windows -> Paths.get(System.getenv("APPDATA"));
@@ -94,8 +94,8 @@ public class AppPaths {
         };
     }
 
-    private static Path GetBaseCacheDir() {
-        OS os = GetOS();
+    private static Path getBaseCacheDir() {
+        OS os = getOS();
 
         return switch (os) {
             case Windows -> Paths.get(System.getenv("APPDATA"));
@@ -118,7 +118,7 @@ public class AppPaths {
         };
     }
 
-    private static void CreateIfMissing(Path path) {
+    private static void createIfMissing(Path path) {
         try {
             Files.createDirectories(path);
         } catch (Exception e) {
