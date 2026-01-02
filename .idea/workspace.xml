@@ -4,20 +4,14 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="c1aa160e-de6c-484d-8c28-5409cf16dc62" name="Changes" comment="Fix windows run issue">
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/net/chrupki/database/DatabaseInitializer.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/net/chrupki/database/dao/VersionDAO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/net/chrupki/database/schema/Tables.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/net/chrupki/ui/views/MainView.java" afterDir="false" />
+    <list default="true" id="c1aa160e-de6c-484d-8c28-5409cf16dc62" name="Changes" comment="Refractor code base">
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/net/chrupki/ui/components/CreateProjectComponent.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/net/chrupki/ui/components/PickProjectComponent.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/net/chrupki/ui/components/button/ButtonProjectComponent.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/net/chrupki/ui/components/label/LabelProjectComponent.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/net/chrupki/ui/views/ProjectView.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/net/chrupki/Patcher.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/net/chrupki/Patcher.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/net/chrupki/database/Database.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/net/chrupki/database/Database.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/net/chrupki/database/DatabaseConnection.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/net/chrupki/project/AppProject.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/net/chrupki/project/AppProject.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/net/chrupki/structures/PatchType.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/net/chrupki/structures/Utils.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/net/chrupki/utils/AppData.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/net/chrupki/app/AppData.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/net/chrupki/utils/AppPaths.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/net/chrupki/app/AppPath.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/net/chrupki/ui/views/MainView.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/net/chrupki/ui/views/MainView.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -157,7 +151,7 @@
       <updated>1766329077288</updated>
       <workItem from="1767013504361" duration="2210000" />
       <workItem from="1767349251256" duration="3845000" />
-      <workItem from="1767363766550" duration="3210000" />
+      <workItem from="1767363766550" duration="11874000" />
     </task>
     <task id="LOCAL-00001" summary="Setup gradle project">
       <option name="closed" value="true" />
@@ -231,7 +225,15 @@
       <option name="project" value="LOCAL" />
       <updated>1767013916225</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="Refractor code base">
+      <option name="closed" value="true" />
+      <created>1767368896456</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1767368896456</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -247,7 +249,8 @@
     <MESSAGE value="Add combo box to change current project" />
     <MESSAGE value="Add project box with version creator button" />
     <MESSAGE value="Fix windows run issue" />
-    <option name="LAST_COMMIT_MESSAGE" value="Fix windows run issue" />
+    <MESSAGE value="Refractor code base" />
+    <option name="LAST_COMMIT_MESSAGE" value="Refractor code base" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/Patcher$Patcher__build_.ic" NAME="Patcher [build] Coverage Results" MODIFIED="1767013393295" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="true" />
