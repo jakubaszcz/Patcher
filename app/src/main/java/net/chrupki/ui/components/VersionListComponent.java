@@ -7,6 +7,7 @@ import javafx.scene.control.Label;
 import javafx.scene.layout.VBox;
 import net.chrupki.app.AppData;
 import net.chrupki.database.dao.VersionDAO;
+import net.chrupki.model.Version;
 import net.chrupki.ui.components.container.VersionContainer;
 import net.chrupki.ui.model.ProjectModel;
 
@@ -29,9 +30,9 @@ public class VersionListComponent extends VBox {
 
         view.managedProperty().bind(view.visibleProperty());
 
-        ObservableList<String> versions = model.getVersions();
+        ObservableList<Version> versions = model.getVersions();
 
-        versions.addListener((ListChangeListener<String>) change -> {
+        versions.addListener((ListChangeListener<Version>) change -> {
             while (change.next()) {
 
                 if (change.wasRemoved()) {
@@ -39,8 +40,8 @@ public class VersionListComponent extends VBox {
                 }
 
                 if (change.wasAdded()) {
-                    for (String v : change.getAddedSubList()) {
-                        view.getChildren().add(new VersionContainer(v));
+                    for (Version v : change.getAddedSubList()) {
+                        view.getChildren().add(new VersionContainer(v.getVersion(), v.getId()));
                     }
                 }
             }

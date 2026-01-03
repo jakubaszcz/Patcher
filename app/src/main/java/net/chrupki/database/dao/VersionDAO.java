@@ -1,6 +1,7 @@
 package net.chrupki.database.dao;
 
 import net.chrupki.database.Database;
+import net.chrupki.model.Version;
 import net.chrupki.ui.model.ProjectModel;
 
 import java.sql.Connection;
@@ -33,10 +34,10 @@ public class VersionDAO {
         }
     }
 
-    public static List<String> findAll(String projectName) throws Exception {
-        List<String> versions = new ArrayList<>();
+    public static List<Version> findAll(String projectName) throws Exception {
+        List<Version> result = new ArrayList<>();
         String sql = """
-                SELECT version
+                SELECT id, version
                 FROM versions
                 WHERE id
                 ORDER BY id ASC
@@ -50,7 +51,10 @@ public class VersionDAO {
 
             try (ResultSet rs = stmt.executeQuery()) {
                 while (rs.next()) {
-                    versions.add(rs.getString("version"));
+                    result.add(new Version(
+                            rs.getInt("id"),
+                            rs.getString("version")
+                    ));
                 }
             }
 
@@ -59,6 +63,6 @@ public class VersionDAO {
         } catch (Exception e) {
             throw new RuntimeException(e);
         }
-        return versions;
+        return result;
     }
 }

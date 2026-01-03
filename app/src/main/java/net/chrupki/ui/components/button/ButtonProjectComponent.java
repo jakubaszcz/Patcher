@@ -8,6 +8,7 @@ import javafx.scene.layout.Priority;
 import javafx.scene.layout.VBox;
 import net.chrupki.app.AppData;
 import net.chrupki.database.dao.VersionDAO;
+import net.chrupki.model.Version;
 import net.chrupki.ui.model.ProjectModel;
 
 public class ButtonProjectComponent extends VBox {
@@ -32,7 +33,7 @@ public class ButtonProjectComponent extends VBox {
 
         button.setOnAction(event -> {
             VersionDAO.insert(AppData.getPropertyCurrentProjectName().get(), textField.getText());
-            model.getVersions().add(textField.getText());
+            model.getVersions().add(new Version(-1, textField.getText()));
         });
 
 
