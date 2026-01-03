@@ -3,6 +3,7 @@ package net.chrupki.ui.views;
 import javafx.scene.Scene;
 import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
+import net.chrupki.project.services.PatchService;
 import net.chrupki.project.services.ProjectService;
 import net.chrupki.project.services.VersionService;
 import net.chrupki.ui.components.CreateProjectForm;
@@ -33,12 +34,13 @@ public class MainView {
 
         ProjectService projectService = new ProjectService();
         VersionService versionService = new VersionService();
+        PatchService patchService = new PatchService();
 
         ProjectModel model = new ProjectModel();
 
         ProjectController projectController = new ProjectController(projectService, model);
         VersionController versionController = new VersionController(versionService, model);
-        PatchController patchController = new PatchController();
+        PatchController patchController = new PatchController(patchService);
 
 
         // Set up the application stage
