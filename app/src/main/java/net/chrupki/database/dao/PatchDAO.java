@@ -9,7 +9,7 @@ import java.sql.SQLException;
 
 public class PatchDAO {
     public static void insert(String projectName, int id, String type, String content) {
-        String sql = "INSERT INTO note (id, type, content) VALUES (?, ?, ?)";
+        String sql = "INSERT INTO notes (version_id, patch, content) VALUES (?, ?, ?)";
 
         try (Connection conn = Database.getConnection(projectName);
              PreparedStatement stmt = conn.prepareStatement(sql)) {
