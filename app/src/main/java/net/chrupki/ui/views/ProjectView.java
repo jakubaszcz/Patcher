@@ -14,9 +14,10 @@ public class ProjectView extends VBox {
 
     private static VBox view;
 
-    public ProjectView() throws Exception {
-        ProjectModel model = new ProjectModel();
+    private ProjectModel model;
 
+    public ProjectView(ProjectModel projectModel) throws Exception {
+        this.model = projectModel;
         view = new VBox(10, new LabelProjectComponent(), new ButtonProjectComponent(model), new VersionListComponent(model));
 
         this.getChildren().add(view);

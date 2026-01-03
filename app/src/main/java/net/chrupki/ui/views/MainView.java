@@ -10,6 +10,7 @@ import net.chrupki.app.AppData;
 import net.chrupki.database.dao.VersionDAO;
 import net.chrupki.ui.components.CreateProjectComponent;
 import net.chrupki.ui.components.PickProjectComponent;
+import net.chrupki.ui.model.ProjectModel;
 
 public class MainView {
 
@@ -28,13 +29,16 @@ public class MainView {
 
     public static void display(Stage stage) throws Exception {
 
+
         // Set up the application stage
         setup(stage);
 
+        ProjectModel model = new ProjectModel();
+
         VBox root = new VBox(10,
-                new CreateProjectComponent(),
-                new PickProjectComponent(),
-                new ProjectView()
+                new CreateProjectComponent(model),
+                new PickProjectComponent(model),
+                new ProjectView(model)
         );
 
         scene(stage, root);

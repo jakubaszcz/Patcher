@@ -7,9 +7,14 @@ public class ProjectModel {
 
     public ProjectModel() {}
 
-    private final ObservableList<String> versions= FXCollections.observableArrayList();
+    private final ObservableList<String> versions = FXCollections.observableArrayList();
+    private final ObservableList<String> projects = FXCollections.observableArrayList();
 
     public ObservableList<String> getVersions() {
         return versions;
+    }
+
+    public ObservableList<String> getProjects() {
+        return projects;
     }
 }
