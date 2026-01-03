@@ -25,6 +25,8 @@ public class CreatePatchForm extends VBox {
                 "Patch", "Add", "Features", "Fix"
         );
 
+        comboBox.getSelectionModel().selectFirst();
+
         button.setOnAction(e -> {
             PatchRequest request = new PatchRequest(
                     textField.getText(),
