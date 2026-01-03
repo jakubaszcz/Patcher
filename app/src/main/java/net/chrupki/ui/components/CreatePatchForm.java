@@ -31,6 +31,9 @@ public class CreatePatchForm extends VBox {
                     comboBox.getValue()
             );
 
+            textField.clear();
+            comboBox.getSelectionModel().selectFirst();
+
             onCreatePatch.accept(request);
         });
 
