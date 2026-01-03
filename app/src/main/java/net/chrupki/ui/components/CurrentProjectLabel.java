@@ -1,16 +1,16 @@
-package net.chrupki.ui.components.label;
+package net.chrupki.ui.components;
 
 import javafx.beans.binding.Bindings;
 import javafx.scene.control.Label;
 import javafx.scene.layout.VBox;
 import net.chrupki.app.AppData;
 
-public class LabelProjectComponent extends VBox {
+public class CurrentProjectLabel extends VBox {
 
     private static final String BLANK = "No current project";
+    private final Label projectLabel = new Label();
 
-    public LabelProjectComponent() {
-        Label projectLabel = new Label();
+    public CurrentProjectLabel() {
 
         projectLabel.textProperty().bind(
                 Bindings.when(

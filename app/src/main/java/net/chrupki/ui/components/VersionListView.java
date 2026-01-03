@@ -3,20 +3,18 @@ package net.chrupki.ui.components;
 import javafx.beans.property.StringProperty;
 import javafx.collections.ListChangeListener;
 import javafx.collections.ObservableList;
-import javafx.scene.control.Label;
 import javafx.scene.layout.VBox;
 import net.chrupki.app.AppData;
 import net.chrupki.database.dao.VersionDAO;
 import net.chrupki.model.Version;
-import net.chrupki.ui.components.container.VersionContainer;
 import net.chrupki.ui.model.ProjectModel;
 
-public class VersionListComponent extends VBox {
+public class VersionListView extends VBox {
 
 
     private ProjectModel model;
 
-    public VersionListComponent(ProjectModel model) throws Exception {
+    public VersionListView(ProjectModel model) throws Exception {
         this.model = model;
 
         StringProperty currentProject = AppData.getPropertyCurrentProjectName();

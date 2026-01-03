@@ -1,7 +1,5 @@
 package net.chrupki.ui.components;
 
-import javafx.beans.property.StringProperty;
-import javafx.collections.ListChangeListener;
 import javafx.collections.ObservableList;
 import javafx.scene.control.ComboBox;
 import javafx.scene.layout.VBox;
@@ -10,29 +8,26 @@ import net.chrupki.project.AppProject;
 import net.chrupki.ui.model.ProjectModel;
 
 import java.io.IOException;
+import java.util.function.Consumer;
 
-public class PickProjectComponent extends VBox {
+public class ProjectSelector extends VBox {
 
     private ProjectModel model;
+    ComboBox<String> comboBox = new ComboBox<>();
 
-    public PickProjectComponent(ProjectModel projectModel) throws IOException {
+    public ProjectSelector(ProjectModel projectModel, Consumer<String> onProjectSelected) {
         this.model = projectModel;
 
         ObservableList<String> projects = model.getProjects();
 
-        ComboBox<String> comboBox = new ComboBox<>();
         comboBox.setItems(projects);
 
         comboBox.valueProperty().addListener((obs, oldV, newV) -> {
             if (newV != null) {
-                AppData.setCurrentProject(newV);
+                onProjectSelected.accept(newV);
             }
         });
 
         this.getChildren().add(comboBox);
-
-        projects.setAll(
-                AppProject.FetchAllProjectNames()
-        );
     }
 }

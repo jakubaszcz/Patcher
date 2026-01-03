@@ -1,15 +1,14 @@
 package net.chrupki.ui.views;
 
-import javafx.collections.FXCollections;
-import javafx.collections.ObservableList;
 import javafx.scene.Scene;
-import javafx.scene.control.*;
 import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
-import net.chrupki.app.AppData;
-import net.chrupki.database.dao.VersionDAO;
-import net.chrupki.ui.components.CreateProjectComponent;
-import net.chrupki.ui.components.PickProjectComponent;
+import net.chrupki.project.services.ProjectService;
+import net.chrupki.project.services.VersionService;
+import net.chrupki.ui.components.CreateProjectForm;
+import net.chrupki.ui.components.ProjectSelector;
+import net.chrupki.ui.controllers.ProjectController;
+import net.chrupki.ui.controllers.VersionController;
 import net.chrupki.ui.model.ProjectModel;
 
 public class MainView {
@@ -29,17 +28,26 @@ public class MainView {
 
     public static void display(Stage stage) throws Exception {
 
+        ProjectService projectService = new ProjectService();
+        VersionService versionService = new VersionService();
+
+        ProjectModel model = new ProjectModel();
+
+        ProjectController projectController = new ProjectController(projectService, model);
+        VersionController versionController = new VersionController(versionService, model);
+
 
         // Set up the application stage
         setup(stage);
 
-        ProjectModel model = new ProjectModel();
-
         VBox root = new VBox(10,
-                new CreateProjectComponent(model),
-                new PickProjectComponent(model),
-                new ProjectView(model)
+                new CreateProjectForm(model, projectController::createProject),
+                new ProjectSelector(model, projectController::selectProject),
+                new ProjectView(model, projectController, versionController),
+                new VersionView()
         );
+
+        projectController.loadProjects();
 
         scene(stage, root);
 

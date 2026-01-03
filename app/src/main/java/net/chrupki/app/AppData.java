@@ -1,9 +1,7 @@
 package net.chrupki.app;
 
-import javafx.beans.property.ObjectProperty;
-import javafx.beans.property.SimpleObjectProperty;
-import javafx.beans.property.SimpleStringProperty;
-import javafx.beans.property.StringProperty;
+import javafx.beans.property.*;
+import javafx.beans.value.ObservableValue;
 import net.chrupki.project.AppProject;
 
 import java.nio.file.Path;
@@ -13,7 +11,17 @@ public class AppData {
     private static final StringProperty CURRENT_PROJECT_NAME = new SimpleStringProperty();
     private static final ObjectProperty<Path> CURRENT_PROJECT_PATH = new SimpleObjectProperty<>();
 
-    private static int CURRENT_VERSION_ID = -1;
+    private static IntegerProperty CURRENT_VERSION_ID = new SimpleIntegerProperty();
+
+    private static BooleanProperty VERSION_SELCTED = new SimpleBooleanProperty();
+
+    public static void setVersionSelected(boolean versionSelected) {
+        VERSION_SELCTED.set(versionSelected);
+    }
+
+    public static ObservableValue<? extends Boolean> getVersionSelected() {
+        return VERSION_SELCTED;
+    }
 
     public static void setCurrentProject(String name) {
         setCurrentProjectName(name);
@@ -21,11 +29,12 @@ public class AppData {
     }
 
     public static void setCurrentVersionId(int id) {
-        CURRENT_VERSION_ID = id;
+        setVersionSelected(true);
+        CURRENT_VERSION_ID.set(id);
     }
 
     public static int getCurrentVersionId() {
-        return CURRENT_VERSION_ID;
+        return CURRENT_VERSION_ID.get();
     }
 
     public static void setCurrentProjectName(String name) {

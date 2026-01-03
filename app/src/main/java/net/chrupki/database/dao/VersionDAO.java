@@ -17,7 +17,7 @@ public class VersionDAO {
         insert(projectName, "x.y.z");
     }
 
-    public static void insert(String projectName, String version) {
+    public static int  insert(String projectName, String version) {
         String sql = "INSERT INTO versions (version) VALUES (?)";
 
         try (Connection conn = Database.getConnection(projectName);
@@ -27,11 +27,19 @@ public class VersionDAO {
 
             stmt.executeUpdate();
 
+            try (ResultSet rs = stmt.getGeneratedKeys()) {
+                if (rs.next()) {
+                    return rs.getInt(1);
+                }
+            }
+
+
         } catch (SQLException ex) {
             ex.printStackTrace();
         } catch (Exception e) {
             throw new RuntimeException(e);
         }
+        return -1;
     }
 
     public static List<Version> findAll(String projectName) throws Exception {

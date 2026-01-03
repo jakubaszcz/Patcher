@@ -1,13 +1,13 @@
 package net.chrupki.ui.views;
 
-import javafx.beans.binding.Bindings;
-import javafx.scene.control.Button;
 import javafx.scene.layout.VBox;
 import net.chrupki.app.AppData;
-import net.chrupki.database.dao.VersionDAO;
-import net.chrupki.ui.components.VersionListComponent;
-import net.chrupki.ui.components.button.ButtonProjectComponent;
-import net.chrupki.ui.components.label.LabelProjectComponent;
+import net.chrupki.project.services.VersionService;
+import net.chrupki.ui.components.VersionListView;
+import net.chrupki.ui.components.CreateVersionForm;
+import net.chrupki.ui.components.CurrentProjectLabel;
+import net.chrupki.ui.controllers.ProjectController;
+import net.chrupki.ui.controllers.VersionController;
 import net.chrupki.ui.model.ProjectModel;
 
 public class ProjectView extends VBox {
@@ -16,9 +16,20 @@ public class ProjectView extends VBox {
 
     private ProjectModel model;
 
-    public ProjectView(ProjectModel projectModel) throws Exception {
+
+    public ProjectView(
+            ProjectModel projectModel,
+            ProjectController projectController,
+            VersionController versionController
+    ) throws Exception {
         this.model = projectModel;
-        view = new VBox(10, new LabelProjectComponent(), new ButtonProjectComponent(model), new VersionListComponent(model));
+
+        view = new VBox(10,
+                new CurrentProjectLabel(),
+                new CreateVersionForm(model, versionController::createVersion),
+                new VersionListView(model));
+
+        versionController.loadVersions(AppData.getCurrentProjectName());
 
         this.getChildren().add(view);
     }

@@ -6,23 +6,27 @@ import javafx.scene.layout.VBox;
 import net.chrupki.project.AppProject;
 import net.chrupki.ui.model.ProjectModel;
 
-public class CreateProjectComponent extends VBox {
+import java.util.function.Consumer;
+
+public class CreateProjectForm extends VBox {
 
     private static final String BUTTON_TEXT = "Create project";
     private static final String TEXTFIELD_TEXT = "Project";
 
-    private ProjectModel model;
+    private final ProjectModel model;
+    private final TextField textField = new TextField();
+    private final Button button = new Button(BUTTON_TEXT);
 
-    public CreateProjectComponent(ProjectModel projectModel) throws Exception {
+    public CreateProjectForm(ProjectModel projectModel, Consumer<String> onCreateProject) {
         this.model = projectModel;
-        TextField textField = new TextField();
+
         textField.setPromptText(TEXTFIELD_TEXT);
 
-        Button button = new Button(BUTTON_TEXT);
         button.setOnAction(e -> {
             if (!textField.getText().isBlank()) {
-                AppProject.CreateProject(textField.getText());
+                onCreateProject.accept(textField.getText());
                 model.getProjects().add(textField.getText());
+                textField.clear();
             }
         });
 
