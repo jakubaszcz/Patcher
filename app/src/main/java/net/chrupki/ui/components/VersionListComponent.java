@@ -7,6 +7,7 @@ import javafx.scene.control.Label;
 import javafx.scene.layout.VBox;
 import net.chrupki.app.AppData;
 import net.chrupki.database.dao.VersionDAO;
+import net.chrupki.ui.components.container.VersionContainer;
 import net.chrupki.ui.model.ProjectModel;
 
 public class VersionListComponent extends VBox {
@@ -39,7 +40,7 @@ public class VersionListComponent extends VBox {
 
                 if (change.wasAdded()) {
                     for (String v : change.getAddedSubList()) {
-                        view.getChildren().add(new Label(v));
+                        view.getChildren().add(new VersionContainer(v));
                     }
                 }
             }

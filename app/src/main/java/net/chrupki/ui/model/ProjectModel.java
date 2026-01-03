@@ -10,6 +10,11 @@ public class ProjectModel {
     private final ObservableList<String> versions = FXCollections.observableArrayList();
     private final ObservableList<String> projects = FXCollections.observableArrayList();
 
+    class Version {
+        ObservableList<String> patches = FXCollections.observableArrayList();
+        ObservableList<String> fixes = FXCollections.observableArrayList();
+    }
+
     public ObservableList<String> getVersions() {
         return versions;
     }

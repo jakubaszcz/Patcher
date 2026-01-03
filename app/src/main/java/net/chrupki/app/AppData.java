@@ -13,9 +13,19 @@ public class AppData {
     private static final StringProperty CURRENT_PROJECT_NAME = new SimpleStringProperty();
     private static final ObjectProperty<Path> CURRENT_PROJECT_PATH = new SimpleObjectProperty<>();
 
+    private static int CURRENT_VERSION_ID = -1;
+
     public static void setCurrentProject(String name) {
         setCurrentProjectName(name);
         setCurrentProjectPath();
+    }
+
+    public static void setCurrentVersionId(int id) {
+        CURRENT_VERSION_ID = id;
+    }
+
+    public static int getCurrentVersionId() {
+        return CURRENT_VERSION_ID;
     }
 
     public static void setCurrentProjectName(String name) {
