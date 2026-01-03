@@ -5,6 +5,7 @@ import net.chrupki.app.AppData;
 import net.chrupki.project.services.VersionService;
 import net.chrupki.ui.components.CreatePatchForm;
 import net.chrupki.ui.components.VersionContainer;
+import net.chrupki.ui.controllers.PatchController;
 import net.chrupki.ui.controllers.VersionController;
 
 
@@ -13,14 +14,14 @@ public class VersionView extends VBox {
     private static VBox view;
 
 
-    public VersionView() {
+    public VersionView(PatchController patchController) {
 
         view = new VBox(10);
 
         view.visibleProperty().bind(AppData.getVersionSelected());
 
         view.getChildren().add(
-                new CreatePatchForm()
+                new CreatePatchForm(patchController::createPatch)
         );
 
         this.getChildren().add(view);

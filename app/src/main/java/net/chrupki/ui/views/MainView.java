@@ -7,9 +7,12 @@ import net.chrupki.project.services.ProjectService;
 import net.chrupki.project.services.VersionService;
 import net.chrupki.ui.components.CreateProjectForm;
 import net.chrupki.ui.components.ProjectSelector;
+import net.chrupki.ui.controllers.PatchController;
 import net.chrupki.ui.controllers.ProjectController;
 import net.chrupki.ui.controllers.VersionController;
 import net.chrupki.ui.model.ProjectModel;
+
+import javax.sound.midi.Patch;
 
 public class MainView {
 
@@ -35,6 +38,7 @@ public class MainView {
 
         ProjectController projectController = new ProjectController(projectService, model);
         VersionController versionController = new VersionController(versionService, model);
+        PatchController patchController = new PatchController();
 
 
         // Set up the application stage
@@ -44,7 +48,7 @@ public class MainView {
                 new CreateProjectForm(model, projectController::createProject),
                 new ProjectSelector(model, projectController::selectProject),
                 new ProjectView(model, projectController, versionController),
-                new VersionView()
+                new VersionView(patchController)
         );
 
         projectController.loadProjects();
