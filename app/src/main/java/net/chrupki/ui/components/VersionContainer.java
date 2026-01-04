@@ -20,6 +20,9 @@ public class VersionContainer extends VBox {
 
         button.setOnAction(e -> {
             AppData.setCurrentVersionId(id);
+
+            model.getPatches().clear();
+
             try {
                 model.getPatches().addAll(PatchDAO.findAll(AppData.getCurrentProjectName()));
             } catch (Exception ex) {
