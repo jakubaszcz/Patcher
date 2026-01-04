@@ -7,20 +7,20 @@ import javafx.scene.layout.VBox;
 import net.chrupki.app.AppData;
 import net.chrupki.database.dao.VersionDAO;
 import net.chrupki.model.Version;
+import net.chrupki.ui.controllers.VersionController;
 import net.chrupki.ui.model.ProjectModel;
 
 public class VersionListView extends VBox {
 
+    private final VBox view = new VBox();
 
     private ProjectModel model;
 
-    public VersionListView(ProjectModel model) throws Exception {
+    public VersionListView(VersionController versionController, ProjectModel model) throws Exception {
         this.model = model;
 
         StringProperty currentProject = AppData.getPropertyCurrentProjectName();
 
-        VBox view = new VBox(10);
-        this.getChildren().add(view);
 
         view.visibleProperty().bind(
                 currentProject.isNotNull().and(currentProject.isNotEmpty())
@@ -39,7 +39,7 @@ public class VersionListView extends VBox {
 
                 if (change.wasAdded()) {
                     for (Version v : change.getAddedSubList()) {
-                        view.getChildren().add(new VersionContainer(model, v.getVersion(), v.getId()));
+                        view.getChildren().add(new VersionContainer(model, v.getVersion(), v.getId(), versionController::selectVersion));
                     }
                 }
             }
@@ -61,8 +61,6 @@ public class VersionListView extends VBox {
             }
         });
 
-        versions.setAll(
-                VersionDAO.findAll(AppData.getCurrentProjectName())
-        );
+        this.getChildren().add(view);
     }
 }

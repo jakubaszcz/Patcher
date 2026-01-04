@@ -14,9 +14,10 @@ import net.chrupki.ui.model.ProjectModel;
 
 
 public class PatchContainer extends VBox {
-    public PatchContainer(ProjectModel model) throws Exception {
-        HBox view = new HBox();
 
+    private HBox view = new HBox();
+
+    public PatchContainer(ProjectModel model) throws Exception {
 
         ObservableList<Patch> patches = model.getPatches();
 
@@ -39,10 +40,6 @@ public class PatchContainer extends VBox {
                 }
             }
         });
-
-        patches.setAll(
-                PatchDAO.findAll(AppData.getCurrentProjectName())
-        );
 
         this.getChildren().addAll(view);
     }

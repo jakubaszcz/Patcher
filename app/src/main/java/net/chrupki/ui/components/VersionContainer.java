@@ -9,25 +9,18 @@ import net.chrupki.database.dao.PatchDAO;
 import net.chrupki.ui.model.ProjectModel;
 
 import java.util.Map;
+import java.util.function.Consumer;
 
 public class VersionContainer extends VBox {
 
-    public VersionContainer(ProjectModel model, String version, int id) {
+    public VersionContainer(ProjectModel model, String version, int id, Consumer<Integer> onSelectVersion) {
         HBox hBox = new HBox(10);
 
         Label label = new Label(version);
         Button button = new Button("Select this version");
 
         button.setOnAction(e -> {
-            AppData.setCurrentVersionId(id);
-
-            model.getPatches().clear();
-
-            try {
-                model.getPatches().addAll(PatchDAO.findAll(AppData.getCurrentProjectName()));
-            } catch (Exception ex) {
-                throw new RuntimeException(ex);
-            }
+            onSelectVersion.accept(id);
         });
 
         hBox.getChildren().addAll(label, button);

@@ -2,9 +2,12 @@ package net.chrupki.ui.controllers;
 
 import javafx.beans.property.StringProperty;
 import net.chrupki.app.AppData;
+import net.chrupki.database.dao.PatchDAO;
 import net.chrupki.model.Version;
 import net.chrupki.project.services.VersionService;
 import net.chrupki.ui.model.ProjectModel;
+
+import java.util.Objects;
 
 public class VersionController {
     private final VersionService service;
@@ -40,11 +43,21 @@ public class VersionController {
         }
     }
 
-    public void loadVersions(String projectName) throws Exception {
+    public void selectVersion(Integer index) {
+        AppData.setCurrentVersionId(index);
 
+        model.getPatches().clear();
+
+        try {
+            model.getPatches().addAll(Objects.requireNonNull(PatchDAO.findAll(AppData.getCurrentProjectName())));
+        } catch (Exception ex) {
+            throw new RuntimeException(ex);
+        }
+    }
+
+    public void loadVersions(String projectName) throws Exception {
         model.getVersions().setAll(
                 service.fetchVersions(projectName)
         );
     }
-
 }

@@ -40,7 +40,7 @@ public class MainView {
 
         ProjectController projectController = new ProjectController(projectService, model);
         VersionController versionController = new VersionController(versionService, model);
-        PatchController patchController = new PatchController(patchService);
+        PatchController patchController = new PatchController(patchService, model);
 
 
         // Set up the application stage
@@ -54,6 +54,7 @@ public class MainView {
         );
 
         projectController.loadProjects();
+        patchController.loadPatches();
 
         scene(stage, root);
 

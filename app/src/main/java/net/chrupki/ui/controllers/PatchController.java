@@ -5,13 +5,16 @@ import net.chrupki.database.Database;
 import net.chrupki.database.dao.PatchDAO;
 import net.chrupki.model.PatchRequest;
 import net.chrupki.project.services.PatchService;
+import net.chrupki.ui.model.ProjectModel;
 
 public class PatchController {
 
     private final PatchService service;
+    private final ProjectModel model;
 
-    public PatchController(PatchService service) {
+    public PatchController(PatchService service, ProjectModel model) {
         this.service = service;
+        this.model = model;
     }
 
     public void createPatch(PatchRequest request) {
@@ -27,6 +30,12 @@ public class PatchController {
                 request.type(),
                 request.name()
         );
+    }
 
+    public void loadPatches() throws Exception {
+        String projectName = AppData.getCurrentProjectName();
+        model.getPatches().setAll(
+                service.fetchVersions(projectName)
+        );
     }
 }
