@@ -6,7 +6,7 @@ import net.chrupki.project.AppProject;
 
 import java.nio.file.Path;
 
-public class AppData {
+public class  AppData {
 
     private static final StringProperty CURRENT_PROJECT_NAME = new SimpleStringProperty();
     private static final ObjectProperty<Path> CURRENT_PROJECT_PATH = new SimpleObjectProperty<>();

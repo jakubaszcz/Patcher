@@ -50,7 +50,7 @@ public class MainView {
                 new CreateProjectForm(model, projectController::createProject),
                 new ProjectSelector(model, projectController::selectProject),
                 new ProjectView(model, projectController, versionController),
-                new VersionView(patchController)
+                new VersionView(model, patchController)
         );
 
         projectController.loadProjects();

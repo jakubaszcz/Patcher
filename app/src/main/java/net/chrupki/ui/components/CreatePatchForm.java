@@ -5,14 +5,16 @@ import javafx.scene.control.ComboBox;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
 import javafx.scene.control.TextField;
+import net.chrupki.model.Patch;
 import net.chrupki.model.PatchRequest;
+import net.chrupki.ui.model.ProjectModel;
 
 import java.util.function.Consumer;
 
 
 public class CreatePatchForm extends VBox {
 
-    public CreatePatchForm(Consumer<PatchRequest> onCreatePatch) {
+    public CreatePatchForm(ProjectModel model, Consumer<PatchRequest> onCreatePatch) {
         HBox box = new HBox();
 
         TextField textField = new TextField();
@@ -37,6 +39,11 @@ public class CreatePatchForm extends VBox {
             comboBox.getSelectionModel().selectFirst();
 
             onCreatePatch.accept(request);
+            model.getPatches().add(new Patch(
+                    textField.getText(),
+                    comboBox.getValue()
+                    )
+            );
         });
 
         box.getChildren().addAll(textField, comboBox, button);
