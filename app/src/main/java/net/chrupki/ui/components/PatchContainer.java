@@ -17,7 +17,7 @@ public class PatchContainer extends VBox {
 
     private HBox view = new HBox();
 
-    public PatchContainer(ProjectModel model) throws Exception {
+    public PatchContainer(ProjectModel model) {
 
         ObservableList<Patch> patches = model.getPatches();
 

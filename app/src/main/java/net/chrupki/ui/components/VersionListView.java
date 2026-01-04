@@ -16,7 +16,7 @@ public class VersionListView extends VBox {
 
     private ProjectModel model;
 
-    public VersionListView(VersionController versionController, ProjectModel model) throws Exception {
+    public VersionListView(VersionController versionController, ProjectModel model) {
         this.model = model;
 
         StringProperty currentProject = AppData.getPropertyCurrentProjectName();
