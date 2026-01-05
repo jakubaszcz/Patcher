@@ -6,8 +6,10 @@ import javafx.stage.Stage;
 import net.chrupki.project.services.PatchService;
 import net.chrupki.project.services.ProjectService;
 import net.chrupki.project.services.VersionService;
+import net.chrupki.project.services.exports.MarkdownExportService;
 import net.chrupki.ui.components.CreateProjectForm;
 import net.chrupki.ui.components.ProjectSelector;
+import net.chrupki.ui.controllers.ExportController;
 import net.chrupki.ui.controllers.PatchController;
 import net.chrupki.ui.controllers.ProjectController;
 import net.chrupki.ui.controllers.VersionController;
@@ -35,12 +37,14 @@ public class MainView {
         ProjectService projectService = new ProjectService();
         VersionService versionService = new VersionService();
         PatchService patchService = new PatchService();
+        MarkdownExportService markdownExportService = new MarkdownExportService();
 
         ProjectModel model = new ProjectModel();
 
         ProjectController projectController = new ProjectController(projectService, model);
         VersionController versionController = new VersionController(versionService, model);
         PatchController patchController = new PatchController(patchService, model);
+        ExportController exportController = new ExportController(markdownExportService);
 
 
         // Set up the application stage
@@ -50,7 +54,7 @@ public class MainView {
                 new CreateProjectForm(model, projectController::createProject),
                 new ProjectSelector(model, projectController::selectProject),
                 new ProjectView(model, projectController, versionController),
-                new VersionView(model, patchController)
+                new VersionView(model, patchController, exportController)
         );
 
         projectController.loadProjects();

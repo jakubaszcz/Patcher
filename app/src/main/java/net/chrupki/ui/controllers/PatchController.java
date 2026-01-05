@@ -1,9 +1,7 @@
 package net.chrupki.ui.controllers;
 
 import net.chrupki.app.AppData;
-import net.chrupki.database.Database;
-import net.chrupki.database.dao.PatchDAO;
-import net.chrupki.model.PatchRequest;
+import net.chrupki.request.PatchRequest;
 import net.chrupki.project.services.PatchService;
 import net.chrupki.ui.model.ProjectModel;
 

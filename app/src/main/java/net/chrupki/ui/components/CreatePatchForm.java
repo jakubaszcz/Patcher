@@ -5,16 +5,22 @@ import javafx.scene.control.ComboBox;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
 import javafx.scene.control.TextField;
+import javafx.stage.FileChooser;
+import net.chrupki.app.AppData;
+import net.chrupki.database.dao.VersionDAO;
 import net.chrupki.model.Patch;
-import net.chrupki.model.PatchRequest;
+import net.chrupki.request.ExportRequest;
+import net.chrupki.request.PatchRequest;
 import net.chrupki.ui.model.ProjectModel;
 
+import java.io.File;
+import java.util.List;
 import java.util.function.Consumer;
 
 
 public class CreatePatchForm extends VBox {
 
-    public CreatePatchForm(ProjectModel model, Consumer<PatchRequest> onCreatePatch) {
+    public CreatePatchForm(ProjectModel model, Consumer<PatchRequest> onCreatePatch, Consumer<ExportRequest> onExportPatch) {
         HBox box = new HBox();
 
         TextField textField = new TextField();
@@ -30,7 +36,7 @@ public class CreatePatchForm extends VBox {
         );
 
         comboBoxExport.getItems().addAll(
-                "JSON", "XML"
+                "markdown"
         );
 
         comboBoxPatch.getSelectionModel().selectFirst();
@@ -51,6 +57,31 @@ public class CreatePatchForm extends VBox {
 
             textField.clear();
             comboBoxPatch.getSelectionModel().selectFirst();
+        });
+
+        exportButton.setOnAction(e -> {
+
+            FileChooser chooser = new FileChooser();
+
+            File file = chooser.showSaveDialog(getScene().getWindow());
+            if (file == null) {
+                return;
+            }
+
+            try {
+                onExportPatch.accept(new ExportRequest(
+                        AppData.getCurrentProjectName(),
+                        VersionDAO.findNameById(
+                                AppData.getCurrentProjectName(),
+                                AppData.getCurrentVersionId()
+                        ),
+                        comboBoxExport.getValue(),
+                        List.of(),
+                        file.toPath()
+                ));
+            } catch (Exception ex) {
+                throw new RuntimeException(ex);
+            }
         });
 
         box.getChildren().addAll(textField, comboBoxPatch, createButton, comboBoxExport, exportButton);

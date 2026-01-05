@@ -57,10 +57,6 @@ public class AppProject {
             if (p.equals(path)) return;
         }
         projects.add(path);
-
-        for (var p : projects) {
-            System.out.println(p.toString());
-        }
     }
 
     public static List<String> FetchAllProjectNames() throws IOException {

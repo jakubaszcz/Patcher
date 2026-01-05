@@ -49,11 +49,6 @@ public class PatchDAO {
 
             stmt.setInt(1, AppData.getCurrentVersionId());
 
-            ResultSet rs1 = stmt.executeQuery();
-            rs1.next();
-            System.out.println(rs1.getString("content"));
-            System.out.println(rs1.getString("patch"));
-
             try (ResultSet rs = stmt.executeQuery()) {
                 while (rs.next()) {
                     result.add(new Patch(

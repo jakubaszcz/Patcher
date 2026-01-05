@@ -7,7 +7,12 @@ import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
 import javafx.scene.control.Label;
 import net.chrupki.model.Patch;
+import net.chrupki.request.ExportRequest;
+import net.chrupki.ui.controllers.ExportController;
 import net.chrupki.ui.model.ProjectModel;
+
+import java.util.function.BiConsumer;
+import java.util.function.Consumer;
 
 
 public class PatchListView extends VBox {
@@ -20,8 +25,6 @@ public class PatchListView extends VBox {
 
         patches.addListener((ListChangeListener<Patch>) change -> {
             while (change.next()) {
-
-                System.out.println(change.wasAdded());
 
                 if (change.wasRemoved()) {
                     view.getChildren().clear();
