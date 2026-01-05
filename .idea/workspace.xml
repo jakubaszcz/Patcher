@@ -4,9 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="c1aa160e-de6c-484d-8c28-5409cf16dc62" name="Changes" comment="Add type finder for patch content retrieval">
+    <list default="true" id="c1aa160e-de6c-484d-8c28-5409cf16dc62" name="Changes" comment="Add markdown generator">
+      <change afterPath="$PROJECT_DIR$/Licence.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/net/chrupki/project/services/exports/MarkdownExportService.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/net/chrupki/project/services/exports/MarkdownExportService.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -449,14 +449,21 @@
       <option name="project" value="LOCAL" />
       <updated>1767652047094</updated>
     </task>
-    <option name="localTasksCounter" value="38" />
+    <task id="LOCAL-00038" summary="Add markdown generator">
+      <option name="closed" value="true" />
+      <created>1767652093593</created>
+      <option name="number" value="00038" />
+      <option name="presentableId" value="LOCAL-00038" />
+      <option name="project" value="LOCAL" />
+      <updated>1767652093593</updated>
+    </task>
+    <option name="localTasksCounter" value="39" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Add display project dynamically" />
     <MESSAGE value="Add version container" />
     <MESSAGE value="Fetch id and version from versions table" />
     <MESSAGE value="Add Controllers &amp; Services" />
@@ -481,7 +488,8 @@
     <MESSAGE value="Add find name by id for the version" />
     <MESSAGE value="Add markdown exporting" />
     <MESSAGE value="Add type finder for patch content retrieval" />
-    <option name="LAST_COMMIT_MESSAGE" value="Add type finder for patch content retrieval" />
+    <MESSAGE value="Add markdown generator" />
+    <option name="LAST_COMMIT_MESSAGE" value="Add markdown generator" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/Patcher$Patcher__build_.ic" NAME="Patcher [build] Coverage Results" MODIFIED="1767013393295" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="true" />
