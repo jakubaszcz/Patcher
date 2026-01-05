@@ -34,6 +34,7 @@ public class CreatePatchForm extends VBox {
         );
 
         comboBoxPatch.getSelectionModel().selectFirst();
+        comboBoxExport.getSelectionModel().selectFirst();
 
         createButton.setOnAction(e -> {
             PatchRequest request = new PatchRequest(
