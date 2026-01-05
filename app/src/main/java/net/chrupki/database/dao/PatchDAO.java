@@ -33,6 +33,35 @@ public class PatchDAO {
         }
     }
 
+    public static List<String> findByType(String projectName, String type) {
+
+        List<String> result = new ArrayList<>();
+
+        String sql = "SELECT content FROM notes WHERE patch = ?";
+
+        if (projectName == null || projectName.isBlank()) return List.of();
+
+        try (Connection conn = Database.getConnection(projectName);
+             PreparedStatement stmt = conn.prepareStatement(sql)) {
+
+            stmt.setString(1, type);
+
+            try (ResultSet rs = stmt.executeQuery()) {
+                while (rs.next()) {
+                    result.add(rs.getString("content"));
+                }
+                return result;
+            }
+
+
+        } catch (SQLException ex) {
+            ex.printStackTrace();
+        } catch (Exception e) {
+            return null;
+        }
+        return result;
+    }
+
     public static List<Patch> findAll(String projectName) throws Exception {
         List<Patch> result = new ArrayList<>();
         String sql = """
