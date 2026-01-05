@@ -44,6 +44,9 @@ public class CreatePatchForm extends VBox {
                     comboBox.getValue()
                     )
             );
+
+            textField.clear();
+            comboBox.getSelectionModel().selectFirst();
         });
 
         box.getChildren().addAll(textField, comboBox, button);
