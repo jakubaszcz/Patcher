@@ -42,6 +42,20 @@ public class VersionDAO {
         return -1;
     }
 
+    public static String findNameById(String projectName, int id) throws Exception {
+        String sql = "SELECT version FROM versions WHERE id = ?";
+
+        if (projectName == null || projectName.isBlank()) return null;
+
+        try (Connection conn = Database.getConnection(projectName);
+            PreparedStatement stmt = conn.prepareStatement(sql)) {
+                stmt.setInt(1, id);
+                ResultSet rs = stmt.executeQuery();
+                rs.next();
+                return rs.getString("version");
+            }
+    }
+
     public static List<Version> findAll(String projectName) throws Exception {
         List<Version> result = new ArrayList<>();
         String sql = """
