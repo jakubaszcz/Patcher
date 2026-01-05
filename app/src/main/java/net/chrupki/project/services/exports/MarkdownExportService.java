@@ -1,9 +1,11 @@
 package net.chrupki.project.services.exports;
 
+import net.chrupki.database.dao.PatchDAO;
 import net.chrupki.request.ExportRequest;
 
 import java.io.IOException;
 import java.nio.file.Files;
+import java.util.List;
 
 public class MarkdownExportService {
 
@@ -19,7 +21,17 @@ public class MarkdownExportService {
     public String generateMarkdown(ExportRequest request) {
         StringBuilder md = new StringBuilder();
 
+        List<String> notes = List.of("Patch", "Add", "Features", "Fix");
+
         md.append("# Project ").append(request.project()).append(" (v.").append(request.version()).append(")\n\n");
+
+        for (String note : notes) {
+            md.append("## ").append(note).append("\n\n");
+            for (String patch : PatchDAO.findByType(request.project(), note)) {
+                md.append("- ").append(patch).append("\n");
+            }
+            md.append("\n");
+        }
 
         return md.toString();
     }
