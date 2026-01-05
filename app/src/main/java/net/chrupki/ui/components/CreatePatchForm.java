@@ -19,34 +19,40 @@ public class CreatePatchForm extends VBox {
 
         TextField textField = new TextField();
 
-        Button button = new Button("Create patch");
+        Button createButton = new Button("Create patch");
+        ComboBox<String> comboBoxExport = new ComboBox<>();
+        Button exportButton = new Button("Export");
 
-        ComboBox<String> comboBox = new ComboBox<>();
+        ComboBox<String> comboBoxPatch = new ComboBox<>();
 
-        comboBox.getItems().addAll(
+        comboBoxPatch.getItems().addAll(
                 "Patch", "Add", "Features", "Fix"
         );
 
-        comboBox.getSelectionModel().selectFirst();
+        comboBoxExport.getItems().addAll(
+                "JSON", "XML"
+        );
 
-        button.setOnAction(e -> {
+        comboBoxPatch.getSelectionModel().selectFirst();
+
+        createButton.setOnAction(e -> {
             PatchRequest request = new PatchRequest(
                     textField.getText(),
-                    comboBox.getValue()
+                    comboBoxPatch.getValue()
             );
 
             onCreatePatch.accept(request);
             model.getPatches().add(new Patch(
                     textField.getText(),
-                    comboBox.getValue()
+                    comboBoxPatch.getValue()
                     )
             );
 
             textField.clear();
-            comboBox.getSelectionModel().selectFirst();
+            comboBoxPatch.getSelectionModel().selectFirst();
         });
 
-        box.getChildren().addAll(textField, comboBox, button);
+        box.getChildren().addAll(textField, comboBoxPatch, createButton, comboBoxExport, exportButton);
 
         this.getChildren().add(box);
     }
