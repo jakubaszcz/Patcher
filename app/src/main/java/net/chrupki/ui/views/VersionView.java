@@ -2,12 +2,9 @@ package net.chrupki.ui.views;
 
 import javafx.scene.layout.VBox;
 import net.chrupki.app.AppData;
-import net.chrupki.project.services.VersionService;
 import net.chrupki.ui.components.CreatePatchForm;
-import net.chrupki.ui.components.PatchContainer;
-import net.chrupki.ui.components.VersionContainer;
+import net.chrupki.ui.components.PatchListView;
 import net.chrupki.ui.controllers.PatchController;
-import net.chrupki.ui.controllers.VersionController;
 import net.chrupki.ui.model.ProjectModel;
 
 
@@ -24,7 +21,7 @@ public class VersionView extends VBox {
 
         view.getChildren().addAll(
                 new CreatePatchForm(projectModel, patchController::createPatch),
-                new PatchContainer(projectModel)
+                new PatchListView(projectModel)
         );
 
         this.getChildren().add(view);
