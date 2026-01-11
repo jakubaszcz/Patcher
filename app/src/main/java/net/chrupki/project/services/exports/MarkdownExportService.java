@@ -26,6 +26,7 @@ public class MarkdownExportService {
         md.append("# Project ").append(request.project()).append(" (v.").append(request.version()).append(")\n\n");
 
         for (String note : notes) {
+            if (PatchDAO.findByType(request.project(), note).isEmpty()) continue;
             md.append("## ").append(note).append("\n\n");
             for (String patch : PatchDAO.findByType(request.project(), note)) {
                 md.append("- ").append(patch).append("\n");
