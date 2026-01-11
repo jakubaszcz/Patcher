@@ -4,10 +4,14 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="c1aa160e-de6c-484d-8c28-5409cf16dc62" name="Changes" comment="Fix hide version button create">
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/net/chrupki/ui/views/ModalView.java" afterDir="false" />
+    <list default="true" id="c1aa160e-de6c-484d-8c28-5409cf16dc62" name="Changes" comment="Add modal view for overlay">
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/net/chrupki/ui/controllers/ModalController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/net/chrupki/ui/components/CurrentProjectLabel.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/net/chrupki/ui/components/CurrentProjectLabel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/net/chrupki/ui/model/ProjectModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/net/chrupki/ui/model/ProjectModel.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/net/chrupki/ui/views/MainView.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/net/chrupki/ui/views/MainView.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/net/chrupki/ui/views/ModalView.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/net/chrupki/ui/views/ModalView.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/net/chrupki/ui/views/ProjectView.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/net/chrupki/ui/views/ProjectView.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -153,7 +157,7 @@
       <workItem from="1767456805075" duration="20852000" />
       <workItem from="1767532221772" duration="784000" />
       <workItem from="1767544161784" duration="11911000" />
-      <workItem from="1768130801077" duration="14343000" />
+      <workItem from="1768130801077" duration="17257000" />
     </task>
     <task id="LOCAL-00001" summary="Setup gradle project">
       <option name="closed" value="true" />
@@ -507,7 +511,23 @@
       <option name="project" value="LOCAL" />
       <updated>1768157337690</updated>
     </task>
-    <option name="localTasksCounter" value="45" />
+    <task id="LOCAL-00045" summary="Add modal view for overlay">
+      <option name="closed" value="true" />
+      <created>1768163772252</created>
+      <option name="number" value="00045" />
+      <option name="presentableId" value="LOCAL-00045" />
+      <option name="project" value="LOCAL" />
+      <updated>1768163772252</updated>
+    </task>
+    <task id="LOCAL-00046" summary="Add edit property">
+      <option name="closed" value="true" />
+      <created>1768165521266</created>
+      <option name="number" value="00046" />
+      <option name="presentableId" value="LOCAL-00046" />
+      <option name="project" value="LOCAL" />
+      <updated>1768165521266</updated>
+    </task>
+    <option name="localTasksCounter" value="47" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -525,8 +545,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Add clear choices when submit" />
-    <MESSAGE value="Fix select first choice by default" />
     <MESSAGE value="Add patch DAO file" />
     <MESSAGE value="Fix SQL command to insert in notes" />
     <MESSAGE value="Link controller and service for patch" />
@@ -550,7 +568,9 @@
     <MESSAGE value="Edit current project label" />
     <MESSAGE value="Fix hide version button create" />
     <MESSAGE value="Fix don't print another patch if null" />
-    <option name="LAST_COMMIT_MESSAGE" value="Fix don't print another patch if null" />
+    <MESSAGE value="Add modal view for overlay" />
+    <MESSAGE value="Add edit property" />
+    <option name="LAST_COMMIT_MESSAGE" value="Add edit property" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/Patcher$Patcher__build_.ic" NAME="Patcher [build] Coverage Results" MODIFIED="1767013393295" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="true" />

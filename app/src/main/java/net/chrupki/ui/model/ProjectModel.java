@@ -1,5 +1,7 @@
 package net.chrupki.ui.model;
 
+import javafx.beans.property.BooleanProperty;
+import javafx.beans.property.SimpleBooleanProperty;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import net.chrupki.model.Patch;
@@ -13,31 +15,43 @@ public class ProjectModel {
     private final ObservableList<String> projects = FXCollections.observableArrayList();
     private final ObservableList<Patch> patches = FXCollections.observableArrayList();
 
+    private final BooleanProperty editActive = new SimpleBooleanProperty(false);
     private final BooleanProperty editProject = new SimpleBooleanProperty(false);
     private final BooleanProperty editVersion = new SimpleBooleanProperty(false);
     private final BooleanProperty editPatch = new SimpleBooleanProperty(false);
 
-    public void setProjectProperty(BooleanProperty booleanProperty) {
-        editProject.set(booleanProperty.get());
+    public void setEditActiveProperty(boolean booleanProperty) {
+        editActive.set(booleanProperty);
     }
 
-    public BooleanProperty getProjectProperty() {
+    public BooleanProperty getEditActiveProperty() {
+        return editActive;
+    }
+
+    public void setEditProjectProperty(boolean booleanProperty) {
+        setEditActiveProperty(booleanProperty);
+        editProject.set(booleanProperty);
+    }
+
+    public BooleanProperty getEditProjectProperty() {
         return editProject;
     }
 
-    public void setVersionProperty(BooleanProperty booleanProperty) {
-        editVersion.set(booleanProperty.get());
+    public void setEditVersionProperty(boolean booleanProperty) {
+        setEditActiveProperty(booleanProperty);
+        editVersion.set(booleanProperty);
     }
 
-    public BooleanProperty getVersionProperty() {
+    public BooleanProperty getEditVersionProperty() {
         return editVersion;
     }
 
-    public void setPatchProperty(BooleanProperty booleanProperty) {
-        editPatch.set(booleanProperty.get());
+    public void setEditPatchProperty(boolean booleanProperty) {
+        setEditActiveProperty(booleanProperty);
+        editPatch.set(booleanProperty);
     }
 
-    public BooleanProperty getPatchProperty() {
+    public BooleanProperty getEditPatchProperty() {
         return editPatch;
     }
 

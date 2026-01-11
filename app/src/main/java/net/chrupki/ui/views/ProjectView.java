@@ -1,5 +1,6 @@
 package net.chrupki.ui.views;
 
+import javafx.scene.control.Label;
 import javafx.scene.layout.VBox;
 import net.chrupki.app.AppData;
 import net.chrupki.project.services.VersionService;
@@ -25,7 +26,7 @@ public class ProjectView extends VBox {
         this.model = projectModel;
 
         view = new VBox(10,
-                new CurrentProjectLabel(),
+                new CurrentProjectLabel(model),
                 new CreateVersionForm(model, versionController::createVersion),
                 new VersionListView(versionController, model));
 
