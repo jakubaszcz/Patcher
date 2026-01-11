@@ -45,9 +45,16 @@ tasks.jar {
     }
 }
 
+tasks.register('copyDependencies', Copy) {
+    from configurations.runtimeClasspath
+    into "$buildDir/libs"
+}
+
 tasks.register('packageApp', Exec) {
     group = "distribution"
     description = "Create native app using jpackage"
+
+    dependsOn(jar, copyDependencies)
 
     commandLine(
             "jpackage",
@@ -58,9 +65,10 @@ tasks.register('packageApp', Exec) {
             "--dest", "build/jpackage",
             "--type", "app-image",
             "--module-path", configurations.runtimeClasspath.asPath,
-            "--add-modules", "javafx.controls,javafx.fxml",
+            "--add-modules", "javafx.controls,javafx.fxml,java.sql",
     )
 }
+
 
 
 
