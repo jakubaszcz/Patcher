@@ -5,9 +5,8 @@ import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
-import net.chrupki.app.AppData;
-import net.chrupki.database.dao.VersionDAO;
-import net.chrupki.model.Version;
+import net.chrupki.app.AppContext;
+import net.chrupki.app.context.ProjectContext;
 import net.chrupki.ui.model.ProjectModel;
 
 import java.util.function.Consumer;
@@ -29,7 +28,7 @@ public class CreateVersionForm extends VBox {
 
         button.textProperty().bind(
                 Bindings.when(
-                                AppData.getPropertyCurrentProjectName().isNull())
+                                AppContext.projectContext().getName().isNull())
                         .then(BLANK)
                         .otherwise(BUTTON_TEXT));
 
@@ -37,7 +36,7 @@ public class CreateVersionForm extends VBox {
             onCreateVersion.accept(textField.getText());
         });
 
-        view.visibleProperty().bind(AppData.getPropertyCurrentProjectName().isNotNull());
+        view.visibleProperty().bind(AppContext.projectContext().getName().isNotNull());
 
         view.getChildren().addAll(button, textField);
 

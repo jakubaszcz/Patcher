@@ -1,6 +1,8 @@
 package net.chrupki.ui.controllers;
 
+import net.chrupki.app.AppContext;
 import net.chrupki.app.AppData;
+import net.chrupki.app.context.ProjectContext;
 import net.chrupki.project.AppProject;
 import net.chrupki.project.services.ProjectService;
 import net.chrupki.ui.model.ProjectModel;
@@ -31,7 +33,7 @@ public class ProjectController {
     }
 
     public void selectProject(String projectName) {
-        AppData.setCurrentProjectName(projectName);
+        AppContext.projectContext().setName(projectName);
         AppData.setVersionSelected(false);
     }
 }
