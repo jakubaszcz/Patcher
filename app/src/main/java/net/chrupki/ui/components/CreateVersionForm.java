@@ -17,6 +17,7 @@ public class CreateVersionForm extends VBox {
     private static final String BUTTON_TEXT = "Create version";
     private static final String BLANK = "No project selected";
 
+
     private ProjectModel model;
 
     public CreateVersionForm(ProjectModel model, Consumer<String> onCreateVersion) {
@@ -35,6 +36,8 @@ public class CreateVersionForm extends VBox {
         button.setOnAction(event -> {
             onCreateVersion.accept(textField.getText());
         });
+
+        view.visibleProperty().bind(AppData.getPropertyCurrentProjectName().isNotNull());
 
         view.getChildren().addAll(button, textField);
 
