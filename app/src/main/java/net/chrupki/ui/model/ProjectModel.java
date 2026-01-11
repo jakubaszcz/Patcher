@@ -13,6 +13,34 @@ public class ProjectModel {
     private final ObservableList<String> projects = FXCollections.observableArrayList();
     private final ObservableList<Patch> patches = FXCollections.observableArrayList();
 
+    private final BooleanProperty editProject = new SimpleBooleanProperty(false);
+    private final BooleanProperty editVersion = new SimpleBooleanProperty(false);
+    private final BooleanProperty editPatch = new SimpleBooleanProperty(false);
+
+    public void setProjectProperty(BooleanProperty booleanProperty) {
+        editProject.set(booleanProperty.get());
+    }
+
+    public BooleanProperty getProjectProperty() {
+        return editProject;
+    }
+
+    public void setVersionProperty(BooleanProperty booleanProperty) {
+        editVersion.set(booleanProperty.get());
+    }
+
+    public BooleanProperty getVersionProperty() {
+        return editVersion;
+    }
+
+    public void setPatchProperty(BooleanProperty booleanProperty) {
+        editPatch.set(booleanProperty.get());
+    }
+
+    public BooleanProperty getPatchProperty() {
+        return editPatch;
+    }
+
     public ObservableList<Version> getVersions() {
         return versions;
     }
