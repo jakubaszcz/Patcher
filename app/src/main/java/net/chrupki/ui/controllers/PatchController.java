@@ -1,5 +1,6 @@
 package net.chrupki.ui.controllers;
 
+import net.chrupki.app.AppContext;
 import net.chrupki.app.AppData;
 import net.chrupki.request.PatchRequest;
 import net.chrupki.project.services.PatchService;
@@ -16,7 +17,7 @@ public class PatchController {
     }
 
     public void createPatch(PatchRequest request) {
-        String projectName = AppData.getCurrentProjectName();
+        String projectName = AppContext.projectContext().getName().get();
         if (projectName == null || projectName.isBlank()) { throw new IllegalStateException("No project selected");}
 
         Integer versionId = AppData.getCurrentVersionId();

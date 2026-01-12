@@ -4,12 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="c1aa160e-de6c-484d-8c28-5409cf16dc62" name="Changes" comment="Add edit project controller">
+    <list default="true" id="c1aa160e-de6c-484d-8c28-5409cf16dc62" name="Changes" comment="Add project editor">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/net/chrupki/project/AppProject.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/net/chrupki/project/AppProject.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/net/chrupki/ui/components/modal/ModalProjectForm.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/net/chrupki/ui/components/modal/ModalProjectForm.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/net/chrupki/ui/controllers/ProjectController.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/net/chrupki/ui/controllers/ProjectController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/net/chrupki/ui/views/ModalView.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/net/chrupki/ui/views/ModalView.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/net/chrupki/project/services/VersionService.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/net/chrupki/project/services/VersionService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/net/chrupki/ui/components/VersionListView.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/net/chrupki/ui/components/VersionListView.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/net/chrupki/ui/controllers/PatchController.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/net/chrupki/ui/controllers/PatchController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/net/chrupki/ui/controllers/VersionController.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/net/chrupki/ui/controllers/VersionController.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -156,15 +156,7 @@
       <workItem from="1767532221772" duration="784000" />
       <workItem from="1767544161784" duration="11911000" />
       <workItem from="1768130801077" duration="22931000" />
-      <workItem from="1768246508726" duration="6669000" />
-    </task>
-    <task id="LOCAL-00002" summary="Refractor packages">
-      <option name="closed" value="true" />
-      <created>1766345516188</created>
-      <option name="number" value="00002" />
-      <option name="presentableId" value="LOCAL-00002" />
-      <option name="project" value="LOCAL" />
-      <updated>1766345516188</updated>
+      <workItem from="1768246508726" duration="7736000" />
     </task>
     <task id="LOCAL-00003" summary="Add working sqlite locally">
       <option name="closed" value="true" />
@@ -550,7 +542,15 @@
       <option name="project" value="LOCAL" />
       <updated>1768248368238</updated>
     </task>
-    <option name="localTasksCounter" value="51" />
+    <task id="LOCAL-00051" summary="Add project editor">
+      <option name="closed" value="true" />
+      <created>1768257308797</created>
+      <option name="number" value="00051" />
+      <option name="presentableId" value="LOCAL-00051" />
+      <option name="project" value="LOCAL" />
+      <updated>1768257308797</updated>
+    </task>
+    <option name="localTasksCounter" value="52" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -568,7 +568,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Fix clear when version changement" />
     <MESSAGE value="Update code to display with controller and service" />
     <MESSAGE value="Fix patch creator by removing unnecessary changes and updating" />
     <MESSAGE value="Rename PatchContainer to PatchListView" />
@@ -593,7 +592,8 @@
     <MESSAGE value="Add context for variables&#10;&#10;The context has been created to make the storage of important information easier and the use as well." />
     <MESSAGE value="Add edit project UI" />
     <MESSAGE value="Add edit project controller" />
-    <option name="LAST_COMMIT_MESSAGE" value="Add edit project controller" />
+    <MESSAGE value="Add project editor" />
+    <option name="LAST_COMMIT_MESSAGE" value="Add project editor" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/Patcher$Patcher__build_.ic" NAME="Patcher [build] Coverage Results" MODIFIED="1767013393295" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="true" />

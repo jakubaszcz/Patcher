@@ -4,6 +4,7 @@ import javafx.beans.property.StringProperty;
 import javafx.collections.ListChangeListener;
 import javafx.collections.ObservableList;
 import javafx.scene.layout.VBox;
+import net.chrupki.app.AppContext;
 import net.chrupki.app.AppData;
 import net.chrupki.database.dao.VersionDAO;
 import net.chrupki.model.Version;
@@ -19,7 +20,7 @@ public class VersionListView extends VBox {
     public VersionListView(VersionController versionController, ProjectModel model) {
         this.model = model;
 
-        StringProperty currentProject = AppData.getPropertyCurrentProjectName();
+        StringProperty currentProject = AppContext.projectContext().getName();
 
 
         view.visibleProperty().bind(

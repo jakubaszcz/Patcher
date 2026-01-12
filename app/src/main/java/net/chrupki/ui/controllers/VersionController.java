@@ -1,6 +1,7 @@
 package net.chrupki.ui.controllers;
 
 import javafx.beans.property.StringProperty;
+import net.chrupki.app.AppContext;
 import net.chrupki.app.AppData;
 import net.chrupki.database.dao.PatchDAO;
 import net.chrupki.model.Version;
@@ -33,7 +34,7 @@ public class VersionController {
     }
 
     public void createVersion(String versionName) {
-        String projectName = AppData.getPropertyCurrentProjectName().get();
+        String projectName = AppContext.projectContext().getName().get();
 
         try {
             Version version = service.createVersion(projectName, versionName);

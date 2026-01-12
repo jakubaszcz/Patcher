@@ -10,6 +10,8 @@ public class VersionService {
         if (project == null || project.isBlank()) { throw new IllegalArgumentException("Project name is required");}
         if (version == null || version.isBlank()) { throw new IllegalArgumentException("Version name is required");}
 
+        System.out.println("Creating version " + version + " for project " + project);
+
         int id = VersionDAO.insert(project, version);
         return new Version(id, version);
     }
