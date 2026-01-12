@@ -1,6 +1,7 @@
 package net.chrupki.ui.views;
 
 import javafx.scene.layout.VBox;
+import net.chrupki.app.AppContext;
 import net.chrupki.app.AppData;
 import net.chrupki.ui.components.CreatePatchForm;
 import net.chrupki.ui.components.PatchListView;
@@ -20,7 +21,7 @@ public class VersionView extends VBox {
 
         view = new VBox(10);
 
-        view.visibleProperty().bind(AppData.getVersionSelected());
+        view.visibleProperty().bind(AppContext.versionContext().getId().isNotNull());
 
         view.getChildren().addAll(
                 new CreatePatchForm(projectModel, patchController::createPatch, exportController::export),

@@ -20,7 +20,7 @@ public class PatchController {
         String projectName = AppContext.projectContext().getName().get();
         if (projectName == null || projectName.isBlank()) { throw new IllegalStateException("No project selected");}
 
-        Integer versionId = AppData.getCurrentVersionId();
+        Integer versionId = AppContext.versionContext().getId().get();
         if (versionId == null) { throw new IllegalStateException("No version selected");}
 
         service.createPatch(

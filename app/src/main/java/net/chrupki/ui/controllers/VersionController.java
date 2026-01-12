@@ -22,7 +22,7 @@ public class VersionController {
     }
 
     private void observeCurrentProject() {
-        StringProperty currentProject = AppData.getPropertyCurrentProjectName();
+        StringProperty currentProject = AppContext.projectContext().getName();
 
         currentProject.addListener((obs, oldProject, newProject) -> {
             try {
@@ -45,7 +45,7 @@ public class VersionController {
     }
 
     public void selectVersion(Integer index) {
-        AppData.setCurrentVersionId(index);
+        AppContext.versionContext().setId(index);
 
         model.getPatches().clear();
 

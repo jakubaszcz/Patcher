@@ -1,5 +1,6 @@
 package net.chrupki.database.dao;
 
+import net.chrupki.app.AppContext;
 import net.chrupki.app.AppData;
 import net.chrupki.database.Database;
 import net.chrupki.model.Patch;
@@ -76,7 +77,7 @@ public class PatchDAO {
         try (Connection conn = Database.getConnection(projectName);
              PreparedStatement stmt = conn.prepareStatement(sql)) {
 
-            stmt.setInt(1, AppData.getCurrentVersionId());
+            stmt.setInt(1, AppContext.versionContext().getId().get());
 
             try (ResultSet rs = stmt.executeQuery()) {
                 while (rs.next()) {

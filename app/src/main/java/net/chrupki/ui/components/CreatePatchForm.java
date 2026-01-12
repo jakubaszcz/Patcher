@@ -74,7 +74,7 @@ public class CreatePatchForm extends VBox {
                         AppContext.projectContext().getName().get(),
                         VersionDAO.findNameById(
                                 AppContext.projectContext().getName().get(),
-                                AppData.getCurrentVersionId()
+                                AppContext.versionContext().getId().get()
                         ),
                         comboBoxExport.getValue(),
                         List.of(),
