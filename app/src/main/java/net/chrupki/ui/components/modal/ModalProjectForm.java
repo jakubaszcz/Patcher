@@ -9,11 +9,15 @@ import javafx.scene.control.Label;
 import net.chrupki.app.AppContext;
 import net.chrupki.ui.model.ProjectModel;
 
+import java.util.function.BiConsumer;
+import java.util.function.Consumer;
 
 
 public class ModalProjectForm extends VBox {
 
-    public ModalProjectForm(ProjectModel model) {
+    public ModalProjectForm(ProjectModel model, BiConsumer<String, String> onSave, Consumer<String> onDelete) {
+
+        String projectName = AppContext.projectContext().getName().get();
 
         setAlignment(Pos.CENTER);
 
@@ -28,6 +32,14 @@ public class ModalProjectForm extends VBox {
         Button save = new Button("Save");
 
         Button delete = new Button("Delete");
+
+        save.setOnAction(e -> {
+            onSave.accept(projectName, textField.getText());
+        });
+
+        delete.setOnAction(e -> {
+            onDelete.accept(projectName);
+        });
 
         label.textProperty().bind(AppContext.projectContext().getName());
 

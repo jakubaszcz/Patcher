@@ -9,6 +9,7 @@ import javafx.scene.layout.VBox;
 import net.chrupki.app.AppContext;
 import net.chrupki.app.context.ProjectContext;
 import net.chrupki.ui.components.modal.ModalProjectForm;
+import net.chrupki.ui.controllers.ProjectController;
 import net.chrupki.ui.model.ProjectModel;
 import javafx.beans.binding.Bindings;
 
@@ -17,7 +18,7 @@ public class ModalView extends StackPane {
 
     private ProjectModel model;
 
-    public ModalView(ProjectModel model) {
+    public ModalView(ProjectModel model, ProjectController projectController) {
         this.model = model;
 
         Pane backdrop = new Pane();
@@ -29,21 +30,11 @@ public class ModalView extends StackPane {
             -fx-padding: 20;
         """);
 
-
-
         getChildren().addAll(backdrop, popup);
 
         popup.getChildren().add(
-                new ModalProjectForm(model)
+                new ModalProjectForm(model, projectController::saveProject, projectController::deleteProject)
         );
-
-        backdrop.setOnMouseClicked(e ->
-        {
-            model.setEditActiveProperty(false);
-            model.setEditPatchProperty(false);
-            model.setEditProjectProperty(false);
-            model.setEditActiveProperty(false);
-        });
 
         visibleProperty().bind(model.getEditActiveProperty());
 

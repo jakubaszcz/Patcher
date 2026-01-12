@@ -63,7 +63,7 @@ public class MainView {
         root.getChildren().add(mainContent);
 
         // Modal View
-        root.getChildren().add(new ModalView(model));
+        root.getChildren().add(new ModalView(model, projectController));
 
         projectController.loadProjects();
         patchController.loadPatches();

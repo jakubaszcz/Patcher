@@ -36,4 +36,12 @@ public class ProjectController {
         AppContext.projectContext().setName(projectName);
         AppData.setVersionSelected(false);
     }
+
+    public void saveProject(String oldProjectName, String newProjectName) {
+        // Fct
+    }
+
+    public void deleteProject(String projectName) {
+        // Fct
+    }
 }
