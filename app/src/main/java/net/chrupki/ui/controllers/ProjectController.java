@@ -36,7 +36,6 @@ public class ProjectController {
 
     public void selectProject(String projectName) {
         AppContext.projectContext().setName(projectName);
-        AppData.setVersionSelected(false);
     }
 
     public void saveProject(String oldProjectName, String newProjectName) {
