@@ -5,7 +5,6 @@ import javafx.collections.ListChangeListener;
 import javafx.collections.ObservableList;
 import javafx.scene.layout.VBox;
 import net.chrupki.app.AppContext;
-import net.chrupki.app.AppData;
 import net.chrupki.database.dao.VersionDAO;
 import net.chrupki.model.Version;
 import net.chrupki.ui.controllers.VersionController;

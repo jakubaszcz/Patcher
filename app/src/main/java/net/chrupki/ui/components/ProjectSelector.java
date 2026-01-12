@@ -3,11 +3,8 @@ package net.chrupki.ui.components;
 import javafx.collections.ObservableList;
 import javafx.scene.control.ComboBox;
 import javafx.scene.layout.VBox;
-import net.chrupki.app.AppData;
-import net.chrupki.project.AppProject;
 import net.chrupki.ui.model.ProjectModel;
 
-import java.io.IOException;
 import java.util.function.Consumer;
 
 public class ProjectSelector extends VBox {

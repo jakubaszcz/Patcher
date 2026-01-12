@@ -7,7 +7,6 @@ import javafx.scene.layout.VBox;
 import javafx.scene.control.TextField;
 import javafx.stage.FileChooser;
 import net.chrupki.app.AppContext;
-import net.chrupki.app.AppData;
 import net.chrupki.database.dao.VersionDAO;
 import net.chrupki.model.Patch;
 import net.chrupki.request.ExportRequest;

@@ -1,7 +1,6 @@
 package net.chrupki.ui.controllers;
 
 import net.chrupki.app.AppContext;
-import net.chrupki.app.AppData;
 import net.chrupki.request.PatchRequest;
 import net.chrupki.project.services.PatchService;
 import net.chrupki.ui.model.ProjectModel;

@@ -1,10 +1,7 @@
 package net.chrupki.ui.views;
 
-import javafx.scene.control.Label;
 import javafx.scene.layout.VBox;
 import net.chrupki.app.AppContext;
-import net.chrupki.app.AppData;
-import net.chrupki.project.services.VersionService;
 import net.chrupki.ui.components.VersionListView;
 import net.chrupki.ui.components.CreateVersionForm;
 import net.chrupki.ui.components.CurrentProjectLabel;

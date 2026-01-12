@@ -1,10 +1,6 @@
 package net.chrupki.ui.controllers;
 
-import javafx.collections.FXCollections;
-import javafx.collections.ObservableList;
 import net.chrupki.app.AppContext;
-import net.chrupki.app.AppData;
-import net.chrupki.app.context.ProjectContext;
 import net.chrupki.project.AppProject;
 import net.chrupki.project.services.ProjectService;
 import net.chrupki.ui.model.ProjectModel;

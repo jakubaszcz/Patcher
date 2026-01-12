@@ -4,11 +4,8 @@ import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
-import net.chrupki.app.AppData;
-import net.chrupki.database.dao.PatchDAO;
 import net.chrupki.ui.model.ProjectModel;
 
-import java.util.Map;
 import java.util.function.Consumer;
 
 public class VersionContainer extends VBox {

@@ -1,10 +1,8 @@
 package net.chrupki.database.dao;
 
 import net.chrupki.app.AppContext;
-import net.chrupki.app.AppData;
 import net.chrupki.database.Database;
 import net.chrupki.model.Patch;
-import net.chrupki.model.Version;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
