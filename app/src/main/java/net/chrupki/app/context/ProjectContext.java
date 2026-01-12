@@ -20,18 +20,4 @@ public class ProjectContext {
     public StringProperty getName() {
         return name;
     }
-
-    public void setPath(String name) {
-        for (Path p : AppProject.GetProjects()) {
-            if (p.toString().contains(name)) {
-                path.set(p);
-                return;
-            }
-        }
-    }
-
-    public Path getPath() {
-        return path.get();
-    }
-
 }
