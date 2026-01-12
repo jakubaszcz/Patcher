@@ -31,7 +31,7 @@ public class CurrentProjectLabel extends VBox {
         label.textProperty().bind(Bindings.when(view.visibleProperty()).then(currentProject).otherwise(currentProject));
 
         button.setOnAction(e -> {
-            model.setEditPatchProperty(true);
+            model.setEditProjectProperty(true);
         });
 
         view.getChildren().addAll(label, button);

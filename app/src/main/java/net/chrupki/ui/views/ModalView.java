@@ -8,6 +8,7 @@ import javafx.scene.layout.StackPane;
 import javafx.scene.layout.VBox;
 import net.chrupki.app.AppContext;
 import net.chrupki.app.context.ProjectContext;
+import net.chrupki.ui.components.modal.ModalProjectForm;
 import net.chrupki.ui.model.ProjectModel;
 import javafx.beans.binding.Bindings;
 
@@ -28,23 +29,21 @@ public class ModalView extends StackPane {
             -fx-padding: 20;
         """);
 
-        Label label = new Label();
 
-        label.textProperty().bind(
-                Bindings.when(model.getEditActiveProperty().not()).then("No project").otherwise(AppContext.projectContext().getName())
-        );
-
-
-
-        Button button = new Button("Close");
-
-        button.setOnAction(e -> {
-            model.setEditActiveProperty(false);
-        });
 
         getChildren().addAll(backdrop, popup);
 
-        popup.getChildren().addAll(button, label);
+        popup.getChildren().add(
+                new ModalProjectForm(model)
+        );
+
+        backdrop.setOnMouseClicked(e ->
+        {
+            model.setEditActiveProperty(false);
+            model.setEditPatchProperty(false);
+            model.setEditProjectProperty(false);
+            model.setEditActiveProperty(false);
+        });
 
         visibleProperty().bind(model.getEditActiveProperty());
 
