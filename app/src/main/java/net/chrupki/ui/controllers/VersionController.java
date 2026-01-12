@@ -50,7 +50,7 @@ public class VersionController {
         model.getPatches().clear();
 
         try {
-            model.getPatches().addAll(Objects.requireNonNull(PatchDAO.findAll(AppData.getCurrentProjectName())));
+            model.getPatches().addAll(Objects.requireNonNull(PatchDAO.findAll(AppContext.projectContext().getName().get())));
         } catch (Exception ex) {
             throw new RuntimeException(ex);
         }
