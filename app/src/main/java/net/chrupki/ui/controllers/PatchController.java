@@ -32,7 +32,7 @@ public class PatchController {
     }
 
     public void loadPatches() throws Exception {
-        String projectName = AppData.getCurrentProjectName();
+        String projectName = AppContext.projectContext().getName().get();
         model.getPatches().setAll(
                 service.fetchVersions(projectName)
         );

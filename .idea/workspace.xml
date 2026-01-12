@@ -4,9 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="c1aa160e-de6c-484d-8c28-5409cf16dc62" name="Changes" comment="refactor(context): remove unused helper method&#10;&#10;A helper method used to resolve the project path in AppData was no longer needed and has been removed.">
+    <list default="true" id="c1aa160e-de6c-484d-8c28-5409cf16dc62" name="Changes" comment="refactor(context): remove remaining unused code">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/net/chrupki/app/context/ProjectContext.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/net/chrupki/app/context/ProjectContext.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/net/chrupki/ui/components/CreatePatchForm.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/net/chrupki/ui/components/CreatePatchForm.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/net/chrupki/ui/controllers/PatchController.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/net/chrupki/ui/controllers/PatchController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/net/chrupki/ui/views/ProjectView.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/net/chrupki/ui/views/ProjectView.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -154,14 +156,6 @@
       <workItem from="1767544161784" duration="11911000" />
       <workItem from="1768130801077" duration="22931000" />
       <workItem from="1768246508726" duration="7736000" />
-    </task>
-    <task id="LOCAL-00005" summary="Add UI to create projects">
-      <option name="closed" value="true" />
-      <created>1766513120084</created>
-      <option name="number" value="00005" />
-      <option name="presentableId" value="LOCAL-00005" />
-      <option name="project" value="LOCAL" />
-      <updated>1766513120084</updated>
     </task>
     <task id="LOCAL-00006" summary="Add database in each project folder">
       <option name="closed" value="true" />
@@ -547,7 +541,15 @@
       <option name="project" value="LOCAL" />
       <updated>1768259188362</updated>
     </task>
-    <option name="localTasksCounter" value="54" />
+    <task id="LOCAL-00054" summary="refactor(context): remove remaining unused code">
+      <option name="closed" value="true" />
+      <created>1768259990230</created>
+      <option name="number" value="00054" />
+      <option name="presentableId" value="LOCAL-00054" />
+      <option name="project" value="LOCAL" />
+      <updated>1768259990230</updated>
+    </task>
+    <option name="localTasksCounter" value="55" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -565,7 +567,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Rename PatchContainer to PatchListView" />
     <MESSAGE value="Add patch container" />
     <MESSAGE value="Add export button" />
     <MESSAGE value="Add default choice in export combo box" />
@@ -590,7 +591,8 @@
     <MESSAGE value="Add project editor" />
     <MESSAGE value="fix(context): use selected project when creating patches&#10;&#10;Patches could not fetch data because the current project&#10;context was empty when creating a version." />
     <MESSAGE value="refactor(context): remove unused helper method&#10;&#10;A helper method used to resolve the project path in AppData was no longer needed and has been removed." />
-    <option name="LAST_COMMIT_MESSAGE" value="refactor(context): remove unused helper method&#10;&#10;A helper method used to resolve the project path in AppData was no longer needed and has been removed." />
+    <MESSAGE value="refactor(context): remove remaining unused code" />
+    <option name="LAST_COMMIT_MESSAGE" value="refactor(context): remove remaining unused code" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/Patcher$Patcher__build_.ic" NAME="Patcher [build] Coverage Results" MODIFIED="1767013393295" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="true" />
