@@ -4,9 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="c1aa160e-de6c-484d-8c28-5409cf16dc62" name="Changes" comment="Add project editor">
+    <list default="true" id="c1aa160e-de6c-484d-8c28-5409cf16dc62" name="Changes" comment="refactor(context): remove unused helper method&#10;&#10;A helper method used to resolve the project path in AppData was no longer needed and has been removed.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/net/chrupki/ui/controllers/VersionController.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/net/chrupki/ui/controllers/VersionController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/net/chrupki/app/context/ProjectContext.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/net/chrupki/app/context/ProjectContext.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -154,22 +154,6 @@
       <workItem from="1767544161784" duration="11911000" />
       <workItem from="1768130801077" duration="22931000" />
       <workItem from="1768246508726" duration="7736000" />
-    </task>
-    <task id="LOCAL-00003" summary="Add working sqlite locally">
-      <option name="closed" value="true" />
-      <created>1766437778858</created>
-      <option name="number" value="00003" />
-      <option name="presentableId" value="LOCAL-00003" />
-      <option name="project" value="LOCAL" />
-      <updated>1766437778858</updated>
-    </task>
-    <task id="LOCAL-00004" summary="Add data directory">
-      <option name="closed" value="true" />
-      <created>1766510278506</created>
-      <option name="number" value="00004" />
-      <option name="presentableId" value="LOCAL-00004" />
-      <option name="project" value="LOCAL" />
-      <updated>1766510278506</updated>
     </task>
     <task id="LOCAL-00005" summary="Add UI to create projects">
       <option name="closed" value="true" />
@@ -547,7 +531,23 @@
       <option name="project" value="LOCAL" />
       <updated>1768257308797</updated>
     </task>
-    <option name="localTasksCounter" value="52" />
+    <task id="LOCAL-00052" summary="fix(context): use selected project when creating patches&#10;&#10;Patches could not fetch data because the current project&#10;context was empty when creating a version.">
+      <option name="closed" value="true" />
+      <created>1768258868165</created>
+      <option name="number" value="00052" />
+      <option name="presentableId" value="LOCAL-00052" />
+      <option name="project" value="LOCAL" />
+      <updated>1768258868165</updated>
+    </task>
+    <task id="LOCAL-00053" summary="refactor(context): remove unused helper method&#10;&#10;A helper method used to resolve the project path in AppData was no longer needed and has been removed.">
+      <option name="closed" value="true" />
+      <created>1768259188362</created>
+      <option name="number" value="00053" />
+      <option name="presentableId" value="LOCAL-00053" />
+      <option name="project" value="LOCAL" />
+      <updated>1768259188362</updated>
+    </task>
+    <option name="localTasksCounter" value="54" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -565,8 +565,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Update code to display with controller and service" />
-    <MESSAGE value="Fix patch creator by removing unnecessary changes and updating" />
     <MESSAGE value="Rename PatchContainer to PatchListView" />
     <MESSAGE value="Add patch container" />
     <MESSAGE value="Add export button" />
@@ -590,7 +588,9 @@
     <MESSAGE value="Add edit project UI" />
     <MESSAGE value="Add edit project controller" />
     <MESSAGE value="Add project editor" />
-    <option name="LAST_COMMIT_MESSAGE" value="Add project editor" />
+    <MESSAGE value="fix(context): use selected project when creating patches&#10;&#10;Patches could not fetch data because the current project&#10;context was empty when creating a version." />
+    <MESSAGE value="refactor(context): remove unused helper method&#10;&#10;A helper method used to resolve the project path in AppData was no longer needed and has been removed." />
+    <option name="LAST_COMMIT_MESSAGE" value="refactor(context): remove unused helper method&#10;&#10;A helper method used to resolve the project path in AppData was no longer needed and has been removed." />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/Patcher$Patcher__build_.ic" NAME="Patcher [build] Coverage Results" MODIFIED="1767013393295" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="true" />
