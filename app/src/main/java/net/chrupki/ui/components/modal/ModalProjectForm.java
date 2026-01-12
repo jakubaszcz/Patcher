@@ -15,9 +15,8 @@ import java.util.function.Consumer;
 
 public class ModalProjectForm extends VBox {
 
-    public ModalProjectForm(ProjectModel model, BiConsumer<String, String> onSave, Consumer<String> onDelete) {
+    public ModalProjectForm(ProjectModel model, BiConsumer<String, String> onSave, Runnable onClose) {
 
-        String projectName = AppContext.projectContext().getName().get();
 
         setAlignment(Pos.CENTER);
 
@@ -31,19 +30,19 @@ public class ModalProjectForm extends VBox {
 
         Button save = new Button("Save");
 
-        Button delete = new Button("Delete");
+        Button close = new Button("Close");
 
         save.setOnAction(e -> {
-            onSave.accept(projectName, textField.getText());
+            onSave.accept(AppContext.projectContext().getName().get(), textField.getText());
         });
 
-        delete.setOnAction(e -> {
-            onDelete.accept(projectName);
+        close.setOnAction(e -> {
+            onClose.run();
         });
 
         label.textProperty().bind(AppContext.projectContext().getName());
 
-        getChildren().addAll(label, textField, save, delete);
+        getChildren().addAll(label, textField, save, close);
 
     }
 }

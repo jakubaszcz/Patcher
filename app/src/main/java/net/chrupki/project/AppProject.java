@@ -77,6 +77,30 @@ public class AppProject {
         return projectsName;
     }
 
+    public static void renameProject(String oldName, String newName) throws IOException {
+        Path path = AppPath.getDataDir().resolve("projects").resolve(oldName);
+        Path newPath = AppPath.getDataDir().resolve("projects").resolve(newName);
+        Files.move(path, newPath);
+    }
+
+    public static void deleteProject(String name) throws IOException {
+        Path path = AppPath.getDataDir().resolve("projects").resolve(name);
+    
+    if (Files.exists(path)) {
+        try (var stream = Files.walk(path)) {
+            stream
+                    .sorted((a, b) -> b.compareTo(a))
+                    .forEach(p -> {
+                        try {
+                            Files.delete(p);
+                        } catch (IOException e) {
+                            throw new RuntimeException("Failed to delete: " + p, e);
+                        }
+                    });
+        }
+    }
+}
+
     public static ObservableList<StringProperty> FetchAllProjectPropertiesName() throws IOException {
         Path path = AppPath.getDataDir().resolve("projects");
         ObservableList<StringProperty> projectsName = FXCollections.observableArrayList();;

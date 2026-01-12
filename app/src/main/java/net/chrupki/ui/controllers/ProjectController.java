@@ -1,5 +1,7 @@
 package net.chrupki.ui.controllers;
 
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import net.chrupki.app.AppContext;
 import net.chrupki.app.AppData;
 import net.chrupki.app.context.ProjectContext;
@@ -38,10 +40,27 @@ public class ProjectController {
     }
 
     public void saveProject(String oldProjectName, String newProjectName) {
-        // Fct
+
+        if (oldProjectName == null || oldProjectName.isBlank()) {
+            throw new IllegalStateException("No project selected");
+        }
+
+        if (newProjectName == null || newProjectName.isBlank()) {
+            throw new IllegalArgumentException("New project name is empty");
+        }
+
+        try {
+            AppProject.renameProject(oldProjectName, newProjectName);
+        } catch (IOException e) {
+            throw new RuntimeException("Failed to rename project", e);
+        }
+
+        loadProjects();
+        closeModal();
     }
 
-    public void deleteProject(String projectName) {
-        // Fct
+    public void closeModal() {
+        model.setEditActiveProperty(false);
+        model.setEditProjectProperty(false);
     }
 }
