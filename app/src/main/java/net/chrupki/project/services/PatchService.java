@@ -29,4 +29,21 @@ public class PatchService {
 
         return PatchDAO.findAll(projectName);
     }
+
+    public void savePatch(Integer id, Integer vid, String content, String type) {
+        if (id == null || vid == null || !PatchDAO.doesThisPatchByIdsExist(id, vid)) {
+            throw new IllegalArgumentException("Patch ids are unavailable or corrupted !");
+        }
+
+        String currentContent = PatchDAO.findContent(id, vid);
+        if (content != null && !content.isEmpty() && !content.equals(currentContent)) {
+            PatchDAO.renameContent(id, vid, content);
+        }
+
+        String currentType = PatchDAO.findPatch(id, vid);
+        if (type != null && !type.isEmpty() && !type.equals(currentType)) {
+            PatchDAO.renamePatch(id, vid, type);
+        }
+    }
+
 }
