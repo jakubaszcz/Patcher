@@ -6,10 +6,9 @@ import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.VBox;
 import net.chrupki.app.AppContext;
-import net.chrupki.ui.controllers.structures.EditVersion;
+import net.chrupki.ui.controllers.dtos.EditVersion;
 import net.chrupki.ui.model.ProjectModel;
 
-import java.util.function.BiConsumer;
 import java.util.function.Consumer;
 
 public class ModalVersionForm extends VBox {

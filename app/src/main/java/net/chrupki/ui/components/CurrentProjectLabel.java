@@ -22,7 +22,6 @@ public class CurrentProjectLabel extends VBox {
         this.model = model;
 
         Label label = new Label(BLANK);
-        Button button = new Button("Edit project");
 
         StringProperty currentProject = AppContext.projectContext().getName();
 
@@ -30,11 +29,8 @@ public class CurrentProjectLabel extends VBox {
 
         label.textProperty().bind(Bindings.when(view.visibleProperty()).then(currentProject).otherwise(currentProject));
 
-        button.setOnAction(e -> {
-            model.setEditProjectProperty(true);
-        });
 
-        view.getChildren().addAll(label, button);
+        view.getChildren().add(label);
 
         this.getChildren().addAll(view);
     }

@@ -4,12 +4,10 @@ import javafx.beans.property.StringProperty;
 import net.chrupki.app.AppContext;
 import net.chrupki.database.dao.PatchDAO;
 import net.chrupki.model.Version;
-import net.chrupki.project.AppProject;
 import net.chrupki.project.services.VersionService;
-import net.chrupki.ui.controllers.structures.EditVersion;
+import net.chrupki.ui.controllers.dtos.EditVersion;
 import net.chrupki.ui.model.ProjectModel;
 
-import java.io.IOException;
 import java.util.Objects;
 
 public class VersionController {

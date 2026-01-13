@@ -4,12 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="c1aa160e-de6c-484d-8c28-5409cf16dc62" name="Changes" comment="feat(ui): handling version modal">
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/net/chrupki/ui/controllers/structures/EditVersion.java" afterDir="false" />
+    <list default="true" id="c1aa160e-de6c-484d-8c28-5409cf16dc62" name="Changes" comment="refactor(controller): rename folder structures in dtos&#10;&#10;The dtos folder contains all the structure to use with the Consumer functions provided by Java. It's impossible otherwise to put more than three arguments in a Consumer.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/net/chrupki/database/dao/VersionDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/net/chrupki/database/dao/VersionDAO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/net/chrupki/project/services/VersionService.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/net/chrupki/project/services/VersionService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/net/chrupki/ui/components/VersionContainer.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/net/chrupki/ui/components/VersionContainer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/net/chrupki/ui/components/CurrentProjectLabel.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/net/chrupki/ui/components/CurrentProjectLabel.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/net/chrupki/ui/components/modal/ModalVersionForm.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/net/chrupki/ui/components/modal/ModalVersionForm.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/net/chrupki/ui/controllers/VersionController.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/net/chrupki/ui/controllers/VersionController.java" afterDir="false" />
     </list>
@@ -164,31 +161,7 @@
       <workItem from="1767544161784" duration="11911000" />
       <workItem from="1768130801077" duration="22931000" />
       <workItem from="1768246508726" duration="7736000" />
-      <workItem from="1768326113650" duration="5139000" />
-    </task>
-    <task id="LOCAL-00015" summary="Fetch id and version from versions table">
-      <option name="closed" value="true" />
-      <created>1767457572503</created>
-      <option name="number" value="00015" />
-      <option name="presentableId" value="LOCAL-00015" />
-      <option name="project" value="LOCAL" />
-      <updated>1767457572504</updated>
-    </task>
-    <task id="LOCAL-00016" summary="Add Controllers &amp; Services">
-      <option name="closed" value="true" />
-      <created>1767479768046</created>
-      <option name="number" value="00016" />
-      <option name="presentableId" value="LOCAL-00016" />
-      <option name="project" value="LOCAL" />
-      <updated>1767479768046</updated>
-    </task>
-    <task id="LOCAL-00017" summary="Add patch record">
-      <option name="closed" value="true" />
-      <created>1767482574696</created>
-      <option name="number" value="00017" />
-      <option name="presentableId" value="LOCAL-00017" />
-      <option name="project" value="LOCAL" />
-      <updated>1767482574696</updated>
+      <workItem from="1768326113650" duration="6250000" />
     </task>
     <task id="LOCAL-00018" summary="Add patch controller">
       <option name="closed" value="true" />
@@ -558,7 +531,31 @@
       <option name="project" value="LOCAL" />
       <updated>1768328487821</updated>
     </task>
-    <option name="localTasksCounter" value="64" />
+    <task id="LOCAL-00064" summary="add(ui): link controller and service to version DAO">
+      <option name="closed" value="true" />
+      <created>1768332904741</created>
+      <option name="number" value="00064" />
+      <option name="presentableId" value="LOCAL-00064" />
+      <option name="project" value="LOCAL" />
+      <updated>1768332904741</updated>
+    </task>
+    <task id="LOCAL-00065" summary="refactor(controller): rename folder structures in dtos&#10;&#10;The dtos folder contains all the structure to use with the Consumer functions provided by Java. It's impossible otherwise to put more than three arguments in a Consumer.">
+      <option name="closed" value="true" />
+      <created>1768333201267</created>
+      <option name="number" value="00065" />
+      <option name="presentableId" value="LOCAL-00065" />
+      <option name="project" value="LOCAL" />
+      <updated>1768333201267</updated>
+    </task>
+    <task id="LOCAL-00066" summary="refactor(ui): delete spacing for the box">
+      <option name="closed" value="true" />
+      <created>1768333430610</created>
+      <option name="number" value="00066" />
+      <option name="presentableId" value="LOCAL-00066" />
+      <option name="project" value="LOCAL" />
+      <updated>1768333430610</updated>
+    </task>
+    <option name="localTasksCounter" value="67" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -576,9 +573,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Add licence" />
-    <MESSAGE value="Add license" />
-    <MESSAGE value="Fix to include jdbc" />
     <MESSAGE value="Edit current project label" />
     <MESSAGE value="Fix hide version button create" />
     <MESSAGE value="Fix don't print another patch if null" />
@@ -601,7 +595,10 @@
     <MESSAGE value="add(ui): add managed property for project modal" />
     <MESSAGE value="feat(ui): create basic ui for version modal&#10;&#10;Every event has been linked to the controller as well." />
     <MESSAGE value="feat(ui): handling version modal" />
-    <option name="LAST_COMMIT_MESSAGE" value="feat(ui): handling version modal" />
+    <MESSAGE value="add(ui): link controller and service to version DAO" />
+    <MESSAGE value="refactor(controller): rename folder structures in dtos&#10;&#10;The dtos folder contains all the structure to use with the Consumer functions provided by Java. It's impossible otherwise to put more than three arguments in a Consumer." />
+    <MESSAGE value="refactor(ui): delete spacing for the box" />
+    <option name="LAST_COMMIT_MESSAGE" value="refactor(ui): delete spacing for the box" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/Patcher$Patcher__build_.ic" NAME="Patcher [build] Coverage Results" MODIFIED="1767013393295" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="true" />
