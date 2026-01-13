@@ -2,5 +2,6 @@ package net.chrupki.request;
 
 public record PatchRequest(
         String name,
-        String type
+        String type,
+        int vid
 ) {}
