@@ -34,6 +34,7 @@ public class CreateVersionForm extends VBox {
 
         button.setOnAction(event -> {
             onCreateVersion.accept(textField.getText());
+            textField.clear();
         });
 
         view.visibleProperty().bind(AppContext.projectContext().getName().isNotNull());
