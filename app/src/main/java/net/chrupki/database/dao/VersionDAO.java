@@ -18,7 +18,7 @@ public class VersionDAO {
         insert(projectName, "x.y.z");
     }
 
-    public static int  insert(String projectName, String version) {
+    public static int insert(String projectName, String version) {
         String sql = "INSERT INTO versions (version) VALUES (?)";
 
         try (Connection conn = Database.getConnection(projectName);

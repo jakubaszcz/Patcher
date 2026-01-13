@@ -50,11 +50,6 @@ public class CreatePatchForm extends VBox {
             );
 
             onCreatePatch.accept(request);
-            model.getPatches().add(new Patch(
-                    textField.getText(),
-                    comboBoxPatch.getValue()
-                    )
-            );
 
             textField.clear();
             comboBoxPatch.getSelectionModel().selectFirst();

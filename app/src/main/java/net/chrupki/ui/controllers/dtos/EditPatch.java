@@ -17,7 +17,7 @@ public class EditPatch {
         return id;
     }
 
-    public Integer etVid() {
+    public Integer getVid() {
         return vid;
     }
 

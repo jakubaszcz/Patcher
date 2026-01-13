@@ -8,13 +8,13 @@ import net.chrupki.model.Version;
 import java.util.List;
 
 public class PatchService {
-    public void createPatch(
+    public int createPatch(
             String projectName,
             int versionId,
             String type,
             String content
     ) {
-        PatchDAO.insert(
+        return PatchDAO.insert(
                 projectName,
                 versionId,
                 type,

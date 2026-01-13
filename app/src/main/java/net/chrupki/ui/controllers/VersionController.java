@@ -72,7 +72,6 @@ public class VersionController {
 
     public void saveVersion(EditVersion version) {
 
-        System.out.println(version.getId());
 
         service.renameVersion(version.getId(), version.getNewName());
         loadVersions(version.getProject());

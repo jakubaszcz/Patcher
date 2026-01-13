@@ -12,7 +12,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class PatchDAO {
-    public static void insert(String projectName, int id, String type, String content) {
+    public static int insert(String projectName, int id, String type, String content) {
         String sql = "INSERT INTO notes (version_id, patch, content) VALUES (?, ?, ?)";
 
         try (Connection conn = Database.getConnection(projectName);
@@ -24,9 +24,69 @@ public class PatchDAO {
 
             stmt.executeUpdate();
 
+            try (ResultSet rs = stmt.getGeneratedKeys()) {
+                if (rs.next()) {
+                    return rs.getInt(1);
+                }
+            }
 
         } catch (SQLException ex) {
             ex.printStackTrace();
+        } catch (Exception e) {
+            throw new RuntimeException(e);
+        }
+        return id;
+    }
+
+    public static String findPatch(int id, int vid) {
+        String sql = "SELECT patch FROM notes WHERE id = ? AND version_id = ?";
+
+        String projectName = AppContext.projectContext().getName().get();
+        if (projectName == null || projectName.isBlank()) return null;
+
+        try (Connection conn = Database.getConnection(projectName);
+             PreparedStatement stmt = conn.prepareStatement(sql)) {
+
+            stmt.setInt(1, id);
+            stmt.setInt(2, vid);
+
+            try (ResultSet rs = stmt.executeQuery()) {
+                if (rs.next()) {
+                    return rs.getString("patch");
+                }
+                return null;
+            }
+
+        } catch (SQLException ex) {
+            ex.printStackTrace();
+            return null;
+        } catch (Exception e) {
+            throw new RuntimeException(e);
+        }
+    }
+
+    public static String findContent(int id, int vid) {
+        String sql = "SELECT content FROM notes WHERE id = ? AND version_id = ?";
+
+        String projectName = AppContext.projectContext().getName().get();
+        if (projectName == null || projectName.isBlank()) return null;
+
+        try (Connection conn = Database.getConnection(projectName);
+             PreparedStatement stmt = conn.prepareStatement(sql)) {
+
+            stmt.setInt(1, id);
+            stmt.setInt(2, vid);
+
+            try (ResultSet rs = stmt.executeQuery()) {
+                if (rs.next()) {
+                    return rs.getString("content");
+                }
+                return null;
+            }
+
+        } catch (SQLException ex) {
+            ex.printStackTrace();
+            return null;
         } catch (Exception e) {
             throw new RuntimeException(e);
         }
@@ -168,10 +228,10 @@ public class PatchDAO {
 
             try (ResultSet rs = stmt.executeQuery()) {
                 while (rs.next()) {
-                    result.add(new Patch(
-                            rs.getString("content"),
-                            rs.getString("patch"))
-                    );
+                    result.add(new Patch(rs.getString("content"),
+                            rs.getString("patch"),
+                            rs.getInt("id"),
+                            rs.getInt("version_id")));
                 }
             }
 

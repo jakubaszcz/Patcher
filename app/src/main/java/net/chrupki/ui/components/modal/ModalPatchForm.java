@@ -7,6 +7,7 @@ import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.VBox;
 import net.chrupki.app.AppContext;
+import net.chrupki.ui.controllers.dtos.EditPatch;
 import net.chrupki.ui.controllers.dtos.EditVersion;
 import net.chrupki.ui.model.ProjectModel;
 
@@ -14,7 +15,7 @@ import java.util.function.Consumer;
 
 public class ModalPatchForm extends VBox {
 
-    public ModalPatchForm(ProjectModel model, Consumer<EditVersion> onSave, Runnable onClose) {
+    public ModalPatchForm(ProjectModel model, Consumer<EditPatch> onSave, Runnable onClose) {
 
         setAlignment(Pos.CENTER);
 
