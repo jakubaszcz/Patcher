@@ -4,13 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="c1aa160e-de6c-484d-8c28-5409cf16dc62" name="Changes" comment="feat(ui): add edit button for versions">
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/net/chrupki/ui/components/modal/ModalVersionForm.java" afterDir="false" />
+    <list default="true" id="c1aa160e-de6c-484d-8c28-5409cf16dc62" name="Changes" comment="feat(controller): open modal to edit versions">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/net/chrupki/ui/components/VersionContainer.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/net/chrupki/ui/components/VersionContainer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/net/chrupki/ui/components/VersionListView.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/net/chrupki/ui/components/VersionListView.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/net/chrupki/ui/components/modal/ModalProjectForm.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/net/chrupki/ui/components/modal/ModalProjectForm.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/net/chrupki/ui/components/modal/ModalVersionForm.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/net/chrupki/ui/components/modal/ModalVersionForm.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/net/chrupki/ui/controllers/VersionController.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/net/chrupki/ui/controllers/VersionController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/net/chrupki/ui/views/MainView.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/net/chrupki/ui/views/MainView.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/net/chrupki/ui/views/ModalView.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/net/chrupki/ui/views/ModalView.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -164,23 +162,7 @@
       <workItem from="1767544161784" duration="11911000" />
       <workItem from="1768130801077" duration="22931000" />
       <workItem from="1768246508726" duration="7736000" />
-      <workItem from="1768326113650" duration="1284000" />
-    </task>
-    <task id="LOCAL-00010" summary="Refractor code base">
-      <option name="closed" value="true" />
-      <created>1767368896456</created>
-      <option name="number" value="00010" />
-      <option name="presentableId" value="LOCAL-00010" />
-      <option name="project" value="LOCAL" />
-      <updated>1767368896456</updated>
-    </task>
-    <task id="LOCAL-00011" summary="Refractor interface components and layout">
-      <option name="closed" value="true" />
-      <created>1767378034363</created>
-      <option name="number" value="00011" />
-      <option name="presentableId" value="LOCAL-00011" />
-      <option name="project" value="LOCAL" />
-      <updated>1767378034363</updated>
+      <workItem from="1768326113650" duration="2153000" />
     </task>
     <task id="LOCAL-00012" summary="Add display all project versions">
       <option name="closed" value="true" />
@@ -558,7 +540,23 @@
       <option name="project" value="LOCAL" />
       <updated>1768326804935</updated>
     </task>
-    <option name="localTasksCounter" value="59" />
+    <task id="LOCAL-00059" summary="feat(controller): open modal to edit versions">
+      <option name="closed" value="true" />
+      <created>1768327437440</created>
+      <option name="number" value="00059" />
+      <option name="presentableId" value="LOCAL-00059" />
+      <option name="project" value="LOCAL" />
+      <updated>1768327437440</updated>
+    </task>
+    <task id="LOCAL-00060" summary="fix(controller): close project instead of version">
+      <option name="closed" value="true" />
+      <created>1768328278380</created>
+      <option name="number" value="00060" />
+      <option name="presentableId" value="LOCAL-00060" />
+      <option name="project" value="LOCAL" />
+      <updated>1768328278380</updated>
+    </task>
+    <option name="localTasksCounter" value="61" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -576,8 +574,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Add export request and create request folder" />
-    <MESSAGE value="Add find name by id for the version" />
     <MESSAGE value="Add markdown exporting" />
     <MESSAGE value="Add type finder for patch content retrieval" />
     <MESSAGE value="Add markdown generator" />
@@ -601,7 +597,9 @@
     <MESSAGE value="fix(context): cast version id to object property&#10;&#10;It allows the use of checking if an integer is null." />
     <MESSAGE value="refactor(context): delete useless functions&#10;&#10;Old functions allowed verifying if a version has been selected, thanks to a previous commit, the functions can be removed." />
     <MESSAGE value="feat(ui): add edit button for versions" />
-    <option name="LAST_COMMIT_MESSAGE" value="feat(ui): add edit button for versions" />
+    <MESSAGE value="feat(controller): open modal to edit versions" />
+    <MESSAGE value="fix(controller): close project instead of version" />
+    <option name="LAST_COMMIT_MESSAGE" value="fix(controller): close project instead of version" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/Patcher$Patcher__build_.ic" NAME="Patcher [build] Coverage Results" MODIFIED="1767013393295" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="true" />

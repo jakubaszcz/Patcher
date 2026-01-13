@@ -4,9 +4,11 @@ import javafx.beans.property.StringProperty;
 import net.chrupki.app.AppContext;
 import net.chrupki.database.dao.PatchDAO;
 import net.chrupki.model.Version;
+import net.chrupki.project.AppProject;
 import net.chrupki.project.services.VersionService;
 import net.chrupki.ui.model.ProjectModel;
 
+import java.io.IOException;
 import java.util.Objects;
 
 public class VersionController {
@@ -63,6 +65,10 @@ public class VersionController {
         model.getVersions().setAll(
                 service.fetchVersions(projectName)
         );
+    }
+
+    public void saveVersion(Integer id, String version) {
+        closeModal();
     }
 
     public void closeModal() {
