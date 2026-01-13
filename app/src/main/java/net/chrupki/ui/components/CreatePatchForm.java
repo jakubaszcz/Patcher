@@ -45,7 +45,8 @@ public class CreatePatchForm extends VBox {
         createButton.setOnAction(e -> {
             PatchRequest request = new PatchRequest(
                     textField.getText(),
-                    comboBoxPatch.getValue()
+                    comboBoxPatch.getValue(),
+                    AppContext.versionContext().getId().get()
             );
 
             onCreatePatch.accept(request);
