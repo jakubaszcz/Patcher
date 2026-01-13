@@ -7,10 +7,12 @@ import java.util.List;
 
 public class VersionService {
     public Version createVersion(String project, String version) {
-        if (project == null || project.isBlank()) { throw new IllegalArgumentException("Project name is required");}
-        if (version == null || version.isBlank()) { throw new IllegalArgumentException("Version name is required");}
-
-        System.out.println("Creating version " + version + " for project " + project);
+        if (project == null || project.isBlank()) {
+            throw new IllegalArgumentException("Project name is required");
+        }
+        if (version == null || version.isBlank()) {
+            throw new IllegalArgumentException("Version name is required");
+        }
 
         int id = VersionDAO.insert(project, version);
         return new Version(id, version);
@@ -22,5 +24,20 @@ public class VersionService {
         }
 
         return VersionDAO.findAll(projectName);
+    }
+
+    public void renameVersion(Integer id, String version) {
+
+        if (id == null || id < 0 || !VersionDAO.doesThisVersionByIdExist(id)) {
+            throw new IllegalArgumentException("Version id is unavailable or the id is corrupted !");
+        }
+
+        if (version == null || version.isBlank()) {
+            throw new IllegalArgumentException("Version is blank or don't exist !");
+        }
+
+        if (!VersionDAO.renameVersion(id, version)) {
+            throw new IllegalArgumentException("Version couldn't be renamed !");
+        }
     }
 }

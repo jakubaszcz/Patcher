@@ -4,12 +4,14 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="c1aa160e-de6c-484d-8c28-5409cf16dc62" name="Changes" comment="feat(controller): open modal to edit versions">
+    <list default="true" id="c1aa160e-de6c-484d-8c28-5409cf16dc62" name="Changes" comment="feat(ui): handling version modal">
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/net/chrupki/ui/controllers/structures/EditVersion.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/net/chrupki/ui/components/modal/ModalProjectForm.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/net/chrupki/ui/components/modal/ModalProjectForm.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/net/chrupki/database/dao/VersionDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/net/chrupki/database/dao/VersionDAO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/net/chrupki/project/services/VersionService.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/net/chrupki/project/services/VersionService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/net/chrupki/ui/components/VersionContainer.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/net/chrupki/ui/components/VersionContainer.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/net/chrupki/ui/components/modal/ModalVersionForm.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/net/chrupki/ui/components/modal/ModalVersionForm.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/net/chrupki/ui/controllers/VersionController.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/net/chrupki/ui/controllers/VersionController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/net/chrupki/ui/views/ModalView.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/net/chrupki/ui/views/ModalView.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -162,31 +164,7 @@
       <workItem from="1767544161784" duration="11911000" />
       <workItem from="1768130801077" duration="22931000" />
       <workItem from="1768246508726" duration="7736000" />
-      <workItem from="1768326113650" duration="2153000" />
-    </task>
-    <task id="LOCAL-00012" summary="Add display all project versions">
-      <option name="closed" value="true" />
-      <created>1767396686281</created>
-      <option name="number" value="00012" />
-      <option name="presentableId" value="LOCAL-00012" />
-      <option name="project" value="LOCAL" />
-      <updated>1767396686281</updated>
-    </task>
-    <task id="LOCAL-00013" summary="Add display project dynamically">
-      <option name="closed" value="true" />
-      <created>1767401738161</created>
-      <option name="number" value="00013" />
-      <option name="presentableId" value="LOCAL-00013" />
-      <option name="project" value="LOCAL" />
-      <updated>1767401738161</updated>
-    </task>
-    <task id="LOCAL-00014" summary="Add version container">
-      <option name="closed" value="true" />
-      <created>1767439786542</created>
-      <option name="number" value="00014" />
-      <option name="presentableId" value="LOCAL-00014" />
-      <option name="project" value="LOCAL" />
-      <updated>1767439786542</updated>
+      <workItem from="1768326113650" duration="5139000" />
     </task>
     <task id="LOCAL-00015" summary="Fetch id and version from versions table">
       <option name="closed" value="true" />
@@ -556,7 +534,31 @@
       <option name="project" value="LOCAL" />
       <updated>1768328278380</updated>
     </task>
-    <option name="localTasksCounter" value="61" />
+    <task id="LOCAL-00061" summary="add(ui): add managed property for project modal">
+      <option name="closed" value="true" />
+      <created>1768328344009</created>
+      <option name="number" value="00061" />
+      <option name="presentableId" value="LOCAL-00061" />
+      <option name="project" value="LOCAL" />
+      <updated>1768328344009</updated>
+    </task>
+    <task id="LOCAL-00062" summary="feat(ui): create basic ui for version modal&#10;&#10;Every event has been linked to the controller as well.">
+      <option name="closed" value="true" />
+      <created>1768328413930</created>
+      <option name="number" value="00062" />
+      <option name="presentableId" value="LOCAL-00062" />
+      <option name="project" value="LOCAL" />
+      <updated>1768328413930</updated>
+    </task>
+    <task id="LOCAL-00063" summary="feat(ui): handling version modal">
+      <option name="closed" value="true" />
+      <created>1768328487821</created>
+      <option name="number" value="00063" />
+      <option name="presentableId" value="LOCAL-00063" />
+      <option name="project" value="LOCAL" />
+      <updated>1768328487821</updated>
+    </task>
+    <option name="localTasksCounter" value="64" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -574,9 +576,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Add markdown exporting" />
-    <MESSAGE value="Add type finder for patch content retrieval" />
-    <MESSAGE value="Add markdown generator" />
     <MESSAGE value="Add licence" />
     <MESSAGE value="Add license" />
     <MESSAGE value="Fix to include jdbc" />
@@ -599,7 +598,10 @@
     <MESSAGE value="feat(ui): add edit button for versions" />
     <MESSAGE value="feat(controller): open modal to edit versions" />
     <MESSAGE value="fix(controller): close project instead of version" />
-    <option name="LAST_COMMIT_MESSAGE" value="fix(controller): close project instead of version" />
+    <MESSAGE value="add(ui): add managed property for project modal" />
+    <MESSAGE value="feat(ui): create basic ui for version modal&#10;&#10;Every event has been linked to the controller as well." />
+    <MESSAGE value="feat(ui): handling version modal" />
+    <option name="LAST_COMMIT_MESSAGE" value="feat(ui): handling version modal" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/Patcher$Patcher__build_.ic" NAME="Patcher [build] Coverage Results" MODIFIED="1767013393295" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="true" />

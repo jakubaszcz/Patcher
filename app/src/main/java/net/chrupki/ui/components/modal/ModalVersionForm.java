@@ -6,13 +6,15 @@ import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.VBox;
 import net.chrupki.app.AppContext;
+import net.chrupki.ui.controllers.structures.EditVersion;
 import net.chrupki.ui.model.ProjectModel;
 
 import java.util.function.BiConsumer;
+import java.util.function.Consumer;
 
 public class ModalVersionForm extends VBox {
 
-    public ModalVersionForm(ProjectModel model, BiConsumer<Integer, String> onSave, Runnable onClose) {
+    public ModalVersionForm(ProjectModel model, Consumer<EditVersion> onSave, Runnable onClose) {
 
         setAlignment(Pos.CENTER);
 
@@ -31,7 +33,11 @@ public class ModalVersionForm extends VBox {
         Button close = new Button("Close");
 
         save.setOnAction(e -> {
-            onSave.accept(AppContext.versionContext().getId().get(), textField.getText());
+            onSave.accept(new EditVersion(
+                            AppContext.versionContext().getId().get(),
+                            textField.getText(),
+                            AppContext.projectContext().getName().get()
+                    ));
         });
 
         close.setOnAction(e -> {

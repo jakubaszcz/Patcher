@@ -6,6 +6,7 @@ import net.chrupki.database.dao.PatchDAO;
 import net.chrupki.model.Version;
 import net.chrupki.project.AppProject;
 import net.chrupki.project.services.VersionService;
+import net.chrupki.ui.controllers.structures.EditVersion;
 import net.chrupki.ui.model.ProjectModel;
 
 import java.io.IOException;
@@ -61,13 +62,22 @@ public class VersionController {
         model.setEditVersionProperty(true);
     }
 
-    public void loadVersions(String projectName) throws Exception {
-        model.getVersions().setAll(
-                service.fetchVersions(projectName)
-        );
+    public void loadVersions(String projectName) {
+        try {
+            model.getVersions().setAll(
+                    service.fetchVersions(projectName)
+            );
+        } catch (Exception e) {
+            throw new RuntimeException(e);
+        }
     }
 
-    public void saveVersion(Integer id, String version) {
+    public void saveVersion(EditVersion version) {
+
+        System.out.println(version.getId());
+
+        service.renameVersion(version.getId(), version.getNewName());
+        loadVersions(version.getProject());
         closeModal();
     }
 

@@ -4,6 +4,7 @@ import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
+import net.chrupki.app.AppContext;
 import net.chrupki.ui.model.ProjectModel;
 
 import java.util.function.Consumer;
@@ -23,6 +24,7 @@ public class VersionContainer extends VBox {
         });
 
         edit.setOnAction(e -> {
+            AppContext.versionContext().setId(id);
             onEditVersion.accept(id);
         });
 
