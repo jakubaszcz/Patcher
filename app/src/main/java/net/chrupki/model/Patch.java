@@ -1,12 +1,16 @@
 package net.chrupki.model;
 
 public class Patch {
-    private String content;
-    private String type;
+    private final String content;
+    private final String type;
+    private final int id;
+    private final int vid;
 
-    public Patch(String content, String type) {
+    public Patch(String content, String type, int id, int vid) {
         this.content = content;
         this.type = type;
+        this.id = id;
+        this.vid = vid;
     }
 
     public String getContent() {
@@ -15,4 +19,6 @@ public class Patch {
     public String getType() {
         return type;
     }
+    public int getId() { return id; }
+    public int getVid() { return vid; }
 }
