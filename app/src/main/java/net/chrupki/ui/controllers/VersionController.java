@@ -67,6 +67,6 @@ public class VersionController {
 
     public void closeModal() {
         model.setEditActiveProperty(false);
-        model.setEditProjectProperty(false);
+        model.setEditVersionProperty(false);
     }
 }
