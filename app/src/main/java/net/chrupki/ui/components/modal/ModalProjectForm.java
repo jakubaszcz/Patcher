@@ -21,6 +21,7 @@ public class ModalProjectForm extends VBox {
         setAlignment(Pos.CENTER);
 
         visibleProperty().bind(model.getEditProjectProperty());
+        managedProperty().bind(model.getEditProjectProperty());
 
         Label label = new Label();
 
