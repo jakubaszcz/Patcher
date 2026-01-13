@@ -10,6 +10,7 @@ import net.chrupki.app.AppContext;
 import net.chrupki.app.context.ProjectContext;
 import net.chrupki.ui.components.modal.ModalProjectForm;
 import net.chrupki.ui.controllers.ProjectController;
+import net.chrupki.ui.controllers.VersionController;
 import net.chrupki.ui.model.ProjectModel;
 import javafx.beans.binding.Bindings;
 
@@ -18,7 +19,7 @@ public class ModalView extends StackPane {
 
     private ProjectModel model;
 
-    public ModalView(ProjectModel model, ProjectController projectController) {
+    public ModalView(ProjectModel model, ProjectController projectController, VersionController versionController) {
         this.model = model;
 
         Pane backdrop = new Pane();

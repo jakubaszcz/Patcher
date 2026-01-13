@@ -55,9 +55,18 @@ public class VersionController {
         }
     }
 
+    public void editVersion(Integer index) {
+        model.setEditVersionProperty(true);
+    }
+
     public void loadVersions(String projectName) throws Exception {
         model.getVersions().setAll(
                 service.fetchVersions(projectName)
         );
+    }
+
+    public void closeModal() {
+        model.setEditActiveProperty(false);
+        model.setEditProjectProperty(false);
     }
 }

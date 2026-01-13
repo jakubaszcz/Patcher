@@ -39,7 +39,7 @@ public class VersionListView extends VBox {
 
                 if (change.wasAdded()) {
                     for (Version v : change.getAddedSubList()) {
-                        view.getChildren().add(new VersionContainer(model, v.getVersion(), v.getId(), versionController::selectVersion));
+                        view.getChildren().add(new VersionContainer(model, v.getVersion(), v.getId(), versionController::selectVersion, versionController::editVersion));
                     }
                 }
             }

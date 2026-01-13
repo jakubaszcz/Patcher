@@ -10,7 +10,7 @@ import java.util.function.Consumer;
 
 public class VersionContainer extends VBox {
 
-    public VersionContainer(ProjectModel model, String version, int id, Consumer<Integer> onSelectVersion) {
+    public VersionContainer(ProjectModel model, String version, int id, Consumer<Integer> onSelectVersion, Consumer<Integer> onEditVersion) {
         HBox hBox = new HBox(10);
 
         Label label = new Label(version);
@@ -20,6 +20,10 @@ public class VersionContainer extends VBox {
 
         select.setOnAction(e -> {
             onSelectVersion.accept(id);
+        });
+
+        edit.setOnAction(e -> {
+            onEditVersion.accept(id);
         });
 
         hBox.getChildren().addAll(label, select, edit);
