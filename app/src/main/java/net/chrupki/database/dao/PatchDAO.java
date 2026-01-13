@@ -61,6 +61,95 @@ public class PatchDAO {
         return result;
     }
 
+    public static boolean renameContent(Integer id, Integer vid, String content) {
+        String sql = """
+            UPDATE notes
+            SET content = ?
+            WHERE id = ? AND version_id = ?
+            """;
+
+        String projectName = AppContext.projectContext().getName().get();
+
+        if (projectName == null || projectName.isBlank()) return false;
+
+        try (Connection conn = Database.getConnection(projectName);
+             PreparedStatement stmt = conn.prepareStatement(sql)) {
+
+            stmt.setString(1, content);
+            stmt.setInt(2, id);
+            stmt.setInt(3, vid);
+
+            int rows = stmt.executeUpdate();
+            return rows > 0;
+
+        } catch (SQLException ex) {
+            ex.printStackTrace();
+            return false;
+        } catch (Exception e) {
+            throw new RuntimeException(e);
+        }
+    }
+
+    public static boolean renamePatch(Integer id, Integer vid, String patch) {
+        String sql = """
+            UPDATE notes
+            SET patch = ?
+            WHERE id = ? AND version_id = ?
+            """;
+
+        String projectName = AppContext.projectContext().getName().get();
+
+        if (projectName == null || projectName.isBlank()) return false;
+
+        try (Connection conn = Database.getConnection(projectName);
+             PreparedStatement stmt = conn.prepareStatement(sql)) {
+
+            stmt.setString(1, patch);
+            stmt.setInt(2, id);
+            stmt.setInt(3, vid);
+
+            int rows = stmt.executeUpdate();
+            return rows > 0;
+
+        } catch (SQLException ex) {
+            ex.printStackTrace();
+            return false;
+        } catch (Exception e) {
+            throw new RuntimeException(e);
+        }
+    }
+
+    public static boolean doesThisPatchByIdsExist(Integer id, Integer vid) {
+        String sql = """
+                SELECT id
+                FROM notes
+                WHERE id = ? AND version_id = ?
+                ORDER BY id ASC
+                """;
+
+        String projectName = AppContext.projectContext().getName().get();
+
+        if (projectName == null || projectName.isBlank()) return false;
+
+        try (Connection conn = Database.getConnection(projectName);
+             PreparedStatement stmt = conn.prepareStatement(sql)) {
+
+            stmt.setInt(1, id);
+            stmt.setInt(2, vid);
+
+            try (ResultSet rs = stmt.executeQuery()) {
+                return rs.next();
+            }
+
+        } catch (SQLException ex) {
+            ex.printStackTrace();
+        } catch (Exception e) {
+            throw new RuntimeException(e);
+        }
+
+        return false;
+    }
+
     public static List<Patch> findAll(String projectName) throws Exception {
         List<Patch> result = new ArrayList<>();
         String sql = """
