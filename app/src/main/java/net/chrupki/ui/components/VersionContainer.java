@@ -14,13 +14,15 @@ public class VersionContainer extends VBox {
         HBox hBox = new HBox(10);
 
         Label label = new Label(version);
-        Button button = new Button("Select this version");
+        Button select = new Button("Select this version");
 
-        button.setOnAction(e -> {
+        Button edit = new Button("Edit");
+
+        select.setOnAction(e -> {
             onSelectVersion.accept(id);
         });
 
-        hBox.getChildren().addAll(label, button);
+        hBox.getChildren().addAll(label, select, edit);
         this.getChildren().add(hBox);
     }
 }
