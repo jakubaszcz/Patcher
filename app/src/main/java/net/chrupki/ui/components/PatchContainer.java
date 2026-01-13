@@ -1,25 +1,26 @@
 package net.chrupki.ui.components;
 
+import javafx.scene.control.Button;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
 import javafx.scene.control.Label;
-
+import net.chrupki.ui.model.ProjectModel;
 
 
 public class PatchContainer extends VBox {
 
-    private HBox box;
+    public PatchContainer(ProjectModel model, String content, String type) {
 
-    private Label contentLabel;
-    private Label typeLabel;
+        HBox box = new HBox(10);
+        Label contentLabel = new Label(content);
+        Label typeLabel = new Label(type);
+        Button edit = new Button("Edit patch");
 
-    public PatchContainer(String content, String type) {
+        box.getChildren().addAll(typeLabel, contentLabel, edit);
 
-        box = new HBox(10);
-        contentLabel = new Label(content);
-        typeLabel = new Label(type);
-
-        box.getChildren().addAll(typeLabel, contentLabel);
+        edit.setOnAction(e ->{
+            model.setEditPatchProperty(true);
+        });
 
 
         this.getChildren().add(box);

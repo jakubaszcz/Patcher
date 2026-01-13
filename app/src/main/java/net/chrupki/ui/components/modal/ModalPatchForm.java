@@ -1,0 +1,44 @@
+package net.chrupki.ui.components.modal;
+
+import javafx.geometry.Pos;
+import javafx.scene.control.Button;
+import javafx.scene.control.ComboBox;
+import javafx.scene.control.Label;
+import javafx.scene.control.TextField;
+import javafx.scene.layout.VBox;
+import net.chrupki.app.AppContext;
+import net.chrupki.ui.controllers.dtos.EditVersion;
+import net.chrupki.ui.model.ProjectModel;
+
+import java.util.function.Consumer;
+
+public class ModalPatchForm extends VBox {
+
+    public ModalPatchForm(ProjectModel model, Consumer<EditVersion> onSave, Runnable onClose) {
+
+        setAlignment(Pos.CENTER);
+
+        visibleProperty().bind(model.getEditPatchProperty());
+        managedProperty().bind(model.getEditPatchProperty());
+
+        Label label = new Label();
+
+        TextField textField = new TextField();
+
+        textField.setPromptText("Enter new project name");
+
+        Button save = new Button("Save");
+
+        Button close = new Button("Close");
+
+        ComboBox<String> comboBoxPatch = new ComboBox<>();
+
+        comboBoxPatch.getItems().addAll(
+                "Patch", "Add", "Features", "Fix"
+        );
+
+        label.textProperty().bind(AppContext.projectContext().getName());
+
+        getChildren().addAll(label, textField, comboBoxPatch, save, close);
+    }
+}

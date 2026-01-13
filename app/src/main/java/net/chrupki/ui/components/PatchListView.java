@@ -33,7 +33,7 @@ public class PatchListView extends VBox {
                 if (change.wasAdded()) {
                     for (Patch v : change.getAddedSubList()) {
                         view.getChildren().add(
-                                new PatchContainer(v.getContent(), v.getType())
+                                new PatchContainer(model, v.getContent(), v.getType())
                         );
                     }
                 }

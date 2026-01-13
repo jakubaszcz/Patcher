@@ -4,11 +4,14 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="c1aa160e-de6c-484d-8c28-5409cf16dc62" name="Changes" comment="refactor(controller): rename folder structures in dtos&#10;&#10;The dtos folder contains all the structure to use with the Consumer functions provided by Java. It's impossible otherwise to put more than three arguments in a Consumer.">
+    <list default="true" id="c1aa160e-de6c-484d-8c28-5409cf16dc62" name="Changes" comment="add(controller): add edit patch dtos for patch edit">
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/net/chrupki/ui/components/modal/ModalPatchForm.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/net/chrupki/ui/components/CurrentProjectLabel.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/net/chrupki/ui/components/CurrentProjectLabel.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/net/chrupki/ui/components/modal/ModalVersionForm.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/net/chrupki/ui/components/modal/ModalVersionForm.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/net/chrupki/ui/controllers/VersionController.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/net/chrupki/ui/controllers/VersionController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/net/chrupki/ui/components/PatchContainer.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/net/chrupki/ui/components/PatchContainer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/net/chrupki/ui/components/PatchListView.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/net/chrupki/ui/components/PatchListView.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/net/chrupki/ui/controllers/PatchController.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/net/chrupki/ui/controllers/PatchController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/net/chrupki/ui/views/MainView.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/net/chrupki/ui/views/MainView.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/net/chrupki/ui/views/ModalView.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/net/chrupki/ui/views/ModalView.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -161,31 +164,7 @@
       <workItem from="1767544161784" duration="11911000" />
       <workItem from="1768130801077" duration="22931000" />
       <workItem from="1768246508726" duration="7736000" />
-      <workItem from="1768326113650" duration="6250000" />
-    </task>
-    <task id="LOCAL-00018" summary="Add patch controller">
-      <option name="closed" value="true" />
-      <created>1767482861223</created>
-      <option name="number" value="00018" />
-      <option name="presentableId" value="LOCAL-00018" />
-      <option name="project" value="LOCAL" />
-      <updated>1767482861223</updated>
-    </task>
-    <task id="LOCAL-00019" summary="Add patch create container">
-      <option name="closed" value="true" />
-      <created>1767482941382</created>
-      <option name="number" value="00019" />
-      <option name="presentableId" value="LOCAL-00019" />
-      <option name="project" value="LOCAL" />
-      <updated>1767482941382</updated>
-    </task>
-    <task id="LOCAL-00020" summary="Add clear choices when submit">
-      <option name="closed" value="true" />
-      <created>1767482995761</created>
-      <option name="number" value="00020" />
-      <option name="presentableId" value="LOCAL-00020" />
-      <option name="project" value="LOCAL" />
-      <updated>1767482995761</updated>
+      <workItem from="1768326113650" duration="7424000" />
     </task>
     <task id="LOCAL-00021" summary="Fix select first choice by default">
       <option name="closed" value="true" />
@@ -555,7 +534,31 @@
       <option name="project" value="LOCAL" />
       <updated>1768333430610</updated>
     </task>
-    <option name="localTasksCounter" value="67" />
+    <task id="LOCAL-00067" summary="fix(ui): delete temporarily project editing&#10;&#10;It was deleted because I temporarily need to deal with the database directly.">
+      <option name="closed" value="true" />
+      <created>1768334038798</created>
+      <option name="number" value="00067" />
+      <option name="presentableId" value="LOCAL-00067" />
+      <option name="project" value="LOCAL" />
+      <updated>1768334038798</updated>
+    </task>
+    <task id="LOCAL-00068" summary="feat(ui): clear text field in version when the version is created">
+      <option name="closed" value="true" />
+      <created>1768334144048</created>
+      <option name="number" value="00068" />
+      <option name="presentableId" value="LOCAL-00068" />
+      <option name="project" value="LOCAL" />
+      <updated>1768334144048</updated>
+    </task>
+    <task id="LOCAL-00069" summary="add(controller): add edit patch dtos for patch edit">
+      <option name="closed" value="true" />
+      <created>1768334956471</created>
+      <option name="number" value="00069" />
+      <option name="presentableId" value="LOCAL-00069" />
+      <option name="project" value="LOCAL" />
+      <updated>1768334956471</updated>
+    </task>
+    <option name="localTasksCounter" value="70" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -573,9 +576,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Edit current project label" />
-    <MESSAGE value="Fix hide version button create" />
-    <MESSAGE value="Fix don't print another patch if null" />
     <MESSAGE value="Add modal view for overlay" />
     <MESSAGE value="Add edit property" />
     <MESSAGE value="Add working modal view with bindings" />
@@ -598,7 +598,10 @@
     <MESSAGE value="add(ui): link controller and service to version DAO" />
     <MESSAGE value="refactor(controller): rename folder structures in dtos&#10;&#10;The dtos folder contains all the structure to use with the Consumer functions provided by Java. It's impossible otherwise to put more than three arguments in a Consumer." />
     <MESSAGE value="refactor(ui): delete spacing for the box" />
-    <option name="LAST_COMMIT_MESSAGE" value="refactor(ui): delete spacing for the box" />
+    <MESSAGE value="fix(ui): delete temporarily project editing&#10;&#10;It was deleted because I temporarily need to deal with the database directly." />
+    <MESSAGE value="feat(ui): clear text field in version when the version is created" />
+    <MESSAGE value="add(controller): add edit patch dtos for patch edit" />
+    <option name="LAST_COMMIT_MESSAGE" value="add(controller): add edit patch dtos for patch edit" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/Patcher$Patcher__build_.ic" NAME="Patcher [build] Coverage Results" MODIFIED="1767013393295" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="true" />
