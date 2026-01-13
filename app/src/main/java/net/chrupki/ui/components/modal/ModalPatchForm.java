@@ -37,6 +37,19 @@ public class ModalPatchForm extends VBox {
                 "Patch", "Add", "Features", "Fix"
         );
 
+        save.setOnAction(e -> {
+            onSave.accept(new EditPatch(
+                    AppContext.patchContext().getId().get(),
+                    AppContext.patchContext().getVid().get(),
+                    textField.getText(),
+                    comboBoxPatch.getValue()
+            ));
+        });
+
+        close.setOnAction(e -> {
+            onClose.run();
+        });
+
         label.textProperty().bind(AppContext.projectContext().getName());
 
         getChildren().addAll(label, textField, comboBoxPatch, save, close);
