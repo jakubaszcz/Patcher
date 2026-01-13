@@ -21,7 +21,7 @@ public class CreateVersionForm extends VBox {
 
     public CreateVersionForm(ProjectModel model, Consumer<String> onCreateVersion) {
         this.model = model;
-        HBox view = new HBox(10);
+        HBox view = new HBox();
 
         Button button = new Button();
         TextField textField = new TextField();
