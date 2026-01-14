@@ -28,7 +28,7 @@ public class ProjectView extends VBox {
                 new CreateVersionForm(model, versionController::createVersion),
                 new VersionListView(versionController, model));
 
-        versionController.loadVersions(AppContext.projectContext().getName().get());
+        versionController.loadVersions();
 
         this.getChildren().add(view);
     }

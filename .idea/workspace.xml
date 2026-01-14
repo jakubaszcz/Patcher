@@ -4,13 +4,14 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="c1aa160e-de6c-484d-8c28-5409cf16dc62" name="Changes" comment="feat(ui): delete project button&#10;&#10;User is now capable of deleting an entier project.">
+    <list default="true" id="c1aa160e-de6c-484d-8c28-5409cf16dc62" name="Changes" comment="feat(ui): delete chosen patch&#10;&#10;The user can now delete a chosen patch.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/net/chrupki/database/dao/PatchDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/net/chrupki/database/dao/PatchDAO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/net/chrupki/project/services/PatchService.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/net/chrupki/project/services/PatchService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/net/chrupki/ui/components/modal/ModalPatchForm.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/net/chrupki/ui/components/modal/ModalPatchForm.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/net/chrupki/ui/controllers/PatchController.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/net/chrupki/ui/controllers/PatchController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/net/chrupki/app/context/VersionContext.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/net/chrupki/app/context/VersionContext.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/net/chrupki/project/services/VersionService.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/net/chrupki/project/services/VersionService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/net/chrupki/ui/components/modal/ModalVersionForm.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/net/chrupki/ui/components/modal/ModalVersionForm.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/net/chrupki/ui/controllers/VersionController.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/net/chrupki/ui/controllers/VersionController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/net/chrupki/ui/views/ModalView.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/net/chrupki/ui/views/ModalView.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/net/chrupki/ui/views/ProjectView.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/net/chrupki/ui/views/ProjectView.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -164,39 +165,7 @@
       <workItem from="1768130801077" duration="22931000" />
       <workItem from="1768246508726" duration="7736000" />
       <workItem from="1768326113650" duration="15205000" />
-      <workItem from="1768421332706" duration="6021000" />
-    </task>
-    <task id="LOCAL-00035" summary="Add find name by id for the version">
-      <option name="closed" value="true" />
-      <created>1767645732729</created>
-      <option name="number" value="00035" />
-      <option name="presentableId" value="LOCAL-00035" />
-      <option name="project" value="LOCAL" />
-      <updated>1767645732729</updated>
-    </task>
-    <task id="LOCAL-00036" summary="Add markdown exporting">
-      <option name="closed" value="true" />
-      <created>1767647209952</created>
-      <option name="number" value="00036" />
-      <option name="presentableId" value="LOCAL-00036" />
-      <option name="project" value="LOCAL" />
-      <updated>1767647209952</updated>
-    </task>
-    <task id="LOCAL-00037" summary="Add type finder for patch content retrieval">
-      <option name="closed" value="true" />
-      <created>1767652047094</created>
-      <option name="number" value="00037" />
-      <option name="presentableId" value="LOCAL-00037" />
-      <option name="project" value="LOCAL" />
-      <updated>1767652047094</updated>
-    </task>
-    <task id="LOCAL-00038" summary="Add markdown generator">
-      <option name="closed" value="true" />
-      <created>1767652093593</created>
-      <option name="number" value="00038" />
-      <option name="presentableId" value="LOCAL-00038" />
-      <option name="project" value="LOCAL" />
-      <updated>1767652093593</updated>
+      <workItem from="1768421332706" duration="7321000" />
     </task>
     <task id="LOCAL-00039" summary="Add licence">
       <option name="closed" value="true" />
@@ -558,7 +527,39 @@
       <option name="project" value="LOCAL" />
       <updated>1768426776263</updated>
     </task>
-    <option name="localTasksCounter" value="84" />
+    <task id="LOCAL-00084" summary="add(database): function to delete a chosen patch by id &amp; vid">
+      <option name="closed" value="true" />
+      <created>1768428495128</created>
+      <option name="number" value="00084" />
+      <option name="presentableId" value="LOCAL-00084" />
+      <option name="project" value="LOCAL" />
+      <updated>1768428495128</updated>
+    </task>
+    <task id="LOCAL-00085" summary="feat(ui): delete chosen patch&#10;&#10;The user can now delete a chosen patch.">
+      <option name="closed" value="true" />
+      <created>1768428542298</created>
+      <option name="number" value="00085" />
+      <option name="presentableId" value="LOCAL-00085" />
+      <option name="project" value="LOCAL" />
+      <updated>1768428542298</updated>
+    </task>
+    <task id="LOCAL-00086" summary="add(database): delete all patches from a given vid">
+      <option name="closed" value="true" />
+      <created>1768428763692</created>
+      <option name="number" value="00086" />
+      <option name="presentableId" value="LOCAL-00086" />
+      <option name="project" value="LOCAL" />
+      <updated>1768428763693</updated>
+    </task>
+    <task id="LOCAL-00087" summary="add(database): delete chosen version by id">
+      <option name="closed" value="true" />
+      <created>1768429313223</created>
+      <option name="number" value="00087" />
+      <option name="presentableId" value="LOCAL-00087" />
+      <option name="project" value="LOCAL" />
+      <updated>1768429313223</updated>
+    </task>
+    <option name="localTasksCounter" value="88" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -576,10 +577,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="feat(controller): open modal to edit versions" />
-    <MESSAGE value="fix(controller): close project instead of version" />
-    <MESSAGE value="add(ui): add managed property for project modal" />
-    <MESSAGE value="feat(ui): create basic ui for version modal&#10;&#10;Every event has been linked to the controller as well." />
     <MESSAGE value="feat(ui): handling version modal" />
     <MESSAGE value="add(ui): link controller and service to version DAO" />
     <MESSAGE value="refactor(controller): rename folder structures in dtos&#10;&#10;The dtos folder contains all the structure to use with the Consumer functions provided by Java. It's impossible otherwise to put more than three arguments in a Consumer." />
@@ -601,7 +598,11 @@
     <MESSAGE value="refactor(database): change database connect methode&#10;&#10;The refracting is to use the new function from the database hub singleton." />
     <MESSAGE value="feat(ui): toggle back the edit for the project&#10;&#10;It has been temporarily disabled because of the database issues, they're now fixed thanks to the database singleton." />
     <MESSAGE value="feat(ui): delete project button&#10;&#10;User is now capable of deleting an entier project." />
-    <option name="LAST_COMMIT_MESSAGE" value="feat(ui): delete project button&#10;&#10;User is now capable of deleting an entier project." />
+    <MESSAGE value="add(database): function to delete a chosen patch by id &amp; vid" />
+    <MESSAGE value="feat(ui): delete chosen patch&#10;&#10;The user can now delete a chosen patch." />
+    <MESSAGE value="add(database): delete all patches from a given vid" />
+    <MESSAGE value="add(database): delete chosen version by id" />
+    <option name="LAST_COMMIT_MESSAGE" value="add(database): delete chosen version by id" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/Patcher$Patcher__build_.ic" NAME="Patcher [build] Coverage Results" MODIFIED="1767013393295" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="true" />

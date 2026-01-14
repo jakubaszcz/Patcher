@@ -1,5 +1,6 @@
 package net.chrupki.project.services;
 
+import net.chrupki.database.dao.PatchDAO;
 import net.chrupki.database.dao.VersionDAO;
 import net.chrupki.model.Version;
 
@@ -24,6 +25,15 @@ public class VersionService {
         }
 
         return VersionDAO.findAll();
+    }
+
+    public void deleteVersion(Integer id) {
+        if (id == null || id < 0 || !VersionDAO.doesThisVersionByIdExist(id)) {
+            throw new IllegalArgumentException("Version id is unavailable or the id is corrupted !");
+        }
+
+        PatchDAO.deleteAll(id);
+        VersionDAO.deleteThis(id);
     }
 
     public void renameVersion(Integer id, String version) {

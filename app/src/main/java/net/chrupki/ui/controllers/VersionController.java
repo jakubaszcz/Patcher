@@ -26,7 +26,7 @@ public class VersionController {
 
         currentProject.addListener((obs, oldProject, newProject) -> {
             try {
-                loadVersions(newProject);
+                loadVersions();
             } catch (Exception e) {
                 throw new RuntimeException(e);
             }
@@ -60,10 +60,10 @@ public class VersionController {
         model.setEditVersionProperty(true);
     }
 
-    public void loadVersions(String projectName) {
+    public void loadVersions() {
         try {
             model.getVersions().setAll(
-                    service.fetchVersions(projectName)
+                    service.fetchVersions(AppContext.projectContext().getName().get())
             );
         } catch (Exception e) {
             throw new RuntimeException(e);
@@ -74,7 +74,14 @@ public class VersionController {
 
 
         service.renameVersion(version.getId(), version.getNewName());
-        loadVersions(version.getProject());
+        loadVersions();
+        closeModal();
+    }
+
+    public void deleteVersion(Integer id) {
+        service.deleteVersion(id);
+
+        loadVersions();
         closeModal();
     }
 
