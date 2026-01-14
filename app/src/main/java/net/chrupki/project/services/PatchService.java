@@ -15,7 +15,6 @@ public class PatchService {
             String content
     ) {
         return PatchDAO.insert(
-                projectName,
                 versionId,
                 type,
                 content

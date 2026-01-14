@@ -4,21 +4,18 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="c1aa160e-de6c-484d-8c28-5409cf16dc62" name="Changes" comment="add(context): add everything the patch need for edit">
+    <list default="true" id="c1aa160e-de6c-484d-8c28-5409cf16dc62" name="Changes" comment="add(database): handle one instance&#10;&#10;This script will allow stopping/close database with a function unlike before, I was depending on the try/catch methode, limiting plenty of moves.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/net/chrupki/database/dao/PatchDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/net/chrupki/database/dao/PatchDAO.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/net/chrupki/database/dao/VersionDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/net/chrupki/database/dao/VersionDAO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/net/chrupki/model/Patch.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/net/chrupki/model/Patch.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/net/chrupki/project/AppProject.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/net/chrupki/project/AppProject.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/net/chrupki/project/services/PatchService.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/net/chrupki/project/services/PatchService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/net/chrupki/request/PatchRequest.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/net/chrupki/request/PatchRequest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/net/chrupki/project/services/VersionService.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/net/chrupki/project/services/VersionService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/net/chrupki/ui/components/CreatePatchForm.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/net/chrupki/ui/components/CreatePatchForm.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/net/chrupki/ui/components/PatchContainer.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/net/chrupki/ui/components/PatchContainer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/net/chrupki/ui/components/PatchListView.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/net/chrupki/ui/components/PatchListView.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/net/chrupki/ui/components/modal/ModalPatchForm.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/net/chrupki/ui/components/modal/ModalPatchForm.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/net/chrupki/ui/controllers/PatchController.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/net/chrupki/ui/controllers/PatchController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/net/chrupki/ui/controllers/VersionController.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/net/chrupki/ui/controllers/VersionController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/net/chrupki/ui/controllers/dtos/EditPatch.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/net/chrupki/ui/controllers/dtos/EditPatch.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/net/chrupki/ui/views/ModalView.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/net/chrupki/ui/views/ModalView.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/net/chrupki/ui/components/CurrentProjectLabel.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/net/chrupki/ui/components/CurrentProjectLabel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/net/chrupki/ui/components/VersionListView.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/net/chrupki/ui/components/VersionListView.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/net/chrupki/ui/controllers/ProjectController.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/net/chrupki/ui/controllers/ProjectController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/net/chrupki/ui/views/ProjectView.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/net/chrupki/ui/views/ProjectView.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -26,7 +23,7 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="EmbeddingIndexingInfo">
-    <option name="cachedIndexableFilesCount" value="419" />
+    <option name="cachedIndexableFilesCount" value="423" />
     <option name="fileBasedEmbeddingIndicesEnabled" value="true" />
   </component>
   <component name="ExternalProjectsData">
@@ -76,34 +73,34 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "Gradle.Download Sources.executor": "Run",
-    "Gradle.Patcher [build].executor": "Coverage",
-    "Gradle.Patcher [run].executor": "Run",
-    "ModuleVcsDetector.initialDetectionPerformed": "true",
-    "RunOnceActivity.MCP Project settings loaded": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252": "true",
-    "RunOnceActivity.git.unshallow": "true",
-    "RunOnceActivity.typescript.service.memoryLimit.init": "true",
-    "com.intellij.ml.llm.matterhorn.ej.ui.settings.DefaultModelSelectionForGA.v1": "true",
-    "git-widget-placeholder": "main",
-    "junie.onboarding.icon.badge.shown": "true",
-    "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "/home/jakub/Documents/Patcher",
-    "node.js.detected.package.eslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "project.structure.last.edited": "Modules",
-    "project.structure.proportion": "0.0",
-    "project.structure.side.proportion": "0.2",
-    "settings.editor.selected.configurable": "preferences.pluginManager",
-    "to.speed.mode.migration.done": "true",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Gradle.Download Sources.executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.Patcher [build].executor&quot;: &quot;Coverage&quot;,
+    &quot;Gradle.Patcher [run].executor&quot;: &quot;Run&quot;,
+    &quot;ModuleVcsDetector.initialDetectionPerformed&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.MCP Project settings loaded&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.typescript.service.memoryLimit.init&quot;: &quot;true&quot;,
+    &quot;com.intellij.ml.llm.matterhorn.ej.ui.settings.DefaultModelSelectionForGA.v1&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;junie.onboarding.icon.badge.shown&quot;: &quot;true&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/home/jakub/Documents/Patcher&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;,
+    &quot;to.speed.mode.migration.done&quot;: &quot;true&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RunManager">
     <configuration default="true" type="lua.app" factoryName="Lua Application">
       <option name="program" value="/usr/bin/lua" />
@@ -171,71 +168,8 @@
       <workItem from="1767544161784" duration="11911000" />
       <workItem from="1768130801077" duration="22931000" />
       <workItem from="1768246508726" duration="7736000" />
-      <workItem from="1768326113650" duration="14539000" />
-    </task>
-    <task id="LOCAL-00024" summary="Link controller and service for patch">
-      <option name="closed" value="true" />
-      <created>1767484238933</created>
-      <option name="number" value="00024" />
-      <option name="presentableId" value="LOCAL-00024" />
-      <option name="project" value="LOCAL" />
-      <updated>1767484238933</updated>
-    </task>
-    <task id="LOCAL-00025" summary="Add display patches in UI and update project">
-      <option name="closed" value="true" />
-      <created>1767553310839</created>
-      <option name="number" value="00025" />
-      <option name="presentableId" value="LOCAL-00025" />
-      <option name="project" value="LOCAL" />
-      <updated>1767553310839</updated>
-    </task>
-    <task id="LOCAL-00026" summary="Fix clear when version changement">
-      <option name="closed" value="true" />
-      <created>1767555549467</created>
-      <option name="number" value="00026" />
-      <option name="presentableId" value="LOCAL-00026" />
-      <option name="project" value="LOCAL" />
-      <updated>1767555549467</updated>
-    </task>
-    <task id="LOCAL-00027" summary="Update code to display with controller and service">
-      <option name="closed" value="true" />
-      <created>1767556514476</created>
-      <option name="number" value="00027" />
-      <option name="presentableId" value="LOCAL-00027" />
-      <option name="project" value="LOCAL" />
-      <updated>1767556514476</updated>
-    </task>
-    <task id="LOCAL-00028" summary="Fix patch creator by removing unnecessary changes and updating">
-      <option name="closed" value="true" />
-      <created>1767637167916</created>
-      <option name="number" value="00028" />
-      <option name="presentableId" value="LOCAL-00028" />
-      <option name="project" value="LOCAL" />
-      <updated>1767637167916</updated>
-    </task>
-    <task id="LOCAL-00029" summary="Rename PatchContainer to PatchListView">
-      <option name="closed" value="true" />
-      <created>1767638851139</created>
-      <option name="number" value="00029" />
-      <option name="presentableId" value="LOCAL-00029" />
-      <option name="project" value="LOCAL" />
-      <updated>1767638851139</updated>
-    </task>
-    <task id="LOCAL-00030" summary="Add patch container">
-      <option name="closed" value="true" />
-      <created>1767638867383</created>
-      <option name="number" value="00030" />
-      <option name="presentableId" value="LOCAL-00030" />
-      <option name="project" value="LOCAL" />
-      <updated>1767638867383</updated>
-    </task>
-    <task id="LOCAL-00031" summary="Add export button">
-      <option name="closed" value="true" />
-      <created>1767639100302</created>
-      <option name="number" value="00031" />
-      <option name="presentableId" value="LOCAL-00031" />
-      <option name="project" value="LOCAL" />
-      <updated>1767639100302</updated>
+      <workItem from="1768326113650" duration="15205000" />
+      <workItem from="1768421332706" duration="3632000" />
     </task>
     <task id="LOCAL-00032" summary="Add default choice in export combo box">
       <option name="closed" value="true" />
@@ -565,7 +499,71 @@
       <option name="project" value="LOCAL" />
       <updated>1768344822721</updated>
     </task>
-    <option name="localTasksCounter" value="73" />
+    <task id="LOCAL-00073" summary="add(dao): everything needed for the patch changements&#10;&#10;When the save of the patch in the modal, every condition must be checked, that's why the DAO have so much function added.">
+      <option name="closed" value="true" />
+      <created>1768344928713</created>
+      <option name="number" value="00073" />
+      <option name="presentableId" value="LOCAL-00073" />
+      <option name="project" value="LOCAL" />
+      <updated>1768344928713</updated>
+    </task>
+    <task id="LOCAL-00074" summary="refactor(model): add missing information into the structure">
+      <option name="closed" value="true" />
+      <created>1768344983081</created>
+      <option name="number" value="00074" />
+      <option name="presentableId" value="LOCAL-00074" />
+      <option name="project" value="LOCAL" />
+      <updated>1768344983081</updated>
+    </task>
+    <task id="LOCAL-00075" summary="add(request): add new variable into the patch request">
+      <option name="closed" value="true" />
+      <created>1768345025804</created>
+      <option name="number" value="00075" />
+      <option name="presentableId" value="LOCAL-00075" />
+      <option name="project" value="LOCAL" />
+      <updated>1768345025804</updated>
+    </task>
+    <task id="LOCAL-00076" summary="add(ui): every event for the patch modal to send&#10;&#10;Thanks to it, the controller and the service fetch the given data.">
+      <option name="closed" value="true" />
+      <created>1768345084691</created>
+      <option name="number" value="00076" />
+      <option name="presentableId" value="LOCAL-00076" />
+      <option name="project" value="LOCAL" />
+      <updated>1768345084691</updated>
+    </task>
+    <task id="LOCAL-00077" summary="refactor(ui): add missing variable for patch request">
+      <option name="closed" value="true" />
+      <created>1768345118961</created>
+      <option name="number" value="00077" />
+      <option name="presentableId" value="LOCAL-00077" />
+      <option name="project" value="LOCAL" />
+      <updated>1768345118961</updated>
+    </task>
+    <task id="LOCAL-00078" summary="feat(controller): allow patch to be modified&#10;&#10;This commit add a new feature to the application, it is now possible to save and edit patches.">
+      <option name="closed" value="true" />
+      <created>1768345191351</created>
+      <option name="number" value="00078" />
+      <option name="presentableId" value="LOCAL-00078" />
+      <option name="project" value="LOCAL" />
+      <updated>1768345191353</updated>
+    </task>
+    <task id="LOCAL-00079" summary="refactor(ui): delete spacing for box">
+      <option name="closed" value="true" />
+      <created>1768345379397</created>
+      <option name="number" value="00079" />
+      <option name="presentableId" value="LOCAL-00079" />
+      <option name="project" value="LOCAL" />
+      <updated>1768345379397</updated>
+    </task>
+    <task id="LOCAL-00080" summary="add(database): handle one instance&#10;&#10;This script will allow stopping/close database with a function unlike before, I was depending on the try/catch methode, limiting plenty of moves.">
+      <option name="closed" value="true" />
+      <created>1768425653380</created>
+      <option name="number" value="00080" />
+      <option name="presentableId" value="LOCAL-00080" />
+      <option name="project" value="LOCAL" />
+      <updated>1768425653381</updated>
+    </task>
+    <option name="localTasksCounter" value="81" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -583,14 +581,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Add context for variables&#10;&#10;The context has been created to make the storage of important information easier and the use as well." />
-    <MESSAGE value="Add edit project UI" />
-    <MESSAGE value="Add edit project controller" />
-    <MESSAGE value="Add project editor" />
-    <MESSAGE value="fix(context): use selected project when creating patches&#10;&#10;Patches could not fetch data because the current project&#10;context was empty when creating a version." />
-    <MESSAGE value="refactor(context): remove unused helper method&#10;&#10;A helper method used to resolve the project path in AppData was no longer needed and has been removed." />
-    <MESSAGE value="refactor(context): remove remaining unused code" />
-    <MESSAGE value="refactor(context): change project name resolution&#10;&#10;The project context was incorrectly using the oldest version&#10;instead of the currently selected one." />
     <MESSAGE value="fix(context): cast version id to object property&#10;&#10;It allows the use of checking if an integer is null." />
     <MESSAGE value="refactor(context): delete useless functions&#10;&#10;Old functions allowed verifying if a version has been selected, thanks to a previous commit, the functions can be removed." />
     <MESSAGE value="feat(ui): add edit button for versions" />
@@ -608,7 +598,15 @@
     <MESSAGE value="feat(ui): add patch modal form&#10;&#10;This modal will allow user to edit his patch." />
     <MESSAGE value="add(service): add function to save patch&#10;&#10;This service function fetch all the changes made in the patch modal to change them with the DAO." />
     <MESSAGE value="add(context): add everything the patch need for edit" />
-    <option name="LAST_COMMIT_MESSAGE" value="add(context): add everything the patch need for edit" />
+    <MESSAGE value="add(dao): everything needed for the patch changements&#10;&#10;When the save of the patch in the modal, every condition must be checked, that's why the DAO have so much function added." />
+    <MESSAGE value="refactor(model): add missing information into the structure" />
+    <MESSAGE value="add(request): add new variable into the patch request" />
+    <MESSAGE value="add(ui): every event for the patch modal to send&#10;&#10;Thanks to it, the controller and the service fetch the given data." />
+    <MESSAGE value="refactor(ui): add missing variable for patch request" />
+    <MESSAGE value="feat(controller): allow patch to be modified&#10;&#10;This commit add a new feature to the application, it is now possible to save and edit patches." />
+    <MESSAGE value="refactor(ui): delete spacing for box" />
+    <MESSAGE value="add(database): handle one instance&#10;&#10;This script will allow stopping/close database with a function unlike before, I was depending on the try/catch methode, limiting plenty of moves." />
+    <option name="LAST_COMMIT_MESSAGE" value="add(database): handle one instance&#10;&#10;This script will allow stopping/close database with a function unlike before, I was depending on the try/catch methode, limiting plenty of moves." />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/Patcher$Patcher__build_.ic" NAME="Patcher [build] Coverage Results" MODIFIED="1767013393295" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="true" />

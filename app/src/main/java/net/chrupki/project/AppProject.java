@@ -4,6 +4,7 @@ import javafx.beans.property.SimpleStringProperty;
 import javafx.beans.property.StringProperty;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
+import net.chrupki.app.AppContext;
 import net.chrupki.app.AppPath;
 import net.chrupki.database.Database;
 import net.chrupki.database.DatabaseInitializer;
@@ -42,7 +43,6 @@ public class AppProject {
         try {
             Files.createDirectories(projectPath);
             AddProjects(projectPath);
-            Database.getConnection(name);
             DatabaseInitializer.init(name);
         } catch (IOException e) {
             throw new RuntimeException(e);

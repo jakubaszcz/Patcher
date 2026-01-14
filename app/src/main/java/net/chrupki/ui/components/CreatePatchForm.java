@@ -68,7 +68,6 @@ public class CreatePatchForm extends VBox {
                 onExportPatch.accept(new ExportRequest(
                         AppContext.projectContext().getName().get(),
                         VersionDAO.findNameById(
-                                AppContext.projectContext().getName().get(),
                                 AppContext.versionContext().getId().get()
                         ),
                         comboBoxExport.getValue(),

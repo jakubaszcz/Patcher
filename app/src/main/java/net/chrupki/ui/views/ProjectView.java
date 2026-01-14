@@ -24,7 +24,7 @@ public class ProjectView extends VBox {
         this.model = projectModel;
 
         view = new VBox(10,
-                new CurrentProjectLabel(model),
+                new CurrentProjectLabel(model, projectController::onDelete),
                 new CreateVersionForm(model, versionController::createVersion),
                 new VersionListView(versionController, model));
 

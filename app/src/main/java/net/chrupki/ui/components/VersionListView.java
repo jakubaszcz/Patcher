@@ -54,7 +54,7 @@ public class VersionListView extends VBox {
 
             try {
                 versions.setAll(
-                        VersionDAO.findAll(newProject)
+                        VersionDAO.findAll()
                 );
             } catch (Exception e) {
                 throw new RuntimeException(e);

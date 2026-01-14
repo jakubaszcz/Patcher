@@ -2,6 +2,7 @@ package net.chrupki.database.dao;
 
 import net.chrupki.app.AppContext;
 import net.chrupki.database.Database;
+import net.chrupki.database.DatabaseHub;
 import net.chrupki.model.Patch;
 
 import java.sql.Connection;
@@ -12,10 +13,10 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class PatchDAO {
-    public static int insert(String projectName, int id, String type, String content) {
+    public static int insert(int id, String type, String content) {
         String sql = "INSERT INTO notes (version_id, patch, content) VALUES (?, ?, ?)";
 
-        try (Connection conn = Database.getConnection(projectName);
+        try (Connection conn = DatabaseHub.getInstance().getConnection();
              PreparedStatement stmt = conn.prepareStatement(sql)) {
 
             stmt.setInt(1, id);
@@ -44,7 +45,7 @@ public class PatchDAO {
         String projectName = AppContext.projectContext().getName().get();
         if (projectName == null || projectName.isBlank()) return null;
 
-        try (Connection conn = Database.getConnection(projectName);
+        try (Connection conn = DatabaseHub.getInstance().getConnection();
              PreparedStatement stmt = conn.prepareStatement(sql)) {
 
             stmt.setInt(1, id);
@@ -71,7 +72,7 @@ public class PatchDAO {
         String projectName = AppContext.projectContext().getName().get();
         if (projectName == null || projectName.isBlank()) return null;
 
-        try (Connection conn = Database.getConnection(projectName);
+        try (Connection conn = DatabaseHub.getInstance().getConnection();
              PreparedStatement stmt = conn.prepareStatement(sql)) {
 
             stmt.setInt(1, id);
@@ -100,7 +101,7 @@ public class PatchDAO {
 
         if (projectName == null || projectName.isBlank()) return List.of();
 
-        try (Connection conn = Database.getConnection(projectName);
+        try (Connection conn = DatabaseHub.getInstance().getConnection();
              PreparedStatement stmt = conn.prepareStatement(sql)) {
 
             stmt.setString(1, type);
@@ -132,7 +133,7 @@ public class PatchDAO {
 
         if (projectName == null || projectName.isBlank()) return false;
 
-        try (Connection conn = Database.getConnection(projectName);
+        try (Connection conn = DatabaseHub.getInstance().getConnection();
              PreparedStatement stmt = conn.prepareStatement(sql)) {
 
             stmt.setString(1, content);
@@ -161,7 +162,7 @@ public class PatchDAO {
 
         if (projectName == null || projectName.isBlank()) return false;
 
-        try (Connection conn = Database.getConnection(projectName);
+        try (Connection conn = DatabaseHub.getInstance().getConnection();
              PreparedStatement stmt = conn.prepareStatement(sql)) {
 
             stmt.setString(1, patch);
@@ -191,7 +192,7 @@ public class PatchDAO {
 
         if (projectName == null || projectName.isBlank()) return false;
 
-        try (Connection conn = Database.getConnection(projectName);
+        try (Connection conn = DatabaseHub.getInstance().getConnection();
              PreparedStatement stmt = conn.prepareStatement(sql)) {
 
             stmt.setInt(1, id);
@@ -221,7 +222,7 @@ public class PatchDAO {
 
         if (projectName == null || projectName.isBlank()) return List.of();
 
-        try (Connection conn = Database.getConnection(projectName);
+        try (Connection conn = DatabaseHub.getInstance().getConnection();
              PreparedStatement stmt = conn.prepareStatement(sql)) {
 
             stmt.setInt(1, AppContext.versionContext().getId().get());

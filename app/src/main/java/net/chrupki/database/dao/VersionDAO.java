@@ -2,6 +2,7 @@ package net.chrupki.database.dao;
 
 import net.chrupki.app.AppContext;
 import net.chrupki.database.Database;
+import net.chrupki.database.DatabaseHub;
 import net.chrupki.model.Version;
 import net.chrupki.ui.model.ProjectModel;
 
@@ -14,14 +15,10 @@ import java.util.List;
 
 public class VersionDAO {
 
-    public static void insert(String projectName) {
-        insert(projectName, "x.y.z");
-    }
-
-    public static int insert(String projectName, String version) {
+    public static int insert(String version) {
         String sql = "INSERT INTO versions (version) VALUES (?)";
 
-        try (Connection conn = Database.getConnection(projectName);
+        try (Connection conn = DatabaseHub.getInstance().getConnection();
              PreparedStatement stmt = conn.prepareStatement(sql)) {
 
             stmt.setString(1, version);
@@ -43,12 +40,10 @@ public class VersionDAO {
         return -1;
     }
 
-    public static String findNameById(String projectName, int id) throws Exception {
+    public static String findNameById(int id) throws Exception {
         String sql = "SELECT version FROM versions WHERE id = ?";
 
-        if (projectName == null || projectName.isBlank()) return null;
-
-        try (Connection conn = Database.getConnection(projectName);
+        try (Connection conn = DatabaseHub.getInstance().getConnection();
             PreparedStatement stmt = conn.prepareStatement(sql)) {
                 stmt.setInt(1, id);
                 ResultSet rs = stmt.executeQuery();
@@ -65,11 +60,7 @@ public class VersionDAO {
                 ORDER BY id ASC
                 """;
 
-        String projectName = AppContext.projectContext().getName().get();
-
-        if (projectName == null || projectName.isBlank()) return false;
-
-        try (Connection conn = Database.getConnection(projectName);
+        try (Connection conn = DatabaseHub.getInstance().getConnection();
              PreparedStatement stmt = conn.prepareStatement(sql)) {
 
             stmt.setInt(1, id);
@@ -94,11 +85,7 @@ public class VersionDAO {
             WHERE id = ?
             """;
 
-        String projectName = AppContext.projectContext().getName().get();
-
-        if (projectName == null || projectName.isBlank()) return false;
-
-        try (Connection conn = Database.getConnection(projectName);
+        try (Connection conn = DatabaseHub.getInstance().getConnection();
              PreparedStatement stmt = conn.prepareStatement(sql)) {
 
             stmt.setString(1, name);
@@ -116,7 +103,7 @@ public class VersionDAO {
     }
 
 
-    public static List<Version> findAll(String projectName) throws Exception {
+    public static List<Version> findAll() {
         List<Version> result = new ArrayList<>();
         String sql = """
                 SELECT id, version
@@ -125,10 +112,7 @@ public class VersionDAO {
                 ORDER BY id ASC
                 """;
 
-        if (projectName == null || projectName.isBlank()) return List.of();
-
-
-        try (Connection conn = Database.getConnection(projectName);
+        try (Connection conn = DatabaseHub.getInstance().getConnection();
              PreparedStatement stmt = conn.prepareStatement(sql)) {
 
 

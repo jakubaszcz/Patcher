@@ -14,7 +14,7 @@ public class VersionService {
             throw new IllegalArgumentException("Version name is required");
         }
 
-        int id = VersionDAO.insert(project, version);
+        int id = VersionDAO.insert(version);
         return new Version(id, version);
     }
 
@@ -23,7 +23,7 @@ public class VersionService {
             return List.of();
         }
 
-        return VersionDAO.findAll(projectName);
+        return VersionDAO.findAll();
     }
 
     public void renameVersion(Integer id, String version) {
