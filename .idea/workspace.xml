@@ -4,11 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="c1aa160e-de6c-484d-8c28-5409cf16dc62" name="Changes" comment="refactor(database): change database connect methode&#10;&#10;The refracting is to use the new function from the database hub singleton.">
+    <list default="true" id="c1aa160e-de6c-484d-8c28-5409cf16dc62" name="Changes" comment="feat(ui): toggle back the edit for the project&#10;&#10;It has been temporarily disabled because of the database issues, they're now fixed thanks to the database singleton.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/net/chrupki/ui/components/CurrentProjectLabel.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/net/chrupki/ui/components/CurrentProjectLabel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/net/chrupki/project/AppProject.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/net/chrupki/project/AppProject.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/net/chrupki/ui/components/modal/ModalProjectForm.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/net/chrupki/ui/components/modal/ModalProjectForm.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/net/chrupki/ui/controllers/ProjectController.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/net/chrupki/ui/controllers/ProjectController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/net/chrupki/ui/views/ProjectView.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/net/chrupki/ui/views/ProjectView.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/net/chrupki/ui/views/ModalView.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/net/chrupki/ui/views/ModalView.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -162,15 +163,7 @@
       <workItem from="1768130801077" duration="22931000" />
       <workItem from="1768246508726" duration="7736000" />
       <workItem from="1768326113650" duration="15205000" />
-      <workItem from="1768421332706" duration="3840000" />
-    </task>
-    <task id="LOCAL-00033" summary="Add markdown exporter">
-      <option name="closed" value="true" />
-      <created>1767645686379</created>
-      <option name="number" value="00033" />
-      <option name="presentableId" value="LOCAL-00033" />
-      <option name="project" value="LOCAL" />
-      <updated>1767645686379</updated>
+      <workItem from="1768421332706" duration="4345000" />
     </task>
     <task id="LOCAL-00034" summary="Add export request and create request folder">
       <option name="closed" value="true" />
@@ -556,7 +549,15 @@
       <option name="project" value="LOCAL" />
       <updated>1768426075297</updated>
     </task>
-    <option name="localTasksCounter" value="82" />
+    <task id="LOCAL-00082" summary="feat(ui): toggle back the edit for the project&#10;&#10;It has been temporarily disabled because of the database issues, they're now fixed thanks to the database singleton.">
+      <option name="closed" value="true" />
+      <created>1768426346388</created>
+      <option name="number" value="00082" />
+      <option name="presentableId" value="LOCAL-00082" />
+      <option name="project" value="LOCAL" />
+      <updated>1768426346388</updated>
+    </task>
+    <option name="localTasksCounter" value="83" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -574,7 +575,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="refactor(context): delete useless functions&#10;&#10;Old functions allowed verifying if a version has been selected, thanks to a previous commit, the functions can be removed." />
     <MESSAGE value="feat(ui): add edit button for versions" />
     <MESSAGE value="feat(controller): open modal to edit versions" />
     <MESSAGE value="fix(controller): close project instead of version" />
@@ -599,7 +599,8 @@
     <MESSAGE value="refactor(ui): delete spacing for box" />
     <MESSAGE value="add(database): handle one instance&#10;&#10;This script will allow stopping/close database with a function unlike before, I was depending on the try/catch methode, limiting plenty of moves." />
     <MESSAGE value="refactor(database): change database connect methode&#10;&#10;The refracting is to use the new function from the database hub singleton." />
-    <option name="LAST_COMMIT_MESSAGE" value="refactor(database): change database connect methode&#10;&#10;The refracting is to use the new function from the database hub singleton." />
+    <MESSAGE value="feat(ui): toggle back the edit for the project&#10;&#10;It has been temporarily disabled because of the database issues, they're now fixed thanks to the database singleton." />
+    <option name="LAST_COMMIT_MESSAGE" value="feat(ui): toggle back the edit for the project&#10;&#10;It has been temporarily disabled because of the database issues, they're now fixed thanks to the database singleton." />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/Patcher$Patcher__build_.ic" NAME="Patcher [build] Coverage Results" MODIFIED="1767013393295" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="true" />

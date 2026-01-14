@@ -40,7 +40,7 @@ public class ModalView extends StackPane {
         getChildren().addAll(backdrop, popup);
 
         popup.getChildren().addAll(
-                new ModalProjectForm(model, projectController::saveProject, projectController::closeModal),
+                new ModalProjectForm(model, projectController::saveProject, projectController::onDelete , projectController::closeModal),
                 new ModalVersionForm(model, versionController::saveVersion, versionController::closeModal),
                 new ModalPatchForm(model, patchController::savePatch, patchController::closeModal)
         );

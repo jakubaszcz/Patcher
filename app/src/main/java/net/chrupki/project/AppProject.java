@@ -7,11 +7,15 @@ import javafx.collections.ObservableList;
 import net.chrupki.app.AppContext;
 import net.chrupki.app.AppPath;
 import net.chrupki.database.Database;
+import net.chrupki.database.DatabaseHub;
 import net.chrupki.database.DatabaseInitializer;
 
 import java.io.IOException;
+import java.nio.file.FileVisitResult;
 import java.nio.file.Files;
 import java.nio.file.Path;
+import java.nio.file.SimpleFileVisitor;
+import java.nio.file.attribute.BasicFileAttributes;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -83,23 +87,41 @@ public class AppProject {
         Files.move(path, newPath);
     }
 
-    public static void deleteProject(String name) throws IOException {
-        Path path = AppPath.getDataDir().resolve("projects").resolve(name);
-    
-    if (Files.exists(path)) {
-        try (var stream = Files.walk(path)) {
-            stream
-                    .sorted((a, b) -> b.compareTo(a))
-                    .forEach(p -> {
-                        try {
-                            Files.delete(p);
-                        } catch (IOException e) {
-                            throw new RuntimeException("Failed to delete: " + p, e);
-                        }
-                    });
+    public static void deleteProject() throws IOException {
+        Path projectDir = AppPath.getDataDir()
+                .resolve("projects")
+                .resolve(AppContext.projectContext().getName().get());
+
+        DatabaseHub.getInstance().closeAll();
+
+        try {
+            Thread.sleep(300);
+        } catch (InterruptedException e) {
+            Thread.currentThread().interrupt();
+            return;
+        }
+
+        try {
+            Files.walkFileTree(projectDir, new SimpleFileVisitor<Path>() {
+                @Override
+                public FileVisitResult visitFile(Path file, BasicFileAttributes attrs)
+                        throws IOException {
+                    Files.delete(file);
+                    return FileVisitResult.CONTINUE;
+                }
+
+                @Override
+                public FileVisitResult postVisitDirectory(Path dir, IOException exc)
+                        throws IOException {
+                    Files.delete(dir);
+                    return FileVisitResult.CONTINUE;
+                }
+            });
+        } catch (IOException e) {
+            // UI-friendly, pas RuntimeException
+            return;
         }
     }
-}
 
     public static ObservableList<StringProperty> FetchAllProjectPropertiesName() throws IOException {
         Path path = AppPath.getDataDir().resolve("projects");

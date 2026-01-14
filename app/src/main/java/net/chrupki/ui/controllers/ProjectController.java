@@ -66,47 +66,18 @@ public class ProjectController {
 
     public void onEdit() {
         model.setEditProjectProperty(true);
+    }
 
-/*        Path projectDir = AppPath.getDataDir()
-                .resolve("projects")
-                .resolve(AppContext.projectContext().getName().get());
-
-        // 1. Ferme DB
-        DatabaseHub.getInstance().closeAll();
-
-        // 2. PAUSE CRUCIALE (Windows libère les handles)
+    public void onDelete() {
         try {
-            Thread.sleep(300);  // 300ms suffisant
-        } catch (InterruptedException e) {
-            Thread.currentThread().interrupt();
-            return;
-        }
-
-        // 3. Supprime
-        try {
-            Files.walkFileTree(projectDir, new SimpleFileVisitor<Path>() {
-                @Override
-                public FileVisitResult visitFile(Path file, BasicFileAttributes attrs)
-                        throws IOException {
-                    Files.delete(file);
-                    return FileVisitResult.CONTINUE;
-                }
-
-                @Override
-                public FileVisitResult postVisitDirectory(Path dir, IOException exc)
-                        throws IOException {
-                    Files.delete(dir);
-                    return FileVisitResult.CONTINUE;
-                }
-            });
+            AppProject.deleteProject();
         } catch (IOException e) {
-            // UI-friendly, pas RuntimeException
-            return;
+            throw new RuntimeException(e);
         }
 
-        // 4. UI + context
         AppContext.projectContext().setName(null);
-        loadProjects();*/
+        loadProjects();
+        closeModal();
     }
 
 
