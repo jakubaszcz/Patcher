@@ -102,6 +102,26 @@ public class VersionDAO {
         }
     }
 
+    public static boolean deleteThis(Integer id) {
+
+        String sql = "DELETE FROM versions WHERE id = ?";
+
+        try (Connection conn = DatabaseHub.getInstance().getConnection();
+             PreparedStatement stmt = conn.prepareStatement(sql)) {
+
+            stmt.setInt(1, id);
+
+            int rowsDeleted = stmt.executeUpdate();
+            return rowsDeleted > 0;
+
+        } catch (SQLException ex) {
+            ex.printStackTrace();
+        } catch (Exception e) {
+            return false;
+        }
+        return false;
+    }
+
 
     public static List<Version> findAll() {
         List<Version> result = new ArrayList<>();
