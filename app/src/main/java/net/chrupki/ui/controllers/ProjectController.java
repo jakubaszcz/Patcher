@@ -64,8 +64,10 @@ public class ProjectController {
         closeModal();
     }
 
-    public void onDelete() {
-        Path projectDir = AppPath.getDataDir()
+    public void onEdit() {
+        model.setEditProjectProperty(true);
+
+/*        Path projectDir = AppPath.getDataDir()
                 .resolve("projects")
                 .resolve(AppContext.projectContext().getName().get());
 
@@ -104,7 +106,7 @@ public class ProjectController {
 
         // 4. UI + context
         AppContext.projectContext().setName(null);
-        loadProjects();
+        loadProjects();*/
     }
 
 

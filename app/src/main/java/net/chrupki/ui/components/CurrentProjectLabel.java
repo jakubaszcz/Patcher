@@ -18,12 +18,12 @@ public class CurrentProjectLabel extends VBox {
 
     private ProjectModel model;
 
-    public CurrentProjectLabel(ProjectModel model, Runnable onDelete) {
+    public CurrentProjectLabel(ProjectModel model, Runnable onEdit) {
         this.model = model;
 
         Label label = new Label(BLANK);
 
-        Button delete = new Button("delete");
+        Button edit = new Button("Edit");
 
         StringProperty currentProject = AppContext.projectContext().getName();
 
@@ -31,11 +31,11 @@ public class CurrentProjectLabel extends VBox {
 
         label.textProperty().bind(Bindings.when(view.visibleProperty()).then(currentProject).otherwise(currentProject));
 
-        delete.setOnAction(e -> {
-            onDelete.run();
+        edit.setOnAction(e -> {
+            onEdit.run();
         });
 
-        view.getChildren().addAll(label, delete);
+        view.getChildren().addAll(label, edit);
 
         this.getChildren().addAll(view);
     }
