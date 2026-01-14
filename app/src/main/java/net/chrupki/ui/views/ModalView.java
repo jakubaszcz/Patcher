@@ -42,7 +42,7 @@ public class ModalView extends StackPane {
         popup.getChildren().addAll(
                 new ModalProjectForm(model, projectController::saveProject, projectController::onDelete , projectController::closeModal),
                 new ModalVersionForm(model, versionController::saveVersion, versionController::closeModal),
-                new ModalPatchForm(model, patchController::savePatch, patchController::closeModal)
+                new ModalPatchForm(model, patchController::savePatch, patchController::deletePatch, patchController::closeModal)
         );
 
         visibleProperty().bind(model.getEditActiveProperty());

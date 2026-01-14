@@ -29,6 +29,14 @@ public class PatchService {
         return PatchDAO.findAll(projectName);
     }
 
+    public void deletePatch(Integer id, Integer vid) {
+        if (id == null || vid == null || !PatchDAO.doesThisPatchByIdsExist(id, vid)) {
+            throw new IllegalArgumentException("Patch ids are unavailable or corrupted !");
+        }
+
+        PatchDAO.deleteThis(id, vid);
+    }
+
     public void savePatch(Integer id, Integer vid, String content, String type) {
         if (id == null || vid == null || !PatchDAO.doesThisPatchByIdsExist(id, vid)) {
             throw new IllegalArgumentException("Patch ids are unavailable or corrupted !");

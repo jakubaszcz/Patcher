@@ -56,6 +56,12 @@ public class PatchController {
         closeModal();
     }
 
+    public void deletePatch(Integer id, Integer vid) {
+        service.deletePatch(id, vid);
+        loadPatches();
+        closeModal();
+    }
+
 
     public void closeModal() {
         model.setEditActiveProperty(false);

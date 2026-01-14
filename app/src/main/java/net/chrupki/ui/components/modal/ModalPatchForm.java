@@ -11,11 +11,12 @@ import net.chrupki.ui.controllers.dtos.EditPatch;
 import net.chrupki.ui.controllers.dtos.EditVersion;
 import net.chrupki.ui.model.ProjectModel;
 
+import java.util.function.BiConsumer;
 import java.util.function.Consumer;
 
 public class ModalPatchForm extends VBox {
 
-    public ModalPatchForm(ProjectModel model, Consumer<EditPatch> onSave, Runnable onClose) {
+    public ModalPatchForm(ProjectModel model, Consumer<EditPatch> onSave, BiConsumer<Integer, Integer> onDelete, Runnable onClose) {
 
         setAlignment(Pos.CENTER);
 
@@ -29,6 +30,8 @@ public class ModalPatchForm extends VBox {
         textField.setPromptText("Enter new project name");
 
         Button save = new Button("Save");
+
+        Button delete = new Button("Delete");
 
         Button close = new Button("Close");
 
@@ -47,12 +50,17 @@ public class ModalPatchForm extends VBox {
             ));
         });
 
+        delete.setOnAction(e -> {
+            onDelete.accept(AppContext.patchContext().getId().get(),
+                    AppContext.patchContext().getVid().get());
+        });
+
         close.setOnAction(e -> {
             onClose.run();
         });
 
         label.textProperty().bind(AppContext.projectContext().getName());
 
-        getChildren().addAll(label, textField, comboBoxPatch, save, close);
+        getChildren().addAll(label, textField, comboBoxPatch, save, delete, close);
     }
 }

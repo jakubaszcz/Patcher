@@ -4,11 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="c1aa160e-de6c-484d-8c28-5409cf16dc62" name="Changes" comment="feat(ui): toggle back the edit for the project&#10;&#10;It has been temporarily disabled because of the database issues, they're now fixed thanks to the database singleton.">
+    <list default="true" id="c1aa160e-de6c-484d-8c28-5409cf16dc62" name="Changes" comment="feat(ui): delete project button&#10;&#10;User is now capable of deleting an entier project.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/net/chrupki/project/AppProject.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/net/chrupki/project/AppProject.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/net/chrupki/ui/components/modal/ModalProjectForm.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/net/chrupki/ui/components/modal/ModalProjectForm.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/net/chrupki/ui/controllers/ProjectController.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/net/chrupki/ui/controllers/ProjectController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/net/chrupki/database/dao/PatchDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/net/chrupki/database/dao/PatchDAO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/net/chrupki/project/services/PatchService.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/net/chrupki/project/services/PatchService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/net/chrupki/ui/components/modal/ModalPatchForm.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/net/chrupki/ui/components/modal/ModalPatchForm.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/net/chrupki/ui/controllers/PatchController.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/net/chrupki/ui/controllers/PatchController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/net/chrupki/ui/views/ModalView.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/net/chrupki/ui/views/ModalView.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -163,15 +164,7 @@
       <workItem from="1768130801077" duration="22931000" />
       <workItem from="1768246508726" duration="7736000" />
       <workItem from="1768326113650" duration="15205000" />
-      <workItem from="1768421332706" duration="4345000" />
-    </task>
-    <task id="LOCAL-00034" summary="Add export request and create request folder">
-      <option name="closed" value="true" />
-      <created>1767645711890</created>
-      <option name="number" value="00034" />
-      <option name="presentableId" value="LOCAL-00034" />
-      <option name="project" value="LOCAL" />
-      <updated>1767645711890</updated>
+      <workItem from="1768421332706" duration="6021000" />
     </task>
     <task id="LOCAL-00035" summary="Add find name by id for the version">
       <option name="closed" value="true" />
@@ -557,7 +550,15 @@
       <option name="project" value="LOCAL" />
       <updated>1768426346388</updated>
     </task>
-    <option name="localTasksCounter" value="83" />
+    <task id="LOCAL-00083" summary="feat(ui): delete project button&#10;&#10;User is now capable of deleting an entier project.">
+      <option name="closed" value="true" />
+      <created>1768426776263</created>
+      <option name="number" value="00083" />
+      <option name="presentableId" value="LOCAL-00083" />
+      <option name="project" value="LOCAL" />
+      <updated>1768426776263</updated>
+    </task>
+    <option name="localTasksCounter" value="84" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -575,7 +576,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="feat(ui): add edit button for versions" />
     <MESSAGE value="feat(controller): open modal to edit versions" />
     <MESSAGE value="fix(controller): close project instead of version" />
     <MESSAGE value="add(ui): add managed property for project modal" />
@@ -600,7 +600,8 @@
     <MESSAGE value="add(database): handle one instance&#10;&#10;This script will allow stopping/close database with a function unlike before, I was depending on the try/catch methode, limiting plenty of moves." />
     <MESSAGE value="refactor(database): change database connect methode&#10;&#10;The refracting is to use the new function from the database hub singleton." />
     <MESSAGE value="feat(ui): toggle back the edit for the project&#10;&#10;It has been temporarily disabled because of the database issues, they're now fixed thanks to the database singleton." />
-    <option name="LAST_COMMIT_MESSAGE" value="feat(ui): toggle back the edit for the project&#10;&#10;It has been temporarily disabled because of the database issues, they're now fixed thanks to the database singleton." />
+    <MESSAGE value="feat(ui): delete project button&#10;&#10;User is now capable of deleting an entier project." />
+    <option name="LAST_COMMIT_MESSAGE" value="feat(ui): delete project button&#10;&#10;User is now capable of deleting an entier project." />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/Patcher$Patcher__build_.ic" NAME="Patcher [build] Coverage Results" MODIFIED="1767013393295" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="true" />
