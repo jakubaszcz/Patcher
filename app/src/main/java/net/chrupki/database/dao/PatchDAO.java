@@ -143,6 +143,26 @@ public class PatchDAO {
         return false;
     }
 
+    public static boolean deleteAll(Integer vid) {
+
+        String sql = "DELETE FROM notes WHERE version_id = ?";
+
+        try (Connection conn = DatabaseHub.getInstance().getConnection();
+             PreparedStatement stmt = conn.prepareStatement(sql)) {
+
+            stmt.setInt(1, vid);
+
+            int rowsDeleted = stmt.executeUpdate();
+            return rowsDeleted > 0;
+
+        } catch (SQLException ex) {
+            ex.printStackTrace();
+        } catch (Exception e) {
+            return false;
+        }
+        return false;
+    }
+
     public static boolean renameContent(Integer id, Integer vid, String content) {
         String sql = """
             UPDATE notes
