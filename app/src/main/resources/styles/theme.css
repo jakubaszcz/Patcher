@@ -5,3 +5,7 @@
     -color-card: #252526;
     -color-input: #2d2d30;
 }
+
+.root {
+    -fx-background-color: -color-bg;
+}
