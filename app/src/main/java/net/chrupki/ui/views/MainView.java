@@ -27,8 +27,8 @@ public class MainView {
         stage.setMinHeight(400);
     }
 
-    private static void scene(Stage stage, StackPane root) {
-        Scene scene = new Scene(root, 1000, 800);
+    private static void scene(Stage stage, ViewManager viewManager) {
+        Scene scene = new Scene(viewManager.getContainer(), 1000, 800);
 
         scene.getStylesheets().addAll(
                 Css.load("theme.css"),
@@ -52,29 +52,33 @@ public class MainView {
         PatchController patchController = new PatchController(patchService, model);
         ExportController exportController = new ExportController(markdownExportService);
 
+        ViewManager viewManager = new ViewManager();
+
+        viewManager.show(new ProjectsView(viewManager));
+
         // Set up the application stage
         setup(stage);
 
-        VBox mainContent = new VBox(10,
+/*        VBox mainContent = new VBox(10,
                 new Header(model, projectController::createProject, projectController::selectProject),
                 new ProjectSelector(model, projectController::selectProject),
                 new ProjectView(model, projectController, versionController),
                 new VersionView(model, patchController, exportController)
-        );
+        );*/
 
-        StackPane root = new StackPane();
-        root.getChildren().add(mainContent);
+/*        StackPane root = new StackPane();
+        root.getChildren().add(mainContent);*/
 
         // Modal View
-        root.getChildren().add(new ModalView(model,
+        /*root.getChildren().add(new ModalView(model,
                 projectController,
                 versionController,
-                patchController));
+                patchController));*/
+
+        scene(stage, viewManager);
 
         projectController.loadProjects();
         patchController.loadPatches();
-
-        scene(stage, root);
 
         stage.show();
     }
