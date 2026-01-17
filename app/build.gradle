@@ -37,6 +37,14 @@ application {
     mainClass = "net.chrupki.Patcher"
 }
 
+sourceSets {
+    main {
+        resources {
+            srcDirs = ['src/main/resources']
+        }
+    }
+}
+
 tasks.jar {
     manifest {
         attributes(
