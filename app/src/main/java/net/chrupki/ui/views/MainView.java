@@ -32,6 +32,11 @@ public class MainView {
 
     private static void scene(Stage stage, StackPane root) {
         Scene scene = new Scene(root, 600, 400);
+
+        scene.getStylesheets().add(
+                Css.load("theme.css")
+        );
+
         stage.setScene(scene);
     }
 
