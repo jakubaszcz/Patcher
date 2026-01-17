@@ -4,9 +4,16 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="c1aa160e-de6c-484d-8c28-5409cf16dc62" name="Changes" comment="feat(ui): delete chosen version&#10;&#10;Why the patches delete has been made first, because the patches delete was also deleted for version. So I choose to do the patches delete first.">
+    <list default="true" id="c1aa160e-de6c-484d-8c28-5409cf16dc62" name="Changes" comment="fix(file): issue while renaming a file with database">
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/net/chrupki/ui/components/Header.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/net/chrupki/ui/util/Css.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/resources/styles/header.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/resources/styles/theme.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/net/chrupki/project/AppProject.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/net/chrupki/project/AppProject.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/net/chrupki/ui/components/CreateProjectForm.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/net/chrupki/ui/components/CurrentProjectLabel.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/net/chrupki/ui/components/CurrentProjectLabel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/net/chrupki/ui/components/ProjectSelector.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/net/chrupki/ui/components/ProjectSelector.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/net/chrupki/ui/views/MainView.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/net/chrupki/ui/views/MainView.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -161,39 +168,8 @@
       <workItem from="1768246508726" duration="7736000" />
       <workItem from="1768326113650" duration="15205000" />
       <workItem from="1768421332706" duration="7728000" />
-      <workItem from="1768655633282" duration="3336000" />
-    </task>
-    <task id="LOCAL-00040" summary="Add license">
-      <option name="closed" value="true" />
-      <created>1767652362277</created>
-      <option name="number" value="00040" />
-      <option name="presentableId" value="LOCAL-00040" />
-      <option name="project" value="LOCAL" />
-      <updated>1767652362277</updated>
-    </task>
-    <task id="LOCAL-00041" summary="Fix to include jdbc">
-      <option name="closed" value="true" />
-      <created>1768134978959</created>
-      <option name="number" value="00041" />
-      <option name="presentableId" value="LOCAL-00041" />
-      <option name="project" value="LOCAL" />
-      <updated>1768134978959</updated>
-    </task>
-    <task id="LOCAL-00042" summary="Edit current project label">
-      <option name="closed" value="true" />
-      <created>1768135970612</created>
-      <option name="number" value="00042" />
-      <option name="presentableId" value="LOCAL-00042" />
-      <option name="project" value="LOCAL" />
-      <updated>1768135970612</updated>
-    </task>
-    <task id="LOCAL-00043" summary="Fix hide version button create">
-      <option name="closed" value="true" />
-      <created>1768157067115</created>
-      <option name="number" value="00043" />
-      <option name="presentableId" value="LOCAL-00043" />
-      <option name="project" value="LOCAL" />
-      <updated>1768157067115</updated>
+      <workItem from="1768655633282" duration="5524000" />
+      <workItem from="1768674632372" duration="8344000" />
     </task>
     <task id="LOCAL-00044" summary="Fix don't print another patch if null">
       <option name="closed" value="true" />
@@ -555,7 +531,39 @@
       <option name="project" value="LOCAL" />
       <updated>1768429790690</updated>
     </task>
-    <option name="localTasksCounter" value="89" />
+    <task id="LOCAL-00089" summary="fix(file): issue while renaming a file with database">
+      <option name="closed" value="true" />
+      <created>1768659306325</created>
+      <option name="number" value="00089" />
+      <option name="presentableId" value="LOCAL-00089" />
+      <option name="project" value="LOCAL" />
+      <updated>1768659306326</updated>
+    </task>
+    <task id="LOCAL-00090" summary="add(gradle): locate by default path for CSS">
+      <option name="closed" value="true" />
+      <created>1768675131823</created>
+      <option name="number" value="00090" />
+      <option name="presentableId" value="LOCAL-00090" />
+      <option name="project" value="LOCAL" />
+      <updated>1768675131823</updated>
+    </task>
+    <task id="LOCAL-00091" summary="add(ui): the global theme CSS file">
+      <option name="closed" value="true" />
+      <created>1768678462854</created>
+      <option name="number" value="00091" />
+      <option name="presentableId" value="LOCAL-00091" />
+      <option name="project" value="LOCAL" />
+      <updated>1768678462854</updated>
+    </task>
+    <task id="LOCAL-00092" summary="feat(ui): resize of the global window size">
+      <option name="closed" value="true" />
+      <created>1768678557983</created>
+      <option name="number" value="00092" />
+      <option name="presentableId" value="LOCAL-00092" />
+      <option name="project" value="LOCAL" />
+      <updated>1768678557983</updated>
+    </task>
+    <option name="localTasksCounter" value="93" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -573,10 +581,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="add(ui): link controller and service to version DAO" />
-    <MESSAGE value="refactor(controller): rename folder structures in dtos&#10;&#10;The dtos folder contains all the structure to use with the Consumer functions provided by Java. It's impossible otherwise to put more than three arguments in a Consumer." />
-    <MESSAGE value="refactor(ui): delete spacing for the box" />
-    <MESSAGE value="fix(ui): delete temporarily project editing&#10;&#10;It was deleted because I temporarily need to deal with the database directly." />
     <MESSAGE value="feat(ui): clear text field in version when the version is created" />
     <MESSAGE value="add(controller): add edit patch dtos for patch edit" />
     <MESSAGE value="feat(ui): add patch modal form&#10;&#10;This modal will allow user to edit his patch." />
@@ -598,7 +602,11 @@
     <MESSAGE value="add(database): delete all patches from a given vid" />
     <MESSAGE value="add(database): delete chosen version by id" />
     <MESSAGE value="feat(ui): delete chosen version&#10;&#10;Why the patches delete has been made first, because the patches delete was also deleted for version. So I choose to do the patches delete first." />
-    <option name="LAST_COMMIT_MESSAGE" value="feat(ui): delete chosen version&#10;&#10;Why the patches delete has been made first, because the patches delete was also deleted for version. So I choose to do the patches delete first." />
+    <MESSAGE value="fix(file): issue while renaming a file with database" />
+    <MESSAGE value="add(gradle): locate by default path for CSS" />
+    <MESSAGE value="add(ui): the global theme CSS file" />
+    <MESSAGE value="feat(ui): resize of the global window size" />
+    <option name="LAST_COMMIT_MESSAGE" value="feat(ui): resize of the global window size" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/Patcher$Patcher__build_.ic" NAME="Patcher [build] Coverage Results" MODIFIED="1767013393295" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="true" />

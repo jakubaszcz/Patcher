@@ -1,10 +1,6 @@
 package net.chrupki.ui.views;
 
-import javafx.geometry.Pos;
 import javafx.scene.Scene;
-import javafx.scene.control.Button;
-import javafx.scene.control.Label;
-import javafx.scene.layout.Pane;
 import javafx.scene.layout.StackPane;
 import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
@@ -12,13 +8,14 @@ import net.chrupki.project.services.PatchService;
 import net.chrupki.project.services.ProjectService;
 import net.chrupki.project.services.VersionService;
 import net.chrupki.project.services.exports.MarkdownExportService;
-import net.chrupki.ui.components.CreateProjectForm;
+import net.chrupki.ui.components.Header;
 import net.chrupki.ui.components.ProjectSelector;
 import net.chrupki.ui.controllers.ExportController;
 import net.chrupki.ui.controllers.PatchController;
 import net.chrupki.ui.controllers.ProjectController;
 import net.chrupki.ui.controllers.VersionController;
 import net.chrupki.ui.model.ProjectModel;
+import net.chrupki.ui.util.Css;
 
 public class MainView {
 
@@ -33,8 +30,9 @@ public class MainView {
     private static void scene(Stage stage, StackPane root) {
         Scene scene = new Scene(root, 1000, 800);
 
-        scene.getStylesheets().add(
-                Css.load("theme.css")
+        scene.getStylesheets().addAll(
+                Css.load("theme.css"),
+                Css.load("header.css")
         );
 
         stage.setScene(scene);
@@ -58,7 +56,7 @@ public class MainView {
         setup(stage);
 
         VBox mainContent = new VBox(10,
-                new CreateProjectForm(model, projectController::createProject),
+                new Header(model, projectController::createProject, projectController::selectProject),
                 new ProjectSelector(model, projectController::selectProject),
                 new ProjectView(model, projectController, versionController),
                 new VersionView(model, patchController, exportController)
@@ -77,6 +75,7 @@ public class MainView {
         patchController.loadPatches();
 
         scene(stage, root);
+
         stage.show();
     }
 }

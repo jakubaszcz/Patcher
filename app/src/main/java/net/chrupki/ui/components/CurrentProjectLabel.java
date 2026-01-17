@@ -9,6 +9,7 @@ import javafx.scene.layout.VBox;
 import net.chrupki.app.AppContext;
 import net.chrupki.app.context.ProjectContext;
 import net.chrupki.ui.model.ProjectModel;
+import net.chrupki.ui.util.Css;
 
 public class CurrentProjectLabel extends VBox {
 
