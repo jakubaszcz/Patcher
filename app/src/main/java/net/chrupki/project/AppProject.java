@@ -82,9 +82,15 @@ public class AppProject {
     }
 
     public static void renameProject(String oldName, String newName) throws IOException {
-        Path path = AppPath.getDataDir().resolve("projects").resolve(oldName);
+        DatabaseHub.getInstance().closeAll();
+
+        Path oldPath = AppPath.getDataDir().resolve("projects").resolve(oldName);
         Path newPath = AppPath.getDataDir().resolve("projects").resolve(newName);
-        Files.move(path, newPath);
+
+        try { Thread.sleep(100); } catch (InterruptedException e) { }
+
+        Files.move(oldPath, newPath);
+        AppContext.projectContext().setName(newName);
     }
 
     public static void deleteProject() throws IOException {

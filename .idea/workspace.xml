@@ -4,14 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="c1aa160e-de6c-484d-8c28-5409cf16dc62" name="Changes" comment="feat(ui): delete chosen patch&#10;&#10;The user can now delete a chosen patch.">
+    <list default="true" id="c1aa160e-de6c-484d-8c28-5409cf16dc62" name="Changes" comment="feat(ui): delete chosen version&#10;&#10;Why the patches delete has been made first, because the patches delete was also deleted for version. So I choose to do the patches delete first.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/net/chrupki/app/context/VersionContext.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/net/chrupki/app/context/VersionContext.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/net/chrupki/project/services/VersionService.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/net/chrupki/project/services/VersionService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/net/chrupki/ui/components/modal/ModalVersionForm.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/net/chrupki/ui/components/modal/ModalVersionForm.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/net/chrupki/ui/controllers/VersionController.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/net/chrupki/ui/controllers/VersionController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/net/chrupki/ui/views/ModalView.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/net/chrupki/ui/views/ModalView.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/net/chrupki/ui/views/ProjectView.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/net/chrupki/ui/views/ProjectView.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/net/chrupki/project/AppProject.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/net/chrupki/project/AppProject.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -19,7 +14,7 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="EmbeddingIndexingInfo">
-    <option name="cachedIndexableFilesCount" value="423" />
+    <option name="cachedIndexableFilesCount" value="424" />
     <option name="fileBasedEmbeddingIndicesEnabled" value="true" />
   </component>
   <component name="ExternalProjectsData">
@@ -165,15 +160,8 @@
       <workItem from="1768130801077" duration="22931000" />
       <workItem from="1768246508726" duration="7736000" />
       <workItem from="1768326113650" duration="15205000" />
-      <workItem from="1768421332706" duration="7321000" />
-    </task>
-    <task id="LOCAL-00039" summary="Add licence">
-      <option name="closed" value="true" />
-      <created>1767652343952</created>
-      <option name="number" value="00039" />
-      <option name="presentableId" value="LOCAL-00039" />
-      <option name="project" value="LOCAL" />
-      <updated>1767652343952</updated>
+      <workItem from="1768421332706" duration="7728000" />
+      <workItem from="1768655633282" duration="3336000" />
     </task>
     <task id="LOCAL-00040" summary="Add license">
       <option name="closed" value="true" />
@@ -559,7 +547,15 @@
       <option name="project" value="LOCAL" />
       <updated>1768429313223</updated>
     </task>
-    <option name="localTasksCounter" value="88" />
+    <task id="LOCAL-00088" summary="feat(ui): delete chosen version&#10;&#10;Why the patches delete has been made first, because the patches delete was also deleted for version. So I choose to do the patches delete first.">
+      <option name="closed" value="true" />
+      <created>1768429790690</created>
+      <option name="number" value="00088" />
+      <option name="presentableId" value="LOCAL-00088" />
+      <option name="project" value="LOCAL" />
+      <updated>1768429790690</updated>
+    </task>
+    <option name="localTasksCounter" value="89" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -577,7 +573,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="feat(ui): handling version modal" />
     <MESSAGE value="add(ui): link controller and service to version DAO" />
     <MESSAGE value="refactor(controller): rename folder structures in dtos&#10;&#10;The dtos folder contains all the structure to use with the Consumer functions provided by Java. It's impossible otherwise to put more than three arguments in a Consumer." />
     <MESSAGE value="refactor(ui): delete spacing for the box" />
@@ -602,7 +597,8 @@
     <MESSAGE value="feat(ui): delete chosen patch&#10;&#10;The user can now delete a chosen patch." />
     <MESSAGE value="add(database): delete all patches from a given vid" />
     <MESSAGE value="add(database): delete chosen version by id" />
-    <option name="LAST_COMMIT_MESSAGE" value="add(database): delete chosen version by id" />
+    <MESSAGE value="feat(ui): delete chosen version&#10;&#10;Why the patches delete has been made first, because the patches delete was also deleted for version. So I choose to do the patches delete first." />
+    <option name="LAST_COMMIT_MESSAGE" value="feat(ui): delete chosen version&#10;&#10;Why the patches delete has been made first, because the patches delete was also deleted for version. So I choose to do the patches delete first." />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/Patcher$Patcher__build_.ic" NAME="Patcher [build] Coverage Results" MODIFIED="1767013393295" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="true" />
