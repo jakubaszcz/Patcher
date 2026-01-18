@@ -56,6 +56,8 @@ public class ProjectsModalCreateProject extends VBox {
 
         getStyleClass().add("modal-card");
 
+        visibleProperty().bind(ProjectModel.getSwitchCreateProjectsModal());
+
         getChildren().addAll(
                 title,
                 textField,
