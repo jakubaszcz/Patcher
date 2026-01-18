@@ -13,6 +13,7 @@ public class ProjectController {
     public void createProject(String name) {
         AppProject.CreateProject(name);
         AppContext.projectContext().setName(name);
+        loadProjects();
     }
 
     public void loadProjects() {
