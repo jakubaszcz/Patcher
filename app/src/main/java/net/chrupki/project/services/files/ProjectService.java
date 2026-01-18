@@ -1,4 +1,4 @@
-package net.chrupki.project.services;
+package net.chrupki.project.services.files;
 
 import net.chrupki.project.AppProject;
 

@@ -1,9 +1,7 @@
-package net.chrupki.project.services;
+package net.chrupki.project.services.files;
 
 import net.chrupki.database.dao.PatchDAO;
-import net.chrupki.database.dao.VersionDAO;
 import net.chrupki.model.Patch;
-import net.chrupki.model.Version;
 
 import java.util.List;
 
