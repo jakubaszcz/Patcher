@@ -11,57 +11,57 @@ public class ProjectModel {
 
     public ProjectModel() {}
 
-    private final ObservableList<Version> versions = FXCollections.observableArrayList();
-    private final ObservableList<String> projects = FXCollections.observableArrayList();
-    private final ObservableList<Patch> patches = FXCollections.observableArrayList();
+    private static final ObservableList<Version> versions = FXCollections.observableArrayList();
+    private static final ObservableList<String> projects = FXCollections.observableArrayList();
+    private static final ObservableList<Patch> patches = FXCollections.observableArrayList();
 
-    private final BooleanProperty editActive = new SimpleBooleanProperty(false);
-    private final BooleanProperty editProject = new SimpleBooleanProperty(false);
-    private final BooleanProperty editVersion = new SimpleBooleanProperty(false);
-    private final BooleanProperty editPatch = new SimpleBooleanProperty(false);
+    private static final BooleanProperty editActive = new SimpleBooleanProperty(false);
+    private static final BooleanProperty editProject = new SimpleBooleanProperty(false);
+    private static final BooleanProperty editVersion = new SimpleBooleanProperty(false);
+    private static final BooleanProperty editPatch = new SimpleBooleanProperty(false);
 
-    public void setEditActiveProperty(boolean booleanProperty) {
+    public static void setEditActiveProperty(boolean booleanProperty) {
         editActive.set(booleanProperty);
     }
 
-    public BooleanProperty getEditActiveProperty() {
+    public static BooleanProperty getEditActiveProperty() {
         return editActive;
     }
 
-    public void setEditProjectProperty(boolean booleanProperty) {
+    public static void setEditProjectProperty(boolean booleanProperty) {
         setEditActiveProperty(booleanProperty);
         editProject.set(booleanProperty);
     }
 
-    public BooleanProperty getEditProjectProperty() {
+    public static BooleanProperty getEditProjectProperty() {
         return editProject;
     }
 
-    public void setEditVersionProperty(boolean booleanProperty) {
+    public static void setEditVersionProperty(boolean booleanProperty) {
         setEditActiveProperty(booleanProperty);
         editVersion.set(booleanProperty);
     }
 
-    public BooleanProperty getEditVersionProperty() {
+    public static BooleanProperty getEditVersionProperty() {
         return editVersion;
     }
 
-    public void setEditPatchProperty(boolean booleanProperty) {
+    public static void setEditPatchProperty(boolean booleanProperty) {
         setEditActiveProperty(booleanProperty);
         editPatch.set(booleanProperty);
     }
 
-    public BooleanProperty getEditPatchProperty() {
+    public static BooleanProperty getEditPatchProperty() {
         return editPatch;
     }
 
-    public ObservableList<Version> getVersions() {
+    public static ObservableList<Version> getVersions() {
         return versions;
     }
 
-    public ObservableList<String> getProjects() {
+    public static ObservableList<String> getProjects() {
         return projects;
     }
 
-    public ObservableList<Patch> getPatches() { return patches; }
+    public static ObservableList<Patch> getPatches() { return patches; }
 }
