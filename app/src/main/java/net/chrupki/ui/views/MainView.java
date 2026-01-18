@@ -81,7 +81,7 @@ public class MainView {
                 versionController,
                 patchController));*/
 
-        scene(stage, viewManager);
+        scene(stage, root);
 
         projectController.loadProjects();
         patchController.loadPatches();
