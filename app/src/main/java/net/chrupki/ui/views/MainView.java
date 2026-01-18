@@ -1,21 +1,22 @@
 package net.chrupki.ui.views;
 
 import javafx.scene.Scene;
-import javafx.scene.layout.StackPane;
-import javafx.scene.layout.VBox;
+import javafx.scene.layout.BorderPane;
 import javafx.stage.Stage;
-import net.chrupki.project.services.PatchService;
-import net.chrupki.project.services.ProjectService;
-import net.chrupki.project.services.VersionService;
-import net.chrupki.project.services.exports.MarkdownExportService;
-import net.chrupki.ui.components.Header;
-import net.chrupki.ui.components.ProjectSelector;
-import net.chrupki.ui.controllers.ExportController;
-import net.chrupki.ui.controllers.PatchController;
-import net.chrupki.ui.controllers.ProjectController;
-import net.chrupki.ui.controllers.VersionController;
+import net.chrupki.project.services.files.PatchService;
+import net.chrupki.project.services.files.ProjectService;
+import net.chrupki.project.services.files.VersionService;
+import net.chrupki.project.services.files.exports.MarkdownExportService;
+import net.chrupki.ui.controllers.HubController;
+import net.chrupki.ui.controllers.files.ExportController;
+import net.chrupki.ui.controllers.files.PatchController;
+import net.chrupki.ui.controllers.files.ProjectController;
+import net.chrupki.ui.controllers.files.VersionController;
 import net.chrupki.ui.model.ProjectModel;
 import net.chrupki.ui.util.Css;
+import net.chrupki.ui.views.components.Header;
+import net.chrupki.ui.views.manager.ViewManager;
+import net.chrupki.ui.views.pages.projects.ProjectsView;
 
 public class MainView {
 
@@ -39,24 +40,12 @@ public class MainView {
         stage.setScene(scene);
     }
 
-    public static void display(Stage stage) throws Exception {
-
-        ProjectService projectService = new ProjectService();
-        VersionService versionService = new VersionService();
-        PatchService patchService = new PatchService();
-        MarkdownExportService markdownExportService = new MarkdownExportService();
-
-        ProjectModel model = new ProjectModel();
-
-        ProjectController projectController = new ProjectController(projectService, model);
-        VersionController versionController = new VersionController(versionService, model);
-        PatchController patchController = new PatchController(patchService, model);
-        ExportController exportController = new ExportController(markdownExportService);
+    public static void display(Stage stage) {
 
         ViewManager viewManager = new ViewManager();
         Header header = new Header();
 
-        viewManager.show(new ProjectsView(viewManager, model));
+        viewManager.show(new ProjectsView(viewManager));
 
         BorderPane root = new BorderPane();
         root.setTop(header);
@@ -83,8 +72,8 @@ public class MainView {
 
         scene(stage, root);
 
-        projectController.loadProjects();
-        patchController.loadPatches();
+        HubController.getProjectController().loadProjects();
+        HubController.getPatchController().loadPatches();
 
         stage.show();
     }
