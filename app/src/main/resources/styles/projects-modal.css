@@ -59,6 +59,16 @@
     -fx-background-color: derive(-color-primary, 10%);
 }
 
+.modal-button-danger {
+    -fx-background-color: transparent;
+    -fx-text-fill: #ef4444;
+    -fx-padding: 8 14;
+}
+
+.modal-button-danger:hover {
+    -fx-background-color: rgba(239, 68, 68, 0.15);
+}
+
 .create-projects-button-close-modal {
     -fx-background-color: transparent;
     -fx-text-fill: derive(white, -30%);
