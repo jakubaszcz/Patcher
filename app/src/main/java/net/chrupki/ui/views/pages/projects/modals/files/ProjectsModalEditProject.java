@@ -50,13 +50,18 @@ public class ProjectsModalEditProject extends VBox {
         deleteButton.setOnAction(e -> {
             onDelete.run();
             onClose.run();
+            newName.clear();
         });
-        closeButton.setOnAction(e -> onClose.run());
+        closeButton.setOnAction(e -> {
+            onClose.run();
+            newName.clear();
+        });
 
         saveButton.setOnAction(e -> {
             if (!newName.getText().isBlank()) {
                 onSave.accept(AppContext.projectContext().getName().get(), newName.getText());
                 onClose.run();
+                newName.clear();
             }
         });
 

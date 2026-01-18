@@ -4,14 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="c1aa160e-de6c-484d-8c28-5409cf16dc62" name="Changes" comment="feat(ui): add the edit project modal">
+    <list default="true" id="c1aa160e-de6c-484d-8c28-5409cf16dc62" name="Changes" comment="feat(ui): edit project modal">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/net/chrupki/ui/controllers/files/ProjectController.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/net/chrupki/ui/controllers/files/ProjectController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/net/chrupki/ui/views/pages/projects/ProjectsView.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/net/chrupki/ui/views/pages/projects/ProjectsView.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/net/chrupki/ui/views/pages/projects/components/ProjectsContainer.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/net/chrupki/ui/views/pages/projects/components/ProjectsContainer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/net/chrupki/ui/views/pages/projects/modals/ProjectsModal.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/net/chrupki/ui/views/pages/projects/modals/ProjectsModal.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/net/chrupki/ui/views/pages/projects/modals/files/ProjectsModalCreateProject.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/net/chrupki/ui/views/pages/projects/modals/files/ProjectsModalCreateProject.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/resources/styles/projects-modal.css" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/resources/styles/projects-modal.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/net/chrupki/ui/views/pages/projects/modals/files/ProjectsModalEditProject.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/net/chrupki/ui/views/pages/projects/modals/files/ProjectsModalEditProject.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -174,22 +170,6 @@
       <workItem from="1768655633282" duration="5524000" />
       <workItem from="1768674632372" duration="8344000" />
       <workItem from="1768734249537" duration="14540000" />
-    </task>
-    <task id="LOCAL-00074" summary="refactor(model): add missing information into the structure">
-      <option name="closed" value="true" />
-      <created>1768344983081</created>
-      <option name="number" value="00074" />
-      <option name="presentableId" value="LOCAL-00074" />
-      <option name="project" value="LOCAL" />
-      <updated>1768344983081</updated>
-    </task>
-    <task id="LOCAL-00075" summary="add(request): add new variable into the patch request">
-      <option name="closed" value="true" />
-      <created>1768345025804</created>
-      <option name="number" value="00075" />
-      <option name="presentableId" value="LOCAL-00075" />
-      <option name="project" value="LOCAL" />
-      <updated>1768345025804</updated>
     </task>
     <task id="LOCAL-00076" summary="add(ui): every event for the patch modal to send&#10;&#10;Thanks to it, the controller and the service fetch the given data.">
       <option name="closed" value="true" />
@@ -567,7 +547,23 @@
       <option name="project" value="LOCAL" />
       <updated>1768768757887</updated>
     </task>
-    <option name="localTasksCounter" value="123" />
+    <task id="LOCAL-00123" summary="add(ui): new styling in the CSS file for the modal">
+      <option name="closed" value="true" />
+      <created>1768768804054</created>
+      <option name="number" value="00123" />
+      <option name="presentableId" value="LOCAL-00123" />
+      <option name="project" value="LOCAL" />
+      <updated>1768768804054</updated>
+    </task>
+    <task id="LOCAL-00124" summary="feat(ui): edit project modal">
+      <option name="closed" value="true" />
+      <created>1768768821844</created>
+      <option name="number" value="00124" />
+      <option name="presentableId" value="LOCAL-00124" />
+      <option name="project" value="LOCAL" />
+      <updated>1768768821844</updated>
+    </task>
+    <option name="localTasksCounter" value="125" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -585,8 +581,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="add(ui): header include" />
-    <MESSAGE value="feat(ui): add border pane to distinguish header and the body" />
     <MESSAGE value="add(ui): border pane for the scene function" />
     <MESSAGE value="add(ui): add the border pane argument to the scene function" />
     <MESSAGE value="refactor(controller): move controllers in new folder and create a hub&#10;&#10;The controllers have been moved into a folder, and a hub has been created to store all controllers and use them as static." />
@@ -610,7 +604,9 @@
     <MESSAGE value="add(ui): bind for the create project modal" />
     <MESSAGE value="add(ui): manage property to avoid layers&#10;&#10;basically if you remove this line, the components will stack itself." />
     <MESSAGE value="feat(ui): add the edit project modal" />
-    <option name="LAST_COMMIT_MESSAGE" value="feat(ui): add the edit project modal" />
+    <MESSAGE value="add(ui): new styling in the CSS file for the modal" />
+    <MESSAGE value="feat(ui): edit project modal" />
+    <option name="LAST_COMMIT_MESSAGE" value="feat(ui): edit project modal" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/Patcher$Patcher__build_.ic" NAME="Patcher [build] Coverage Results" MODIFIED="1767013393295" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="true" />

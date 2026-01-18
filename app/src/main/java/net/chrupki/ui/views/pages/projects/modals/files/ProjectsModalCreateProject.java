@@ -34,12 +34,16 @@ public class ProjectsModalCreateProject extends VBox {
         Button createButton = new Button("Create");
         createButton.getStyleClass().add("modal-button-create");
 
-        closeButton.setOnAction(e -> onClose.run());
+        closeButton.setOnAction(e -> {
+            textField.clear();
+            onClose.run();
+        });
 
         createButton.setOnAction(e -> {
             if (!textField.getText().isBlank()) {
                 onCreate.accept(textField.getText());
                 onClose.run();
+                textField.clear();
             }
         });
 
