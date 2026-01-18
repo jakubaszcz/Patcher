@@ -1,4 +1,4 @@
-package net.chrupki.ui.views;
+package net.chrupki.ui.views.manager;
 
 import javafx.scene.Parent;
 import javafx.scene.layout.StackPane;
@@ -8,6 +8,7 @@ public class ViewManager {
     private final StackPane container = new StackPane();
 
     public void show(Parent view) {
+        container.getChildren().clear();
         container.getChildren().add(view);
     }
 
