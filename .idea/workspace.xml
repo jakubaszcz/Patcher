@@ -4,10 +4,14 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="c1aa160e-de6c-484d-8c28-5409cf16dc62" name="Changes" comment="add(ui): create styling for the upcoming projects creator">
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/net/chrupki/ui/views/pages/projects/modals/files/ProjectsModalCreateProject.java" afterDir="false" />
+    <list default="true" id="c1aa160e-de6c-484d-8c28-5409cf16dc62" name="Changes" comment="feat(ui): add the edit project modal">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/net/chrupki/ui/controllers/files/ProjectController.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/net/chrupki/ui/controllers/files/ProjectController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/net/chrupki/ui/views/pages/projects/ProjectsView.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/net/chrupki/ui/views/pages/projects/ProjectsView.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/net/chrupki/ui/views/pages/projects/components/ProjectsContainer.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/net/chrupki/ui/views/pages/projects/components/ProjectsContainer.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/net/chrupki/ui/views/pages/projects/modals/ProjectsModal.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/net/chrupki/ui/views/pages/projects/modals/ProjectsModal.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/net/chrupki/ui/views/pages/projects/modals/files/ProjectsModalCreateProject.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/net/chrupki/ui/views/pages/projects/modals/files/ProjectsModalCreateProject.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/resources/styles/projects-modal.css" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/resources/styles/projects-modal.css" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -170,30 +174,6 @@
       <workItem from="1768655633282" duration="5524000" />
       <workItem from="1768674632372" duration="8344000" />
       <workItem from="1768734249537" duration="14540000" />
-    </task>
-    <task id="LOCAL-00071" summary="add(service): add function to save patch&#10;&#10;This service function fetch all the changes made in the patch modal to change them with the DAO.">
-      <option name="closed" value="true" />
-      <created>1768344774470</created>
-      <option name="number" value="00071" />
-      <option name="presentableId" value="LOCAL-00071" />
-      <option name="project" value="LOCAL" />
-      <updated>1768344774470</updated>
-    </task>
-    <task id="LOCAL-00072" summary="add(context): add everything the patch need for edit">
-      <option name="closed" value="true" />
-      <created>1768344822721</created>
-      <option name="number" value="00072" />
-      <option name="presentableId" value="LOCAL-00072" />
-      <option name="project" value="LOCAL" />
-      <updated>1768344822721</updated>
-    </task>
-    <task id="LOCAL-00073" summary="add(dao): everything needed for the patch changements&#10;&#10;When the save of the patch in the modal, every condition must be checked, that's why the DAO have so much function added.">
-      <option name="closed" value="true" />
-      <created>1768344928713</created>
-      <option name="number" value="00073" />
-      <option name="presentableId" value="LOCAL-00073" />
-      <option name="project" value="LOCAL" />
-      <updated>1768344928713</updated>
     </task>
     <task id="LOCAL-00074" summary="refactor(model): add missing information into the structure">
       <option name="closed" value="true" />
@@ -563,7 +543,31 @@
       <option name="project" value="LOCAL" />
       <updated>1768765844710</updated>
     </task>
-    <option name="localTasksCounter" value="120" />
+    <task id="LOCAL-00120" summary="add(ui): bind for the create project modal">
+      <option name="closed" value="true" />
+      <created>1768767553542</created>
+      <option name="number" value="00120" />
+      <option name="presentableId" value="LOCAL-00120" />
+      <option name="project" value="LOCAL" />
+      <updated>1768767553542</updated>
+    </task>
+    <task id="LOCAL-00121" summary="add(ui): manage property to avoid layers&#10;&#10;basically if you remove this line, the components will stack itself.">
+      <option name="closed" value="true" />
+      <created>1768768730108</created>
+      <option name="number" value="00121" />
+      <option name="presentableId" value="LOCAL-00121" />
+      <option name="project" value="LOCAL" />
+      <updated>1768768730108</updated>
+    </task>
+    <task id="LOCAL-00122" summary="feat(ui): add the edit project modal">
+      <option name="closed" value="true" />
+      <created>1768768757887</created>
+      <option name="number" value="00122" />
+      <option name="presentableId" value="LOCAL-00122" />
+      <option name="project" value="LOCAL" />
+      <updated>1768768757887</updated>
+    </task>
+    <option name="localTasksCounter" value="123" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -581,9 +585,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="feat(ui): styling background" />
-    <MESSAGE value="feat(ui): add styling file for the header" />
-    <MESSAGE value="feat(ui): add fixed header" />
     <MESSAGE value="add(ui): header include" />
     <MESSAGE value="feat(ui): add border pane to distinguish header and the body" />
     <MESSAGE value="add(ui): border pane for the scene function" />
@@ -606,7 +607,10 @@
     <MESSAGE value="add(ui): initiate the projects modal style sheet" />
     <MESSAGE value="add(ui): create styling for the upcoming projects creator" />
     <MESSAGE value="feat(ui): initiate the modal in the projects modal view" />
-    <option name="LAST_COMMIT_MESSAGE" value="feat(ui): initiate the modal in the projects modal view" />
+    <MESSAGE value="add(ui): bind for the create project modal" />
+    <MESSAGE value="add(ui): manage property to avoid layers&#10;&#10;basically if you remove this line, the components will stack itself." />
+    <MESSAGE value="feat(ui): add the edit project modal" />
+    <option name="LAST_COMMIT_MESSAGE" value="feat(ui): add the edit project modal" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/Patcher$Patcher__build_.ic" NAME="Patcher [build] Coverage Results" MODIFIED="1767013393295" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="true" />

@@ -7,6 +7,7 @@ import javafx.scene.layout.VBox;
 import net.chrupki.ui.controllers.HubController;
 import net.chrupki.ui.model.ProjectModel;
 import net.chrupki.ui.views.pages.projects.modals.files.ProjectsModalCreateProject;
+import net.chrupki.ui.views.pages.projects.modals.files.ProjectsModalEditProject;
 
 public class ProjectsModal extends StackPane {
 
@@ -20,6 +21,12 @@ public class ProjectsModal extends StackPane {
             -fx-padding: 20;
         """);
 
+        vBox.setOnMouseClicked(e -> {
+            ProjectModel.setSwitchProjectsModal(false);
+            ProjectModel.setSwitchCreateProjectsModal(false);
+            ProjectModel.setSwitchEditProjectsModal(false);
+        });
+
         getChildren().addAll(pane, vBox);
 
         visibleProperty().bind(ProjectModel.getSwitchProjectsModal());
@@ -28,6 +35,11 @@ public class ProjectsModal extends StackPane {
                 new ProjectsModalCreateProject(
                         HubController.getProjectController()::createProject,
                         HubController.getProjectController()::closeCreateProjectsModal
+                ),
+                new ProjectsModalEditProject(
+                        HubController.getProjectController()::saveProject,
+                        HubController.getProjectController()::onDelete,
+                        HubController.getProjectController()::closeEditProjectsModal
                 )
         );
 

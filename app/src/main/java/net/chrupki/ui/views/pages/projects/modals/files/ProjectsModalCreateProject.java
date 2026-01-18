@@ -9,6 +9,8 @@ import javafx.scene.layout.HBox;
 import javafx.scene.layout.Priority;
 import javafx.scene.layout.Region;
 import javafx.scene.layout.VBox;
+import net.chrupki.ui.model.ProjectModel;
+import net.chrupki.ui.views.pages.projects.modals.ProjectsModal;
 
 import java.util.function.Consumer;
 

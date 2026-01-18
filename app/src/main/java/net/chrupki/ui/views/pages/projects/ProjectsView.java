@@ -90,7 +90,8 @@ public class ProjectsView extends StackPane {
                                     p,
                                     WIDTH,
                                     HEIGHT
-                            )
+                            ),
+                            HubController.getProjectController()::openEditProjectsModal
                     )
             );
         }

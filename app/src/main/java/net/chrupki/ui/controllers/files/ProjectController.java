@@ -36,6 +36,16 @@ public class ProjectController {
         ProjectModel.setSwitchCreateProjectsModal(false);
     }
 
+    public void openEditProjectsModal() {
+        ProjectModel.setSwitchProjectsModal(true);
+        ProjectModel.setSwitchEditProjectsModal(true);
+    }
+
+    public void closeEditProjectsModal() {
+        ProjectModel.setSwitchProjectsModal(false);
+        ProjectModel.setSwitchEditProjectsModal(false);
+    }
+
     public void selectProject(String projectName) {
         AppContext.projectContext().setName(projectName);
     }
@@ -73,7 +83,6 @@ public class ProjectController {
 
         AppContext.projectContext().setName(null);
         loadProjects();
-        closeModal();
     }
 
 

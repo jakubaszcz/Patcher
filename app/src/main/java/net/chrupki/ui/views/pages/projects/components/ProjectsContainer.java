@@ -4,6 +4,7 @@ import javafx.geometry.Insets;
 import javafx.scene.control.Button;
 import javafx.scene.layout.HBox;
 import javafx.scene.control.Label;
+import net.chrupki.app.AppContext;
 import net.chrupki.ui.views.pages.project.ProjectView;
 import net.chrupki.ui.views.pages.projects.components.model.ProjectContainerModel;
 
@@ -11,7 +12,10 @@ import net.chrupki.ui.views.pages.projects.components.model.ProjectContainerMode
 public class ProjectsContainer extends HBox {
 
 
-    public ProjectsContainer(ProjectContainerModel projectContainerModel) {
+    public ProjectsContainer(
+            ProjectContainerModel projectContainerModel,
+            Runnable onEditProjectModal
+    ) {
 
         Label title = new Label(projectContainerModel.getText());
         title.getStyleClass().add("project-card-title");
@@ -31,6 +35,11 @@ public class ProjectsContainer extends HBox {
 
         setOnMouseClicked(e -> {
             projectContainerModel.getViewManager().show(new ProjectView(projectContainerModel.getViewManager()));
+        });
+
+        edit.setOnAction(e -> {
+            onEditProjectModal.run();
+            AppContext.projectContext().setName(projectContainerModel.getText());
         });
 
         setPrefSize(projectContainerModel.getWidth(), projectContainerModel.getHeight());
