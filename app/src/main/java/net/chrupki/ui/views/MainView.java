@@ -54,6 +54,7 @@ public class MainView {
         ExportController exportController = new ExportController(markdownExportService);
 
         ViewManager viewManager = new ViewManager();
+        Header header = new Header();
 
         viewManager.show(new ProjectsView(viewManager));
 
