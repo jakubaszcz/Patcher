@@ -27,8 +27,8 @@ public class MainView {
         stage.setMinHeight(400);
     }
 
-    private static void scene(Stage stage, ViewManager viewManager) {
-        Scene scene = new Scene(viewManager.getContainer(), 1000, 800);
+    private static void scene(Stage stage, BorderPane borderPane) {
+        Scene scene = new Scene(borderPane, 1000, 800);
 
         scene.getStylesheets().addAll(
                 Css.load("theme.css"),
