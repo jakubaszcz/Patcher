@@ -1,29 +1,14 @@
-package net.chrupki.ui.controllers;
+package net.chrupki.ui.controllers.files;
 
 import net.chrupki.app.AppContext;
-import net.chrupki.app.AppPath;
-import net.chrupki.database.DatabaseHub;
 import net.chrupki.project.AppProject;
-import net.chrupki.project.services.ProjectService;
+import net.chrupki.project.services.HubService;
+import net.chrupki.project.services.files.ProjectService;
 import net.chrupki.ui.model.ProjectModel;
 
 import java.io.IOException;
-import java.nio.file.FileVisitResult;
-import java.nio.file.Files;
-import java.nio.file.Path;
-import java.nio.file.SimpleFileVisitor;
-import java.nio.file.attribute.BasicFileAttributes;
-
-import static java.nio.file.FileVisitResult.CONTINUE;
 
 public class ProjectController {
-    private final ProjectService service;
-    private final ProjectModel model;
-
-    public ProjectController(ProjectService service, ProjectModel model) {
-        this.service = service;
-        this.model = model;
-    }
 
     public void createProject(String name) {
         AppProject.CreateProject(name);
@@ -32,8 +17,8 @@ public class ProjectController {
 
     public void loadProjects() {
         try {
-            model.getProjects().setAll(
-                    service.fetchAllProjectNames()
+            ProjectModel.getProjects().setAll(
+                    HubService.getProjectService().fetchAllProjectNames()
             );
         } catch (IOException e) {
             System.out.println(e.getMessage());
@@ -65,7 +50,7 @@ public class ProjectController {
     }
 
     public void onEdit() {
-        model.setEditProjectProperty(true);
+        ProjectModel.setEditProjectProperty(true);
     }
 
     public void onDelete() {
@@ -82,7 +67,7 @@ public class ProjectController {
 
 
     public void closeModal() {
-        model.setEditActiveProperty(false);
-        model.setEditProjectProperty(false);
+        ProjectModel.setEditActiveProperty(false);
+        ProjectModel.setEditProjectProperty(false);
     }
 }
