@@ -20,6 +20,39 @@ public class ProjectModel {
     private static final BooleanProperty editVersion = new SimpleBooleanProperty(false);
     private static final BooleanProperty editPatch = new SimpleBooleanProperty(false);
 
+    private static final BooleanProperty switchProjectsModal =
+            new SimpleBooleanProperty(false);
+
+    private static final BooleanProperty switchEditProjectsModal =
+            new SimpleBooleanProperty(false);
+
+    private static final BooleanProperty switchCreateProjectsModal =
+            new SimpleBooleanProperty(false);
+
+    public static void setSwitchProjectsModal(boolean value) {
+        switchProjectsModal.set(value);
+    }
+
+    public static BooleanProperty getSwitchProjectsModal() {
+        return switchProjectsModal;
+    }
+
+    public static void setSwitchEditProjectsModal(boolean value) {
+        switchEditProjectsModal.set(value);
+    }
+
+    public static BooleanProperty getSwitchEditProjectsModal() {
+        return switchEditProjectsModal;
+    }
+
+    public static void setSwitchCreateProjectsModal(boolean value) {
+        switchCreateProjectsModal.set(value);
+    }
+
+    public static BooleanProperty getSwitchCreateProjectsModal() {
+        return switchCreateProjectsModal;
+    }
+
     public static void setEditActiveProperty(boolean booleanProperty) {
         editActive.set(booleanProperty);
     }
