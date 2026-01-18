@@ -4,8 +4,8 @@ import javafx.scene.layout.VBox;
 import net.chrupki.app.AppContext;
 import net.chrupki.ui.components.CreatePatchForm;
 import net.chrupki.ui.components.PatchListView;
-import net.chrupki.ui.controllers.ExportController;
-import net.chrupki.ui.controllers.PatchController;
+import net.chrupki.ui.controllers.files.ExportController;
+import net.chrupki.ui.controllers.files.PatchController;
 import net.chrupki.ui.model.ProjectModel;
 
 

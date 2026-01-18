@@ -7,7 +7,7 @@ import javafx.scene.layout.VBox;
 import net.chrupki.app.AppContext;
 import net.chrupki.database.dao.VersionDAO;
 import net.chrupki.model.Version;
-import net.chrupki.ui.controllers.VersionController;
+import net.chrupki.ui.controllers.files.VersionController;
 import net.chrupki.ui.model.ProjectModel;
 
 public class VersionListView extends VBox {

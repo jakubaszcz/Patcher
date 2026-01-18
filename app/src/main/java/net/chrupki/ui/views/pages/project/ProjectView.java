@@ -1,7 +1,10 @@
-package net.chrupki.ui.views;
+package net.chrupki.ui.views.pages.project;
 
 import javafx.scene.control.Button;
 import javafx.scene.layout.VBox;
+import net.chrupki.ui.model.ProjectModel;
+import net.chrupki.ui.views.manager.ViewManager;
+import net.chrupki.ui.views.pages.projects.ProjectsView;
 
 public class ProjectView extends VBox {
 

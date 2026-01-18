@@ -4,16 +4,31 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="c1aa160e-de6c-484d-8c28-5409cf16dc62" name="Changes" comment="fix(file): issue while renaming a file with database">
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/net/chrupki/ui/components/Header.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/net/chrupki/ui/util/Css.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/resources/styles/header.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/resources/styles/theme.css" afterDir="false" />
+    <list default="true" id="c1aa160e-de6c-484d-8c28-5409cf16dc62" name="Changes" comment="feat(ui): add multiple CSS files">
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/net/chrupki/project/services/HubService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/net/chrupki/ui/views/ProjectViewt.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/net/chrupki/ui/views/pages/projects/ProjectsView.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/net/chrupki/ui/views/pages/projects/components/CreateProjectButton.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/net/chrupki/ui/views/pages/projects/components/ProjectsContainer.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/net/chrupki/ui/views/pages/projects/components/model/CreateProjectButtonModel.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/net/chrupki/ui/views/pages/projects/components/model/ProjectContainerModel.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/net/chrupki/ui/views/pages/projects/modals/ProjectsModal.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/net/chrupki/ui/components/CreateProjectForm.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/net/chrupki/ui/components/CurrentProjectLabel.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/net/chrupki/ui/components/CurrentProjectLabel.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/net/chrupki/ui/components/ProjectSelector.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/net/chrupki/ui/components/ProjectSelector.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/net/chrupki/project/services/PatchService.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/net/chrupki/project/services/files/PatchService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/net/chrupki/project/services/ProjectService.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/net/chrupki/project/services/files/ProjectService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/net/chrupki/project/services/VersionService.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/net/chrupki/project/services/files/VersionService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/net/chrupki/project/services/exports/MarkdownExportService.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/net/chrupki/project/services/files/exports/MarkdownExportService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/net/chrupki/ui/components/PatchListView.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/net/chrupki/ui/components/PatchListView.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/net/chrupki/ui/components/VersionListView.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/net/chrupki/ui/components/VersionListView.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/net/chrupki/ui/components/modal/ModalPatchForm.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/net/chrupki/ui/components/modal/ModalPatchForm.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/net/chrupki/ui/components/modal/ModalVersionForm.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/net/chrupki/ui/components/modal/ModalVersionForm.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/net/chrupki/ui/controllers/dtos/EditPatch.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/net/chrupki/ui/controllers/files/dtos/EditPatch.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/net/chrupki/ui/controllers/dtos/EditVersion.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/net/chrupki/ui/controllers/files/dtos/EditVersion.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/net/chrupki/ui/views/MainView.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/net/chrupki/ui/views/MainView.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/net/chrupki/ui/views/ModalView.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/net/chrupki/ui/views/ModalView.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/net/chrupki/ui/views/ProjectView.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/net/chrupki/ui/views/pages/project/ProjectView.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/net/chrupki/ui/views/ProjectsView.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/net/chrupki/ui/views/VersionView.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/net/chrupki/ui/views/VersionView.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -21,7 +36,7 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="EmbeddingIndexingInfo">
-    <option name="cachedIndexableFilesCount" value="424" />
+    <option name="cachedIndexableFilesCount" value="434" />
     <option name="fileBasedEmbeddingIndicesEnabled" value="true" />
   </component>
   <component name="ExternalProjectsData">
@@ -57,6 +72,11 @@
     </option>
   </component>
   <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="main" />
+      </map>
+    </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="McpProjectServerCommands">
@@ -83,7 +103,7 @@
     &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.typescript.service.memoryLimit.init&quot;: &quot;true&quot;,
     &quot;com.intellij.ml.llm.matterhorn.ej.ui.settings.DefaultModelSelectionForGA.v1&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;feat/interfaces/styling&quot;,
     &quot;junie.onboarding.icon.badge.shown&quot;: &quot;true&quot;,
     &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
     &quot;last_opened_file_path&quot;: &quot;/home/jakub/Documents/Patcher&quot;,
@@ -170,110 +190,7 @@
       <workItem from="1768421332706" duration="7728000" />
       <workItem from="1768655633282" duration="5524000" />
       <workItem from="1768674632372" duration="8344000" />
-    </task>
-    <task id="LOCAL-00044" summary="Fix don't print another patch if null">
-      <option name="closed" value="true" />
-      <created>1768157337690</created>
-      <option name="number" value="00044" />
-      <option name="presentableId" value="LOCAL-00044" />
-      <option name="project" value="LOCAL" />
-      <updated>1768157337690</updated>
-    </task>
-    <task id="LOCAL-00045" summary="Add modal view for overlay">
-      <option name="closed" value="true" />
-      <created>1768163772252</created>
-      <option name="number" value="00045" />
-      <option name="presentableId" value="LOCAL-00045" />
-      <option name="project" value="LOCAL" />
-      <updated>1768163772252</updated>
-    </task>
-    <task id="LOCAL-00046" summary="Add edit property">
-      <option name="closed" value="true" />
-      <created>1768165521266</created>
-      <option name="number" value="00046" />
-      <option name="presentableId" value="LOCAL-00046" />
-      <option name="project" value="LOCAL" />
-      <updated>1768165521266</updated>
-    </task>
-    <task id="LOCAL-00047" summary="Add working modal view with bindings">
-      <option name="closed" value="true" />
-      <created>1768166705768</created>
-      <option name="number" value="00047" />
-      <option name="presentableId" value="LOCAL-00047" />
-      <option name="project" value="LOCAL" />
-      <updated>1768166705768</updated>
-    </task>
-    <task id="LOCAL-00048" summary="Add context for variables&#10;&#10;The context has been created to make the storage of important information easier and the use as well.">
-      <option name="closed" value="true" />
-      <created>1768175830556</created>
-      <option name="number" value="00048" />
-      <option name="presentableId" value="LOCAL-00048" />
-      <option name="project" value="LOCAL" />
-      <updated>1768175830556</updated>
-    </task>
-    <task id="LOCAL-00049" summary="Add edit project UI">
-      <option name="closed" value="true" />
-      <created>1768247938101</created>
-      <option name="number" value="00049" />
-      <option name="presentableId" value="LOCAL-00049" />
-      <option name="project" value="LOCAL" />
-      <updated>1768247938101</updated>
-    </task>
-    <task id="LOCAL-00050" summary="Add edit project controller">
-      <option name="closed" value="true" />
-      <created>1768248368237</created>
-      <option name="number" value="00050" />
-      <option name="presentableId" value="LOCAL-00050" />
-      <option name="project" value="LOCAL" />
-      <updated>1768248368238</updated>
-    </task>
-    <task id="LOCAL-00051" summary="Add project editor">
-      <option name="closed" value="true" />
-      <created>1768257308797</created>
-      <option name="number" value="00051" />
-      <option name="presentableId" value="LOCAL-00051" />
-      <option name="project" value="LOCAL" />
-      <updated>1768257308797</updated>
-    </task>
-    <task id="LOCAL-00052" summary="fix(context): use selected project when creating patches&#10;&#10;Patches could not fetch data because the current project&#10;context was empty when creating a version.">
-      <option name="closed" value="true" />
-      <created>1768258868165</created>
-      <option name="number" value="00052" />
-      <option name="presentableId" value="LOCAL-00052" />
-      <option name="project" value="LOCAL" />
-      <updated>1768258868165</updated>
-    </task>
-    <task id="LOCAL-00053" summary="refactor(context): remove unused helper method&#10;&#10;A helper method used to resolve the project path in AppData was no longer needed and has been removed.">
-      <option name="closed" value="true" />
-      <created>1768259188362</created>
-      <option name="number" value="00053" />
-      <option name="presentableId" value="LOCAL-00053" />
-      <option name="project" value="LOCAL" />
-      <updated>1768259188362</updated>
-    </task>
-    <task id="LOCAL-00054" summary="refactor(context): remove remaining unused code">
-      <option name="closed" value="true" />
-      <created>1768259990230</created>
-      <option name="number" value="00054" />
-      <option name="presentableId" value="LOCAL-00054" />
-      <option name="project" value="LOCAL" />
-      <updated>1768259990230</updated>
-    </task>
-    <task id="LOCAL-00055" summary="refactor(context): change project name resolution&#10;&#10;The project context was incorrectly using the oldest version&#10;instead of the currently selected one.">
-      <option name="closed" value="true" />
-      <created>1768260497920</created>
-      <option name="number" value="00055" />
-      <option name="presentableId" value="LOCAL-00055" />
-      <option name="project" value="LOCAL" />
-      <updated>1768260497920</updated>
-    </task>
-    <task id="LOCAL-00056" summary="fix(context): cast version id to object property&#10;&#10;It allows the use of checking if an integer is null.">
-      <option name="closed" value="true" />
-      <created>1768261725074</created>
-      <option name="number" value="00056" />
-      <option name="presentableId" value="LOCAL-00056" />
-      <option name="project" value="LOCAL" />
-      <updated>1768261725074</updated>
+      <workItem from="1768734249537" duration="10702000" />
     </task>
     <task id="LOCAL-00057" summary="refactor(context): delete useless functions&#10;&#10;Old functions allowed verifying if a version has been selected, thanks to a previous commit, the functions can be removed.">
       <option name="closed" value="true" />
@@ -563,7 +480,111 @@
       <option name="project" value="LOCAL" />
       <updated>1768678557983</updated>
     </task>
-    <option name="localTasksCounter" value="93" />
+    <task id="LOCAL-00093" summary="feat(ui): add view manager">
+      <option name="closed" value="true" />
+      <created>1768691823985</created>
+      <option name="number" value="00093" />
+      <option name="presentableId" value="LOCAL-00093" />
+      <option name="project" value="LOCAL" />
+      <updated>1768691823985</updated>
+    </task>
+    <task id="LOCAL-00094" summary="feat(ui): add multiple views">
+      <option name="closed" value="true" />
+      <created>1768692284031</created>
+      <option name="number" value="00094" />
+      <option name="presentableId" value="LOCAL-00094" />
+      <option name="project" value="LOCAL" />
+      <updated>1768692284031</updated>
+    </task>
+    <task id="LOCAL-00095" summary="feat(ui): styling background">
+      <option name="closed" value="true" />
+      <created>1768693913966</created>
+      <option name="number" value="00095" />
+      <option name="presentableId" value="LOCAL-00095" />
+      <option name="project" value="LOCAL" />
+      <updated>1768693913966</updated>
+    </task>
+    <task id="LOCAL-00096" summary="feat(ui): add styling file for the header">
+      <option name="closed" value="true" />
+      <created>1768737820972</created>
+      <option name="number" value="00096" />
+      <option name="presentableId" value="LOCAL-00096" />
+      <option name="project" value="LOCAL" />
+      <updated>1768737820972</updated>
+    </task>
+    <task id="LOCAL-00097" summary="feat(ui): add fixed header">
+      <option name="closed" value="true" />
+      <created>1768737849155</created>
+      <option name="number" value="00097" />
+      <option name="presentableId" value="LOCAL-00097" />
+      <option name="project" value="LOCAL" />
+      <updated>1768737849155</updated>
+    </task>
+    <task id="LOCAL-00098" summary="add(ui): header include">
+      <option name="closed" value="true" />
+      <created>1768737890468</created>
+      <option name="number" value="00098" />
+      <option name="presentableId" value="LOCAL-00098" />
+      <option name="project" value="LOCAL" />
+      <updated>1768737890469</updated>
+    </task>
+    <task id="LOCAL-00099" summary="feat(ui): add border pane to distinguish header and the body">
+      <option name="closed" value="true" />
+      <created>1768737926574</created>
+      <option name="number" value="00099" />
+      <option name="presentableId" value="LOCAL-00099" />
+      <option name="project" value="LOCAL" />
+      <updated>1768737926574</updated>
+    </task>
+    <task id="LOCAL-00100" summary="add(ui): border pane for the scene function">
+      <option name="closed" value="true" />
+      <created>1768737950668</created>
+      <option name="number" value="00100" />
+      <option name="presentableId" value="LOCAL-00100" />
+      <option name="project" value="LOCAL" />
+      <updated>1768737950668</updated>
+    </task>
+    <task id="LOCAL-00101" summary="add(ui): add the border pane argument to the scene function">
+      <option name="closed" value="true" />
+      <created>1768737973686</created>
+      <option name="number" value="00101" />
+      <option name="presentableId" value="LOCAL-00101" />
+      <option name="project" value="LOCAL" />
+      <updated>1768737973686</updated>
+    </task>
+    <task id="LOCAL-00102" summary="refactor(controller): move controllers in new folder and create a hub&#10;&#10;The controllers have been moved into a folder, and a hub has been created to store all controllers and use them as static.">
+      <option name="closed" value="true" />
+      <created>1768758031700</created>
+      <option name="number" value="00102" />
+      <option name="presentableId" value="LOCAL-00102" />
+      <option name="project" value="LOCAL" />
+      <updated>1768758031700</updated>
+    </task>
+    <task id="LOCAL-00103" summary="refactor(controller): make project model as static">
+      <option name="closed" value="true" />
+      <created>1768758057885</created>
+      <option name="number" value="00103" />
+      <option name="presentableId" value="LOCAL-00103" />
+      <option name="project" value="LOCAL" />
+      <updated>1768758057885</updated>
+    </task>
+    <task id="LOCAL-00104" summary="refactor(controller): move view manager into manager folder">
+      <option name="closed" value="true" />
+      <created>1768758101002</created>
+      <option name="number" value="00104" />
+      <option name="presentableId" value="LOCAL-00104" />
+      <option name="project" value="LOCAL" />
+      <updated>1768758101002</updated>
+    </task>
+    <task id="LOCAL-00105" summary="feat(ui): add multiple CSS files">
+      <option name="closed" value="true" />
+      <created>1768758400252</created>
+      <option name="number" value="00105" />
+      <option name="presentableId" value="LOCAL-00105" />
+      <option name="project" value="LOCAL" />
+      <updated>1768758400253</updated>
+    </task>
+    <option name="localTasksCounter" value="106" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -581,19 +602,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="feat(ui): clear text field in version when the version is created" />
-    <MESSAGE value="add(controller): add edit patch dtos for patch edit" />
-    <MESSAGE value="feat(ui): add patch modal form&#10;&#10;This modal will allow user to edit his patch." />
-    <MESSAGE value="add(service): add function to save patch&#10;&#10;This service function fetch all the changes made in the patch modal to change them with the DAO." />
-    <MESSAGE value="add(context): add everything the patch need for edit" />
-    <MESSAGE value="add(dao): everything needed for the patch changements&#10;&#10;When the save of the patch in the modal, every condition must be checked, that's why the DAO have so much function added." />
-    <MESSAGE value="refactor(model): add missing information into the structure" />
-    <MESSAGE value="add(request): add new variable into the patch request" />
-    <MESSAGE value="add(ui): every event for the patch modal to send&#10;&#10;Thanks to it, the controller and the service fetch the given data." />
-    <MESSAGE value="refactor(ui): add missing variable for patch request" />
-    <MESSAGE value="feat(controller): allow patch to be modified&#10;&#10;This commit add a new feature to the application, it is now possible to save and edit patches." />
-    <MESSAGE value="refactor(ui): delete spacing for box" />
-    <MESSAGE value="add(database): handle one instance&#10;&#10;This script will allow stopping/close database with a function unlike before, I was depending on the try/catch methode, limiting plenty of moves." />
     <MESSAGE value="refactor(database): change database connect methode&#10;&#10;The refracting is to use the new function from the database hub singleton." />
     <MESSAGE value="feat(ui): toggle back the edit for the project&#10;&#10;It has been temporarily disabled because of the database issues, they're now fixed thanks to the database singleton." />
     <MESSAGE value="feat(ui): delete project button&#10;&#10;User is now capable of deleting an entier project." />
@@ -606,7 +614,20 @@
     <MESSAGE value="add(gradle): locate by default path for CSS" />
     <MESSAGE value="add(ui): the global theme CSS file" />
     <MESSAGE value="feat(ui): resize of the global window size" />
-    <option name="LAST_COMMIT_MESSAGE" value="feat(ui): resize of the global window size" />
+    <MESSAGE value="feat(ui): add view manager" />
+    <MESSAGE value="feat(ui): add multiple views" />
+    <MESSAGE value="feat(ui): styling background" />
+    <MESSAGE value="feat(ui): add styling file for the header" />
+    <MESSAGE value="feat(ui): add fixed header" />
+    <MESSAGE value="add(ui): header include" />
+    <MESSAGE value="feat(ui): add border pane to distinguish header and the body" />
+    <MESSAGE value="add(ui): border pane for the scene function" />
+    <MESSAGE value="add(ui): add the border pane argument to the scene function" />
+    <MESSAGE value="refactor(controller): move controllers in new folder and create a hub&#10;&#10;The controllers have been moved into a folder, and a hub has been created to store all controllers and use them as static." />
+    <MESSAGE value="refactor(controller): make project model as static" />
+    <MESSAGE value="refactor(controller): move view manager into manager folder" />
+    <MESSAGE value="feat(ui): add multiple CSS files" />
+    <option name="LAST_COMMIT_MESSAGE" value="feat(ui): add multiple CSS files" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/Patcher$Patcher__build_.ic" NAME="Patcher [build] Coverage Results" MODIFIED="1767013393295" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="true" />

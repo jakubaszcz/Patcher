@@ -2,17 +2,9 @@ package net.chrupki.ui.components;
 
 import javafx.collections.ListChangeListener;
 import javafx.collections.ObservableList;
-import javafx.scene.control.Button;
-import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
-import javafx.scene.control.Label;
 import net.chrupki.model.Patch;
-import net.chrupki.request.ExportRequest;
-import net.chrupki.ui.controllers.ExportController;
 import net.chrupki.ui.model.ProjectModel;
-
-import java.util.function.BiConsumer;
-import java.util.function.Consumer;
 
 
 public class PatchListView extends VBox {

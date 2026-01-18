@@ -1,21 +1,16 @@
 package net.chrupki.ui.views;
 
 import javafx.geometry.Pos;
-import javafx.scene.control.Button;
-import javafx.scene.control.Label;
 import javafx.scene.layout.Pane;
 import javafx.scene.layout.StackPane;
 import javafx.scene.layout.VBox;
-import net.chrupki.app.AppContext;
-import net.chrupki.app.context.ProjectContext;
 import net.chrupki.ui.components.modal.ModalPatchForm;
 import net.chrupki.ui.components.modal.ModalProjectForm;
 import net.chrupki.ui.components.modal.ModalVersionForm;
-import net.chrupki.ui.controllers.PatchController;
-import net.chrupki.ui.controllers.ProjectController;
-import net.chrupki.ui.controllers.VersionController;
+import net.chrupki.ui.controllers.files.PatchController;
+import net.chrupki.ui.controllers.files.ProjectController;
+import net.chrupki.ui.controllers.files.VersionController;
 import net.chrupki.ui.model.ProjectModel;
-import javafx.beans.binding.Bindings;
 
 
 public class ModalView extends StackPane {

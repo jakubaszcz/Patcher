@@ -1,4 +1,4 @@
-package net.chrupki.ui.controllers.dtos;
+package net.chrupki.ui.controllers.files.dtos;
 
 public class EditVersion {
 
