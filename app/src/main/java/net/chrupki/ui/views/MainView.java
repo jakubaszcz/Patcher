@@ -28,8 +28,8 @@ public class MainView {
         stage.setMinHeight(400);
     }
 
-    private static void scene(Stage stage, BorderPane borderPane) {
-        Scene scene = new Scene(borderPane, 1000, 800);
+    private static void scene(Stage stage, ViewManager viewManager) {
+        Scene scene = new Scene(viewManager.getContainer(), 1000, 800);
 
         scene.getStylesheets().addAll(
                 Css.load("theme.css"),
@@ -46,10 +46,6 @@ public class MainView {
         Header header = new Header();
 
         viewManager.show(new ProjectsView(viewManager));
-
-        BorderPane root = new BorderPane();
-        root.setTop(header);
-        root.setCenter(viewManager.getContainer());
 
         // Set up the application stage
         setup(stage);
@@ -70,7 +66,7 @@ public class MainView {
                 versionController,
                 patchController));*/
 
-        scene(stage, root);
+        scene(stage, viewManager);
 
         HubController.getProjectController().loadProjects();
         HubController.getPatchController().loadPatches();
