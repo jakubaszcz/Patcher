@@ -1,0 +1,65 @@
+package net.chrupki.ui.views.pages.projects.modals.files;
+
+import javafx.geometry.Insets;
+import javafx.geometry.Pos;
+import javafx.scene.control.Button;
+import javafx.scene.control.Label;
+import javafx.scene.control.TextField;
+import javafx.scene.layout.HBox;
+import javafx.scene.layout.Priority;
+import javafx.scene.layout.Region;
+import javafx.scene.layout.VBox;
+
+import java.util.function.Consumer;
+
+public class ProjectsModalCreateProject extends VBox {
+
+    public ProjectsModalCreateProject(
+            Consumer<String> onCreate,
+            Runnable onClose
+    ) {
+
+        Label title = new Label("Create project");
+        title.getStyleClass().add("modal-title");
+
+        TextField textField = new TextField();
+        textField.setPromptText("Project name");
+        textField.getStyleClass().add("modal-textfield");
+
+        Button closeButton = new Button("Cancel");
+        closeButton.getStyleClass().add("modal-button-close");
+
+        Button createButton = new Button("Create");
+        createButton.getStyleClass().add("modal-button-create");
+
+        closeButton.setOnAction(e -> onClose.run());
+
+        createButton.setOnAction(e -> {
+            if (!textField.getText().isBlank()) {
+                onCreate.accept(textField.getText());
+                onClose.run();
+            }
+        });
+
+        Region spacer = new Region();
+        HBox.setHgrow(spacer, Priority.ALWAYS);
+
+        HBox actions = new HBox(12, closeButton, spacer, createButton);
+        actions.setAlignment(Pos.CENTER);
+
+        setSpacing(16);
+        setPadding(new Insets(18));
+        setAlignment(Pos.CENTER_LEFT);
+
+        setPrefWidth(360);
+        setMaxWidth(360);
+
+        getStyleClass().add("modal-card");
+
+        getChildren().addAll(
+                title,
+                textField,
+                actions
+        );
+    }
+}

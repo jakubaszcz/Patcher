@@ -4,11 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="c1aa160e-de6c-484d-8c28-5409cf16dc62" name="Changes" comment="remove(ui): fixe header">
+    <list default="true" id="c1aa160e-de6c-484d-8c28-5409cf16dc62" name="Changes" comment="add(ui): create styling for the upcoming projects creator">
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/net/chrupki/ui/views/pages/projects/modals/files/ProjectsModalCreateProject.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/net/chrupki/ui/controllers/files/ProjectController.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/net/chrupki/ui/controllers/files/ProjectController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/net/chrupki/ui/views/pages/projects/ProjectsView.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/net/chrupki/ui/views/pages/projects/ProjectsView.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/net/chrupki/ui/views/pages/projects/components/CreateProjectButton.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/net/chrupki/ui/views/pages/projects/components/CreateProjectButton.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/net/chrupki/ui/views/pages/projects/modals/ProjectsModal.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/net/chrupki/ui/views/pages/projects/modals/ProjectsModal.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -171,55 +169,7 @@
       <workItem from="1768421332706" duration="7728000" />
       <workItem from="1768655633282" duration="5524000" />
       <workItem from="1768674632372" duration="8344000" />
-      <workItem from="1768734249537" duration="12982000" />
-    </task>
-    <task id="LOCAL-00065" summary="refactor(controller): rename folder structures in dtos&#10;&#10;The dtos folder contains all the structure to use with the Consumer functions provided by Java. It's impossible otherwise to put more than three arguments in a Consumer.">
-      <option name="closed" value="true" />
-      <created>1768333201267</created>
-      <option name="number" value="00065" />
-      <option name="presentableId" value="LOCAL-00065" />
-      <option name="project" value="LOCAL" />
-      <updated>1768333201267</updated>
-    </task>
-    <task id="LOCAL-00066" summary="refactor(ui): delete spacing for the box">
-      <option name="closed" value="true" />
-      <created>1768333430610</created>
-      <option name="number" value="00066" />
-      <option name="presentableId" value="LOCAL-00066" />
-      <option name="project" value="LOCAL" />
-      <updated>1768333430610</updated>
-    </task>
-    <task id="LOCAL-00067" summary="fix(ui): delete temporarily project editing&#10;&#10;It was deleted because I temporarily need to deal with the database directly.">
-      <option name="closed" value="true" />
-      <created>1768334038798</created>
-      <option name="number" value="00067" />
-      <option name="presentableId" value="LOCAL-00067" />
-      <option name="project" value="LOCAL" />
-      <updated>1768334038798</updated>
-    </task>
-    <task id="LOCAL-00068" summary="feat(ui): clear text field in version when the version is created">
-      <option name="closed" value="true" />
-      <created>1768334144048</created>
-      <option name="number" value="00068" />
-      <option name="presentableId" value="LOCAL-00068" />
-      <option name="project" value="LOCAL" />
-      <updated>1768334144048</updated>
-    </task>
-    <task id="LOCAL-00069" summary="add(controller): add edit patch dtos for patch edit">
-      <option name="closed" value="true" />
-      <created>1768334956471</created>
-      <option name="number" value="00069" />
-      <option name="presentableId" value="LOCAL-00069" />
-      <option name="project" value="LOCAL" />
-      <updated>1768334956471</updated>
-    </task>
-    <task id="LOCAL-00070" summary="feat(ui): add patch modal form&#10;&#10;This modal will allow user to edit his patch.">
-      <option name="closed" value="true" />
-      <created>1768335214245</created>
-      <option name="number" value="00070" />
-      <option name="presentableId" value="LOCAL-00070" />
-      <option name="project" value="LOCAL" />
-      <updated>1768335214245</updated>
+      <workItem from="1768734249537" duration="14540000" />
     </task>
     <task id="LOCAL-00071" summary="add(service): add function to save patch&#10;&#10;This service function fetch all the changes made in the patch modal to change them with the DAO.">
       <option name="closed" value="true" />
@@ -565,7 +515,55 @@
       <option name="project" value="LOCAL" />
       <updated>1768764219976</updated>
     </task>
-    <option name="localTasksCounter" value="114" />
+    <task id="LOCAL-00114" summary="feat(ui): trigger the modal when create new project">
+      <option name="closed" value="true" />
+      <created>1768764301381</created>
+      <option name="number" value="00114" />
+      <option name="presentableId" value="LOCAL-00114" />
+      <option name="project" value="LOCAL" />
+      <updated>1768764301381</updated>
+    </task>
+    <task id="LOCAL-00115" summary="add(controller): load the projects when creating one">
+      <option name="closed" value="true" />
+      <created>1768765644556</created>
+      <option name="number" value="00115" />
+      <option name="presentableId" value="LOCAL-00115" />
+      <option name="project" value="LOCAL" />
+      <updated>1768765644556</updated>
+    </task>
+    <task id="LOCAL-00116" summary="add(controller): close the modal">
+      <option name="closed" value="true" />
+      <created>1768765663457</created>
+      <option name="number" value="00116" />
+      <option name="presentableId" value="LOCAL-00116" />
+      <option name="project" value="LOCAL" />
+      <updated>1768765663457</updated>
+    </task>
+    <task id="LOCAL-00117" summary="add(ui): initiate the projects modal style sheet">
+      <option name="closed" value="true" />
+      <created>1768765750672</created>
+      <option name="number" value="00117" />
+      <option name="presentableId" value="LOCAL-00117" />
+      <option name="project" value="LOCAL" />
+      <updated>1768765750672</updated>
+    </task>
+    <task id="LOCAL-00118" summary="add(ui): create styling for the upcoming projects creator">
+      <option name="closed" value="true" />
+      <created>1768765812319</created>
+      <option name="number" value="00118" />
+      <option name="presentableId" value="LOCAL-00118" />
+      <option name="project" value="LOCAL" />
+      <updated>1768765812320</updated>
+    </task>
+    <task id="LOCAL-00119" summary="feat(ui): initiate the modal in the projects modal view">
+      <option name="closed" value="true" />
+      <created>1768765844710</created>
+      <option name="number" value="00119" />
+      <option name="presentableId" value="LOCAL-00119" />
+      <option name="project" value="LOCAL" />
+      <updated>1768765844710</updated>
+    </task>
+    <option name="localTasksCounter" value="120" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -583,12 +581,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="fix(file): issue while renaming a file with database" />
-    <MESSAGE value="add(gradle): locate by default path for CSS" />
-    <MESSAGE value="add(ui): the global theme CSS file" />
-    <MESSAGE value="feat(ui): resize of the global window size" />
-    <MESSAGE value="feat(ui): add view manager" />
-    <MESSAGE value="feat(ui): add multiple views" />
     <MESSAGE value="feat(ui): styling background" />
     <MESSAGE value="feat(ui): add styling file for the header" />
     <MESSAGE value="feat(ui): add fixed header" />
@@ -608,7 +600,13 @@
     <MESSAGE value="refractor(ui): move every files to refractor &#10;&#10;It's a big refractor..." />
     <MESSAGE value="add(model): new boolean property" />
     <MESSAGE value="remove(ui): fixe header" />
-    <option name="LAST_COMMIT_MESSAGE" value="remove(ui): fixe header" />
+    <MESSAGE value="feat(ui): trigger the modal when create new project" />
+    <MESSAGE value="add(controller): load the projects when creating one" />
+    <MESSAGE value="add(controller): close the modal" />
+    <MESSAGE value="add(ui): initiate the projects modal style sheet" />
+    <MESSAGE value="add(ui): create styling for the upcoming projects creator" />
+    <MESSAGE value="feat(ui): initiate the modal in the projects modal view" />
+    <option name="LAST_COMMIT_MESSAGE" value="feat(ui): initiate the modal in the projects modal view" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/Patcher$Patcher__build_.ic" NAME="Patcher [build] Coverage Results" MODIFIED="1767013393295" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="true" />

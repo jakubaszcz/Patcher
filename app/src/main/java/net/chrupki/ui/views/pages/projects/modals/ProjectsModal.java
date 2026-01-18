@@ -4,7 +4,9 @@ import javafx.geometry.Pos;
 import javafx.scene.layout.Pane;
 import javafx.scene.layout.StackPane;
 import javafx.scene.layout.VBox;
+import net.chrupki.ui.controllers.HubController;
 import net.chrupki.ui.model.ProjectModel;
+import net.chrupki.ui.views.pages.projects.modals.files.ProjectsModalCreateProject;
 
 public class ProjectsModal extends StackPane {
 
