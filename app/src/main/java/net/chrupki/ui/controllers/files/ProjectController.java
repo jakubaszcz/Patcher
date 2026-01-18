@@ -31,6 +31,11 @@ public class ProjectController {
         ProjectModel.setSwitchCreateProjectsModal(true);
     }
 
+    public void closeCreateProjectsModal() {
+        ProjectModel.setSwitchProjectsModal(false);
+        ProjectModel.setSwitchCreateProjectsModal(false);
+    }
+
     public void selectProject(String projectName) {
         AppContext.projectContext().setName(projectName);
     }
