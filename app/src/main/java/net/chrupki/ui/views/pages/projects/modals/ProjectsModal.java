@@ -22,6 +22,13 @@ public class ProjectsModal extends StackPane {
 
         visibleProperty().bind(ProjectModel.getSwitchProjectsModal());
 
+        vBox.getChildren().addAll(
+                new ProjectsModalCreateProject(
+                        HubController.getProjectController()::createProject,
+                        HubController.getProjectController()::closeCreateProjectsModal
+                )
+        );
+
         managedProperty().bind(visibleProperty());
 
         StackPane.setAlignment(vBox, Pos.CENTER);
