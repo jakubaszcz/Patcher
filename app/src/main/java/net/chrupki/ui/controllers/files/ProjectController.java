@@ -25,6 +25,11 @@ public class ProjectController {
         }
     }
 
+    public void openCreateProjectsModal() {
+        ProjectModel.setSwitchProjectsModal(true);
+        ProjectModel.setSwitchCreateProjectsModal(true);
+    }
+
     public void selectProject(String projectName) {
         AppContext.projectContext().setName(projectName);
     }

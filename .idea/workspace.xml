@@ -4,9 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="c1aa160e-de6c-484d-8c28-5409cf16dc62" name="Changes" comment="refractor(ui): move every files to refractor &#10;&#10;It's a big refractor...">
+    <list default="true" id="c1aa160e-de6c-484d-8c28-5409cf16dc62" name="Changes" comment="remove(ui): fixe header">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/net/chrupki/ui/model/ProjectModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/net/chrupki/ui/model/ProjectModel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/net/chrupki/ui/controllers/files/ProjectController.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/net/chrupki/ui/controllers/files/ProjectController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/net/chrupki/ui/views/pages/projects/ProjectsView.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/net/chrupki/ui/views/pages/projects/ProjectsView.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/net/chrupki/ui/views/pages/projects/components/CreateProjectButton.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/net/chrupki/ui/views/pages/projects/components/CreateProjectButton.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/net/chrupki/ui/views/pages/projects/modals/ProjectsModal.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/net/chrupki/ui/views/pages/projects/modals/ProjectsModal.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -168,23 +171,7 @@
       <workItem from="1768421332706" duration="7728000" />
       <workItem from="1768655633282" duration="5524000" />
       <workItem from="1768674632372" duration="8344000" />
-      <workItem from="1768734249537" duration="11492000" />
-    </task>
-    <task id="LOCAL-00063" summary="feat(ui): handling version modal">
-      <option name="closed" value="true" />
-      <created>1768328487821</created>
-      <option name="number" value="00063" />
-      <option name="presentableId" value="LOCAL-00063" />
-      <option name="project" value="LOCAL" />
-      <updated>1768328487821</updated>
-    </task>
-    <task id="LOCAL-00064" summary="add(ui): link controller and service to version DAO">
-      <option name="closed" value="true" />
-      <created>1768332904741</created>
-      <option name="number" value="00064" />
-      <option name="presentableId" value="LOCAL-00064" />
-      <option name="project" value="LOCAL" />
-      <updated>1768332904741</updated>
+      <workItem from="1768734249537" duration="12982000" />
     </task>
     <task id="LOCAL-00065" summary="refactor(controller): rename folder structures in dtos&#10;&#10;The dtos folder contains all the structure to use with the Consumer functions provided by Java. It's impossible otherwise to put more than three arguments in a Consumer.">
       <option name="closed" value="true" />
@@ -562,7 +549,23 @@
       <option name="project" value="LOCAL" />
       <updated>1768758870042</updated>
     </task>
-    <option name="localTasksCounter" value="112" />
+    <task id="LOCAL-00112" summary="add(model): new boolean property">
+      <option name="closed" value="true" />
+      <created>1768759289164</created>
+      <option name="number" value="00112" />
+      <option name="presentableId" value="LOCAL-00112" />
+      <option name="project" value="LOCAL" />
+      <updated>1768759289165</updated>
+    </task>
+    <task id="LOCAL-00113" summary="remove(ui): fixe header">
+      <option name="closed" value="true" />
+      <created>1768764219976</created>
+      <option name="number" value="00113" />
+      <option name="presentableId" value="LOCAL-00113" />
+      <option name="project" value="LOCAL" />
+      <updated>1768764219976</updated>
+    </task>
+    <option name="localTasksCounter" value="114" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -580,8 +583,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="add(database): delete chosen version by id" />
-    <MESSAGE value="feat(ui): delete chosen version&#10;&#10;Why the patches delete has been made first, because the patches delete was also deleted for version. So I choose to do the patches delete first." />
     <MESSAGE value="fix(file): issue while renaming a file with database" />
     <MESSAGE value="add(gradle): locate by default path for CSS" />
     <MESSAGE value="add(ui): the global theme CSS file" />
@@ -605,7 +606,9 @@
     <MESSAGE value="feat(ui): create the new projects page&#10;&#10;The new page for the project has been completely redesigned and retreated" />
     <MESSAGE value="feat(ui): add projects modal" />
     <MESSAGE value="refractor(ui): move every files to refractor &#10;&#10;It's a big refractor..." />
-    <option name="LAST_COMMIT_MESSAGE" value="refractor(ui): move every files to refractor &#10;&#10;It's a big refractor..." />
+    <MESSAGE value="add(model): new boolean property" />
+    <MESSAGE value="remove(ui): fixe header" />
+    <option name="LAST_COMMIT_MESSAGE" value="remove(ui): fixe header" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/Patcher$Patcher__build_.ic" NAME="Patcher [build] Coverage Results" MODIFIED="1767013393295" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="true" />

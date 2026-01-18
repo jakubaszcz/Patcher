@@ -6,7 +6,9 @@ import javafx.geometry.Insets;
 import javafx.geometry.Pos;
 import javafx.scene.control.Button;
 import javafx.scene.layout.FlowPane;
+import javafx.scene.layout.StackPane;
 import javafx.scene.layout.VBox;
+import net.chrupki.ui.controllers.HubController;
 import net.chrupki.ui.model.ProjectModel;
 import net.chrupki.ui.views.manager.ViewManager;
 import net.chrupki.ui.views.pages.project.ProjectView;
@@ -16,7 +18,7 @@ import net.chrupki.ui.views.pages.projects.components.model.CreateProjectButtonM
 import net.chrupki.ui.views.pages.projects.components.model.ProjectContainerModel;
 import net.chrupki.ui.views.pages.projects.modals.ProjectsModal;
 
-public class ProjectsView extends VBox {
+public class ProjectsView extends StackPane {
 
     private final double WIDTH = 280;
     private final double HEIGHT = 72;
@@ -38,7 +40,9 @@ public class ProjectsView extends VBox {
         projectsView.setAlignment(Pos.TOP_CENTER);
 
         createButton = new CreateProjectButton(
-                new CreateProjectButtonModel(WIDTH, HEIGHT)
+                new CreateProjectButtonModel(WIDTH, HEIGHT),
+                HubController.getProjectController()::openCreateProjectsModal
+
         );
 
         projectsView.widthProperty().addListener((obs, oldW, newW) ->
@@ -51,7 +55,6 @@ public class ProjectsView extends VBox {
                 refresh(projects)
         );
 
-        setSpacing(16);
         getChildren().add(projectsView);
 
         // Modal

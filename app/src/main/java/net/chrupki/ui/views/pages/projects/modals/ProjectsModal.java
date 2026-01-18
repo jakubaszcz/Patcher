@@ -4,8 +4,9 @@ import javafx.geometry.Pos;
 import javafx.scene.layout.Pane;
 import javafx.scene.layout.StackPane;
 import javafx.scene.layout.VBox;
+import net.chrupki.ui.model.ProjectModel;
 
-public class ProjectsModal extends VBox {
+public class ProjectsModal extends StackPane {
 
     public ProjectsModal() {
         Pane pane = new Pane();
@@ -19,6 +20,7 @@ public class ProjectsModal extends VBox {
 
         getChildren().addAll(pane, vBox);
 
+        visibleProperty().bind(ProjectModel.getSwitchProjectsModal());
 
         managedProperty().bind(visibleProperty());
 
