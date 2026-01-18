@@ -1,0 +1,70 @@
+.modal-card {
+    -fx-background-color: -color-card;
+    -fx-background-radius: 14;
+    -fx-border-radius: 14;
+    -fx-border-color: derive(-color-card, 18%);
+    -fx-pref-width: 360;
+}
+
+.modal-title {
+    -fx-text-fill: white;
+    -fx-font-size: 14px;
+    -fx-font-weight: bold;
+}
+
+.modal-textfield {
+    -fx-background-color: derive(-color-input, 8%);
+    -fx-text-fill: white;
+    -fx-prompt-text-fill: derive(white, -45%);
+    -fx-background-radius: 8;
+    -fx-padding: 8 10;
+    -fx-border-color: derive(-color-input, 20%);
+    -fx-border-radius: 8;
+}
+
+.modal-textfield:focused {
+    -fx-border-color: -color-primary;
+}
+
+.modal-button-close {
+    -fx-background-color: transparent;
+    -fx-text-fill: #ef4444;
+    -fx-padding: 8 14;
+}
+
+.modal-button-close:hover {
+    -fx-background-color: rgba(239, 68, 68, 0.12);
+}
+
+.modal-button-create {
+    -fx-background-color: -color-primary;
+    -fx-text-fill: white;
+    -fx-background-radius: 8;
+    -fx-padding: 8 18;
+    -fx-font-weight: bold;
+}
+
+.modal-button-create:hover {
+    -fx-background-color: derive(-color-primary, 12%);
+}
+
+.create-projects-button-accept-modal {
+    -fx-background-color: -color-primary;
+    -fx-text-fill: white;
+    -fx-background-radius: 8;
+    -fx-padding: 8 14;
+}
+
+.create-projects-button-accept-modal:hover {
+    -fx-background-color: derive(-color-primary, 10%);
+}
+
+.create-projects-button-close-modal {
+    -fx-background-color: transparent;
+    -fx-text-fill: derive(white, -30%);
+    -fx-padding: 6 14;
+}
+
+.create-projects-button-close-modal:hover {
+    -fx-text-fill: white;
+}
