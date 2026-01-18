@@ -56,7 +56,11 @@ public class MainView {
         ViewManager viewManager = new ViewManager();
         Header header = new Header();
 
-        viewManager.show(new ProjectsView(viewManager));
+        viewManager.show(new ProjectsView(viewManager, model));
+
+        BorderPane root = new BorderPane();
+        root.setTop(header);
+        root.setCenter(viewManager.getContainer());
 
         // Set up the application stage
         setup(stage);
