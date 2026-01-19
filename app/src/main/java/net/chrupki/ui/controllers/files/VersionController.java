@@ -3,9 +3,8 @@ package net.chrupki.ui.controllers.files;
 import javafx.beans.property.StringProperty;
 import net.chrupki.app.AppContext;
 import net.chrupki.database.dao.PatchDAO;
-import net.chrupki.model.Version;
+import net.chrupki.ui.views.pages.project.dto.VersionDTO;
 import net.chrupki.project.services.HubService;
-import net.chrupki.project.services.files.VersionService;
 import net.chrupki.ui.controllers.files.dtos.EditVersion;
 import net.chrupki.ui.model.ProjectModel;
 
@@ -32,7 +31,7 @@ public class VersionController {
         String projectName = AppContext.projectContext().getName().get();
 
         try {
-            Version version = HubService.getVersionService().createVersion(projectName, versionName);
+            VersionDTO version = HubService.getVersionService().createVersion(projectName, versionName);
             ProjectModel.getVersions().add(version);
         } catch (Exception e) {
             System.out.println(e.getMessage());

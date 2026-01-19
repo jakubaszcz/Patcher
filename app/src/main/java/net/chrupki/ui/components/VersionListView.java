@@ -6,7 +6,7 @@ import javafx.collections.ObservableList;
 import javafx.scene.layout.VBox;
 import net.chrupki.app.AppContext;
 import net.chrupki.database.dao.VersionDAO;
-import net.chrupki.model.Version;
+import net.chrupki.ui.views.pages.project.dto.VersionDTO;
 import net.chrupki.ui.controllers.files.VersionController;
 import net.chrupki.ui.model.ProjectModel;
 
@@ -28,9 +28,9 @@ public class VersionListView extends VBox {
 
         view.managedProperty().bind(view.visibleProperty());
 
-        ObservableList<Version> versions = model.getVersions();
+        ObservableList<VersionDTO> versions = model.getVersions();
 
-        versions.addListener((ListChangeListener<Version>) change -> {
+        versions.addListener((ListChangeListener<VersionDTO>) change -> {
             while (change.next()) {
 
                 if (change.wasRemoved()) {
@@ -38,7 +38,7 @@ public class VersionListView extends VBox {
                 }
 
                 if (change.wasAdded()) {
-                    for (Version v : change.getAddedSubList()) {
+                    for (VersionDTO v : change.getAddedSubList()) {
                         view.getChildren().add(new VersionContainer(model, v.getVersion(), v.getId(), versionController::selectVersion, versionController::editVersion));
                     }
                 }

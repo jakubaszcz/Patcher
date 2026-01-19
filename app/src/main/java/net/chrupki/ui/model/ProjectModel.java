@@ -5,13 +5,13 @@ import javafx.beans.property.SimpleBooleanProperty;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import net.chrupki.model.Patch;
-import net.chrupki.model.Version;
+import net.chrupki.ui.views.pages.project.dto.VersionDTO;
 
 public class ProjectModel {
 
     public ProjectModel() {}
 
-    private static final ObservableList<Version> versions = FXCollections.observableArrayList();
+    private static final ObservableList<VersionDTO> versions = FXCollections.observableArrayList();
     private static final ObservableList<String> projects = FXCollections.observableArrayList();
     private static final ObservableList<Patch> patches = FXCollections.observableArrayList();
 
@@ -88,7 +88,7 @@ public class ProjectModel {
         return editPatch;
     }
 
-    public static ObservableList<Version> getVersions() {
+    public static ObservableList<VersionDTO> getVersions() {
         return versions;
     }
 
