@@ -35,6 +35,7 @@ public class ProjectsContainer extends HBox {
 
         setOnMouseClicked(e -> {
             projectContainerModel.getViewManager().show(new ProjectView(projectContainerModel.getViewManager()));
+            AppContext.projectContext().setName(projectContainerModel.getText());
         });
 
         edit.setOnAction(e -> {
