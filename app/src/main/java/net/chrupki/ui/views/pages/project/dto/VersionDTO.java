@@ -1,10 +1,10 @@
-package net.chrupki.model;
+package net.chrupki.ui.views.pages.project.dto;
 
-public class Version {
+public class VersionDTO {
     private final int id;
     private final String version;
 
-    public Version(int id, String version) {
+    public VersionDTO(int id, String version) {
         this.id = id;
         this.version = version;
     }
