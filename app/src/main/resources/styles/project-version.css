@@ -1,0 +1,51 @@
+.project-body {
+    -fx-background-color: transparent;
+}
+
+.version-panel {
+    -fx-background-color: -color-card;
+    -fx-pref-width: 280;
+}
+
+.version-header {
+    -fx-background-color: derive(-color-card, -25%);
+    -fx-padding: 12;
+    -fx-pref-width: 280;
+}
+
+.version-title {
+    -fx-text-fill: white;
+    -fx-font-size: 14px;
+    -fx-font-weight: bold;
+}
+
+.version-add-button {
+    -fx-background-color: -color-primary;
+    -fx-text-fill: white;
+    -fx-background-radius: 6;
+    -fx-padding: 6 10;
+}
+
+.version-add-button:hover {
+    -fx-background-color: derive(-color-primary, 12%);
+}
+
+.version-item {
+    -fx-background-color: -color-card;
+    -fx-cursor: hand;
+}
+
+.version-item:hover {
+    -fx-background-color: derive(-color-card, -15%);
+}
+
+.version-item-title {
+    -fx-text-fill: white;
+    -fx-font-size: 12px;
+    -fx-font-weight: bold;
+}
+
+.version-item-meta {
+    -fx-text-fill: derive(white, -40%);
+    -fx-font-size: 10px;
+}
