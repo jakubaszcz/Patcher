@@ -4,10 +4,23 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="c1aa160e-de6c-484d-8c28-5409cf16dc62" name="Changes" comment="feat(ui): edit project modal">
+    <list default="true" id="c1aa160e-de6c-484d-8c28-5409cf16dc62" name="Changes" comment="refactor(ui): move dto folder into the projects folder">
       <change afterPath="$PROJECT_DIR$/app/src/main/java/net/chrupki/ui/views/pages/project/components/Body.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/net/chrupki/ui/views/pages/project/components/Patch.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/net/chrupki/ui/views/pages/project/components/Version.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/net/chrupki/ui/views/pages/project/components/VersionContainer.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/net/chrupki/ui/views/pages/project/components/VersionHeader.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/resources/styles/project-version.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/net/chrupki/database/dao/VersionDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/net/chrupki/database/dao/VersionDAO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/net/chrupki/model/Version.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/net/chrupki/ui/views/pages/project/dto/VersionDTO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/net/chrupki/project/services/files/VersionService.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/net/chrupki/project/services/files/VersionService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/net/chrupki/ui/components/VersionListView.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/net/chrupki/ui/components/VersionListView.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/net/chrupki/ui/controllers/files/VersionController.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/net/chrupki/ui/controllers/files/VersionController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/net/chrupki/ui/model/ProjectModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/net/chrupki/ui/model/ProjectModel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/net/chrupki/ui/views/MainView.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/net/chrupki/ui/views/MainView.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/net/chrupki/ui/views/pages/project/ProjectView.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/net/chrupki/ui/views/pages/project/ProjectView.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/net/chrupki/ui/views/pages/projects/ProjectsView.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/net/chrupki/ui/views/pages/projects/ProjectsView.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -170,15 +183,7 @@
       <workItem from="1768655633282" duration="5524000" />
       <workItem from="1768674632372" duration="8344000" />
       <workItem from="1768734249537" duration="14540000" />
-      <workItem from="1768854480253" duration="547000" />
-    </task>
-    <task id="LOCAL-00076" summary="add(ui): every event for the patch modal to send&#10;&#10;Thanks to it, the controller and the service fetch the given data.">
-      <option name="closed" value="true" />
-      <created>1768345084691</created>
-      <option name="number" value="00076" />
-      <option name="presentableId" value="LOCAL-00076" />
-      <option name="project" value="LOCAL" />
-      <updated>1768345084691</updated>
+      <workItem from="1768854480253" duration="3750000" />
     </task>
     <task id="LOCAL-00077" summary="refactor(ui): add missing variable for patch request">
       <option name="closed" value="true" />
@@ -564,7 +569,15 @@
       <option name="project" value="LOCAL" />
       <updated>1768768821844</updated>
     </task>
-    <option name="localTasksCounter" value="125" />
+    <task id="LOCAL-00125" summary="refactor(ui): move dto folder into the projects folder">
+      <option name="closed" value="true" />
+      <created>1768855098066</created>
+      <option name="number" value="00125" />
+      <option name="presentableId" value="LOCAL-00125" />
+      <option name="project" value="LOCAL" />
+      <updated>1768855098067</updated>
+    </task>
+    <option name="localTasksCounter" value="126" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -582,7 +595,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="add(ui): border pane for the scene function" />
     <MESSAGE value="add(ui): add the border pane argument to the scene function" />
     <MESSAGE value="refactor(controller): move controllers in new folder and create a hub&#10;&#10;The controllers have been moved into a folder, and a hub has been created to store all controllers and use them as static." />
     <MESSAGE value="refactor(controller): make project model as static" />
@@ -607,7 +619,9 @@
     <MESSAGE value="feat(ui): add the edit project modal" />
     <MESSAGE value="add(ui): new styling in the CSS file for the modal" />
     <MESSAGE value="feat(ui): edit project modal" />
-    <option name="LAST_COMMIT_MESSAGE" value="feat(ui): edit project modal" />
+    <MESSAGE value="refactor(ui): move dto folder into the projects folder" />
+    <option name="LAST_COMMIT_MESSAGE" value="refactor(ui): move dto folder into the projects folder" />
+    <option name="LAST_CHUNK_COMMIT_MESSAGE" value="add(ui): create new" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/Patcher$Patcher__build_.ic" NAME="Patcher [build] Coverage Results" MODIFIED="1767013393295" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="true" />
