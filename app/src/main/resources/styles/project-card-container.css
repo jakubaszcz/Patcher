@@ -59,7 +59,7 @@
 }
 
 .add-button:hover {
-    -fx-background-color: derive(-color-card, 12%);
+    -fx-background-color: derive(#2ecc71, 12%);
 }
 
 .add-button-title {
@@ -68,4 +68,3 @@
     -fx-font-weight: bold;
     -fx-alignment: center;
 }
-
