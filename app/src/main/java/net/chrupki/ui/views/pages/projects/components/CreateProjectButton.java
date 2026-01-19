@@ -1,7 +1,7 @@
 package net.chrupki.ui.views.pages.projects.components;
 
 import javafx.scene.layout.HBox;
-import net.chrupki.ui.views.pages.projects.components.dto.CreateProjectButtonDTO;
+import net.chrupki.ui.views.pages.projects.dto.CreateProjectButtonDTO;
 import javafx.scene.control.Label;
 
 

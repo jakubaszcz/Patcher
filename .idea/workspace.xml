@@ -4,13 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="c1aa160e-de6c-484d-8c28-5409cf16dc62" name="Changes" comment="refactor(ui): rename folder model into DTO for data transfer object&#10;&#10;The DTO or Data Transfer Object is the structure you create to send variables for functions. It's to avoid having more than 2 arguments for a function.">
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/net/chrupki/ui/views/pages/projects/EmptyProjectsView.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/resources/styles/empty-projects.css" afterDir="false" />
+    <list default="true" id="c1aa160e-de6c-484d-8c28-5409cf16dc62" name="Changes" comment="feat(ui): edit project modal">
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/net/chrupki/ui/views/pages/project/components/Body.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/net/chrupki/ui/views/MainView.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/net/chrupki/ui/views/MainView.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/net/chrupki/ui/views/pages/projects/ProjectsView.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/net/chrupki/ui/views/pages/projects/ProjectsView.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/resources/styles/project-card-container.css" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/resources/styles/project-card-container.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/net/chrupki/ui/views/pages/project/ProjectView.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/net/chrupki/ui/views/pages/project/ProjectView.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -18,7 +15,7 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="EmbeddingIndexingInfo">
-    <option name="cachedIndexableFilesCount" value="434" />
+    <option name="cachedIndexableFilesCount" value="445" />
     <option name="fileBasedEmbeddingIndicesEnabled" value="true" />
   </component>
   <component name="ExternalProjectsData">
@@ -62,24 +59,8 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="McpProjectServerCommands">
-    <McpServerCommand sourceId="UserConfigurationSource">
-      <option name="allowedToolsNames" />
-      <option name="enabled" value="true" />
-      <option name="name" value="" />
-      <option name="programPath" value="" />
-      <option name="arguments" value="" />
-      <option name="workingDirectory" value="" />
-      <envs />
-    </McpServerCommand>
-    <McpServerCommand sourceId="UserConfigurationSource">
-      <option name="allowedToolsNames" />
-      <option name="enabled" value="true" />
-      <option name="name" value="" />
-      <option name="programPath" value="" />
-      <option name="arguments" value="" />
-      <option name="workingDirectory" value="" />
-      <envs />
-    </McpServerCommand>
+    <commands />
+    <urls />
   </component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 5
@@ -112,12 +93,22 @@
     &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
     &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
     &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;reference.settingsdialog.project.gradle&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;,
     &quot;to.speed.mode.migration.done&quot;: &quot;true&quot;,
     &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
 }</component>
   <component name="RunManager">
+    <configuration default="true" type="lua.app" factoryName="Lua Application">
+      <option name="program" value="/usr/bin/lua" />
+      <option name="file" value="" />
+      <option name="workingDir" value="$PROJECT_DIR$/app/src/main/java" />
+      <option name="debuggerType" value="2" />
+      <option name="params" value="" />
+      <option name="charset" value="UTF-8" />
+      <option name="showConsole" value="true" />
+      <method v="2" />
+    </configuration>
     <configuration name="Patcher [run]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
@@ -179,6 +170,39 @@
       <workItem from="1768655633282" duration="5524000" />
       <workItem from="1768674632372" duration="8344000" />
       <workItem from="1768734249537" duration="14540000" />
+      <workItem from="1768854480253" duration="547000" />
+    </task>
+    <task id="LOCAL-00076" summary="add(ui): every event for the patch modal to send&#10;&#10;Thanks to it, the controller and the service fetch the given data.">
+      <option name="closed" value="true" />
+      <created>1768345084691</created>
+      <option name="number" value="00076" />
+      <option name="presentableId" value="LOCAL-00076" />
+      <option name="project" value="LOCAL" />
+      <updated>1768345084691</updated>
+    </task>
+    <task id="LOCAL-00077" summary="refactor(ui): add missing variable for patch request">
+      <option name="closed" value="true" />
+      <created>1768345118961</created>
+      <option name="number" value="00077" />
+      <option name="presentableId" value="LOCAL-00077" />
+      <option name="project" value="LOCAL" />
+      <updated>1768345118961</updated>
+    </task>
+    <task id="LOCAL-00078" summary="feat(controller): allow patch to be modified&#10;&#10;This commit add a new feature to the application, it is now possible to save and edit patches.">
+      <option name="closed" value="true" />
+      <created>1768345191351</created>
+      <option name="number" value="00078" />
+      <option name="presentableId" value="LOCAL-00078" />
+      <option name="project" value="LOCAL" />
+      <updated>1768345191353</updated>
+    </task>
+    <task id="LOCAL-00079" summary="refactor(ui): delete spacing for box">
+      <option name="closed" value="true" />
+      <created>1768345379397</created>
+      <option name="number" value="00079" />
+      <option name="presentableId" value="LOCAL-00079" />
+      <option name="project" value="LOCAL" />
+      <updated>1768345379397</updated>
     </task>
     <task id="LOCAL-00080" summary="add(database): handle one instance&#10;&#10;This script will allow stopping/close database with a function unlike before, I was depending on the try/catch methode, limiting plenty of moves.">
       <option name="closed" value="true" />
@@ -540,39 +564,7 @@
       <option name="project" value="LOCAL" />
       <updated>1768768821844</updated>
     </task>
-    <task id="LOCAL-00125" summary="remove(ui): delete header component">
-      <option name="closed" value="true" />
-      <created>1768818667887</created>
-      <option name="number" value="00125" />
-      <option name="presentableId" value="LOCAL-00125" />
-      <option name="project" value="LOCAL" />
-      <updated>1768818667888</updated>
-    </task>
-    <task id="LOCAL-00126" summary="add(ui): set the current project">
-      <option name="closed" value="true" />
-      <created>1768819680718</created>
-      <option name="number" value="00126" />
-      <option name="presentableId" value="LOCAL-00126" />
-      <option name="project" value="LOCAL" />
-      <updated>1768819680718</updated>
-    </task>
-    <task id="LOCAL-00127" summary="feat(ui): add header for the project page&#10;&#10;The project page is where you go when you choose a project to work with">
-      <option name="closed" value="true" />
-      <created>1768819727959</created>
-      <option name="number" value="00127" />
-      <option name="presentableId" value="LOCAL-00127" />
-      <option name="project" value="LOCAL" />
-      <updated>1768819727959</updated>
-    </task>
-    <task id="LOCAL-00128" summary="refactor(ui): rename folder model into DTO for data transfer object&#10;&#10;The DTO or Data Transfer Object is the structure you create to send variables for functions. It's to avoid having more than 2 arguments for a function.">
-      <option name="closed" value="true" />
-      <created>1768820026884</created>
-      <option name="number" value="00128" />
-      <option name="presentableId" value="LOCAL-00128" />
-      <option name="project" value="LOCAL" />
-      <updated>1768820026884</updated>
-    </task>
-    <option name="localTasksCounter" value="129" />
+    <option name="localTasksCounter" value="125" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -590,6 +582,10 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
+    <MESSAGE value="add(ui): border pane for the scene function" />
+    <MESSAGE value="add(ui): add the border pane argument to the scene function" />
+    <MESSAGE value="refactor(controller): move controllers in new folder and create a hub&#10;&#10;The controllers have been moved into a folder, and a hub has been created to store all controllers and use them as static." />
+    <MESSAGE value="refactor(controller): make project model as static" />
     <MESSAGE value="refactor(controller): move view manager into manager folder" />
     <MESSAGE value="feat(ui): add multiple CSS files" />
     <MESSAGE value="refactor(service): move services files into a folder and create hub services&#10;&#10;The files have been moved into a folder, and a hub service has been created to instantiate those services" />
@@ -611,11 +607,7 @@
     <MESSAGE value="feat(ui): add the edit project modal" />
     <MESSAGE value="add(ui): new styling in the CSS file for the modal" />
     <MESSAGE value="feat(ui): edit project modal" />
-    <MESSAGE value="remove(ui): delete header component" />
-    <MESSAGE value="add(ui): set the current project" />
-    <MESSAGE value="feat(ui): add header for the project page&#10;&#10;The project page is where you go when you choose a project to work with" />
-    <MESSAGE value="refactor(ui): rename folder model into DTO for data transfer object&#10;&#10;The DTO or Data Transfer Object is the structure you create to send variables for functions. It's to avoid having more than 2 arguments for a function." />
-    <option name="LAST_COMMIT_MESSAGE" value="refactor(ui): rename folder model into DTO for data transfer object&#10;&#10;The DTO or Data Transfer Object is the structure you create to send variables for functions. It's to avoid having more than 2 arguments for a function." />
+    <option name="LAST_COMMIT_MESSAGE" value="feat(ui): edit project modal" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/Patcher$Patcher__build_.ic" NAME="Patcher [build] Coverage Results" MODIFIED="1767013393295" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="true" />

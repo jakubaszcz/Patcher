@@ -1,4 +1,4 @@
-package net.chrupki.ui.views.pages.projects.components.dto;
+package net.chrupki.ui.views.pages.projects.dto;
 
 import net.chrupki.ui.views.manager.ViewManager;
 
