@@ -4,18 +4,15 @@ import javafx.collections.ListChangeListener;
 import javafx.collections.ObservableList;
 import javafx.geometry.Insets;
 import javafx.geometry.Pos;
-import javafx.scene.control.Button;
 import javafx.scene.layout.FlowPane;
 import javafx.scene.layout.StackPane;
-import javafx.scene.layout.VBox;
 import net.chrupki.ui.controllers.HubController;
 import net.chrupki.ui.model.ProjectModel;
 import net.chrupki.ui.views.manager.ViewManager;
-import net.chrupki.ui.views.pages.project.ProjectView;
 import net.chrupki.ui.views.pages.projects.components.CreateProjectButton;
 import net.chrupki.ui.views.pages.projects.components.ProjectsContainer;
-import net.chrupki.ui.views.pages.projects.components.model.CreateProjectButtonModel;
-import net.chrupki.ui.views.pages.projects.components.model.ProjectContainerModel;
+import net.chrupki.ui.views.pages.projects.components.dto.CreateProjectButtonDTO;
+import net.chrupki.ui.views.pages.projects.components.dto.ProjectContainerDTO;
 import net.chrupki.ui.views.pages.projects.modals.ProjectsModal;
 
 public class ProjectsView extends StackPane {
@@ -40,7 +37,7 @@ public class ProjectsView extends StackPane {
         projectsView.setAlignment(Pos.TOP_CENTER);
 
         createButton = new CreateProjectButton(
-                new CreateProjectButtonModel(WIDTH, HEIGHT),
+                new CreateProjectButtonDTO(WIDTH, HEIGHT),
                 HubController.getProjectController()::openCreateProjectsModal
 
         );
@@ -85,7 +82,7 @@ public class ProjectsView extends StackPane {
         for (String p : projects) {
             projectsView.getChildren().add(
                     new ProjectsContainer(
-                            new ProjectContainerModel(
+                            new ProjectContainerDTO(
                                     viewManager,
                                     p,
                                     WIDTH,

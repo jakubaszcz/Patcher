@@ -1,15 +1,14 @@
 package net.chrupki.ui.views.pages.projects.components;
 
 import javafx.scene.layout.HBox;
-import net.chrupki.ui.views.pages.project.ProjectView;
-import net.chrupki.ui.views.pages.projects.components.model.CreateProjectButtonModel;
+import net.chrupki.ui.views.pages.projects.components.dto.CreateProjectButtonDTO;
 import javafx.scene.control.Label;
 
 
 public class CreateProjectButton extends HBox {
 
     public CreateProjectButton(
-            CreateProjectButtonModel model,
+            CreateProjectButtonDTO model,
             Runnable onCreateProjectModal
     ) {
 

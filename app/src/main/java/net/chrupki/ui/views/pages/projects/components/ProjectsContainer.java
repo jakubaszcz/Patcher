@@ -6,14 +6,14 @@ import javafx.scene.layout.HBox;
 import javafx.scene.control.Label;
 import net.chrupki.app.AppContext;
 import net.chrupki.ui.views.pages.project.ProjectView;
-import net.chrupki.ui.views.pages.projects.components.model.ProjectContainerModel;
+import net.chrupki.ui.views.pages.projects.components.dto.ProjectContainerDTO;
 
 
 public class ProjectsContainer extends HBox {
 
 
     public ProjectsContainer(
-            ProjectContainerModel projectContainerModel,
+            ProjectContainerDTO projectContainerModel,
             Runnable onEditProjectModal
     ) {
 

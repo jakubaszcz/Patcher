@@ -1,10 +1,10 @@
-package net.chrupki.ui.views.pages.projects.components.model;
+package net.chrupki.ui.views.pages.projects.components.dto;
 
-public class CreateProjectButtonModel {
+public class CreateProjectButtonDTO {
     private final double width;
     private final double height;
 
-    public CreateProjectButtonModel(double width, double height) {
+    public CreateProjectButtonDTO(double width, double height) {
         this.width = width;
         this.height = height;
     }
