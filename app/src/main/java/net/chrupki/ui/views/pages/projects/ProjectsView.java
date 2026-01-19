@@ -11,8 +11,8 @@ import net.chrupki.ui.model.ProjectModel;
 import net.chrupki.ui.views.manager.ViewManager;
 import net.chrupki.ui.views.pages.projects.components.CreateProjectButton;
 import net.chrupki.ui.views.pages.projects.components.ProjectsContainer;
-import net.chrupki.ui.views.pages.projects.components.dto.CreateProjectButtonDTO;
-import net.chrupki.ui.views.pages.projects.components.dto.ProjectContainerDTO;
+import net.chrupki.ui.views.pages.projects.dto.CreateProjectButtonDTO;
+import net.chrupki.ui.views.pages.projects.dto.ProjectContainerDTO;
 import net.chrupki.ui.views.pages.projects.modals.ProjectsModal;
 
 public class ProjectsView extends StackPane {
