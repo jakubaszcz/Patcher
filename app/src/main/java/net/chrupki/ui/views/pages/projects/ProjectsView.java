@@ -77,6 +77,13 @@ public class ProjectsView extends StackPane {
 
         projectsView.getChildren().clear();
 
+        if (projects.isEmpty()) {
+            projectsView.getChildren().add(
+                    new EmptyProjectsView(HubController.getProjectController()::openCreateProjectsModal)
+            );
+            return;
+        }
+
         projectsView.getChildren().add(createButton);
 
         for (String p : projects) {
