@@ -14,7 +14,6 @@ import net.chrupki.ui.controllers.files.ProjectController;
 import net.chrupki.ui.controllers.files.VersionController;
 import net.chrupki.ui.model.ProjectModel;
 import net.chrupki.ui.util.Css;
-import net.chrupki.ui.views.components.Header;
 import net.chrupki.ui.views.manager.ViewManager;
 import net.chrupki.ui.views.pages.projects.ProjectsView;
 
@@ -44,7 +43,6 @@ public class MainView {
     public static void display(Stage stage) {
 
         ViewManager viewManager = new ViewManager();
-        Header header = new Header();
 
         viewManager.show(new ProjectsView(viewManager));
 
