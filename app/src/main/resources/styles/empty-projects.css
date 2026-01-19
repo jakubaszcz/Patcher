@@ -1,0 +1,30 @@
+.empty-container {
+    -fx-padding: 40;
+    -fx-opacity: 0.95;
+}
+
+.empty-title {
+    -fx-text-fill: white;
+    -fx-font-size: 34px;
+    -fx-font-weight: bold;
+}
+
+.empty-subtitle {
+    -fx-text-fill: derive(white, -40%);
+    -fx-font-size: 13px;
+    -fx-text-alignment: center;
+}
+
+.empty-create-button {
+    -fx-background-color: #2ecc71;
+    -fx-text-fill: white;
+    -fx-font-size: 13px;
+    -fx-font-weight: bold;
+    -fx-padding: 10 18;
+    -fx-background-radius: 8;
+    -fx-cursor: hand;
+}
+
+.empty-create-button:hover {
+    -fx-background-color: derive(#2ecc71, 12%);
+}

@@ -34,7 +34,8 @@ public class MainView {
                 Css.load("theme.css"),
                 Css.load("header.css"),
                 Css.load("project-card-container.css"),
-                Css.load("projects-modal.css")
+                Css.load("projects-modal.css"),
+                Css.load("empty-projects.css")
         );
 
         stage.setScene(scene);
