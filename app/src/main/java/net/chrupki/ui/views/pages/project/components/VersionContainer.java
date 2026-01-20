@@ -8,6 +8,8 @@ import javafx.scene.layout.HBox;
 import javafx.scene.layout.Priority;
 import javafx.scene.layout.Region;
 import javafx.scene.layout.VBox;
+import net.chrupki.app.AppContext;
+import net.chrupki.ui.model.ProjectModel;
 import net.chrupki.ui.views.pages.project.dto.VersionDTO;
 
 public class VersionContainer extends HBox {
@@ -24,15 +26,18 @@ public class VersionContainer extends HBox {
         VBox textBox = new VBox(2, name, meta);
         textBox.setAlignment(Pos.CENTER_LEFT);
 
-        // Bouton Edit (droite)
         Button editButton = new Button("Edit");
         editButton.getStyleClass().add("version-item-button");
 
-        // Spacer pour pousser le bouton à droite
+        editButton.setOnAction(e -> {
+            AppContext.versionContext().setId(version.getId());
+            ProjectModel.setSwitchProjectModal(true);
+            ProjectModel.setSwitchEditVersionProjectModal(true);
+        });
+
         Region spacer = new Region();
         HBox.setHgrow(spacer, Priority.ALWAYS);
 
-        // Layout principal
         setAlignment(Pos.CENTER_LEFT);
         setPadding(new Insets(10, 12, 10, 12));
         setSpacing(8);

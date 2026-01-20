@@ -35,7 +35,12 @@ public class ProjectModal extends StackPane {
             new CreateVersionModal(
                     HubController.getVersionController()::createVersion,
                     HubController.getVersionController()::closeModal
-            )
+            ),
+                new EditVersionModal(
+                        HubController.getVersionController()::saveVersion,
+                        HubController.getVersionController()::deleteVersion,
+                        HubController.getVersionController()::closeModal
+                )
         );
 
         managedProperty().bind(visibleProperty());
