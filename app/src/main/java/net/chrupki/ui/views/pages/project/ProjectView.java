@@ -10,7 +10,7 @@ import net.chrupki.ui.views.pages.project.components.Body;
 import net.chrupki.ui.views.pages.project.components.Header;
 import net.chrupki.ui.views.pages.projects.ProjectsView;
 
-public class ProjectView extends VBox {
+public class ProjectView extends StackPane {
 
     public ProjectView(ViewManager viewManager) {
 
