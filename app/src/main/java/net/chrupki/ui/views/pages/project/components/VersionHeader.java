@@ -27,7 +27,11 @@ public class VersionHeader extends HBox {
         setPadding(new Insets(10, 12, 10, 12));
         setSpacing(8);
 
-        // 🔑 TRÈS IMPORTANT
+        addButton.setOnAction(e -> {
+            ProjectModel.setSwitchProjectModal(true);
+            ProjectModel.setSwitchCreateVersionProjectModal(true);
+        });
+
         setMaxWidth(Double.MAX_VALUE);
 
         getStyleClass().add("version-header");
