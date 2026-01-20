@@ -1,10 +1,28 @@
 .root {
-    -color-bg: #0b0e12;
-    -color-primary: #2563eb;
-    -color-secondary: #0e1720;
-    -color-card: #252526;
-    -color-input: #2d2d30;
+    -color-primary-50:  #EEF3EF;
+    -color-primary-100: #D7E2DA;
+    -color-primary-200: #B9CCBF;
+    -color-primary-300: #9BB6A4;
+    -color-primary-400: #7FA08B;
+    -color-primary-500: #5A7863;
+    -color-primary-600: #4E6A57;
+    -color-primary-700: #415748;
+    -color-primary-800: #34443A;
+    -color-primary-900: #27322C;
+    -color-primary-950: #161E1B;
+
+    -color-base-50:  #F5F5F6;
+    -color-base-100: #E1E1E3;
+    -color-base-200: #C6C6C9;
+    -color-base-300: #ABABAF;
+    -color-base-400: #909095;
+    -color-base-500: #6E6E73;
+    -color-base-600: #4D4D52;
+    -color-base-700: #36363A;
+    -color-base-800: #252526;
+    -color-base-900: #1B1B1C;
+    -color-base-950: #121213;
 }
 .root {
-    -fx-background-color: -color-bg;
+    -fx-background-color: -color-base-950;
 }
