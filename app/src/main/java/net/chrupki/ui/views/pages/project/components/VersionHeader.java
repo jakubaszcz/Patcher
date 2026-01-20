@@ -8,6 +8,8 @@ import javafx.scene.layout.HBox;
 import javafx.scene.layout.Priority;
 import javafx.scene.layout.Region;
 import net.chrupki.app.AppContext;
+import net.chrupki.ui.model.ProjectModel;
+import net.chrupki.ui.views.pages.project.modals.ProjectModal;
 
 public class VersionHeader extends HBox {
 

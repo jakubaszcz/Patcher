@@ -4,23 +4,13 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="c1aa160e-de6c-484d-8c28-5409cf16dc62" name="Changes" comment="refactor(ui): move dto folder into the projects folder">
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/net/chrupki/ui/views/pages/project/components/Body.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/net/chrupki/ui/views/pages/project/components/Patch.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/net/chrupki/ui/views/pages/project/components/Version.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/net/chrupki/ui/views/pages/project/components/VersionContainer.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/net/chrupki/ui/views/pages/project/components/VersionHeader.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/resources/styles/project-version.css" afterDir="false" />
+    <list default="true" id="c1aa160e-de6c-484d-8c28-5409cf16dc62" name="Changes" comment="add(model): property to toggle project modal">
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/net/chrupki/ui/views/pages/project/modals/CreateVersionModal.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/net/chrupki/ui/views/pages/project/modals/ProjectModal.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/net/chrupki/database/dao/VersionDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/net/chrupki/database/dao/VersionDAO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/net/chrupki/model/Version.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/net/chrupki/ui/views/pages/project/dto/VersionDTO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/net/chrupki/project/services/files/VersionService.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/net/chrupki/project/services/files/VersionService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/net/chrupki/ui/components/VersionListView.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/net/chrupki/ui/components/VersionListView.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/net/chrupki/ui/controllers/files/VersionController.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/net/chrupki/ui/controllers/files/VersionController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/net/chrupki/ui/model/ProjectModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/net/chrupki/ui/model/ProjectModel.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/net/chrupki/ui/views/MainView.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/net/chrupki/ui/views/MainView.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/net/chrupki/ui/views/pages/project/ProjectView.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/net/chrupki/ui/views/pages/project/ProjectView.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/net/chrupki/ui/views/pages/projects/ProjectsView.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/net/chrupki/ui/views/pages/projects/ProjectsView.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/net/chrupki/ui/views/pages/project/components/VersionHeader.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/net/chrupki/ui/views/pages/project/components/VersionHeader.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -28,7 +18,7 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="EmbeddingIndexingInfo">
-    <option name="cachedIndexableFilesCount" value="445" />
+    <option name="cachedIndexableFilesCount" value="451" />
     <option name="fileBasedEmbeddingIndicesEnabled" value="true" />
   </component>
   <component name="ExternalProjectsData">
@@ -183,79 +173,8 @@
       <workItem from="1768655633282" duration="5524000" />
       <workItem from="1768674632372" duration="8344000" />
       <workItem from="1768734249537" duration="14540000" />
-      <workItem from="1768854480253" duration="3750000" />
-    </task>
-    <task id="LOCAL-00077" summary="refactor(ui): add missing variable for patch request">
-      <option name="closed" value="true" />
-      <created>1768345118961</created>
-      <option name="number" value="00077" />
-      <option name="presentableId" value="LOCAL-00077" />
-      <option name="project" value="LOCAL" />
-      <updated>1768345118961</updated>
-    </task>
-    <task id="LOCAL-00078" summary="feat(controller): allow patch to be modified&#10;&#10;This commit add a new feature to the application, it is now possible to save and edit patches.">
-      <option name="closed" value="true" />
-      <created>1768345191351</created>
-      <option name="number" value="00078" />
-      <option name="presentableId" value="LOCAL-00078" />
-      <option name="project" value="LOCAL" />
-      <updated>1768345191353</updated>
-    </task>
-    <task id="LOCAL-00079" summary="refactor(ui): delete spacing for box">
-      <option name="closed" value="true" />
-      <created>1768345379397</created>
-      <option name="number" value="00079" />
-      <option name="presentableId" value="LOCAL-00079" />
-      <option name="project" value="LOCAL" />
-      <updated>1768345379397</updated>
-    </task>
-    <task id="LOCAL-00080" summary="add(database): handle one instance&#10;&#10;This script will allow stopping/close database with a function unlike before, I was depending on the try/catch methode, limiting plenty of moves.">
-      <option name="closed" value="true" />
-      <created>1768425653380</created>
-      <option name="number" value="00080" />
-      <option name="presentableId" value="LOCAL-00080" />
-      <option name="project" value="LOCAL" />
-      <updated>1768425653381</updated>
-    </task>
-    <task id="LOCAL-00081" summary="refactor(database): change database connect methode&#10;&#10;The refracting is to use the new function from the database hub singleton.">
-      <option name="closed" value="true" />
-      <created>1768426075297</created>
-      <option name="number" value="00081" />
-      <option name="presentableId" value="LOCAL-00081" />
-      <option name="project" value="LOCAL" />
-      <updated>1768426075297</updated>
-    </task>
-    <task id="LOCAL-00082" summary="feat(ui): toggle back the edit for the project&#10;&#10;It has been temporarily disabled because of the database issues, they're now fixed thanks to the database singleton.">
-      <option name="closed" value="true" />
-      <created>1768426346388</created>
-      <option name="number" value="00082" />
-      <option name="presentableId" value="LOCAL-00082" />
-      <option name="project" value="LOCAL" />
-      <updated>1768426346388</updated>
-    </task>
-    <task id="LOCAL-00083" summary="feat(ui): delete project button&#10;&#10;User is now capable of deleting an entier project.">
-      <option name="closed" value="true" />
-      <created>1768426776263</created>
-      <option name="number" value="00083" />
-      <option name="presentableId" value="LOCAL-00083" />
-      <option name="project" value="LOCAL" />
-      <updated>1768426776263</updated>
-    </task>
-    <task id="LOCAL-00084" summary="add(database): function to delete a chosen patch by id &amp; vid">
-      <option name="closed" value="true" />
-      <created>1768428495128</created>
-      <option name="number" value="00084" />
-      <option name="presentableId" value="LOCAL-00084" />
-      <option name="project" value="LOCAL" />
-      <updated>1768428495128</updated>
-    </task>
-    <task id="LOCAL-00085" summary="feat(ui): delete chosen patch&#10;&#10;The user can now delete a chosen patch.">
-      <option name="closed" value="true" />
-      <created>1768428542298</created>
-      <option name="number" value="00085" />
-      <option name="presentableId" value="LOCAL-00085" />
-      <option name="project" value="LOCAL" />
-      <updated>1768428542298</updated>
+      <workItem from="1768854480253" duration="4694000" />
+      <workItem from="1768916925129" duration="1920000" />
     </task>
     <task id="LOCAL-00086" summary="add(database): delete all patches from a given vid">
       <option name="closed" value="true" />
@@ -577,7 +496,79 @@
       <option name="project" value="LOCAL" />
       <updated>1768855098067</updated>
     </task>
-    <option name="localTasksCounter" value="126" />
+    <task id="LOCAL-00126" summary="refactor(ui): using the DTO files for the projects view">
+      <option name="closed" value="true" />
+      <created>1768858295657</created>
+      <option name="number" value="00126" />
+      <option name="presentableId" value="LOCAL-00126" />
+      <option name="project" value="LOCAL" />
+      <updated>1768858295657</updated>
+    </task>
+    <task id="LOCAL-00127" summary="refactor(dto): change the name to dto, more appropriate">
+      <option name="closed" value="true" />
+      <created>1768858347039</created>
+      <option name="number" value="00127" />
+      <option name="presentableId" value="LOCAL-00127" />
+      <option name="project" value="LOCAL" />
+      <updated>1768858347039</updated>
+    </task>
+    <task id="LOCAL-00128" summary="refactor(dto): change the old version DTO into version DTO">
+      <option name="closed" value="true" />
+      <created>1768858393580</created>
+      <option name="number" value="00128" />
+      <option name="presentableId" value="LOCAL-00128" />
+      <option name="project" value="LOCAL" />
+      <updated>1768858393580</updated>
+    </task>
+    <task id="LOCAL-00129" summary="feat(ui): add the new version view">
+      <option name="closed" value="true" />
+      <created>1768858414078</created>
+      <option name="number" value="00129" />
+      <option name="presentableId" value="LOCAL-00129" />
+      <option name="project" value="LOCAL" />
+      <updated>1768858414078</updated>
+    </task>
+    <task id="LOCAL-00130" summary="feat(ui): add the new version style file for the view">
+      <option name="closed" value="true" />
+      <created>1768858435860</created>
+      <option name="number" value="00130" />
+      <option name="presentableId" value="LOCAL-00130" />
+      <option name="project" value="LOCAL" />
+      <updated>1768858435860</updated>
+    </task>
+    <task id="LOCAL-00131" summary="add(model): property to toggle project modal">
+      <option name="closed" value="true" />
+      <created>1768917568147</created>
+      <option name="number" value="00131" />
+      <option name="presentableId" value="LOCAL-00131" />
+      <option name="project" value="LOCAL" />
+      <updated>1768917568147</updated>
+    </task>
+    <task id="LOCAL-00132" summary="feat(ui): add modal for the project page">
+      <option name="closed" value="true" />
+      <created>1768918788823</created>
+      <option name="number" value="00132" />
+      <option name="presentableId" value="LOCAL-00132" />
+      <option name="project" value="LOCAL" />
+      <updated>1768918788823</updated>
+    </task>
+    <task id="LOCAL-00133" summary="refactor(view): change the extends to stack pane to allow modal">
+      <option name="closed" value="true" />
+      <created>1768918823270</created>
+      <option name="number" value="00133" />
+      <option name="presentableId" value="LOCAL-00133" />
+      <option name="project" value="LOCAL" />
+      <updated>1768918823270</updated>
+    </task>
+    <task id="LOCAL-00134" summary="feat(ui): add functions to open the version creator modal">
+      <option name="closed" value="true" />
+      <created>1768918857063</created>
+      <option name="number" value="00134" />
+      <option name="presentableId" value="LOCAL-00134" />
+      <option name="project" value="LOCAL" />
+      <updated>1768918857063</updated>
+    </task>
+    <option name="localTasksCounter" value="135" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -595,15 +586,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="add(ui): add the border pane argument to the scene function" />
-    <MESSAGE value="refactor(controller): move controllers in new folder and create a hub&#10;&#10;The controllers have been moved into a folder, and a hub has been created to store all controllers and use them as static." />
-    <MESSAGE value="refactor(controller): make project model as static" />
-    <MESSAGE value="refactor(controller): move view manager into manager folder" />
-    <MESSAGE value="feat(ui): add multiple CSS files" />
-    <MESSAGE value="refactor(service): move services files into a folder and create hub services&#10;&#10;The files have been moved into a folder, and a hub service has been created to instantiate those services" />
-    <MESSAGE value="refactor(ui): given him temporarily name" />
-    <MESSAGE value="refactor(ui): to handle new pagination's system&#10;&#10;Thanks to the pages systems, we're now allowed to have multiple pages." />
-    <MESSAGE value="feat(ui): create the new projects page&#10;&#10;The new page for the project has been completely redesigned and retreated" />
     <MESSAGE value="feat(ui): add projects modal" />
     <MESSAGE value="refractor(ui): move every files to refractor &#10;&#10;It's a big refractor..." />
     <MESSAGE value="add(model): new boolean property" />
@@ -620,8 +602,16 @@
     <MESSAGE value="add(ui): new styling in the CSS file for the modal" />
     <MESSAGE value="feat(ui): edit project modal" />
     <MESSAGE value="refactor(ui): move dto folder into the projects folder" />
-    <option name="LAST_COMMIT_MESSAGE" value="refactor(ui): move dto folder into the projects folder" />
-    <option name="LAST_CHUNK_COMMIT_MESSAGE" value="add(ui): create new" />
+    <MESSAGE value="refactor(ui): using the DTO files for the projects view" />
+    <MESSAGE value="refactor(dto): change the name to dto, more appropriate" />
+    <MESSAGE value="refactor(dto): change the old version DTO into version DTO" />
+    <MESSAGE value="feat(ui): add the new version view" />
+    <MESSAGE value="feat(ui): add the new version style file for the view" />
+    <MESSAGE value="add(model): property to toggle project modal" />
+    <MESSAGE value="feat(ui): add modal for the project page" />
+    <MESSAGE value="refactor(view): change the extends to stack pane to allow modal" />
+    <MESSAGE value="feat(ui): add functions to open the version creator modal" />
+    <option name="LAST_COMMIT_MESSAGE" value="feat(ui): add functions to open the version creator modal" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/Patcher$Patcher__build_.ic" NAME="Patcher [build] Coverage Results" MODIFIED="1767013393295" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="true" />

@@ -80,7 +80,8 @@ public class VersionController {
     }
 
     public void closeModal() {
-        ProjectModel.setEditActiveProperty(false);
-        ProjectModel.setEditVersionProperty(false);
+        ProjectModel.setSwitchProjectModal(false);
+        ProjectModel.setSwitchCreateVersionProjectModal(false);
+        ProjectModel.setSwitchEditVersionProjectModal(false);
     }
 }
