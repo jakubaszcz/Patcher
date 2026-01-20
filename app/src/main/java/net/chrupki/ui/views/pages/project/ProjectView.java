@@ -24,6 +24,11 @@ public class ProjectView extends VBox {
         VBox.setVgrow(borderPane, Priority.ALWAYS);
 
         getChildren().add(borderPane);
+
+        // Modal
+        getChildren().add(
+                new ProjectModal()
+        );
     }
 }
 
