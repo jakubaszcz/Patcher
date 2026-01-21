@@ -1,22 +1,20 @@
 .header {
-    -fx-background-color: -color-card;
-    -fx-border-color: derive(-color-card, 18%);
-    -fx-border-width: 0 0 1 0;
+    -fx-background-color: -color-base-900;
 }
 
 .header-back-button {
-    -fx-background-color: -color-input;
-    -fx-text-fill: white;
+    -fx-background-color: -color-primary-700;
+    -fx-text-fill: -color-primary-100;
     -fx-background-radius: 8;
     -fx-padding: 6 10;
     -fx-cursor: hand;
 }
 
 .header-back-button:hover {
-    -fx-background-color: derive(-color-input, 10%);
+    -fx-background-color: -color-primary-800;
 }
 
 .header-back-text {
-    -fx-text-fill: derive(white, -20%);
+    -fx-text-fill: -color-primary-100;
     -fx-font-size: 12px;
 }
