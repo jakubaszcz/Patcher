@@ -4,11 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="c1aa160e-de6c-484d-8c28-5409cf16dc62" name="Changes" comment="refactor(ui): use the new colors for the projects page">
-      <change afterPath="$PROJECT_DIR$/app/src/main/resources/styles/modal.css" afterDir="false" />
+    <list default="true" id="c1aa160e-de6c-484d-8c28-5409cf16dc62" name="Changes" comment="refactor(ui): use the new colors for the modals">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/net/chrupki/ui/views/MainView.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/net/chrupki/ui/views/MainView.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/resources/styles/projects-modal.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/resources/styles/empty-projects.css" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/resources/styles/empty-projects.css" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -173,15 +171,7 @@
       <workItem from="1768734249537" duration="14540000" />
       <workItem from="1768854480253" duration="4694000" />
       <workItem from="1768916925129" duration="17166000" />
-      <workItem from="1768988890042" duration="3440000" />
-    </task>
-    <task id="LOCAL-00093" summary="feat(ui): add view manager">
-      <option name="closed" value="true" />
-      <created>1768691823985</created>
-      <option name="number" value="00093" />
-      <option name="presentableId" value="LOCAL-00093" />
-      <option name="project" value="LOCAL" />
-      <updated>1768691823985</updated>
+      <workItem from="1768988890042" duration="3530000" />
     </task>
     <task id="LOCAL-00094" summary="feat(ui): add multiple views">
       <option name="closed" value="true" />
@@ -567,7 +557,15 @@
       <option name="project" value="LOCAL" />
       <updated>1768991502420</updated>
     </task>
-    <option name="localTasksCounter" value="142" />
+    <task id="LOCAL-00142" summary="refactor(ui): use the new colors for the modals">
+      <option name="closed" value="true" />
+      <created>1768992371142</created>
+      <option name="number" value="00142" />
+      <option name="presentableId" value="LOCAL-00142" />
+      <option name="project" value="LOCAL" />
+      <updated>1768992371142</updated>
+    </task>
+    <option name="localTasksCounter" value="143" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -585,7 +583,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="add(ui): initiate the projects modal style sheet" />
     <MESSAGE value="add(ui): create styling for the upcoming projects creator" />
     <MESSAGE value="feat(ui): initiate the modal in the projects modal view" />
     <MESSAGE value="add(ui): bind for the create project modal" />
@@ -610,7 +607,8 @@
     <MESSAGE value="refactor(style): change main colors" />
     <MESSAGE value="refactor(ui): change the top padding" />
     <MESSAGE value="refactor(ui): use the new colors for the projects page" />
-    <option name="LAST_COMMIT_MESSAGE" value="refactor(ui): use the new colors for the projects page" />
+    <MESSAGE value="refactor(ui): use the new colors for the modals" />
+    <option name="LAST_COMMIT_MESSAGE" value="refactor(ui): use the new colors for the modals" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/Patcher$Patcher__build_.ic" NAME="Patcher [build] Coverage Results" MODIFIED="1767013393295" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="true" />
