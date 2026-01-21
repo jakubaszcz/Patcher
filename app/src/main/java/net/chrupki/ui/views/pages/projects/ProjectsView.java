@@ -33,7 +33,7 @@ public class ProjectsView extends StackPane {
 
         projectsView.setHgap(gap);
         projectsView.setVgap(gap);
-        projectsView.setPadding(new Insets(16));
+        projectsView.setPadding(new Insets(gap));
         projectsView.setAlignment(Pos.TOP_CENTER);
 
         createButton = new CreateProjectButton(
