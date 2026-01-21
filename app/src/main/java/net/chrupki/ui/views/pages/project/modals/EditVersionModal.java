@@ -24,19 +24,11 @@ public class EditVersionModal extends VBox {
             Consumer<Integer> onDelete,
             Runnable onClose
     ) {
-        StringProperty projectName = AppContext.projectContext().getName();
-
-        Label title = new Label("Edit project");
+        Label title = new Label("Edit version");
         title.getStyleClass().add("modal-title");
 
-        TextField currentName = new TextField();
-        currentName.textProperty().bind(projectName);
-
-        currentName.setDisable(true);
-        currentName.getStyleClass().add("modal-textfield");
-
         TextField newName = new TextField();
-        newName.setPromptText("New project name");
+        newName.setPromptText("New version name");
         newName.getStyleClass().add("modal-textfield");
 
         Button deleteButton = new Button("Delete");
@@ -93,7 +85,6 @@ public class EditVersionModal extends VBox {
 
         getChildren().addAll(
                 title,
-                currentName,
                 newName,
                 actions
         );
