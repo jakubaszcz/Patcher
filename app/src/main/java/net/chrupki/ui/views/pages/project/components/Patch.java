@@ -5,6 +5,7 @@ import javafx.scene.layout.HBox;
 public class Patch extends HBox {
 
     public Patch() {
+        getStyleClass().add("version-panel");
 
     }
 

@@ -18,17 +18,17 @@ public class ProjectsContainer extends HBox {
     ) {
 
         Label title = new Label(projectContainerModel.getText());
-        title.getStyleClass().add("project-card-title");
+        title.getStyleClass().add("card-title");
 
         Button edit = new Button("Edit");
-        edit.getStyleClass().add("project-card-action");
+        edit.getStyleClass().add("card-action");
 
         HBox actions = new HBox(edit);
-        actions.getStyleClass().add("project-card-actions");
+        actions.getStyleClass().add("card-actions");
 
         getChildren().addAll(title, actions);
 
-        getStyleClass().add("project-card");
+        getStyleClass().add("card");
 
         setPadding(new Insets(10, 14, 10, 14));
         setSpacing(8);

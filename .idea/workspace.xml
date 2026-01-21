@@ -4,11 +4,13 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="c1aa160e-de6c-484d-8c28-5409cf16dc62" name="Changes" comment="feat(ui): add button to edit a version">
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/net/chrupki/ui/views/pages/project/modals/EditVersionModal.java" afterDir="false" />
+    <list default="true" id="c1aa160e-de6c-484d-8c28-5409cf16dc62" name="Changes" comment="refactor(style): change main colors">
+      <change afterPath="$PROJECT_DIR$/app/src/main/resources/styles/card-container.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/net/chrupki/ui/views/pages/project/components/VersionContainer.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/net/chrupki/ui/views/pages/project/components/VersionContainer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/net/chrupki/ui/views/pages/project/modals/ProjectModal.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/net/chrupki/ui/views/pages/project/modals/ProjectModal.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/net/chrupki/ui/views/MainView.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/net/chrupki/ui/views/MainView.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/net/chrupki/ui/views/pages/project/components/Patch.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/net/chrupki/ui/views/pages/project/components/Patch.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/net/chrupki/ui/views/pages/projects/components/ProjectsContainer.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/net/chrupki/ui/views/pages/projects/components/ProjectsContainer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/resources/styles/project-card-container.css" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -16,7 +18,7 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="EmbeddingIndexingInfo">
-    <option name="cachedIndexableFilesCount" value="451" />
+    <option name="cachedIndexableFilesCount" value="454" />
     <option name="fileBasedEmbeddingIndicesEnabled" value="true" />
   </component>
   <component name="ExternalProjectsData">
@@ -172,39 +174,8 @@
       <workItem from="1768674632372" duration="8344000" />
       <workItem from="1768734249537" duration="14540000" />
       <workItem from="1768854480253" duration="4694000" />
-      <workItem from="1768916925129" duration="3946000" />
-    </task>
-    <task id="LOCAL-00088" summary="feat(ui): delete chosen version&#10;&#10;Why the patches delete has been made first, because the patches delete was also deleted for version. So I choose to do the patches delete first.">
-      <option name="closed" value="true" />
-      <created>1768429790690</created>
-      <option name="number" value="00088" />
-      <option name="presentableId" value="LOCAL-00088" />
-      <option name="project" value="LOCAL" />
-      <updated>1768429790690</updated>
-    </task>
-    <task id="LOCAL-00089" summary="fix(file): issue while renaming a file with database">
-      <option name="closed" value="true" />
-      <created>1768659306325</created>
-      <option name="number" value="00089" />
-      <option name="presentableId" value="LOCAL-00089" />
-      <option name="project" value="LOCAL" />
-      <updated>1768659306326</updated>
-    </task>
-    <task id="LOCAL-00090" summary="add(gradle): locate by default path for CSS">
-      <option name="closed" value="true" />
-      <created>1768675131823</created>
-      <option name="number" value="00090" />
-      <option name="presentableId" value="LOCAL-00090" />
-      <option name="project" value="LOCAL" />
-      <updated>1768675131823</updated>
-    </task>
-    <task id="LOCAL-00091" summary="add(ui): the global theme CSS file">
-      <option name="closed" value="true" />
-      <created>1768678462854</created>
-      <option name="number" value="00091" />
-      <option name="presentableId" value="LOCAL-00091" />
-      <option name="project" value="LOCAL" />
-      <updated>1768678462854</updated>
+      <workItem from="1768916925129" duration="17166000" />
+      <workItem from="1768988890042" duration="2553000" />
     </task>
     <task id="LOCAL-00092" summary="feat(ui): resize of the global window size">
       <option name="closed" value="true" />
@@ -566,7 +537,39 @@
       <option name="project" value="LOCAL" />
       <updated>1768919693991</updated>
     </task>
-    <option name="localTasksCounter" value="137" />
+    <task id="LOCAL-00137" summary="feat(ui): add edit version modal">
+      <option name="closed" value="true" />
+      <created>1768921018137</created>
+      <option name="number" value="00137" />
+      <option name="presentableId" value="LOCAL-00137" />
+      <option name="project" value="LOCAL" />
+      <updated>1768921018137</updated>
+    </task>
+    <task id="LOCAL-00138" summary="feat(ui): sync the edit version modal with controller and service">
+      <option name="closed" value="true" />
+      <created>1768921046194</created>
+      <option name="number" value="00138" />
+      <option name="presentableId" value="LOCAL-00138" />
+      <option name="project" value="LOCAL" />
+      <updated>1768921046194</updated>
+    </task>
+    <task id="LOCAL-00139" summary="refactor(style): change main colors">
+      <option name="closed" value="true" />
+      <created>1768941957403</created>
+      <option name="number" value="00139" />
+      <option name="presentableId" value="LOCAL-00139" />
+      <option name="project" value="LOCAL" />
+      <updated>1768941957403</updated>
+    </task>
+    <task id="LOCAL-00140" summary="refactor(ui): change the top padding">
+      <option name="closed" value="true" />
+      <created>1768991459496</created>
+      <option name="number" value="00140" />
+      <option name="presentableId" value="LOCAL-00140" />
+      <option name="project" value="LOCAL" />
+      <updated>1768991459496</updated>
+    </task>
+    <option name="localTasksCounter" value="141" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -584,10 +587,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="add(model): new boolean property" />
-    <MESSAGE value="remove(ui): fixe header" />
-    <MESSAGE value="feat(ui): trigger the modal when create new project" />
-    <MESSAGE value="add(controller): load the projects when creating one" />
     <MESSAGE value="add(controller): close the modal" />
     <MESSAGE value="add(ui): initiate the projects modal style sheet" />
     <MESSAGE value="add(ui): create styling for the upcoming projects creator" />
@@ -609,7 +608,11 @@
     <MESSAGE value="feat(ui): add functions to open the version creator modal" />
     <MESSAGE value="feat(ui): add modal for version creation + linking with the service and controller" />
     <MESSAGE value="feat(ui): add button to edit a version" />
-    <option name="LAST_COMMIT_MESSAGE" value="feat(ui): add button to edit a version" />
+    <MESSAGE value="feat(ui): add edit version modal" />
+    <MESSAGE value="feat(ui): sync the edit version modal with controller and service" />
+    <MESSAGE value="refactor(style): change main colors" />
+    <MESSAGE value="refactor(ui): change the top padding" />
+    <option name="LAST_COMMIT_MESSAGE" value="refactor(ui): change the top padding" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/Patcher$Patcher__build_.ic" NAME="Patcher [build] Coverage Results" MODIFIED="1767013393295" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="true" />
