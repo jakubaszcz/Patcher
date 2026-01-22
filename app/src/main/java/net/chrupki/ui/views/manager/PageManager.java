@@ -3,7 +3,7 @@ package net.chrupki.ui.views.manager;
 import javafx.scene.Parent;
 import javafx.scene.layout.StackPane;
 
-public class ViewManager {
+public class PageManager {
 
     private final StackPane container = new StackPane();
 

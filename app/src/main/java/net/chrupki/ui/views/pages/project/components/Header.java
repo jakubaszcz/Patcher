@@ -6,12 +6,12 @@ import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.layout.HBox;
 import net.chrupki.app.AppContext;
-import net.chrupki.ui.views.manager.ViewManager;
+import net.chrupki.ui.views.manager.PageManager;
 import net.chrupki.ui.views.pages.projects.ProjectsView;
 
 public class Header extends HBox {
 
-    public Header(ViewManager viewManager) {
+    public Header(PageManager viewManager) {
 
         Button backButton = new Button("←");
         backButton.getStyleClass().add("header-back-button");

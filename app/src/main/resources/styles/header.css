@@ -5,7 +5,7 @@
 .header-back-button {
     -fx-background-color: -color-primary-700;
     -fx-text-fill: -color-primary-100;
-    -fx-background-radius: 8;
+    -fx-background-radius: 5px;
     -fx-padding: 6 10;
     -fx-cursor: hand;
 }

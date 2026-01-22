@@ -1,23 +1,13 @@
 package net.chrupki.ui.views;
 
 import javafx.scene.Scene;
-import javafx.scene.layout.BorderPane;
 import javafx.stage.Stage;
-import net.chrupki.project.services.files.PatchService;
-import net.chrupki.project.services.files.ProjectService;
-import net.chrupki.project.services.files.VersionService;
-import net.chrupki.project.services.files.exports.MarkdownExportService;
 import net.chrupki.ui.controllers.HubController;
-import net.chrupki.ui.controllers.files.ExportController;
-import net.chrupki.ui.controllers.files.PatchController;
-import net.chrupki.ui.controllers.files.ProjectController;
-import net.chrupki.ui.controllers.files.VersionController;
-import net.chrupki.ui.model.ProjectModel;
 import net.chrupki.ui.util.Css;
-import net.chrupki.ui.views.manager.ViewManager;
+import net.chrupki.ui.views.manager.PageManager;
 import net.chrupki.ui.views.pages.projects.ProjectsView;
 
-public class MainView {
+public class MainPage {
 
     private static final String APP_NAME = "patcher";
 
@@ -27,7 +17,7 @@ public class MainView {
         stage.setMinHeight(400);
     }
 
-    private static void scene(Stage stage, ViewManager viewManager) {
+    private static void scene(Stage stage, PageManager viewManager) {
         Scene scene = new Scene(viewManager.getContainer(), 1000, 800);
 
         scene.getStylesheets().addAll(
@@ -44,7 +34,7 @@ public class MainView {
 
     public static void display(Stage stage) {
 
-        ViewManager viewManager = new ViewManager();
+        PageManager viewManager = new PageManager();
 
         viewManager.show(new ProjectsView(viewManager));
 

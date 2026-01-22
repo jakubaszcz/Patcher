@@ -4,7 +4,7 @@ import javafx.application.Application;
 import javafx.stage.Stage;
 import net.chrupki.project.AppProject;
 import net.chrupki.app.AppPath;
-import net.chrupki.ui.views.MainView;
+import net.chrupki.ui.views.MainPage;
 
 public class Patcher extends Application {
 
@@ -15,7 +15,7 @@ public class Patcher extends Application {
         AppProject.FetchProject();
         AppPath.getDataDir();
 
-        MainView.display(stage);
+        MainPage.display(stage);
 
     }
 
