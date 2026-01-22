@@ -4,7 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="c1aa160e-de6c-484d-8c28-5409cf16dc62" name="Changes" comment="refactor(file): rename file and folder for better understanding" />
+    <list default="true" id="c1aa160e-de6c-484d-8c28-5409cf16dc62" name="Changes" comment="refactor(file): change view to one">
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/net/chrupki/ui/view/pages/project/components/VersionContainer.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/net/chrupki/ui/view/pages/project/components/VersionContainer.java" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -170,14 +172,6 @@
       <workItem from="1768916925129" duration="17166000" />
       <workItem from="1768988890042" duration="18715000" />
       <workItem from="1769107503453" duration="8376000" />
-    </task>
-    <task id="LOCAL-00110" summary="feat(ui): add projects modal">
-      <option name="closed" value="true" />
-      <created>1768758832913</created>
-      <option name="number" value="00110" />
-      <option name="presentableId" value="LOCAL-00110" />
-      <option name="project" value="LOCAL" />
-      <updated>1768758832913</updated>
     </task>
     <task id="LOCAL-00111" summary="refractor(ui): move every files to refractor &#10;&#10;It's a big refractor...">
       <option name="closed" value="true" />
@@ -563,7 +557,15 @@
       <option name="project" value="LOCAL" />
       <updated>1769124131025</updated>
     </task>
-    <option name="localTasksCounter" value="159" />
+    <task id="LOCAL-00159" summary="refactor(file): change view to one">
+      <option name="closed" value="true" />
+      <created>1769124805402</created>
+      <option name="number" value="00159" />
+      <option name="presentableId" value="LOCAL-00159" />
+      <option name="project" value="LOCAL" />
+      <updated>1769124805402</updated>
+    </task>
+    <option name="localTasksCounter" value="160" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -581,7 +583,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="feat(ui): add functions to open the version creator modal" />
     <MESSAGE value="feat(ui): add modal for version creation + linking with the service and controller" />
     <MESSAGE value="feat(ui): add button to edit a version" />
     <MESSAGE value="feat(ui): add edit version modal" />
@@ -606,7 +607,8 @@
     <MESSAGE value="refactor(file): delete useless files" />
     <MESSAGE value="refactor(UI): clear input for modals" />
     <MESSAGE value="refactor(file): rename file and folder for better understanding" />
-    <option name="LAST_COMMIT_MESSAGE" value="refactor(file): rename file and folder for better understanding" />
+    <MESSAGE value="refactor(file): change view to one" />
+    <option name="LAST_COMMIT_MESSAGE" value="refactor(file): change view to one" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/Patcher$Patcher__build_.ic" NAME="Patcher [build] Coverage Results" MODIFIED="1767013393295" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="true" />

@@ -8,6 +8,7 @@ import javafx.scene.layout.HBox;
 import javafx.scene.layout.Priority;
 import javafx.scene.layout.Region;
 import javafx.scene.layout.VBox;
+import net.chrupki.app.AppContext;
 import net.chrupki.ui.model.ProjectModel;
 import net.chrupki.ui.view.pages.project.dto.VersionDTO;
 
@@ -31,6 +32,7 @@ public class VersionContainer extends HBox {
         editButton.getStyleClass().add("project-item-button");
 
         editButton.setOnAction(e -> {
+            AppContext.versionContext().setId(version.getId());
             ProjectModel.setSwitchProjectModal(true);
             ProjectModel.setSwitchEditVersionProjectModal(true);
         });
