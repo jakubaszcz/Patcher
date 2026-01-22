@@ -7,6 +7,7 @@ import javafx.scene.layout.HBox;
 import javafx.scene.layout.Priority;
 import javafx.scene.layout.VBox;
 import net.chrupki.app.AppContext;
+import net.chrupki.ui.controllers.HubController;
 import net.chrupki.ui.model.ProjectModel;
 import net.chrupki.ui.views.pages.project.dto.PatchDTO;
 import net.chrupki.ui.views.pages.project.dto.VersionDTO;
@@ -32,7 +33,7 @@ public class Patch extends VBox {
 
         getStyleClass().add("project-panel");
         getChildren().addAll(
-                new PatchHeader(),
+                new PatchHeader(HubController.getExportController()::export),
                 list);
     }
 

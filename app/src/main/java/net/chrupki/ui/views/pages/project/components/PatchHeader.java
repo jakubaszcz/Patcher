@@ -7,17 +7,27 @@ import javafx.scene.control.Label;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.Priority;
 import javafx.scene.layout.Region;
+import javafx.stage.FileChooser;
 import net.chrupki.app.AppContext;
+import net.chrupki.database.dao.VersionDAO;
+import net.chrupki.request.ExportRequest;
 import net.chrupki.ui.model.ProjectModel;
+
+import java.io.File;
+import java.util.List;
+import java.util.function.Consumer;
 
 public class PatchHeader extends HBox {
 
-    public PatchHeader() {
+    public PatchHeader(Consumer<ExportRequest> onExport) {
         Label title = new Label("Patches");
         title.getStyleClass().add("project-title");
 
         Button addButton = new Button("+");
         addButton.getStyleClass().add("project-add-button");
+
+        Button exportButton = new Button("Export");
+        exportButton.getStyleClass().add("project-add-button");
 
         Region spacer = new Region();
         HBox.setHgrow(spacer, Priority.ALWAYS);
@@ -31,6 +41,29 @@ public class PatchHeader extends HBox {
             ProjectModel.setSwitchCreatePatchProjectModal(true);
         });
 
+        exportButton.setOnAction(e -> {
+            FileChooser chooser = new FileChooser();
+
+            File file = chooser.showSaveDialog(getScene().getWindow());
+            if (file == null) {
+                return;
+            }
+
+            try {
+                onExport.accept(new ExportRequest(
+                        AppContext.projectContext().getName().get(),
+                        VersionDAO.findNameById(
+                                AppContext.versionContext().getId().get()
+                        ),
+                        "markdown",
+                        List.of(),
+                        file.toPath()
+                ));
+            } catch (Exception ex) {
+                throw new RuntimeException(ex);
+            }
+        });
+
         setMaxWidth(Double.MAX_VALUE);
 
         getStyleClass().add("project-header");
@@ -38,6 +71,7 @@ public class PatchHeader extends HBox {
         getChildren().addAll(
                 title,
                 spacer,
+                exportButton,
                 addButton
         );
     }
