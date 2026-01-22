@@ -1,9 +1,8 @@
 package net.chrupki.database.dao;
 
 import net.chrupki.app.AppContext;
-import net.chrupki.database.Database;
 import net.chrupki.database.DatabaseHub;
-import net.chrupki.model.Patch;
+import net.chrupki.ui.views.pages.project.dto.PatchDTO;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -65,6 +64,7 @@ public class PatchDAO {
             throw new RuntimeException(e);
         }
     }
+
 
     public static String findContent(int id, int vid) {
         String sql = "SELECT content FROM notes WHERE id = ? AND version_id = ?";
@@ -252,8 +252,8 @@ public class PatchDAO {
         return false;
     }
 
-    public static List<Patch> findAll(String projectName) throws Exception {
-        List<Patch> result = new ArrayList<>();
+    public static List<PatchDTO> findAll(String projectName) throws Exception {
+        List<PatchDTO> result = new ArrayList<>();
         String sql = """
             SELECT *
             FROM notes
@@ -270,7 +270,7 @@ public class PatchDAO {
 
             try (ResultSet rs = stmt.executeQuery()) {
                 while (rs.next()) {
-                    result.add(new Patch(rs.getString("content"),
+                    result.add(new PatchDTO(rs.getString("content"),
                             rs.getString("patch"),
                             rs.getInt("id"),
                             rs.getInt("version_id")));

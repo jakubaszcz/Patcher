@@ -1,10 +1,7 @@
 package net.chrupki.database.dao;
 
-import net.chrupki.app.AppContext;
-import net.chrupki.database.Database;
 import net.chrupki.database.DatabaseHub;
-import net.chrupki.model.Version;
-import net.chrupki.ui.model.ProjectModel;
+import net.chrupki.ui.views.pages.project.dto.VersionDTO;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -123,8 +120,8 @@ public class VersionDAO {
     }
 
 
-    public static List<Version> findAll() {
-        List<Version> result = new ArrayList<>();
+    public static List<VersionDTO> findAll() {
+        List<VersionDTO> result = new ArrayList<>();
         String sql = """
                 SELECT id, version
                 FROM versions
@@ -138,7 +135,7 @@ public class VersionDAO {
 
             try (ResultSet rs = stmt.executeQuery()) {
                 while (rs.next()) {
-                    result.add(new Version(
+                    result.add(new VersionDTO(
                             rs.getInt("id"),
                             rs.getString("version")
                     ));
