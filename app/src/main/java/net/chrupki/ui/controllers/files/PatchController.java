@@ -57,5 +57,6 @@ public class PatchController {
     public void closeModal() {
         ProjectModel.setSwitchProjectModal(false);
         ProjectModel.setSwitchCreatePatchProjectModal(false);
+        ProjectModel.setSwitchEditPatchProjectModal(false);
     }
 }

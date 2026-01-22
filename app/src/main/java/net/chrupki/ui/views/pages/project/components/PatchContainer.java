@@ -33,9 +33,10 @@ public class PatchContainer extends HBox {
         editButton.getStyleClass().add("project-item-button");
 
         editButton.setOnAction(e -> {
-            AppContext.versionContext().setId(patch.getId());
+            AppContext.patchContext().setId(patch.getId());
+            AppContext.patchContext().setVid(patch.getVid());
             ProjectModel.setSwitchProjectModal(true);
-            ProjectModel.setSwitchEditVersionProjectModal(true);
+            ProjectModel.setSwitchEditPatchProjectModal(true);
         });
 
         Region spacer = new Region();

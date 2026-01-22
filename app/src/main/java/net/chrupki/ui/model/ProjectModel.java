@@ -41,6 +41,9 @@ public class ProjectModel {
     private static final BooleanProperty switchCreatePatchProjectModal =
             new SimpleBooleanProperty(false);
 
+    private static final BooleanProperty switchEditPatchProjectModal =
+            new SimpleBooleanProperty(false);
+
     public static void setSwitchProjectsModal(boolean value) {
         switchProjectsModal.set(value);
     }
@@ -89,6 +92,10 @@ public class ProjectModel {
         switchCreatePatchProjectModal.set(value);
     }
 
+    public static void setSwitchEditPatchProjectModal(boolean value) {
+        switchEditPatchProjectModal.set(value);
+    }
+
     public static BooleanProperty getSwitchEditVersionProjectModal() {
         return switchEditVersionProjectModal;
     }
@@ -97,6 +104,9 @@ public class ProjectModel {
         return switchCreatePatchProjectModal;
     }
 
+    public static BooleanProperty getSwitchEditPatchProjectModal() {
+        return switchEditPatchProjectModal;
+    }
 
     public static void setEditActiveProperty(boolean booleanProperty) {
         editActive.set(booleanProperty);
