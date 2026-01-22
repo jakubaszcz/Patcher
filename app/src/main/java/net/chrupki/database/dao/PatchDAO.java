@@ -2,7 +2,7 @@ package net.chrupki.database.dao;
 
 import net.chrupki.app.AppContext;
 import net.chrupki.database.DatabaseHub;
-import net.chrupki.ui.views.pages.project.dto.PatchDTO;
+import net.chrupki.ui.view.pages.project.dto.PatchDTO;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;

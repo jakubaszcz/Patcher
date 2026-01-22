@@ -3,7 +3,7 @@ package net.chrupki.ui.controllers.files;
 import javafx.beans.property.StringProperty;
 import net.chrupki.app.AppContext;
 import net.chrupki.database.dao.PatchDAO;
-import net.chrupki.ui.views.pages.project.dto.VersionDTO;
+import net.chrupki.ui.view.pages.project.dto.VersionDTO;
 import net.chrupki.project.services.HubService;
 import net.chrupki.ui.controllers.files.dtos.EditVersion;
 import net.chrupki.ui.model.ProjectModel;

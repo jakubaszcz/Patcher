@@ -1,7 +1,7 @@
 package net.chrupki.ui.controllers.files;
 
 import net.chrupki.app.AppContext;
-import net.chrupki.ui.views.pages.project.dto.PatchDTO;
+import net.chrupki.ui.view.pages.project.dto.PatchDTO;
 import net.chrupki.project.services.HubService;
 import net.chrupki.request.PatchRequest;
 import net.chrupki.ui.controllers.files.dtos.EditPatch;

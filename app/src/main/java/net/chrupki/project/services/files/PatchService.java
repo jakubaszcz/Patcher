@@ -1,7 +1,7 @@
 package net.chrupki.project.services.files;
 
 import net.chrupki.database.dao.PatchDAO;
-import net.chrupki.ui.views.pages.project.dto.PatchDTO;
+import net.chrupki.ui.view.pages.project.dto.PatchDTO;
 
 import java.util.List;
 

@@ -4,7 +4,7 @@ import javafx.application.Application;
 import javafx.stage.Stage;
 import net.chrupki.project.AppProject;
 import net.chrupki.app.AppPath;
-import net.chrupki.ui.views.MainPage;
+import net.chrupki.ui.view.MainPage;
 
 public class Patcher extends Application {
 

@@ -4,8 +4,8 @@ import javafx.beans.property.BooleanProperty;
 import javafx.beans.property.SimpleBooleanProperty;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
-import net.chrupki.ui.views.pages.project.dto.PatchDTO;
-import net.chrupki.ui.views.pages.project.dto.VersionDTO;
+import net.chrupki.ui.view.pages.project.dto.PatchDTO;
+import net.chrupki.ui.view.pages.project.dto.VersionDTO;
 
 public class ProjectModel {
 
