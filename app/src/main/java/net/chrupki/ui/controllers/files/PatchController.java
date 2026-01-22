@@ -1,10 +1,9 @@
 package net.chrupki.ui.controllers.files;
 
 import net.chrupki.app.AppContext;
-import net.chrupki.model.Patch;
+import net.chrupki.ui.views.pages.project.dto.PatchDTO;
 import net.chrupki.project.services.HubService;
 import net.chrupki.request.PatchRequest;
-import net.chrupki.project.services.files.PatchService;
 import net.chrupki.ui.controllers.files.dtos.EditPatch;
 import net.chrupki.ui.model.ProjectModel;
 
@@ -17,7 +16,7 @@ public class PatchController {
         Integer versionId = AppContext.versionContext().getId().get();
         if (versionId == null) { throw new IllegalStateException("No version selected");}
 
-        ProjectModel.getPatches().add(new Patch(
+        ProjectModel.getPatches().add(new PatchDTO(
                         request.name(),
                         request.type(),
                         HubService.getPatchService().createPatch(
@@ -56,7 +55,7 @@ public class PatchController {
 
 
     public void closeModal() {
-        ProjectModel.setEditActiveProperty(false);
-        ProjectModel.setEditPatchProperty(false);
+        ProjectModel.setSwitchProjectModal(false);
+        ProjectModel.setSwitchCreatePatchProjectModal(false);
     }
 }

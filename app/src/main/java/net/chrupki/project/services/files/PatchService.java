@@ -1,7 +1,7 @@
 package net.chrupki.project.services.files;
 
 import net.chrupki.database.dao.PatchDAO;
-import net.chrupki.model.Patch;
+import net.chrupki.ui.views.pages.project.dto.PatchDTO;
 
 import java.util.List;
 
@@ -19,7 +19,7 @@ public class PatchService {
         );
     }
 
-    public List<Patch> fetchVersions(String projectName) throws Exception {
+    public List<PatchDTO> fetchVersions(String projectName) throws Exception {
         if (projectName == null || projectName.isBlank()) {
             return List.of();
         }

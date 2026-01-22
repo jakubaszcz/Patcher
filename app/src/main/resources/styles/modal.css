@@ -60,3 +60,54 @@
     -fx-background-color: -color-primary-900;
 
 }
+
+.modal-combobox {
+    -fx-background-color: -color-base-800;
+    -fx-background-radius: 5px;
+    -fx-padding: 2;
+}
+
+.modal-combobox .list-cell {
+    -fx-background-color: transparent;
+    -fx-text-fill: -color-base-100;
+    -fx-padding: 8 10;
+}
+
+.modal-combobox .arrow-button {
+    -fx-background-color: transparent;
+}
+
+.modal-combobox .arrow {
+    -fx-background-color: -color-base-400;
+}
+
+.modal-combobox:hover {
+    -fx-background-color: -color-base-700;
+}
+
+.modal-combobox:focused {
+    -fx-background-color: -color-base-700;
+    -fx-border-color: -color-primary-800;
+    -fx-border-radius: 5px;
+}
+
+.modal-combobox .combo-box-popup .list-view {
+    -fx-background-color: -color-base-800;
+    -fx-background-radius: 5px;
+    -fx-padding: 4 0;
+}
+
+.modal-combobox .combo-box-popup .list-cell {
+    -fx-background-color: transparent;
+    -fx-text-fill: -color-base-100;
+    -fx-padding: 8 12;
+}
+
+.modal-combobox .combo-box-popup .list-cell:hover {
+    -fx-background-color: -color-base-700;
+}
+
+.modal-combobox .combo-box-popup .list-cell:selected {
+    -fx-background-color: -color-primary-800;
+    -fx-text-fill: -color-primary-100;
+}

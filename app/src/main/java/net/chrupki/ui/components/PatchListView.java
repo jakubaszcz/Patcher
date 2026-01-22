@@ -3,7 +3,7 @@ package net.chrupki.ui.components;
 import javafx.collections.ListChangeListener;
 import javafx.collections.ObservableList;
 import javafx.scene.layout.VBox;
-import net.chrupki.model.Patch;
+import net.chrupki.ui.views.pages.project.dto.PatchDTO;
 import net.chrupki.ui.model.ProjectModel;
 
 
@@ -13,9 +13,9 @@ public class PatchListView extends VBox {
 
     public PatchListView(ProjectModel model) {
 
-        ObservableList<Patch> patches = model.getPatches();
+        ObservableList<PatchDTO> patches = ProjectModel.getPatches();
 
-        patches.addListener((ListChangeListener<Patch>) change -> {
+        patches.addListener((ListChangeListener<PatchDTO>) change -> {
             while (change.next()) {
 
                 if (change.wasRemoved()) {
@@ -23,7 +23,7 @@ public class PatchListView extends VBox {
                 }
 
                 if (change.wasAdded()) {
-                    for (Patch v : change.getAddedSubList()) {
+                    for (PatchDTO v : change.getAddedSubList()) {
                         view.getChildren().add(
                                 new PatchContainer(model, v.getContent(), v.getType(), v.getId(), v.getVid())
                         );

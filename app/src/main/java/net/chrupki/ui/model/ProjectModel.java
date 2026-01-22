@@ -4,7 +4,7 @@ import javafx.beans.property.BooleanProperty;
 import javafx.beans.property.SimpleBooleanProperty;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
-import net.chrupki.model.Patch;
+import net.chrupki.ui.views.pages.project.dto.PatchDTO;
 import net.chrupki.ui.views.pages.project.dto.VersionDTO;
 
 public class ProjectModel {
@@ -13,7 +13,7 @@ public class ProjectModel {
 
     private static final ObservableList<VersionDTO> versions = FXCollections.observableArrayList();
     private static final ObservableList<String> projects = FXCollections.observableArrayList();
-    private static final ObservableList<Patch> patches = FXCollections.observableArrayList();
+    private static final ObservableList<PatchDTO> patches = FXCollections.observableArrayList();
 
     private static final BooleanProperty editActive = new SimpleBooleanProperty(false);
     private static final BooleanProperty editProject = new SimpleBooleanProperty(false);
@@ -38,6 +38,8 @@ public class ProjectModel {
     private static final BooleanProperty switchEditVersionProjectModal =
             new SimpleBooleanProperty(false);
 
+    private static final BooleanProperty switchCreatePatchProjectModal =
+            new SimpleBooleanProperty(false);
 
     public static void setSwitchProjectsModal(boolean value) {
         switchProjectsModal.set(value);
@@ -83,8 +85,16 @@ public class ProjectModel {
         switchEditVersionProjectModal.set(value);
     }
 
+    public static void setSwitchCreatePatchProjectModal(boolean value) {
+        switchCreatePatchProjectModal.set(value);
+    }
+
     public static BooleanProperty getSwitchEditVersionProjectModal() {
         return switchEditVersionProjectModal;
+    }
+
+    public static BooleanProperty getSwitchCreatePatchProjectModal() {
+        return switchCreatePatchProjectModal;
     }
 
 
@@ -131,5 +141,5 @@ public class ProjectModel {
         return projects;
     }
 
-    public static ObservableList<Patch> getPatches() { return patches; }
+    public static ObservableList<PatchDTO> getPatches() { return patches; }
 }

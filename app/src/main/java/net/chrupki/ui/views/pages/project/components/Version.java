@@ -43,7 +43,7 @@ public class Version extends VBox {
         list.getChildren().clear();
 
         for (VersionDTO v : versions) {
-            list.getChildren().add(new VersionContainer(v));
+            list.getChildren().add(new VersionContainer(v, HubController.getVersionController()::selectVersion));
         }
     }
 

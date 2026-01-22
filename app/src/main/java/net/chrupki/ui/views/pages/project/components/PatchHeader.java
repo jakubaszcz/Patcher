@@ -9,14 +9,11 @@ import javafx.scene.layout.Priority;
 import javafx.scene.layout.Region;
 import net.chrupki.app.AppContext;
 import net.chrupki.ui.model.ProjectModel;
-import net.chrupki.ui.views.pages.project.modals.ProjectModal;
 
-public class VersionHeader extends HBox {
+public class PatchHeader extends HBox {
 
-    public VersionHeader() {
-
-        Label title = new Label();
-        title.textProperty().bind(AppContext.projectContext().getName());
+    public PatchHeader() {
+        Label title = new Label("Patches");
         title.getStyleClass().add("project-title");
 
         Button addButton = new Button("+");
@@ -31,7 +28,7 @@ public class VersionHeader extends HBox {
 
         addButton.setOnAction(e -> {
             ProjectModel.setSwitchProjectModal(true);
-            ProjectModel.setSwitchCreateVersionProjectModal(true);
+            ProjectModel.setSwitchCreatePatchProjectModal(true);
         });
 
         setMaxWidth(Double.MAX_VALUE);
@@ -44,4 +41,5 @@ public class VersionHeader extends HBox {
                 addButton
         );
     }
+
 }

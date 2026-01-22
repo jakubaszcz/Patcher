@@ -4,6 +4,8 @@ import javafx.geometry.Insets;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.Priority;
 import javafx.scene.layout.VBox;
+import net.chrupki.app.AppContext;
+import net.chrupki.ui.controllers.HubController;
 
 public class Body extends HBox {
 
@@ -20,6 +22,8 @@ public class Body extends HBox {
         versions.prefWidthProperty().bind(
                 widthProperty().multiply(0.35)
         );
+
+        patches.visibleProperty().bind(AppContext.versionContext().getId().isNotNull());
 
         patches.prefWidthProperty().bind(
                 widthProperty().multiply(0.65)

@@ -4,35 +4,36 @@ import javafx.geometry.Insets;
 import javafx.geometry.Pos;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
-import javafx.scene.layout.HBox;
-import javafx.scene.layout.Priority;
-import javafx.scene.layout.Region;
-import javafx.scene.layout.VBox;
+import javafx.scene.layout.*;
 import net.chrupki.app.AppContext;
 import net.chrupki.ui.model.ProjectModel;
-import net.chrupki.ui.views.pages.project.dto.VersionDTO;
+import net.chrupki.ui.views.pages.project.dto.PatchDTO;
 
-import java.util.function.Consumer;
+public class PatchContainer extends HBox {
 
-public class VersionContainer extends HBox {
+    public PatchContainer(PatchDTO patch) {
 
-    public VersionContainer(VersionDTO version, Consumer<Integer> onSelectVersion) {
+        Label typeLabel = new Label(patch.getType());
 
-        // Labels (gauche)
-        Label name = new Label(version.getVersion());
-        name.getStyleClass().add("project-item-title");
+        typeLabel.getStyleClass().add("project-item-patch-type");
 
-        Label meta = new Label("Version");
-        meta.getStyleClass().add("project-item-meta");
+        StackPane typeBox = new StackPane(typeLabel);
+        typeBox.setAlignment(Pos.CENTER);
+        typeBox.setPadding(new Insets(4, 10, 4, 10));
+        typeBox.getStyleClass().add("project-item-patch-type-box");
 
-        VBox textBox = new VBox(2, name, meta);
+        Label content = new Label(patch.getContent());
+        content.getStyleClass().add("project-item-meta");
+        content.setWrapText(true);
+
+        VBox textBox = new VBox(4, typeBox, content);
         textBox.setAlignment(Pos.CENTER_LEFT);
 
         Button editButton = new Button("Edit");
         editButton.getStyleClass().add("project-item-button");
 
         editButton.setOnAction(e -> {
-            AppContext.versionContext().setId(version.getId());
+            AppContext.versionContext().setId(patch.getId());
             ProjectModel.setSwitchProjectModal(true);
             ProjectModel.setSwitchEditVersionProjectModal(true);
         });
@@ -42,13 +43,9 @@ public class VersionContainer extends HBox {
 
         setAlignment(Pos.CENTER_LEFT);
         setPadding(new Insets(10, 12, 10, 12));
-        setSpacing(8);
+        setSpacing(12);
 
         getStyleClass().add("project-item");
-
-        setOnMouseClicked(e -> {
-            onSelectVersion.accept(version.getId());
-        });
 
         getChildren().addAll(
                 textBox,

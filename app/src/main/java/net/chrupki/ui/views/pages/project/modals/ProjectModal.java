@@ -40,6 +40,10 @@ public class ProjectModal extends StackPane {
                         HubController.getVersionController()::saveVersion,
                         HubController.getVersionController()::deleteVersion,
                         HubController.getVersionController()::closeModal
+                ),
+                new CreatePatchModal(
+                        HubController.getPatchController()::createPatch,
+                        HubController.getPatchController()::closeModal
                 )
         );
 
