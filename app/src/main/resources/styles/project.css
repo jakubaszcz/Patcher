@@ -1,4 +1,5 @@
 .project-panel {
+    -fx-background-color: -color-base-800;
     -fx-pref-width: 280;
 }
 
@@ -26,8 +27,12 @@
 }
 
 .project-item {
-    -fx-background-color: -color-card;
+    -fx-background-color: -color-base-800;
     -fx-cursor: hand;
+}
+
+.project-item:hover {
+    -fx-background-color: -color-primary-800;
 }
 
 .project-item-title {
