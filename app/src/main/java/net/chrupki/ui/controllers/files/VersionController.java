@@ -75,6 +75,8 @@ public class VersionController {
     public void deleteVersion(Integer id) {
         HubService.getVersionService().deleteVersion(id);
 
+        AppContext.versionContext().clearId();
+
         loadVersions();
         closeModal();
     }
