@@ -30,7 +30,7 @@ public class Patch extends VBox {
                 refresh(patches)
         );
 
-        getStyleClass().add("version-panel");
+        getStyleClass().add("project-panel");
         getChildren().addAll(
                 new PatchHeader(),
                 list);

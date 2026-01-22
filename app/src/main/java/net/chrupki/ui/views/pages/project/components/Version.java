@@ -33,7 +33,7 @@ public class Version extends VBox {
                 refresh(versions)
         );
 
-        getStyleClass().add("version-panel");
+        getStyleClass().add("project-panel");
         getChildren().addAll(
                 new VersionHeader(),
                 list);
