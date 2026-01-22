@@ -47,6 +47,7 @@ public class CreateVersionModal extends VBox {
 
         createButton.setOnAction(e -> {
             onCreate.accept(textField.getText());
+            textField.clear();
             onClose.run();
         });
 

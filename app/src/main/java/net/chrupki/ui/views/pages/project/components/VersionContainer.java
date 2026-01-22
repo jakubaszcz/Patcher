@@ -32,7 +32,6 @@ public class VersionContainer extends HBox {
         editButton.getStyleClass().add("project-item-button");
 
         editButton.setOnAction(e -> {
-            AppContext.versionContext().setId(version.getId());
             ProjectModel.setSwitchProjectModal(true);
             ProjectModel.setSwitchEditVersionProjectModal(true);
         });

@@ -4,31 +4,13 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="c1aa160e-de6c-484d-8c28-5409cf16dc62" name="Changes" comment="feat(ui): add the export button + sync to service &amp; controller">
+    <list default="true" id="c1aa160e-de6c-484d-8c28-5409cf16dc62" name="Changes" comment="refactor(file): delete useless files">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/net/chrupki/Patcher.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/net/chrupki/Patcher.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/net/chrupki/ui/components/CreatePatchForm.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/net/chrupki/ui/components/CreateVersionForm.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/net/chrupki/ui/components/CurrentProjectLabel.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/net/chrupki/ui/components/Header.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/net/chrupki/ui/components/PatchContainer.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/net/chrupki/ui/components/PatchListView.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/net/chrupki/ui/components/ProjectSelector.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/net/chrupki/ui/components/VersionContainer.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/net/chrupki/ui/components/VersionListView.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/net/chrupki/ui/components/modal/ModalPatchForm.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/net/chrupki/ui/components/modal/ModalProjectForm.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/net/chrupki/ui/components/modal/ModalVersionForm.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/net/chrupki/ui/views/MainView.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/net/chrupki/ui/views/MainPage.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/net/chrupki/ui/views/ModalView.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/net/chrupki/ui/views/ProjectViewt.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/net/chrupki/ui/views/VersionView.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/net/chrupki/ui/views/manager/ViewManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/net/chrupki/ui/views/manager/PageManager.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/net/chrupki/ui/views/pages/project/ProjectView.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/net/chrupki/ui/views/pages/project/ProjectView.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/net/chrupki/ui/views/pages/project/components/Header.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/net/chrupki/ui/views/pages/project/components/Header.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/net/chrupki/ui/views/pages/projects/ProjectsView.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/net/chrupki/ui/views/pages/projects/ProjectsView.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/net/chrupki/ui/views/pages/projects/dto/ProjectContainerDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/net/chrupki/ui/views/pages/projects/dto/ProjectContainerDTO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/resources/styles/header.css" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/resources/styles/header.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/net/chrupki/ui/views/pages/project/components/VersionContainer.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/net/chrupki/ui/views/pages/project/components/VersionContainer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/net/chrupki/ui/views/pages/project/modals/CreatePatchModal.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/net/chrupki/ui/views/pages/project/modals/CreatePatchModal.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/net/chrupki/ui/views/pages/project/modals/CreateVersionModal.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/net/chrupki/ui/views/pages/project/modals/CreateVersionModal.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/net/chrupki/ui/views/pages/project/modals/EditPatchModal.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/net/chrupki/ui/views/pages/project/modals/EditPatchModal.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/net/chrupki/ui/views/pages/project/modals/EditVersionModal.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/net/chrupki/ui/views/pages/project/modals/EditVersionModal.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -194,15 +176,7 @@
       <workItem from="1768854480253" duration="4694000" />
       <workItem from="1768916925129" duration="17166000" />
       <workItem from="1768988890042" duration="18715000" />
-      <workItem from="1769107503453" duration="7703000" />
-    </task>
-    <task id="LOCAL-00107" summary="refactor(ui): given him temporarily name">
-      <option name="closed" value="true" />
-      <created>1768758661473</created>
-      <option name="number" value="00107" />
-      <option name="presentableId" value="LOCAL-00107" />
-      <option name="project" value="LOCAL" />
-      <updated>1768758661473</updated>
+      <workItem from="1769107503453" duration="8117000" />
     </task>
     <task id="LOCAL-00108" summary="refactor(ui): to handle new pagination's system&#10;&#10;Thanks to the pages systems, we're now allowed to have multiple pages.">
       <option name="closed" value="true" />
@@ -588,7 +562,15 @@
       <option name="project" value="LOCAL" />
       <updated>1769123400880</updated>
     </task>
-    <option name="localTasksCounter" value="156" />
+    <task id="LOCAL-00156" summary="refactor(file): delete useless files">
+      <option name="closed" value="true" />
+      <created>1769123608796</created>
+      <option name="number" value="00156" />
+      <option name="presentableId" value="LOCAL-00156" />
+      <option name="project" value="LOCAL" />
+      <updated>1769123608796</updated>
+    </task>
+    <option name="localTasksCounter" value="157" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -606,7 +588,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="add(model): property to toggle project modal" />
     <MESSAGE value="feat(ui): add modal for the project page" />
     <MESSAGE value="refactor(view): change the extends to stack pane to allow modal" />
     <MESSAGE value="feat(ui): add functions to open the version creator modal" />
@@ -631,7 +612,8 @@
     <MESSAGE value="fix(ui): fix style typo" />
     <MESSAGE value="add(ui): new style for the version area &amp; path area" />
     <MESSAGE value="feat(ui): add the export button + sync to service &amp; controller" />
-    <option name="LAST_COMMIT_MESSAGE" value="feat(ui): add the export button + sync to service &amp; controller" />
+    <MESSAGE value="refactor(file): delete useless files" />
+    <option name="LAST_COMMIT_MESSAGE" value="refactor(file): delete useless files" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/Patcher$Patcher__build_.ic" NAME="Patcher [build] Coverage Results" MODIFIED="1767013393295" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="true" />

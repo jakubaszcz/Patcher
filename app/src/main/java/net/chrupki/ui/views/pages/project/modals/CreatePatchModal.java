@@ -36,6 +36,8 @@ public class CreatePatchModal extends VBox {
                 "Patch", "Add", "Features", "Fix"
         );
 
+        comboBox.setPromptText("Select a type");
+
         Button closeButton = new Button("Cancel");
         closeButton.getStyleClass().add("modal-button-close");
 
@@ -59,6 +61,10 @@ public class CreatePatchModal extends VBox {
             onCreate.accept(
                     new PatchRequest(textField.getText(), comboBox.getValue(), AppContext.versionContext().getId().get())
             );
+            textField.clear();
+            comboBox.getSelectionModel().clearSelection();
+            comboBox.setValue(null);
+            comboBox.setPromptText("Select a type");
             onClose.run();
         });
 

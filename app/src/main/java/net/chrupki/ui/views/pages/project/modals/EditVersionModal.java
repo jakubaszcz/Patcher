@@ -57,6 +57,7 @@ public class EditVersionModal extends VBox {
                         newName.getText(),
                         AppContext.projectContext().getName().get()));
             }
+            newName.clear();
         });
 
         Region spacer = new Region();

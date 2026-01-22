@@ -39,6 +39,8 @@ public class EditPatchModal extends VBox {
                 "Patch", "Add", "Features", "Fix"
         );
 
+        comboBox.setPromptText("Select a type");
+
         Button deleteButton = new Button("Delete");
         deleteButton.getStyleClass().add("modal-button-danger");
 
@@ -70,6 +72,10 @@ public class EditPatchModal extends VBox {
                             comboBox.getValue()
                     )
             );
+            textField.clear();
+            comboBox.getSelectionModel().clearSelection();
+            comboBox.setValue(null);
+            comboBox.setPromptText("Select a type");
             onClose.run();
         });
 
