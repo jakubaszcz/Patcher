@@ -4,16 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="c1aa160e-de6c-484d-8c28-5409cf16dc62" name="Changes" comment="refactor(UI): clear input for modals">
+    <list default="true" id="c1aa160e-de6c-484d-8c28-5409cf16dc62" name="Changes" comment="refactor(file): rename file and folder for better understanding">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/net/chrupki/ui/views/pages/project/modals/CreatePatchModal.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/net/chrupki/ui/views/pages/project/modals/patch/CreatePatchModal.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/net/chrupki/ui/views/pages/project/modals/CreateVersionModal.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/net/chrupki/ui/views/pages/project/modals/version/CreateVersionModal.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/net/chrupki/ui/views/pages/project/modals/EditPatchModal.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/net/chrupki/ui/views/pages/project/modals/patch/EditPatchModal.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/net/chrupki/ui/views/pages/project/modals/EditVersionModal.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/net/chrupki/ui/views/pages/project/modals/version/EditVersionModal.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/net/chrupki/ui/views/pages/project/modals/ProjectModal.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/net/chrupki/ui/views/pages/project/modals/ProjectModal.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/net/chrupki/ui/views/pages/projects/modals/ProjectsModal.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/net/chrupki/ui/views/pages/projects/modals/ProjectsModal.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/net/chrupki/ui/views/pages/projects/modals/files/ProjectsModalCreateProject.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/net/chrupki/ui/views/pages/projects/modals/project/ProjectsModalCreateProject.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/net/chrupki/ui/views/pages/projects/modals/files/ProjectsModalEditProject.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/net/chrupki/ui/views/pages/projects/modals/project/ProjectsModalEditProject.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -179,15 +172,7 @@
       <workItem from="1768854480253" duration="4694000" />
       <workItem from="1768916925129" duration="17166000" />
       <workItem from="1768988890042" duration="18715000" />
-      <workItem from="1769107503453" duration="8236000" />
-    </task>
-    <task id="LOCAL-00109" summary="feat(ui): create the new projects page&#10;&#10;The new page for the project has been completely redesigned and retreated">
-      <option name="closed" value="true" />
-      <created>1768758799108</created>
-      <option name="number" value="00109" />
-      <option name="presentableId" value="LOCAL-00109" />
-      <option name="project" value="LOCAL" />
-      <updated>1768758799108</updated>
+      <workItem from="1769107503453" duration="8376000" />
     </task>
     <task id="LOCAL-00110" summary="feat(ui): add projects modal">
       <option name="closed" value="true" />
@@ -573,7 +558,15 @@
       <option name="project" value="LOCAL" />
       <updated>1769124017203</updated>
     </task>
-    <option name="localTasksCounter" value="158" />
+    <task id="LOCAL-00158" summary="refactor(file): rename file and folder for better understanding">
+      <option name="closed" value="true" />
+      <created>1769124131025</created>
+      <option name="number" value="00158" />
+      <option name="presentableId" value="LOCAL-00158" />
+      <option name="project" value="LOCAL" />
+      <updated>1769124131025</updated>
+    </task>
+    <option name="localTasksCounter" value="159" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -591,7 +584,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="refactor(view): change the extends to stack pane to allow modal" />
     <MESSAGE value="feat(ui): add functions to open the version creator modal" />
     <MESSAGE value="feat(ui): add modal for version creation + linking with the service and controller" />
     <MESSAGE value="feat(ui): add button to edit a version" />
@@ -616,7 +608,8 @@
     <MESSAGE value="feat(ui): add the export button + sync to service &amp; controller" />
     <MESSAGE value="refactor(file): delete useless files" />
     <MESSAGE value="refactor(UI): clear input for modals" />
-    <option name="LAST_COMMIT_MESSAGE" value="refactor(UI): clear input for modals" />
+    <MESSAGE value="refactor(file): rename file and folder for better understanding" />
+    <option name="LAST_COMMIT_MESSAGE" value="refactor(file): rename file and folder for better understanding" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/Patcher$Patcher__build_.ic" NAME="Patcher [build] Coverage Results" MODIFIED="1767013393295" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="true" />

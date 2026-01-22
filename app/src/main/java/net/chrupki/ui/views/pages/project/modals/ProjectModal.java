@@ -27,6 +27,8 @@ public class ProjectModal extends StackPane {
             ProjectModel.setSwitchProjectModal(false);
             ProjectModel.setSwitchCreateVersionProjectModal(false);
             ProjectModel.setSwitchEditVersionProjectModal(false);
+            ProjectModel.setSwitchCreatePatchProjectModal(false);
+            ProjectModel.setSwitchEditPatchProjectModal(false);
         });
 
         getChildren().addAll(pane, vBox);
