@@ -1,4 +1,4 @@
-package net.chrupki.ui.views.pages.projects.modals.files;
+package net.chrupki.ui.views.pages.projects.modals.project;
 
 import javafx.beans.property.StringProperty;
 import javafx.geometry.Insets;

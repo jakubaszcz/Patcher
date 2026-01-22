@@ -6,8 +6,10 @@ import javafx.scene.layout.StackPane;
 import javafx.scene.layout.VBox;
 import net.chrupki.ui.controllers.HubController;
 import net.chrupki.ui.model.ProjectModel;
-import net.chrupki.ui.views.pages.projects.modals.files.ProjectsModalCreateProject;
-import net.chrupki.ui.views.pages.projects.modals.files.ProjectsModalEditProject;
+import net.chrupki.ui.views.pages.project.modals.patch.CreatePatchModal;
+import net.chrupki.ui.views.pages.project.modals.patch.EditPatchModal;
+import net.chrupki.ui.views.pages.project.modals.version.CreateVersionModal;
+import net.chrupki.ui.views.pages.project.modals.version.EditVersionModal;
 
 public class ProjectModal extends StackPane {
 

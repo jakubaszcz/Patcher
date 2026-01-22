@@ -1,6 +1,5 @@
-package net.chrupki.ui.views.pages.project.modals;
+package net.chrupki.ui.views.pages.project.modals.version;
 
-import javafx.beans.property.StringProperty;
 import javafx.geometry.Insets;
 import javafx.geometry.Pos;
 import javafx.scene.control.Button;
@@ -14,7 +13,6 @@ import net.chrupki.app.AppContext;
 import net.chrupki.ui.controllers.files.dtos.EditVersion;
 import net.chrupki.ui.model.ProjectModel;
 
-import java.util.function.BiConsumer;
 import java.util.function.Consumer;
 
 public class EditVersionModal extends VBox {

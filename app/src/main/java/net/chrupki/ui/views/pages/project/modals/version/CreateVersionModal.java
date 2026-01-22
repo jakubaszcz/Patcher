@@ -1,4 +1,4 @@
-package net.chrupki.ui.views.pages.projects.modals.files;
+package net.chrupki.ui.views.pages.project.modals.version;
 
 import javafx.geometry.Insets;
 import javafx.geometry.Pos;
@@ -10,22 +10,20 @@ import javafx.scene.layout.Priority;
 import javafx.scene.layout.Region;
 import javafx.scene.layout.VBox;
 import net.chrupki.ui.model.ProjectModel;
-import net.chrupki.ui.views.pages.projects.modals.ProjectsModal;
 
 import java.util.function.Consumer;
 
-public class ProjectsModalCreateProject extends VBox {
+public class CreateVersionModal extends VBox {
 
-    public ProjectsModalCreateProject(
+    public CreateVersionModal(
             Consumer<String> onCreate,
             Runnable onClose
     ) {
-
-        Label title = new Label("Create project");
+        Label title = new Label("Create version");
         title.getStyleClass().add("modal-title");
 
         TextField textField = new TextField();
-        textField.setPromptText("Project name");
+        textField.setPromptText("Version name");
         textField.getStyleClass().add("modal-textfield");
 
         Button closeButton = new Button("Cancel");
@@ -33,19 +31,6 @@ public class ProjectsModalCreateProject extends VBox {
 
         Button createButton = new Button("Create");
         createButton.getStyleClass().add("modal-button-create");
-
-        closeButton.setOnAction(e -> {
-            textField.clear();
-            onClose.run();
-        });
-
-        createButton.setOnAction(e -> {
-            if (!textField.getText().isBlank()) {
-                onCreate.accept(textField.getText());
-                onClose.run();
-                textField.clear();
-            }
-        });
 
         Region spacer = new Region();
         HBox.setHgrow(spacer, Priority.ALWAYS);
@@ -60,10 +45,21 @@ public class ProjectsModalCreateProject extends VBox {
         setPrefWidth(360);
         setMaxWidth(360);
 
+        createButton.setOnAction(e -> {
+            onCreate.accept(textField.getText());
+            textField.clear();
+            onClose.run();
+        });
+
+        closeButton.setOnAction(e -> {
+            onClose.run();
+        });
+
         getStyleClass().add("modal-card");
 
-        visibleProperty().bind(ProjectModel.getSwitchCreateProjectsModal());
-        managedProperty().bind(ProjectModel.getSwitchCreateProjectsModal());
+        visibleProperty().bind(ProjectModel.getSwitchCreateVersionProjectModal());
+        managedProperty().bind(ProjectModel.getSwitchCreateVersionProjectModal());
+
 
         getChildren().addAll(
                 title,
@@ -71,4 +67,5 @@ public class ProjectsModalCreateProject extends VBox {
                 actions
         );
     }
+
 }

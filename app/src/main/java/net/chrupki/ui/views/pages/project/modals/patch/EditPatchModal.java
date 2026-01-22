@@ -1,4 +1,4 @@
-package net.chrupki.ui.views.pages.project.modals;
+package net.chrupki.ui.views.pages.project.modals.patch;
 
 import javafx.geometry.Insets;
 import javafx.geometry.Pos;
@@ -11,18 +11,20 @@ import javafx.scene.layout.Priority;
 import javafx.scene.layout.Region;
 import javafx.scene.layout.VBox;
 import net.chrupki.app.AppContext;
-import net.chrupki.request.PatchRequest;
+import net.chrupki.ui.controllers.files.dtos.EditPatch;
 import net.chrupki.ui.model.ProjectModel;
 
+import java.util.function.BiConsumer;
 import java.util.function.Consumer;
 
-public class CreatePatchModal extends VBox {
+public class EditPatchModal extends VBox {
 
-    public CreatePatchModal(
-            Consumer<PatchRequest> onCreate,
+    public EditPatchModal(
+            Consumer<EditPatch> onSave,
+            BiConsumer<Integer, Integer> onDelete,
             Runnable onClose
     ) {
-        Label title = new Label("Create patch");
+        Label title = new Label("Edit patch");
         title.getStyleClass().add("modal-title");
 
         TextField textField = new TextField();
@@ -38,16 +40,19 @@ public class CreatePatchModal extends VBox {
 
         comboBox.setPromptText("Select a type");
 
+        Button deleteButton = new Button("Delete");
+        deleteButton.getStyleClass().add("modal-button-danger");
+
         Button closeButton = new Button("Cancel");
         closeButton.getStyleClass().add("modal-button-close");
 
-        Button createButton = new Button("Create");
+        Button createButton = new Button("Save");
         createButton.getStyleClass().add("modal-button-create");
 
         Region spacer = new Region();
         HBox.setHgrow(spacer, Priority.ALWAYS);
 
-        HBox actions = new HBox(12, closeButton, spacer, createButton);
+        HBox actions = new HBox(12, deleteButton, closeButton, spacer, createButton);
         actions.setAlignment(Pos.CENTER);
 
         setSpacing(16);
@@ -58,8 +63,13 @@ public class CreatePatchModal extends VBox {
         setMaxWidth(360);
 
         createButton.setOnAction(e -> {
-            onCreate.accept(
-                    new PatchRequest(textField.getText(), comboBox.getValue(), AppContext.versionContext().getId().get())
+            onSave.accept(
+                    new EditPatch(
+                            AppContext.patchContext().getId().get(),
+                            AppContext.patchContext().getVid().get(),
+                            textField.getText(),
+                            comboBox.getValue()
+                    )
             );
             textField.clear();
             comboBox.getSelectionModel().clearSelection();
@@ -68,14 +78,21 @@ public class CreatePatchModal extends VBox {
             onClose.run();
         });
 
+        deleteButton.setOnAction(e -> {
+            onDelete.accept(
+                    AppContext.patchContext().getId().get(),
+                    AppContext.patchContext().getVid().get()
+            );
+        });
+
         closeButton.setOnAction(e -> {
             onClose.run();
         });
 
         getStyleClass().add("modal-card");
 
-        visibleProperty().bind(ProjectModel.getSwitchCreatePatchProjectModal());
-        managedProperty().bind(ProjectModel.getSwitchCreatePatchProjectModal());
+        visibleProperty().bind(ProjectModel.getSwitchEditPatchProjectModal());
+        managedProperty().bind(ProjectModel.getSwitchEditPatchProjectModal());
 
 
         getChildren().addAll(

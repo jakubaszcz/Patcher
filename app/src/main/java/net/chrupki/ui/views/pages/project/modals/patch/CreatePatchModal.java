@@ -1,30 +1,42 @@
-package net.chrupki.ui.views.pages.project.modals;
+package net.chrupki.ui.views.pages.project.modals.patch;
 
 import javafx.geometry.Insets;
 import javafx.geometry.Pos;
 import javafx.scene.control.Button;
+import javafx.scene.control.ComboBox;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.Priority;
 import javafx.scene.layout.Region;
 import javafx.scene.layout.VBox;
+import net.chrupki.app.AppContext;
+import net.chrupki.request.PatchRequest;
 import net.chrupki.ui.model.ProjectModel;
 
 import java.util.function.Consumer;
 
-public class CreateVersionModal extends VBox {
+public class CreatePatchModal extends VBox {
 
-    public CreateVersionModal(
-            Consumer<String> onCreate,
+    public CreatePatchModal(
+            Consumer<PatchRequest> onCreate,
             Runnable onClose
     ) {
-        Label title = new Label("Create version");
+        Label title = new Label("Create patch");
         title.getStyleClass().add("modal-title");
 
         TextField textField = new TextField();
-        textField.setPromptText("Version name");
+        textField.setPromptText("Patch name");
         textField.getStyleClass().add("modal-textfield");
+
+        ComboBox<String> comboBox = new ComboBox<>();
+        comboBox.getStyleClass().add("modal-combobox");
+
+        comboBox.getItems().addAll(
+                "Patch", "Add", "Features", "Fix"
+        );
+
+        comboBox.setPromptText("Select a type");
 
         Button closeButton = new Button("Cancel");
         closeButton.getStyleClass().add("modal-button-close");
@@ -46,8 +58,13 @@ public class CreateVersionModal extends VBox {
         setMaxWidth(360);
 
         createButton.setOnAction(e -> {
-            onCreate.accept(textField.getText());
+            onCreate.accept(
+                    new PatchRequest(textField.getText(), comboBox.getValue(), AppContext.versionContext().getId().get())
+            );
             textField.clear();
+            comboBox.getSelectionModel().clearSelection();
+            comboBox.setValue(null);
+            comboBox.setPromptText("Select a type");
             onClose.run();
         });
 
@@ -57,13 +74,14 @@ public class CreateVersionModal extends VBox {
 
         getStyleClass().add("modal-card");
 
-        visibleProperty().bind(ProjectModel.getSwitchCreateVersionProjectModal());
-        managedProperty().bind(ProjectModel.getSwitchCreateVersionProjectModal());
+        visibleProperty().bind(ProjectModel.getSwitchCreatePatchProjectModal());
+        managedProperty().bind(ProjectModel.getSwitchCreatePatchProjectModal());
 
 
         getChildren().addAll(
                 title,
                 textField,
+                comboBox,
                 actions
         );
     }
