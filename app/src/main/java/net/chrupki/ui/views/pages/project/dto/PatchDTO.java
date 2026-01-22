@@ -1,12 +1,12 @@
-package net.chrupki.model;
+package net.chrupki.ui.views.pages.project.dto;
 
-public class Patch {
+public class PatchDTO {
     private final String content;
     private final String type;
     private final int id;
     private final int vid;
 
-    public Patch(String content, String type, int id, int vid) {
+    public PatchDTO(String content, String type, int id, int vid) {
         this.content = content;
         this.type = type;
         this.id = id;
