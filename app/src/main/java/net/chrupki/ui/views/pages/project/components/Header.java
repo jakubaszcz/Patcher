@@ -28,8 +28,9 @@ public class Header extends HBox {
         getStyleClass().add("header");
         getChildren().add(backGroup);
 
-        backButton.setOnAction(e ->
-                viewManager.show(new ProjectsView(viewManager))
-        );
+        backButton.setOnAction(e -> {
+            viewManager.show(new ProjectsView(viewManager));
+            AppContext.versionContext().clearId();
+        });
     }
 }
