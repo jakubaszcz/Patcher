@@ -2,6 +2,7 @@ package net.chrupki.ui.view.pages.project.components;
 
 import javafx.collections.ListChangeListener;
 import javafx.collections.ObservableList;
+import javafx.scene.control.ScrollPane;
 import javafx.scene.layout.Priority;
 import javafx.scene.layout.VBox;
 import net.chrupki.app.AppContext;
@@ -12,15 +13,25 @@ import net.chrupki.ui.view.pages.project.dto.PatchDTO;
 public class Patch extends VBox {
 
     private final VBox list = new VBox();
+    private final ScrollPane scrollPane = new ScrollPane();
 
     public Patch() {
 
         ObservableList<PatchDTO> patches = ProjectModel.getPatches();
 
-        list.visibleProperty().bind(AppContext.versionContext().getId().isNotNull());
-        list.managedProperty().bind(list.visibleProperty());
+        scrollPane.visibleProperty().bind(AppContext.versionContext().getId().isNotNull());
+        scrollPane.managedProperty().bind(scrollPane.visibleProperty());
+        scrollPane.getStyleClass().add("invisible-scroll");
 
-        VBox.setVgrow(list, Priority.ALWAYS);
+        scrollPane.setContent(list);
+        scrollPane.setFitToWidth(true);
+
+        scrollPane.setVbarPolicy(ScrollPane.ScrollBarPolicy.NEVER);
+        scrollPane.setHbarPolicy(ScrollPane.ScrollBarPolicy.NEVER);
+
+        scrollPane.setPannable(true);
+
+        VBox.setVgrow(scrollPane, Priority.ALWAYS);
 
         refresh(patches);
 
@@ -31,15 +42,14 @@ public class Patch extends VBox {
         getStyleClass().add("project-panel");
         getChildren().addAll(
                 new PatchHeader(HubController.getExportController()::export),
-                list);
+                scrollPane
+        );
     }
 
     private void refresh(ObservableList<PatchDTO> patches) {
         list.getChildren().clear();
-
         for (PatchDTO p : patches) {
             list.getChildren().add(new PatchContainer(p));
         }
     }
-
 }
