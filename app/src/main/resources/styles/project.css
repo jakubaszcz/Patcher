@@ -68,3 +68,24 @@
     -fx-background-radius: 5px;
 }
 
+.invisible-scroll {
+    -fx-background-color: transparent;
+}
+
+.invisible-scroll .viewport {
+    -fx-background-color: transparent;
+}
+
+.invisible-scroll .scroll-bar:vertical,
+.invisible-scroll .scroll-bar:horizontal {
+    -fx-opacity: 0;
+    -fx-pref-width: 0;
+    -fx-pref-height: 0;
+}
+
+.invisible-scroll .increment-button,
+.invisible-scroll .decrement-button {
+    -fx-opacity: 0;
+    -fx-padding: 0;
+}
+

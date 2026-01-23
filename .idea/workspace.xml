@@ -4,8 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="c1aa160e-de6c-484d-8c28-5409cf16dc62" name="Changes" comment="refactor(file): change view to one">
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/net/chrupki/ui/view/pages/project/components/VersionContainer.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/net/chrupki/ui/view/pages/project/components/VersionContainer.java" afterDir="false" />
+    <list default="true" id="c1aa160e-de6c-484d-8c28-5409cf16dc62" name="Changes" comment="feat(ui): add scroll area for Version area">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/resources/styles/project.css" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/resources/styles/project.css" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -13,8 +14,7 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="EmbeddingIndexingInfo">
-    <option name="cachedIndexableFilesCount" value="457" />
-    <option name="fileBasedEmbeddingIndicesEnabled" value="true" />
+    <option name="cachedIndexableFilesCount" value="53" />
   </component>
   <component name="ExternalProjectsData">
     <projectState path="$PROJECT_DIR$">
@@ -49,16 +49,7 @@
     </option>
   </component>
   <component name="Git.Settings">
-    <option name="RECENT_BRANCH_BY_REPOSITORY">
-      <map>
-        <entry key="$PROJECT_DIR$" value="main" />
-      </map>
-    </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
-  </component>
-  <component name="McpProjectServerCommands">
-    <commands />
-    <urls />
   </component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 5
@@ -68,45 +59,34 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "Gradle.Download Sources.executor": "Run",
-    "Gradle.Patcher [build].executor": "Coverage",
-    "Gradle.Patcher [run].executor": "Run",
-    "ModuleVcsDetector.initialDetectionPerformed": "true",
-    "RunOnceActivity.MCP Project settings loaded": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252": "true",
-    "RunOnceActivity.git.unshallow": "true",
-    "RunOnceActivity.typescript.service.memoryLimit.init": "true",
-    "com.intellij.ml.llm.matterhorn.ej.ui.settings.DefaultModelSelectionForGA.v1": "true",
-    "git-widget-placeholder": "main",
-    "junie.onboarding.icon.badge.shown": "true",
-    "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "/home/jakub/Documents/Patcher",
-    "node.js.detected.package.eslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "project.structure.last.edited": "Modules",
-    "project.structure.proportion": "0.0",
-    "project.structure.side.proportion": "0.2",
-    "settings.editor.selected.configurable": "SettingsForm",
-    "to.speed.mode.migration.done": "true",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Gradle.Download Sources.executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.Patcher [build].executor&quot;: &quot;Coverage&quot;,
+    &quot;Gradle.Patcher [run].executor&quot;: &quot;Run&quot;,
+    &quot;ModuleVcsDetector.initialDetectionPerformed&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.typescript.service.memoryLimit.init&quot;: &quot;true&quot;,
+    &quot;com.intellij.ml.llm.matterhorn.ej.ui.settings.DefaultModelSelectionForGA.v1&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;junie.onboarding.icon.badge.shown&quot;: &quot;true&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/home/jakub/Documents/Patcher&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;,
+    &quot;to.speed.mode.migration.done&quot;: &quot;true&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RunManager">
-    <configuration default="true" type="lua.app" factoryName="Lua Application">
-      <option name="program" value="/usr/bin/lua" />
-      <option name="file" value="" />
-      <option name="workingDir" value="$PROJECT_DIR$/app/src/main/java" />
-      <option name="debuggerType" value="2" />
-      <option name="params" value="" />
-      <option name="charset" value="UTF-8" />
-      <option name="showConsole" value="true" />
-      <method v="2" />
-    </configuration>
     <configuration name="Patcher [run]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
@@ -141,8 +121,7 @@
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
-        <option value="bundled-jdk-30f59d01ecdd-26cb7f24e5b0-intellij.indexing.shared.core-IU-253.29346.240" />
-        <option value="bundled-js-predefined-d6986cc7102b-9b0f141eb926-JavaScript-IU-253.29346.240" />
+        <option value="bundled-jdk-30f59d01ecdd-cffe25b9f5b3-intellij.indexing.shared.core-IU-253.28294.334" />
       </set>
     </attachedChunks>
   </component>
@@ -161,454 +140,384 @@
       <workItem from="1767456805075" duration="20852000" />
       <workItem from="1767532221772" duration="784000" />
       <workItem from="1767544161784" duration="11911000" />
-      <workItem from="1768130801077" duration="22931000" />
-      <workItem from="1768246508726" duration="7736000" />
-      <workItem from="1768326113650" duration="15205000" />
-      <workItem from="1768421332706" duration="7728000" />
-      <workItem from="1768655633282" duration="5524000" />
-      <workItem from="1768674632372" duration="8344000" />
-      <workItem from="1768734249537" duration="14540000" />
-      <workItem from="1768854480253" duration="4694000" />
-      <workItem from="1768916925129" duration="17166000" />
-      <workItem from="1768988890042" duration="18715000" />
-      <workItem from="1769107503453" duration="8376000" />
     </task>
-    <task id="LOCAL-00111" summary="refractor(ui): move every files to refractor &#10;&#10;It's a big refractor...">
+    <task id="LOCAL-00001" summary="Setup gradle project">
       <option name="closed" value="true" />
-      <created>1768758870042</created>
-      <option name="number" value="00111" />
-      <option name="presentableId" value="LOCAL-00111" />
+      <created>1766342649589</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
       <option name="project" value="LOCAL" />
-      <updated>1768758870042</updated>
+      <updated>1766342649589</updated>
     </task>
-    <task id="LOCAL-00112" summary="add(model): new boolean property">
+    <task id="LOCAL-00002" summary="Refractor packages">
       <option name="closed" value="true" />
-      <created>1768759289164</created>
-      <option name="number" value="00112" />
-      <option name="presentableId" value="LOCAL-00112" />
+      <created>1766345516188</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
       <option name="project" value="LOCAL" />
-      <updated>1768759289165</updated>
+      <updated>1766345516188</updated>
     </task>
-    <task id="LOCAL-00113" summary="remove(ui): fixe header">
+    <task id="LOCAL-00003" summary="Add working sqlite locally">
       <option name="closed" value="true" />
-      <created>1768764219976</created>
-      <option name="number" value="00113" />
-      <option name="presentableId" value="LOCAL-00113" />
+      <created>1766437778858</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
       <option name="project" value="LOCAL" />
-      <updated>1768764219976</updated>
+      <updated>1766437778858</updated>
     </task>
-    <task id="LOCAL-00114" summary="feat(ui): trigger the modal when create new project">
+    <task id="LOCAL-00004" summary="Add data directory">
       <option name="closed" value="true" />
-      <created>1768764301381</created>
-      <option name="number" value="00114" />
-      <option name="presentableId" value="LOCAL-00114" />
+      <created>1766510278506</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
       <option name="project" value="LOCAL" />
-      <updated>1768764301381</updated>
+      <updated>1766510278506</updated>
     </task>
-    <task id="LOCAL-00115" summary="add(controller): load the projects when creating one">
+    <task id="LOCAL-00005" summary="Add UI to create projects">
       <option name="closed" value="true" />
-      <created>1768765644556</created>
-      <option name="number" value="00115" />
-      <option name="presentableId" value="LOCAL-00115" />
+      <created>1766513120084</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
       <option name="project" value="LOCAL" />
-      <updated>1768765644556</updated>
+      <updated>1766513120084</updated>
     </task>
-    <task id="LOCAL-00116" summary="add(controller): close the modal">
+    <task id="LOCAL-00006" summary="Add database in each project folder">
       <option name="closed" value="true" />
-      <created>1768765663457</created>
-      <option name="number" value="00116" />
-      <option name="presentableId" value="LOCAL-00116" />
+      <created>1766573542015</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
       <option name="project" value="LOCAL" />
-      <updated>1768765663457</updated>
+      <updated>1766573542015</updated>
     </task>
-    <task id="LOCAL-00117" summary="add(ui): initiate the projects modal style sheet">
+    <task id="LOCAL-00007" summary="Add combo box to change current project">
       <option name="closed" value="true" />
-      <created>1768765750672</created>
-      <option name="number" value="00117" />
-      <option name="presentableId" value="LOCAL-00117" />
+      <created>1766683972568</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
       <option name="project" value="LOCAL" />
-      <updated>1768765750672</updated>
+      <updated>1766683972568</updated>
     </task>
-    <task id="LOCAL-00118" summary="add(ui): create styling for the upcoming projects creator">
+    <task id="LOCAL-00008" summary="Add project box with version creator button">
       <option name="closed" value="true" />
-      <created>1768765812319</created>
-      <option name="number" value="00118" />
-      <option name="presentableId" value="LOCAL-00118" />
+      <created>1766760712281</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
       <option name="project" value="LOCAL" />
-      <updated>1768765812320</updated>
+      <updated>1766760712281</updated>
     </task>
-    <task id="LOCAL-00119" summary="feat(ui): initiate the modal in the projects modal view">
+    <task id="LOCAL-00009" summary="Fix windows run issue">
       <option name="closed" value="true" />
-      <created>1768765844710</created>
-      <option name="number" value="00119" />
-      <option name="presentableId" value="LOCAL-00119" />
+      <created>1767013916225</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
       <option name="project" value="LOCAL" />
-      <updated>1768765844710</updated>
+      <updated>1767013916225</updated>
     </task>
-    <task id="LOCAL-00120" summary="add(ui): bind for the create project modal">
+    <task id="LOCAL-00010" summary="Refractor code base">
       <option name="closed" value="true" />
-      <created>1768767553542</created>
-      <option name="number" value="00120" />
-      <option name="presentableId" value="LOCAL-00120" />
+      <created>1767368896456</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
       <option name="project" value="LOCAL" />
-      <updated>1768767553542</updated>
+      <updated>1767368896456</updated>
     </task>
-    <task id="LOCAL-00121" summary="add(ui): manage property to avoid layers&#10;&#10;basically if you remove this line, the components will stack itself.">
+    <task id="LOCAL-00011" summary="Refractor interface components and layout">
       <option name="closed" value="true" />
-      <created>1768768730108</created>
-      <option name="number" value="00121" />
-      <option name="presentableId" value="LOCAL-00121" />
+      <created>1767378034363</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
       <option name="project" value="LOCAL" />
-      <updated>1768768730108</updated>
+      <updated>1767378034363</updated>
     </task>
-    <task id="LOCAL-00122" summary="feat(ui): add the edit project modal">
+    <task id="LOCAL-00012" summary="Add display all project versions">
       <option name="closed" value="true" />
-      <created>1768768757887</created>
-      <option name="number" value="00122" />
-      <option name="presentableId" value="LOCAL-00122" />
+      <created>1767396686281</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
       <option name="project" value="LOCAL" />
-      <updated>1768768757887</updated>
+      <updated>1767396686281</updated>
     </task>
-    <task id="LOCAL-00123" summary="add(ui): new styling in the CSS file for the modal">
+    <task id="LOCAL-00013" summary="Add display project dynamically">
       <option name="closed" value="true" />
-      <created>1768768804054</created>
-      <option name="number" value="00123" />
-      <option name="presentableId" value="LOCAL-00123" />
+      <created>1767401738161</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
       <option name="project" value="LOCAL" />
-      <updated>1768768804054</updated>
+      <updated>1767401738161</updated>
     </task>
-    <task id="LOCAL-00124" summary="feat(ui): edit project modal">
+    <task id="LOCAL-00014" summary="Add version container">
       <option name="closed" value="true" />
-      <created>1768768821844</created>
-      <option name="number" value="00124" />
-      <option name="presentableId" value="LOCAL-00124" />
+      <created>1767439786542</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
       <option name="project" value="LOCAL" />
-      <updated>1768768821844</updated>
+      <updated>1767439786542</updated>
     </task>
-    <task id="LOCAL-00125" summary="refactor(ui): move dto folder into the projects folder">
+    <task id="LOCAL-00015" summary="Fetch id and version from versions table">
       <option name="closed" value="true" />
-      <created>1768855098066</created>
-      <option name="number" value="00125" />
-      <option name="presentableId" value="LOCAL-00125" />
+      <created>1767457572503</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
       <option name="project" value="LOCAL" />
-      <updated>1768855098067</updated>
+      <updated>1767457572504</updated>
     </task>
-    <task id="LOCAL-00126" summary="refactor(ui): using the DTO files for the projects view">
+    <task id="LOCAL-00016" summary="Add Controllers &amp; Services">
       <option name="closed" value="true" />
-      <created>1768858295657</created>
-      <option name="number" value="00126" />
-      <option name="presentableId" value="LOCAL-00126" />
+      <created>1767479768046</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
       <option name="project" value="LOCAL" />
-      <updated>1768858295657</updated>
+      <updated>1767479768046</updated>
     </task>
-    <task id="LOCAL-00127" summary="refactor(dto): change the name to dto, more appropriate">
+    <task id="LOCAL-00017" summary="Add patch record">
       <option name="closed" value="true" />
-      <created>1768858347039</created>
-      <option name="number" value="00127" />
-      <option name="presentableId" value="LOCAL-00127" />
+      <created>1767482574696</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
       <option name="project" value="LOCAL" />
-      <updated>1768858347039</updated>
+      <updated>1767482574696</updated>
     </task>
-    <task id="LOCAL-00128" summary="refactor(dto): change the old version DTO into version DTO">
+    <task id="LOCAL-00018" summary="Add patch controller">
       <option name="closed" value="true" />
-      <created>1768858393580</created>
-      <option name="number" value="00128" />
-      <option name="presentableId" value="LOCAL-00128" />
+      <created>1767482861223</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
       <option name="project" value="LOCAL" />
-      <updated>1768858393580</updated>
+      <updated>1767482861223</updated>
     </task>
-    <task id="LOCAL-00129" summary="feat(ui): add the new version view">
+    <task id="LOCAL-00019" summary="Add patch create container">
       <option name="closed" value="true" />
-      <created>1768858414078</created>
-      <option name="number" value="00129" />
-      <option name="presentableId" value="LOCAL-00129" />
+      <created>1767482941382</created>
+      <option name="number" value="00019" />
+      <option name="presentableId" value="LOCAL-00019" />
       <option name="project" value="LOCAL" />
-      <updated>1768858414078</updated>
+      <updated>1767482941382</updated>
     </task>
-    <task id="LOCAL-00130" summary="feat(ui): add the new version style file for the view">
+    <task id="LOCAL-00020" summary="Add clear choices when submit">
       <option name="closed" value="true" />
-      <created>1768858435860</created>
-      <option name="number" value="00130" />
-      <option name="presentableId" value="LOCAL-00130" />
+      <created>1767482995761</created>
+      <option name="number" value="00020" />
+      <option name="presentableId" value="LOCAL-00020" />
       <option name="project" value="LOCAL" />
-      <updated>1768858435860</updated>
+      <updated>1767482995761</updated>
     </task>
-    <task id="LOCAL-00131" summary="add(model): property to toggle project modal">
+    <task id="LOCAL-00021" summary="Fix select first choice by default">
       <option name="closed" value="true" />
-      <created>1768917568147</created>
-      <option name="number" value="00131" />
-      <option name="presentableId" value="LOCAL-00131" />
+      <created>1767483019160</created>
+      <option name="number" value="00021" />
+      <option name="presentableId" value="LOCAL-00021" />
       <option name="project" value="LOCAL" />
-      <updated>1768917568147</updated>
+      <updated>1767483019160</updated>
     </task>
-    <task id="LOCAL-00132" summary="feat(ui): add modal for the project page">
+    <task id="LOCAL-00022" summary="Add patch DAO file">
       <option name="closed" value="true" />
-      <created>1768918788823</created>
-      <option name="number" value="00132" />
-      <option name="presentableId" value="LOCAL-00132" />
+      <created>1767483331047</created>
+      <option name="number" value="00022" />
+      <option name="presentableId" value="LOCAL-00022" />
       <option name="project" value="LOCAL" />
-      <updated>1768918788823</updated>
+      <updated>1767483331047</updated>
     </task>
-    <task id="LOCAL-00133" summary="refactor(view): change the extends to stack pane to allow modal">
+    <task id="LOCAL-00023" summary="Fix SQL command to insert in notes">
       <option name="closed" value="true" />
-      <created>1768918823270</created>
-      <option name="number" value="00133" />
-      <option name="presentableId" value="LOCAL-00133" />
+      <created>1767483637284</created>
+      <option name="number" value="00023" />
+      <option name="presentableId" value="LOCAL-00023" />
       <option name="project" value="LOCAL" />
-      <updated>1768918823270</updated>
+      <updated>1767483637285</updated>
     </task>
-    <task id="LOCAL-00134" summary="feat(ui): add functions to open the version creator modal">
+    <task id="LOCAL-00024" summary="Link controller and service for patch">
       <option name="closed" value="true" />
-      <created>1768918857063</created>
-      <option name="number" value="00134" />
-      <option name="presentableId" value="LOCAL-00134" />
+      <created>1767484238933</created>
+      <option name="number" value="00024" />
+      <option name="presentableId" value="LOCAL-00024" />
       <option name="project" value="LOCAL" />
-      <updated>1768918857063</updated>
+      <updated>1767484238933</updated>
     </task>
-    <task id="LOCAL-00135" summary="feat(ui): add modal for version creation + linking with the service and controller">
+    <task id="LOCAL-00025" summary="Add display patches in UI and update project">
       <option name="closed" value="true" />
-      <created>1768918907063</created>
-      <option name="number" value="00135" />
-      <option name="presentableId" value="LOCAL-00135" />
+      <created>1767553310839</created>
+      <option name="number" value="00025" />
+      <option name="presentableId" value="LOCAL-00025" />
       <option name="project" value="LOCAL" />
-      <updated>1768918907064</updated>
+      <updated>1767553310839</updated>
     </task>
-    <task id="LOCAL-00136" summary="feat(ui): add button to edit a version">
+    <task id="LOCAL-00026" summary="Fix clear when version changement">
       <option name="closed" value="true" />
-      <created>1768919693991</created>
-      <option name="number" value="00136" />
-      <option name="presentableId" value="LOCAL-00136" />
+      <created>1767555549467</created>
+      <option name="number" value="00026" />
+      <option name="presentableId" value="LOCAL-00026" />
       <option name="project" value="LOCAL" />
-      <updated>1768919693991</updated>
+      <updated>1767555549467</updated>
     </task>
-    <task id="LOCAL-00137" summary="feat(ui): add edit version modal">
+    <task id="LOCAL-00027" summary="Update code to display with controller and service">
       <option name="closed" value="true" />
-      <created>1768921018137</created>
-      <option name="number" value="00137" />
-      <option name="presentableId" value="LOCAL-00137" />
+      <created>1767556514476</created>
+      <option name="number" value="00027" />
+      <option name="presentableId" value="LOCAL-00027" />
       <option name="project" value="LOCAL" />
-      <updated>1768921018137</updated>
+      <updated>1767556514476</updated>
     </task>
-    <task id="LOCAL-00138" summary="feat(ui): sync the edit version modal with controller and service">
+    <task id="LOCAL-00028" summary="Fix patch creator by removing unnecessary changes and updating">
       <option name="closed" value="true" />
-      <created>1768921046194</created>
-      <option name="number" value="00138" />
-      <option name="presentableId" value="LOCAL-00138" />
+      <created>1767637167916</created>
+      <option name="number" value="00028" />
+      <option name="presentableId" value="LOCAL-00028" />
       <option name="project" value="LOCAL" />
-      <updated>1768921046194</updated>
+      <updated>1767637167916</updated>
     </task>
-    <task id="LOCAL-00139" summary="refactor(style): change main colors">
+    <task id="LOCAL-00029" summary="Rename PatchContainer to PatchListView">
       <option name="closed" value="true" />
-      <created>1768941957403</created>
-      <option name="number" value="00139" />
-      <option name="presentableId" value="LOCAL-00139" />
+      <created>1767638851139</created>
+      <option name="number" value="00029" />
+      <option name="presentableId" value="LOCAL-00029" />
       <option name="project" value="LOCAL" />
-      <updated>1768941957403</updated>
+      <updated>1767638851139</updated>
     </task>
-    <task id="LOCAL-00140" summary="refactor(ui): change the top padding">
+    <task id="LOCAL-00030" summary="Add patch container">
       <option name="closed" value="true" />
-      <created>1768991459496</created>
-      <option name="number" value="00140" />
-      <option name="presentableId" value="LOCAL-00140" />
+      <created>1767638867383</created>
+      <option name="number" value="00030" />
+      <option name="presentableId" value="LOCAL-00030" />
       <option name="project" value="LOCAL" />
-      <updated>1768991459496</updated>
+      <updated>1767638867383</updated>
     </task>
-    <task id="LOCAL-00141" summary="refactor(ui): use the new colors for the projects page">
+    <task id="LOCAL-00031" summary="Add export button">
       <option name="closed" value="true" />
-      <created>1768991502420</created>
-      <option name="number" value="00141" />
-      <option name="presentableId" value="LOCAL-00141" />
+      <created>1767639100302</created>
+      <option name="number" value="00031" />
+      <option name="presentableId" value="LOCAL-00031" />
       <option name="project" value="LOCAL" />
-      <updated>1768991502420</updated>
+      <updated>1767639100302</updated>
     </task>
-    <task id="LOCAL-00142" summary="refactor(ui): use the new colors for the modals">
+    <task id="LOCAL-00032" summary="Add default choice in export combo box">
       <option name="closed" value="true" />
-      <created>1768992371142</created>
-      <option name="number" value="00142" />
-      <option name="presentableId" value="LOCAL-00142" />
+      <created>1767639322290</created>
+      <option name="number" value="00032" />
+      <option name="presentableId" value="LOCAL-00032" />
       <option name="project" value="LOCAL" />
-      <updated>1768992371142</updated>
+      <updated>1767639322290</updated>
     </task>
-    <task id="LOCAL-00143" summary="refactor(ui): use the new colors for the empty projects">
+    <task id="LOCAL-00033" summary="Add markdown exporter">
       <option name="closed" value="true" />
-      <created>1768992491303</created>
-      <option name="number" value="00143" />
-      <option name="presentableId" value="LOCAL-00143" />
+      <created>1767645686379</created>
+      <option name="number" value="00033" />
+      <option name="presentableId" value="LOCAL-00033" />
       <option name="project" value="LOCAL" />
-      <updated>1768992491303</updated>
+      <updated>1767645686379</updated>
     </task>
-    <task id="LOCAL-00144" summary="refactor(ui): use the new colors for the project header">
+    <task id="LOCAL-00034" summary="Add export request and create request folder">
       <option name="closed" value="true" />
-      <created>1768992858682</created>
-      <option name="number" value="00144" />
-      <option name="presentableId" value="LOCAL-00144" />
+      <created>1767645711890</created>
+      <option name="number" value="00034" />
+      <option name="presentableId" value="LOCAL-00034" />
       <option name="project" value="LOCAL" />
-      <updated>1768992858682</updated>
+      <updated>1767645711890</updated>
     </task>
-    <task id="LOCAL-00145" summary="refactor(ui): use the new colors for the version container">
+    <task id="LOCAL-00035" summary="Add find name by id for the version">
       <option name="closed" value="true" />
-      <created>1768993222220</created>
-      <option name="number" value="00145" />
-      <option name="presentableId" value="LOCAL-00145" />
+      <created>1767645732729</created>
+      <option name="number" value="00035" />
+      <option name="presentableId" value="LOCAL-00035" />
       <option name="project" value="LOCAL" />
-      <updated>1768993222220</updated>
+      <updated>1767645732729</updated>
     </task>
-    <task id="LOCAL-00146" summary="refactor(ui): the modal for edit the version">
+    <task id="LOCAL-00036" summary="Add markdown exporting">
       <option name="closed" value="true" />
-      <created>1768993933801</created>
-      <option name="number" value="00146" />
-      <option name="presentableId" value="LOCAL-00146" />
+      <created>1767647209952</created>
+      <option name="number" value="00036" />
+      <option name="presentableId" value="LOCAL-00036" />
       <option name="project" value="LOCAL" />
-      <updated>1768993933801</updated>
+      <updated>1767647209952</updated>
     </task>
-    <task id="LOCAL-00147" summary="refactor(ui): move the patch dto into a folder &amp; rename to patch dto">
+    <task id="LOCAL-00037" summary="Add type finder for patch content retrieval">
       <option name="closed" value="true" />
-      <created>1769118461250</created>
-      <option name="number" value="00147" />
-      <option name="presentableId" value="LOCAL-00147" />
+      <created>1767652047094</created>
+      <option name="number" value="00037" />
+      <option name="presentableId" value="LOCAL-00037" />
       <option name="project" value="LOCAL" />
-      <updated>1769118461250</updated>
+      <updated>1767652047094</updated>
     </task>
-    <task id="LOCAL-00148" summary="feat(ui): add each version's patch view">
+    <task id="LOCAL-00038" summary="Add markdown generator">
       <option name="closed" value="true" />
-      <created>1769118591363</created>
-      <option name="number" value="00148" />
-      <option name="presentableId" value="LOCAL-00148" />
+      <created>1767652093593</created>
+      <option name="number" value="00038" />
+      <option name="presentableId" value="LOCAL-00038" />
       <option name="project" value="LOCAL" />
-      <updated>1769118591363</updated>
+      <updated>1767652093593</updated>
     </task>
-    <task id="LOCAL-00149" summary="fix(ui): clear the version index when moving in another view">
+    <task id="LOCAL-00039" summary="Add licence">
       <option name="closed" value="true" />
-      <created>1769118857046</created>
-      <option name="number" value="00149" />
-      <option name="presentableId" value="LOCAL-00149" />
+      <created>1767652343952</created>
+      <option name="number" value="00039" />
+      <option name="presentableId" value="LOCAL-00039" />
       <option name="project" value="LOCAL" />
-      <updated>1769118857046</updated>
+      <updated>1767652343952</updated>
     </task>
-    <task id="LOCAL-00150" summary="feat(ui): add edit patch modal">
+    <task id="LOCAL-00040" summary="Add license">
       <option name="closed" value="true" />
-      <created>1769121832398</created>
-      <option name="number" value="00150" />
-      <option name="presentableId" value="LOCAL-00150" />
+      <created>1767652362277</created>
+      <option name="number" value="00040" />
+      <option name="presentableId" value="LOCAL-00040" />
       <option name="project" value="LOCAL" />
-      <updated>1769121832398</updated>
+      <updated>1767652362277</updated>
     </task>
-    <task id="LOCAL-00151" summary="feat(ui): link the edit patch">
+    <task id="LOCAL-00041" summary="feat(ui): add scroll area for Patch area">
       <option name="closed" value="true" />
-      <created>1769121845293</created>
-      <option name="number" value="00151" />
-      <option name="presentableId" value="LOCAL-00151" />
+      <created>1769184463849</created>
+      <option name="number" value="00041" />
+      <option name="presentableId" value="LOCAL-00041" />
       <option name="project" value="LOCAL" />
-      <updated>1769121845293</updated>
+      <updated>1769184463849</updated>
     </task>
-    <task id="LOCAL-00152" summary="add(controller): clear version id when version destroyed">
+    <task id="LOCAL-00042" summary="feat(ui): add scroll area for Project area">
       <option name="closed" value="true" />
-      <created>1769121997040</created>
-      <option name="number" value="00152" />
-      <option name="presentableId" value="LOCAL-00152" />
+      <created>1769184477595</created>
+      <option name="number" value="00042" />
+      <option name="presentableId" value="LOCAL-00042" />
       <option name="project" value="LOCAL" />
-      <updated>1769121997040</updated>
+      <updated>1769184477595</updated>
     </task>
-    <task id="LOCAL-00153" summary="fix(ui): fix style typo">
+    <task id="LOCAL-00043" summary="feat(ui): add scroll area for Version area">
       <option name="closed" value="true" />
-      <created>1769122613830</created>
-      <option name="number" value="00153" />
-      <option name="presentableId" value="LOCAL-00153" />
+      <created>1769184494759</created>
+      <option name="number" value="00043" />
+      <option name="presentableId" value="LOCAL-00043" />
       <option name="project" value="LOCAL" />
-      <updated>1769122613830</updated>
+      <updated>1769184494759</updated>
     </task>
-    <task id="LOCAL-00154" summary="add(ui): new style for the version area &amp; path area">
-      <option name="closed" value="true" />
-      <created>1769122638353</created>
-      <option name="number" value="00154" />
-      <option name="presentableId" value="LOCAL-00154" />
-      <option name="project" value="LOCAL" />
-      <updated>1769122638353</updated>
-    </task>
-    <task id="LOCAL-00155" summary="feat(ui): add the export button + sync to service &amp; controller">
-      <option name="closed" value="true" />
-      <created>1769123400880</created>
-      <option name="number" value="00155" />
-      <option name="presentableId" value="LOCAL-00155" />
-      <option name="project" value="LOCAL" />
-      <updated>1769123400880</updated>
-    </task>
-    <task id="LOCAL-00156" summary="refactor(file): delete useless files">
-      <option name="closed" value="true" />
-      <created>1769123608796</created>
-      <option name="number" value="00156" />
-      <option name="presentableId" value="LOCAL-00156" />
-      <option name="project" value="LOCAL" />
-      <updated>1769123608796</updated>
-    </task>
-    <task id="LOCAL-00157" summary="refactor(UI): clear input for modals">
-      <option name="closed" value="true" />
-      <created>1769124017203</created>
-      <option name="number" value="00157" />
-      <option name="presentableId" value="LOCAL-00157" />
-      <option name="project" value="LOCAL" />
-      <updated>1769124017203</updated>
-    </task>
-    <task id="LOCAL-00158" summary="refactor(file): rename file and folder for better understanding">
-      <option name="closed" value="true" />
-      <created>1769124131025</created>
-      <option name="number" value="00158" />
-      <option name="presentableId" value="LOCAL-00158" />
-      <option name="project" value="LOCAL" />
-      <updated>1769124131025</updated>
-    </task>
-    <task id="LOCAL-00159" summary="refactor(file): change view to one">
-      <option name="closed" value="true" />
-      <created>1769124805402</created>
-      <option name="number" value="00159" />
-      <option name="presentableId" value="LOCAL-00159" />
-      <option name="project" value="LOCAL" />
-      <updated>1769124805402</updated>
-    </task>
-    <option name="localTasksCounter" value="160" />
+    <option name="localTasksCounter" value="44" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
   </component>
-  <component name="Vcs.Log.Tabs.Properties">
-    <option name="TAB_STATES">
-      <map>
-        <entry key="MAIN">
-          <value>
-            <State />
-          </value>
-        </entry>
-      </map>
-    </option>
-  </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="feat(ui): add modal for version creation + linking with the service and controller" />
-    <MESSAGE value="feat(ui): add button to edit a version" />
-    <MESSAGE value="feat(ui): add edit version modal" />
-    <MESSAGE value="feat(ui): sync the edit version modal with controller and service" />
-    <MESSAGE value="refactor(style): change main colors" />
-    <MESSAGE value="refactor(ui): change the top padding" />
-    <MESSAGE value="refactor(ui): use the new colors for the projects page" />
-    <MESSAGE value="refactor(ui): use the new colors for the modals" />
-    <MESSAGE value="refactor(ui): use the new colors for the empty projects" />
-    <MESSAGE value="refactor(ui): use the new colors for the project header" />
-    <MESSAGE value="refactor(ui): use the new colors for the version container" />
-    <MESSAGE value="refactor(ui): the modal for edit the version" />
-    <MESSAGE value="refactor(ui): move the patch dto into a folder &amp; rename to patch dto" />
-    <MESSAGE value="feat(ui): add each version's patch view" />
-    <MESSAGE value="fix(ui): clear the version index when moving in another view" />
-    <MESSAGE value="feat(ui): add edit patch modal" />
-    <MESSAGE value="feat(ui): link the edit patch" />
-    <MESSAGE value="add(controller): clear version id when version destroyed" />
-    <MESSAGE value="fix(ui): fix style typo" />
-    <MESSAGE value="add(ui): new style for the version area &amp; path area" />
-    <MESSAGE value="feat(ui): add the export button + sync to service &amp; controller" />
-    <MESSAGE value="refactor(file): delete useless files" />
-    <MESSAGE value="refactor(UI): clear input for modals" />
-    <MESSAGE value="refactor(file): rename file and folder for better understanding" />
-    <MESSAGE value="refactor(file): change view to one" />
-    <option name="LAST_COMMIT_MESSAGE" value="refactor(file): change view to one" />
+    <MESSAGE value="Add patch create container" />
+    <MESSAGE value="Add clear choices when submit" />
+    <MESSAGE value="Fix select first choice by default" />
+    <MESSAGE value="Add patch DAO file" />
+    <MESSAGE value="Fix SQL command to insert in notes" />
+    <MESSAGE value="Link controller and service for patch" />
+    <MESSAGE value="Add display patches in UI and update project" />
+    <MESSAGE value="Fix clear when version changement" />
+    <MESSAGE value="Update code to display with controller and service" />
+    <MESSAGE value="Fix patch creator by removing unnecessary changes and updating" />
+    <MESSAGE value="Rename PatchContainer to PatchListView" />
+    <MESSAGE value="Add patch container" />
+    <MESSAGE value="Add export button" />
+    <MESSAGE value="Add default choice in export combo box" />
+    <MESSAGE value="Add markdown exporter" />
+    <MESSAGE value="Add export request and create request folder" />
+    <MESSAGE value="Add find name by id for the version" />
+    <MESSAGE value="Add markdown exporting" />
+    <MESSAGE value="Add type finder for patch content retrieval" />
+    <MESSAGE value="Add markdown generator" />
+    <MESSAGE value="Add licence" />
+    <MESSAGE value="Add license" />
+    <MESSAGE value="feat(ui): add scroll area for Patch area" />
+    <MESSAGE value="feat(ui): add scroll area for Project area" />
+    <MESSAGE value="feat(ui): add scroll area for Version area" />
+    <option name="LAST_COMMIT_MESSAGE" value="feat(ui): add scroll area for Version area" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/Patcher$Patcher__build_.ic" NAME="Patcher [build] Coverage Results" MODIFIED="1767013393295" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="true" />
