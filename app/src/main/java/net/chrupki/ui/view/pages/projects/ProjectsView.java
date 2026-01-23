@@ -4,6 +4,7 @@ import javafx.collections.ListChangeListener;
 import javafx.collections.ObservableList;
 import javafx.geometry.Insets;
 import javafx.geometry.Pos;
+import javafx.scene.control.ScrollPane;
 import javafx.scene.layout.FlowPane;
 import javafx.scene.layout.StackPane;
 import net.chrupki.ui.controllers.HubController;
@@ -22,8 +23,9 @@ public class ProjectsView extends StackPane {
     private final double gap = 6;
 
     private final FlowPane projectsView = new FlowPane();
-    private final PageManager viewManager;
+    private final ScrollPane scrollPane = new ScrollPane();
 
+    private final PageManager viewManager;
     private final CreateProjectButton createButton;
 
     public ProjectsView(PageManager viewManager) {
@@ -36,14 +38,20 @@ public class ProjectsView extends StackPane {
         projectsView.setPadding(new Insets(gap));
         projectsView.setAlignment(Pos.TOP_CENTER);
 
+        scrollPane.setContent(projectsView);
+        scrollPane.setFitToWidth(true);
+        scrollPane.setPannable(true);
+        scrollPane.setVbarPolicy(ScrollPane.ScrollBarPolicy.NEVER);
+        scrollPane.setHbarPolicy(ScrollPane.ScrollBarPolicy.NEVER);
+        scrollPane.getStyleClass().add("invisible-scroll");
+
+        scrollPane.viewportBoundsProperty().addListener((obs, oldB, newB) ->
+                updateWrapLength(newB.getWidth())
+        );
+
         createButton = new CreateProjectButton(
                 new CreateProjectButtonDTO(WIDTH, HEIGHT),
                 HubController.getProjectController()::openCreateProjectsModal
-
-        );
-
-        projectsView.widthProperty().addListener((obs, oldW, newW) ->
-                updateWrapLength(newW.doubleValue())
         );
 
         refresh(projects);
@@ -52,10 +60,8 @@ public class ProjectsView extends StackPane {
                 refresh(projects)
         );
 
-        getChildren().add(projectsView);
-
-        // Modal
-        getChildren().add(
+        getChildren().addAll(
+                scrollPane,
                 new ProjectsModal()
         );
     }
@@ -79,7 +85,9 @@ public class ProjectsView extends StackPane {
 
         if (projects.isEmpty()) {
             projectsView.getChildren().add(
-                    new EmptyProjectsView(HubController.getProjectController()::openCreateProjectsModal)
+                    new EmptyProjectsView(
+                            HubController.getProjectController()::openCreateProjectsModal
+                    )
             );
             return;
         }
@@ -101,4 +109,3 @@ public class ProjectsView extends StackPane {
         }
     }
 }
-
