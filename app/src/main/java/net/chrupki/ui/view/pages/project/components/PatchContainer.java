@@ -14,19 +14,17 @@ public class PatchContainer extends HBox {
     public PatchContainer(PatchDTO patch) {
 
         Label typeLabel = new Label(patch.getType());
-
         typeLabel.getStyleClass().add("project-item-patch-type");
 
-        StackPane typeBox = new StackPane(typeLabel);
-        typeBox.setAlignment(Pos.CENTER);
-        typeBox.setPadding(new Insets(4, 10, 4, 10));
-        typeBox.getStyleClass().add("project-item-patch-type-box");
+        typeLabel.setAlignment(Pos.CENTER);
+        typeLabel.setPadding(new Insets(4, 10, 4, 10));
+        typeLabel.getStyleClass().add("project-item-patch-type-box");
 
         Label content = new Label(patch.getContent());
         content.getStyleClass().add("project-item-meta");
         content.setWrapText(true);
 
-        VBox textBox = new VBox(4, typeBox, content);
+        VBox textBox = new VBox(4, typeLabel, content);
         textBox.setAlignment(Pos.CENTER_LEFT);
 
         Button editButton = new Button("Edit");
