@@ -71,9 +71,9 @@ public class PatchHeader extends HBox {
         getChildren().addAll(
                 title,
                 spacer,
-                exportButton,
-                addButton
-        );
+                addButton,
+                exportButton
+                );
     }
 
 }
