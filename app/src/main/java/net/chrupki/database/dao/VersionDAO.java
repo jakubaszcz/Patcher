@@ -125,7 +125,7 @@ public class VersionDAO {
     public static List<VersionDTO> findAll() {
         List<VersionDTO> result = new ArrayList<>();
         String sql = """
-                SELECT id, version
+                SELECT id, version, type
                 FROM versions
                 WHERE id
                 ORDER BY id ASC
