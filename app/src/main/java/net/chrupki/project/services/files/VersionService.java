@@ -2,12 +2,13 @@ package net.chrupki.project.services.files;
 
 import net.chrupki.database.dao.PatchDAO;
 import net.chrupki.database.dao.VersionDAO;
+import net.chrupki.database.dao.dto.VersionDatabaseDTO;
 import net.chrupki.ui.view.pages.project.dto.VersionDTO;
 
 import java.util.List;
 
 public class VersionService {
-    public VersionDTO createVersion(String project, String version) {
+    public VersionDTO createVersion(String project, String version, String type) {
         if (project == null || project.isBlank()) {
             throw new IllegalArgumentException("Project name is required");
         }
@@ -15,8 +16,11 @@ public class VersionService {
             throw new IllegalArgumentException("Version name is required");
         }
 
-        int id = VersionDAO.insert(version);
-        return new VersionDTO(id, version);
+        int id = VersionDAO.insert(new VersionDatabaseDTO(
+                version,
+                type
+        ));
+        return new VersionDTO(id, version, type);
     }
 
     public List<VersionDTO> fetchVersions(String projectName) throws Exception {

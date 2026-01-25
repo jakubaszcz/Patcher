@@ -1,6 +1,7 @@
 package net.chrupki.database.dao;
 
 import net.chrupki.database.DatabaseHub;
+import net.chrupki.database.dao.dto.VersionDatabaseDTO;
 import net.chrupki.ui.view.pages.project.dto.VersionDTO;
 
 import java.sql.Connection;
@@ -12,13 +13,14 @@ import java.util.List;
 
 public class VersionDAO {
 
-    public static int insert(String version) {
-        String sql = "INSERT INTO versions (version) VALUES (?)";
+    public static int insert(VersionDatabaseDTO version) {
+        String sql = "INSERT INTO versions (version, type) VALUES (?, ?)";
 
         try (Connection conn = DatabaseHub.getInstance().getConnection();
              PreparedStatement stmt = conn.prepareStatement(sql)) {
 
-            stmt.setString(1, version);
+            stmt.setString(1, version.getVersion());
+            stmt.setString(2, version.getType());
 
             stmt.executeUpdate();
 
@@ -137,7 +139,8 @@ public class VersionDAO {
                 while (rs.next()) {
                     result.add(new VersionDTO(
                             rs.getInt("id"),
-                            rs.getString("version")
+                            rs.getString("version"),
+                            rs.getString("type")
                     ));
                 }
             }

@@ -27,11 +27,11 @@ public class VersionController {
         });
     }
 
-    public void createVersion(String versionName) {
+    public void createVersion(String versionName, String type) {
         String projectName = AppContext.projectContext().getName().get();
 
         try {
-            VersionDTO version = HubService.getVersionService().createVersion(projectName, versionName);
+            VersionDTO version = HubService.getVersionService().createVersion(projectName, versionName, type);
             ProjectModel.getVersions().add(version);
         } catch (Exception e) {
             System.out.println(e.getMessage());

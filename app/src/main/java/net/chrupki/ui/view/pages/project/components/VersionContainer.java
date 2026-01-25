@@ -19,13 +19,20 @@ public class VersionContainer extends HBox {
     public VersionContainer(VersionDTO version, Consumer<Integer> onSelectVersion) {
 
         // Labels (gauche)
-        Label name = new Label(version.getVersion());
+
+
+        Label name = new Label("v" + version.getVersion());
         name.getStyleClass().add("project-item-title");
+
+        Label type = new Label(version.getType());
+        type.getStyleClass().add("version-type-badge");
+
+        HBox versionBox = new HBox(8, name, type);
 
         Label meta = new Label("Version");
         meta.getStyleClass().add("project-item-meta");
 
-        VBox textBox = new VBox(2, name, meta);
+        VBox textBox = new VBox(2, versionBox, meta);
         textBox.setAlignment(Pos.CENTER_LEFT);
 
         Button editButton = new Button("Edit");

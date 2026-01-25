@@ -3,6 +3,7 @@ package net.chrupki.ui.view.pages.project.modals.version;
 import javafx.geometry.Insets;
 import javafx.geometry.Pos;
 import javafx.scene.control.Button;
+import javafx.scene.control.ComboBox;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.HBox;
@@ -11,12 +12,13 @@ import javafx.scene.layout.Region;
 import javafx.scene.layout.VBox;
 import net.chrupki.ui.model.ProjectModel;
 
+import java.util.function.BiConsumer;
 import java.util.function.Consumer;
 
 public class CreateVersionModal extends VBox {
 
     public CreateVersionModal(
-            Consumer<String> onCreate,
+            BiConsumer<String, String> onCreate,
             Runnable onClose
     ) {
         Label title = new Label("Create version");
@@ -25,6 +27,15 @@ public class CreateVersionModal extends VBox {
         TextField textField = new TextField();
         textField.setPromptText("Version name");
         textField.getStyleClass().add("modal-textfield");
+
+        ComboBox<String> comboBox = new ComboBox<>();
+        comboBox.getStyleClass().add("modal-combobox");
+
+        comboBox.getItems().addAll(
+                "Alpha", "Beta", "Pre-Release", "HotFix"
+        );
+
+        comboBox.setPromptText("Select a type");
 
         Button closeButton = new Button("Cancel");
         closeButton.getStyleClass().add("modal-button-close");
@@ -46,7 +57,7 @@ public class CreateVersionModal extends VBox {
         setMaxWidth(360);
 
         createButton.setOnAction(e -> {
-            onCreate.accept(textField.getText());
+            onCreate.accept(textField.getText(), comboBox.getValue());
             textField.clear();
             onClose.run();
         });
@@ -64,6 +75,7 @@ public class CreateVersionModal extends VBox {
         getChildren().addAll(
                 title,
                 textField,
+                comboBox,
                 actions
         );
     }

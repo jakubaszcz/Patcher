@@ -7,7 +7,8 @@ public final class Tables {
     public static final String VERSION = """
         CREATE TABLE IF NOT EXISTS versions (
             id INTEGER PRIMARY KEY AUTOINCREMENT,
-            version TEXT NOT NULL
+            version TEXT NOT NULL,
+            type TEXT NOT NULL
         );
         """;
 
