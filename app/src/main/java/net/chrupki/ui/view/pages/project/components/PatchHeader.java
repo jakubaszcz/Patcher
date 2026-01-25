@@ -55,6 +55,7 @@ public class PatchHeader extends HBox {
                         VersionDAO.findNameById(
                                 AppContext.versionContext().getId().get()
                         ),
+                        AppContext.versionContext().getType().get(),
                         "markdown",
                         List.of(),
                         file.toPath()

@@ -8,6 +8,7 @@ import java.util.List;
 public record ExportRequest(
     String project,
     String version,
+    String type,
     String format,
     List<PatchDTO> patches,
     Path exportPath

@@ -1,5 +1,6 @@
 package net.chrupki.project.services.files.exports;
 
+import net.chrupki.app.AppContext;
 import net.chrupki.database.dao.PatchDAO;
 import net.chrupki.request.ExportRequest;
 
@@ -23,7 +24,17 @@ public class MarkdownExportService {
 
         List<String> notes = List.of("Patch", "Add", "Features", "Fix");
 
-        md.append("# Project ").append(request.project()).append(" (v.").append(request.version()).append(")\n\n");
+        System.out.println(request.type());
+
+        String type = switch (request.type()) {
+            case "Alpha" -> "alpha";
+            case "Beta" -> "beta";
+            case "Pre-Release" -> "pre-release";
+            case "HotFix" -> "hotfix";
+            default -> null;
+        };
+
+        md.append("# Project ").append(request.project()).append(" (v.").append(request.version()).append("-").append(type).append(")\n\n");
 
         for (String note : notes) {
             if (PatchDAO.findByType(request.project(), note).isEmpty()) continue;

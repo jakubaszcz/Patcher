@@ -19,8 +19,6 @@ public class VersionContainer extends HBox {
     public VersionContainer(VersionDTO version, Consumer<Integer> onSelectVersion) {
 
         // Labels (gauche)
-
-
         Label name = new Label("v" + version.getVersion());
         name.getStyleClass().add("project-item-title");
 
@@ -40,6 +38,7 @@ public class VersionContainer extends HBox {
 
         editButton.setOnAction(e -> {
             AppContext.versionContext().setId(version.getId());
+            AppContext.versionContext().setType(version.getType());
             ProjectModel.setSwitchProjectModal(true);
             ProjectModel.setSwitchEditVersionProjectModal(true);
         });
@@ -55,6 +54,7 @@ public class VersionContainer extends HBox {
 
         setOnMouseClicked(e -> {
             onSelectVersion.accept(version.getId());
+            AppContext.versionContext().setType(version.getType());
         });
 
         getChildren().addAll(
