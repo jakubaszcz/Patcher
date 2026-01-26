@@ -1,12 +1,12 @@
 package net.chrupki.ui.controllers.files;
 
 import javafx.beans.property.StringProperty;
-import net.chrupki.app.AppContext;
+import net.chrupki.model.HubModel;
 import net.chrupki.database.dao.PatchDAO;
-import net.chrupki.ui.view.pages.project.dto.VersionDTO;
+import net.chrupki.dto.VersionDTO;
 import net.chrupki.project.services.HubService;
 import net.chrupki.ui.controllers.files.dtos.EditVersion;
-import net.chrupki.ui.model.ProjectModel;
+import net.chrupki.ui.model.GlobalModel;
 
 import java.util.Objects;
 
@@ -16,7 +16,7 @@ public class VersionController {
     }
 
     private void observeCurrentProject() {
-        StringProperty currentProject = AppContext.projectContext().getName();
+        StringProperty currentProject = HubModel.projectModel().getName();
 
         currentProject.addListener((obs, oldProject, newProject) -> {
             try {
@@ -28,36 +28,36 @@ public class VersionController {
     }
 
     public void createVersion(String versionName, String type) {
-        String projectName = AppContext.projectContext().getName().get();
+        String projectName = HubModel.projectModel().getName().get();
 
         try {
             VersionDTO version = HubService.getVersionService().createVersion(projectName, versionName, type);
-            ProjectModel.getVersions().add(version);
+            GlobalModel.getVersions().add(version);
         } catch (Exception e) {
             System.out.println(e.getMessage());
         }
     }
 
-    public void selectVersion(Integer index) {
-        AppContext.versionContext().setId(index);
+    public void selectVersion(VersionDTO versionDTO) {
+        HubModel.versionModel().from(versionDTO);
 
-        ProjectModel.getPatches().clear();
+        GlobalModel.getPatches().clear();
 
         try {
-            ProjectModel.getPatches().addAll(Objects.requireNonNull(PatchDAO.findAll(AppContext.projectContext().getName().get())));
+            GlobalModel.getPatches().addAll(Objects.requireNonNull(PatchDAO.findAll(HubModel.projectModel().getName().get())));
         } catch (Exception ex) {
             throw new RuntimeException(ex);
         }
     }
 
     public void editVersion(Integer index) {
-        ProjectModel.setEditVersionProperty(true);
+        GlobalModel.setEditVersionProperty(true);
     }
 
     public void loadVersions() {
         try {
-            ProjectModel.getVersions().setAll(
-                    HubService.getVersionService().fetchVersions(AppContext.projectContext().getName().get())
+            GlobalModel.getVersions().setAll(
+                    HubService.getVersionService().fetchVersions(HubModel.projectModel().getName().get())
             );
         } catch (Exception e) {
             throw new RuntimeException(e);
@@ -75,15 +75,15 @@ public class VersionController {
     public void deleteVersion(Integer id) {
         HubService.getVersionService().deleteVersion(id);
 
-        AppContext.versionContext().clearId();
+        HubModel.versionModel().clear();
 
         loadVersions();
         closeModal();
     }
 
     public void closeModal() {
-        ProjectModel.setSwitchProjectModal(false);
-        ProjectModel.setSwitchCreateVersionProjectModal(false);
-        ProjectModel.setSwitchEditVersionProjectModal(false);
+        GlobalModel.setSwitchProjectModal(false);
+        GlobalModel.setSwitchCreateVersionProjectModal(false);
+        GlobalModel.setSwitchEditVersionProjectModal(false);
     }
 }

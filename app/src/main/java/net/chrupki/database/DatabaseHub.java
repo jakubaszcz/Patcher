@@ -1,6 +1,6 @@
 package net.chrupki.database;
 
-import net.chrupki.app.AppContext;
+import net.chrupki.model.HubModel;
 
 import java.sql.Connection;
 import java.sql.SQLException;
@@ -17,7 +17,7 @@ public class DatabaseHub {
     }
 
     public Connection getConnection() {
-        if (AppContext.projectContext().getName().get().isEmpty()) return null;
+        if (HubModel.projectModel().getName().get().isEmpty()) return null;
         if (currentConnection != null) {
             try {
                 currentConnection.close();
@@ -26,7 +26,7 @@ public class DatabaseHub {
             }
         }
         try {
-            currentConnection = Database.getConnection(AppContext.projectContext().getName().get());
+            currentConnection = Database.getConnection(HubModel.projectModel().getName().get());
         } catch (Exception e) {
             throw new RuntimeException(e);
         }

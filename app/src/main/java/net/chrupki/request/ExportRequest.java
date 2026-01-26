@@ -1,6 +1,6 @@
 package net.chrupki.request;
 
-import net.chrupki.ui.view.pages.project.dto.PatchDTO;
+import net.chrupki.dto.PatchDTO;
 
 import java.nio.file.Path;
 import java.util.List;

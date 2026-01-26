@@ -1,10 +1,9 @@
 package net.chrupki.ui.controllers.files;
 
-import net.chrupki.app.AppContext;
+import net.chrupki.model.HubModel;
 import net.chrupki.project.AppProject;
 import net.chrupki.project.services.HubService;
-import net.chrupki.project.services.files.ProjectService;
-import net.chrupki.ui.model.ProjectModel;
+import net.chrupki.ui.model.GlobalModel;
 
 import java.io.IOException;
 
@@ -12,13 +11,13 @@ public class ProjectController {
 
     public void createProject(String name) {
         AppProject.CreateProject(name);
-        AppContext.projectContext().setName(name);
+        HubModel.projectModel().setName(name);
         loadProjects();
     }
 
     public void loadProjects() {
         try {
-            ProjectModel.getProjects().setAll(
+            GlobalModel.getProjects().setAll(
                     HubService.getProjectService().fetchAllProjectNames()
             );
         } catch (IOException e) {
@@ -27,27 +26,27 @@ public class ProjectController {
     }
 
     public void openCreateProjectsModal() {
-        ProjectModel.setSwitchProjectsModal(true);
-        ProjectModel.setSwitchCreateProjectsModal(true);
+        GlobalModel.setSwitchProjectsModal(true);
+        GlobalModel.setSwitchCreateProjectsModal(true);
     }
 
     public void closeCreateProjectsModal() {
-        ProjectModel.setSwitchProjectsModal(false);
-        ProjectModel.setSwitchCreateProjectsModal(false);
+        GlobalModel.setSwitchProjectsModal(false);
+        GlobalModel.setSwitchCreateProjectsModal(false);
     }
 
     public void openEditProjectsModal() {
-        ProjectModel.setSwitchProjectsModal(true);
-        ProjectModel.setSwitchEditProjectsModal(true);
+        GlobalModel.setSwitchProjectsModal(true);
+        GlobalModel.setSwitchEditProjectsModal(true);
     }
 
     public void closeEditProjectsModal() {
-        ProjectModel.setSwitchProjectsModal(false);
-        ProjectModel.setSwitchEditProjectsModal(false);
+        GlobalModel.setSwitchProjectsModal(false);
+        GlobalModel.setSwitchEditProjectsModal(false);
     }
 
     public void selectProject(String projectName) {
-        AppContext.projectContext().setName(projectName);
+        HubModel.projectModel().setName(projectName);
     }
 
     public void saveProject(String oldProjectName, String newProjectName) {
@@ -71,7 +70,7 @@ public class ProjectController {
     }
 
     public void onEdit() {
-        ProjectModel.setEditProjectProperty(true);
+        GlobalModel.setEditProjectProperty(true);
     }
 
     public void onDelete() {
@@ -81,13 +80,13 @@ public class ProjectController {
             throw new RuntimeException(e);
         }
 
-        AppContext.projectContext().setName(null);
+        HubModel.projectModel().setName(null);
         loadProjects();
     }
 
 
     public void closeModal() {
-        ProjectModel.setEditActiveProperty(false);
-        ProjectModel.setEditProjectProperty(false);
+        GlobalModel.setEditActiveProperty(false);
+        GlobalModel.setEditProjectProperty(false);
     }
 }

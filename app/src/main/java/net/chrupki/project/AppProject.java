@@ -4,9 +4,8 @@ import javafx.beans.property.SimpleStringProperty;
 import javafx.beans.property.StringProperty;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
-import net.chrupki.app.AppContext;
+import net.chrupki.model.HubModel;
 import net.chrupki.app.AppPath;
-import net.chrupki.database.Database;
 import net.chrupki.database.DatabaseHub;
 import net.chrupki.database.DatabaseInitializer;
 
@@ -90,13 +89,13 @@ public class AppProject {
         try { Thread.sleep(100); } catch (InterruptedException e) { }
 
         Files.move(oldPath, newPath);
-        AppContext.projectContext().setName(newName);
+        HubModel.projectModel().setName(newName);
     }
 
     public static void deleteProject() throws IOException {
         Path projectDir = AppPath.getDataDir()
                 .resolve("projects")
-                .resolve(AppContext.projectContext().getName().get());
+                .resolve(HubModel.projectModel().getName().get());
 
         DatabaseHub.getInstance().closeAll();
 

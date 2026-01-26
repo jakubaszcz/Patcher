@@ -1,9 +1,9 @@
-package net.chrupki.app.context;
+package net.chrupki.model.files;
 
 import javafx.beans.property.SimpleStringProperty;
 import javafx.beans.property.StringProperty;
 
-public class ProjectContext {
+public class ProjectModel {
 
     private static final StringProperty name = new SimpleStringProperty();
 

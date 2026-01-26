@@ -8,7 +8,7 @@ import javafx.scene.control.ScrollPane;
 import javafx.scene.layout.FlowPane;
 import javafx.scene.layout.StackPane;
 import net.chrupki.ui.controllers.HubController;
-import net.chrupki.ui.model.ProjectModel;
+import net.chrupki.ui.model.GlobalModel;
 import net.chrupki.ui.view.manager.PageManager;
 import net.chrupki.ui.view.pages.projects.components.CreateProjectButton;
 import net.chrupki.ui.view.pages.projects.components.ProjectsContainer;
@@ -31,7 +31,7 @@ public class ProjectsView extends StackPane {
     public ProjectsView(PageManager viewManager) {
         this.viewManager = viewManager;
 
-        ObservableList<String> projects = ProjectModel.getProjects();
+        ObservableList<String> projects = GlobalModel.getProjects();
 
         projectsView.setHgap(gap);
         projectsView.setVgap(gap);

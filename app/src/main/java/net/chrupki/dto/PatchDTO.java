@@ -1,4 +1,4 @@
-package net.chrupki.ui.view.pages.project.dto;
+package net.chrupki.dto;
 
 public class PatchDTO {
     private final String content;

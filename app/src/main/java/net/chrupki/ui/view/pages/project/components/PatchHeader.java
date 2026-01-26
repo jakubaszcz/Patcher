@@ -8,10 +8,10 @@ import javafx.scene.layout.HBox;
 import javafx.scene.layout.Priority;
 import javafx.scene.layout.Region;
 import javafx.stage.FileChooser;
-import net.chrupki.app.AppContext;
+import net.chrupki.model.HubModel;
 import net.chrupki.database.dao.VersionDAO;
 import net.chrupki.request.ExportRequest;
-import net.chrupki.ui.model.ProjectModel;
+import net.chrupki.ui.model.GlobalModel;
 
 import java.io.File;
 import java.util.List;
@@ -37,8 +37,8 @@ public class PatchHeader extends HBox {
         setSpacing(8);
 
         addButton.setOnAction(e -> {
-            ProjectModel.setSwitchProjectModal(true);
-            ProjectModel.setSwitchCreatePatchProjectModal(true);
+            GlobalModel.setSwitchProjectModal(true);
+            GlobalModel.setSwitchCreatePatchProjectModal(true);
         });
 
         exportButton.setOnAction(e -> {
@@ -51,11 +51,11 @@ public class PatchHeader extends HBox {
 
             try {
                 onExport.accept(new ExportRequest(
-                        AppContext.projectContext().getName().get(),
+                        HubModel.projectModel().getName().get(),
                         VersionDAO.findNameById(
-                                AppContext.versionContext().getId().get()
+                                HubModel.versionModel().getId().get()
                         ),
-                        AppContext.versionContext().getType().get(),
+                        HubModel.versionModel().getType().get(),
                         "markdown",
                         List.of(),
                         file.toPath()

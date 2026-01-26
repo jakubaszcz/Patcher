@@ -4,12 +4,12 @@ import javafx.beans.property.BooleanProperty;
 import javafx.beans.property.SimpleBooleanProperty;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
-import net.chrupki.ui.view.pages.project.dto.PatchDTO;
-import net.chrupki.ui.view.pages.project.dto.VersionDTO;
+import net.chrupki.dto.PatchDTO;
+import net.chrupki.dto.VersionDTO;
 
-public class ProjectModel {
+public class GlobalModel {
 
-    public ProjectModel() {}
+    public GlobalModel() {}
 
     private static final ObservableList<VersionDTO> versions = FXCollections.observableArrayList();
     private static final ObservableList<String> projects = FXCollections.observableArrayList();

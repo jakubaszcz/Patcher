@@ -5,7 +5,7 @@ import javafx.scene.layout.Pane;
 import javafx.scene.layout.StackPane;
 import javafx.scene.layout.VBox;
 import net.chrupki.ui.controllers.HubController;
-import net.chrupki.ui.model.ProjectModel;
+import net.chrupki.ui.model.GlobalModel;
 import net.chrupki.ui.view.pages.projects.modals.project.ProjectsModalCreateProject;
 import net.chrupki.ui.view.pages.projects.modals.project.ProjectsModalEditProject;
 
@@ -22,14 +22,14 @@ public class ProjectsModal extends StackPane {
         """);
 
         vBox.setOnMouseClicked(e -> {
-            ProjectModel.setSwitchProjectsModal(false);
-            ProjectModel.setSwitchCreateProjectsModal(false);
-            ProjectModel.setSwitchEditProjectsModal(false);
+            GlobalModel.setSwitchProjectsModal(false);
+            GlobalModel.setSwitchCreateProjectsModal(false);
+            GlobalModel.setSwitchEditProjectsModal(false);
         });
 
         getChildren().addAll(pane, vBox);
 
-        visibleProperty().bind(ProjectModel.getSwitchProjectsModal());
+        visibleProperty().bind(GlobalModel.getSwitchProjectsModal());
 
         vBox.getChildren().addAll(
                 new ProjectsModalCreateProject(
