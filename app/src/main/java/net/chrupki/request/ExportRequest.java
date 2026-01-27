@@ -10,6 +10,7 @@ public record ExportRequest(
     String version,
     String type,
     String format,
+    String templates,
     List<PatchDTO> patches,
     Path exportPath
 ) {}
