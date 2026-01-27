@@ -1,5 +1,6 @@
 package net.chrupki.ui.controllers.files;
 
+import net.chrupki.dto.ProjectDTO;
 import net.chrupki.model.HubModel;
 import net.chrupki.project.AppProject;
 import net.chrupki.project.services.HubService;
@@ -11,7 +12,7 @@ public class ProjectController {
 
     public void createProject(String name) {
         AppProject.CreateProject(name);
-        HubModel.projectModel().setName(name);
+        HubModel.projectModel().from(new ProjectDTO(name));
         loadProjects();
     }
 
@@ -45,8 +46,9 @@ public class ProjectController {
         GlobalModel.setSwitchEditProjectsModal(false);
     }
 
-    public void selectProject(String projectName) {
-        HubModel.projectModel().setName(projectName);
+    public void selectProject(String name) {
+        HubModel.projectModel().from(new ProjectDTO(name));
+
     }
 
     public void saveProject(String oldProjectName, String newProjectName) {
@@ -80,7 +82,7 @@ public class ProjectController {
             throw new RuntimeException(e);
         }
 
-        HubModel.projectModel().setName(null);
+        HubModel.projectModel().clear();
         loadProjects();
     }
 

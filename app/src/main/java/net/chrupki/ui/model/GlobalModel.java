@@ -5,6 +5,7 @@ import javafx.beans.property.SimpleBooleanProperty;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import net.chrupki.dto.PatchDTO;
+import net.chrupki.dto.ProjectDTO;
 import net.chrupki.dto.VersionDTO;
 
 public class GlobalModel {
@@ -12,7 +13,7 @@ public class GlobalModel {
     public GlobalModel() {}
 
     private static final ObservableList<VersionDTO> versions = FXCollections.observableArrayList();
-    private static final ObservableList<String> projects = FXCollections.observableArrayList();
+    private static final ObservableList<ProjectDTO> projects = FXCollections.observableArrayList();
     private static final ObservableList<PatchDTO> patches = FXCollections.observableArrayList();
 
     private static final BooleanProperty editActive = new SimpleBooleanProperty(false);
@@ -147,7 +148,7 @@ public class GlobalModel {
         return versions;
     }
 
-    public static ObservableList<String> getProjects() {
+    public static ObservableList<ProjectDTO> getProjects() {
         return projects;
     }
 

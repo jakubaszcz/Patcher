@@ -4,6 +4,7 @@ import javafx.geometry.Insets;
 import javafx.scene.control.Button;
 import javafx.scene.layout.HBox;
 import javafx.scene.control.Label;
+import net.chrupki.dto.ProjectDTO;
 import net.chrupki.model.HubModel;
 import net.chrupki.ui.view.pages.project.ProjectView;
 import net.chrupki.ui.view.pages.projects.dto.ProjectContainerDTO;
@@ -17,7 +18,7 @@ public class ProjectsContainer extends HBox {
             Runnable onEditProjectModal
     ) {
 
-        Label title = new Label(projectContainerModel.getText());
+        Label title = new Label(projectContainerModel.getProjectDTO().getName());
         title.getStyleClass().add("card-title");
 
         Button edit = new Button("Edit");
@@ -35,12 +36,18 @@ public class ProjectsContainer extends HBox {
 
         setOnMouseClicked(e -> {
             projectContainerModel.getViewManager().show(new ProjectView(projectContainerModel.getViewManager()));
-            HubModel.projectModel().setName(projectContainerModel.getText());
+            ProjectDTO projectDTO = new ProjectDTO(
+                    projectContainerModel.getProjectDTO().getName()
+            );
+            HubModel.projectModel().from(projectDTO);
         });
 
         edit.setOnAction(e -> {
             onEditProjectModal.run();
-            HubModel.projectModel().setName(projectContainerModel.getText());
+            ProjectDTO projectDTO = new ProjectDTO(
+                    projectContainerModel.getProjectDTO().getName()
+            );
+            HubModel.projectModel().from(projectDTO);
         });
 
         setPrefSize(projectContainerModel.getWidth(), projectContainerModel.getHeight());

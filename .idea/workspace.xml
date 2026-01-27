@@ -4,46 +4,17 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="c1aa160e-de6c-484d-8c28-5409cf16dc62" name="Changes" comment="fix(ui): invert export &amp; add patch button">
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/net/chrupki/model/HubModel.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/net/chrupki/model/files/VersionModel.java" afterDir="false" />
+    <list default="true" id="c1aa160e-de6c-484d-8c28-5409cf16dc62" name="Changes" comment="fix(code): change context to model">
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/net/chrupki/dto/ProjectDTO.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/net/chrupki/app/AppContext.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/net/chrupki/app/context/PatchContext.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/net/chrupki/model/files/PatchModel.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/net/chrupki/app/context/ProjectContext.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/net/chrupki/model/files/ProjectModel.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/net/chrupki/app/context/VersionContext.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/net/chrupki/database/DatabaseHub.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/net/chrupki/database/DatabaseHub.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/net/chrupki/database/dao/PatchDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/net/chrupki/database/dao/PatchDAO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/net/chrupki/database/dao/VersionDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/net/chrupki/database/dao/VersionDAO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/net/chrupki/model/files/ProjectModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/net/chrupki/model/files/ProjectModel.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/net/chrupki/project/AppProject.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/net/chrupki/project/AppProject.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/net/chrupki/project/services/files/PatchService.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/net/chrupki/project/services/files/PatchService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/net/chrupki/project/services/files/VersionService.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/net/chrupki/project/services/files/VersionService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/net/chrupki/project/services/files/exports/MarkdownExportService.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/net/chrupki/project/services/files/exports/MarkdownExportService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/net/chrupki/request/ExportRequest.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/net/chrupki/request/ExportRequest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/net/chrupki/ui/controllers/files/PatchController.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/net/chrupki/ui/controllers/files/PatchController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/net/chrupki/project/services/files/ProjectService.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/net/chrupki/project/services/files/ProjectService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/net/chrupki/ui/controllers/files/ProjectController.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/net/chrupki/ui/controllers/files/ProjectController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/net/chrupki/ui/controllers/files/VersionController.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/net/chrupki/ui/controllers/files/VersionController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/net/chrupki/ui/model/ProjectModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/net/chrupki/ui/model/GlobalModel.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/net/chrupki/ui/view/pages/project/components/Body.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/net/chrupki/ui/view/pages/project/components/Body.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/net/chrupki/ui/view/pages/project/components/Header.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/net/chrupki/ui/view/pages/project/components/Header.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/net/chrupki/ui/view/pages/project/components/Patch.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/net/chrupki/ui/view/pages/project/components/Patch.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/net/chrupki/ui/view/pages/project/components/PatchContainer.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/net/chrupki/ui/view/pages/project/components/PatchContainer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/net/chrupki/ui/view/pages/project/components/PatchHeader.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/net/chrupki/ui/view/pages/project/components/PatchHeader.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/net/chrupki/ui/view/pages/project/components/Version.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/net/chrupki/ui/view/pages/project/components/Version.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/net/chrupki/ui/view/pages/project/components/VersionContainer.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/net/chrupki/ui/view/pages/project/components/VersionContainer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/net/chrupki/ui/view/pages/project/components/VersionHeader.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/net/chrupki/ui/view/pages/project/components/VersionHeader.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/net/chrupki/ui/view/pages/project/dto/PatchDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/net/chrupki/dto/PatchDTO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/net/chrupki/ui/view/pages/project/dto/VersionDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/net/chrupki/dto/VersionDTO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/net/chrupki/ui/view/pages/project/modals/ProjectModal.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/net/chrupki/ui/view/pages/project/modals/ProjectModal.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/net/chrupki/ui/view/pages/project/modals/patch/CreatePatchModal.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/net/chrupki/ui/view/pages/project/modals/patch/CreatePatchModal.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/net/chrupki/ui/view/pages/project/modals/patch/EditPatchModal.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/net/chrupki/ui/view/pages/project/modals/patch/EditPatchModal.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/net/chrupki/ui/view/pages/project/modals/version/CreateVersionModal.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/net/chrupki/ui/view/pages/project/modals/version/CreateVersionModal.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/net/chrupki/ui/view/pages/project/modals/version/EditVersionModal.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/net/chrupki/ui/view/pages/project/modals/version/EditVersionModal.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/net/chrupki/ui/model/GlobalModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/net/chrupki/ui/model/GlobalModel.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/net/chrupki/ui/view/pages/projects/ProjectsView.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/net/chrupki/ui/view/pages/projects/ProjectsView.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/net/chrupki/ui/view/pages/projects/components/ProjectsContainer.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/net/chrupki/ui/view/pages/projects/components/ProjectsContainer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/net/chrupki/ui/view/pages/projects/modals/ProjectsModal.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/net/chrupki/ui/view/pages/projects/modals/ProjectsModal.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/net/chrupki/ui/view/pages/projects/modals/project/ProjectsModalCreateProject.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/net/chrupki/ui/view/pages/projects/modals/project/ProjectsModalCreateProject.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/net/chrupki/ui/view/pages/projects/modals/project/ProjectsModalEditProject.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/net/chrupki/ui/view/pages/projects/modals/project/ProjectsModalEditProject.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/net/chrupki/ui/view/pages/projects/dto/ProjectContainerDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/net/chrupki/ui/view/pages/projects/dto/ProjectContainerDTO.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -51,7 +22,8 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="EmbeddingIndexingInfo">
-    <option name="cachedIndexableFilesCount" value="53" />
+    <option name="cachedIndexableFilesCount" value="449" />
+    <option name="fileBasedEmbeddingIndicesEnabled" value="true" />
   </component>
   <component name="ExternalProjectsData">
     <projectState path="$PROJECT_DIR$">
@@ -106,6 +78,7 @@
     "Gradle.Patcher [build].executor": "Coverage",
     "Gradle.Patcher [run].executor": "Run",
     "ModuleVcsDetector.initialDetectionPerformed": "true",
+    "RunOnceActivity.MCP Project settings loaded": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252": "true",
     "RunOnceActivity.git.unshallow": "true",
@@ -162,7 +135,8 @@
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
-        <option value="bundled-jdk-30f59d01ecdd-cffe25b9f5b3-intellij.indexing.shared.core-IU-253.28294.334" />
+        <option value="bundled-jdk-30f59d01ecdd-26cb7f24e5b0-intellij.indexing.shared.core-IU-253.29346.240" />
+        <option value="bundled-js-predefined-d6986cc7102b-9b0f141eb926-JavaScript-IU-253.29346.240" />
       </set>
     </attachedChunks>
   </component>
@@ -181,6 +155,7 @@
       <workItem from="1767456805075" duration="20852000" />
       <workItem from="1767532221772" duration="784000" />
       <workItem from="1767544161784" duration="11911000" />
+      <workItem from="1769514724911" duration="788000" />
     </task>
     <task id="LOCAL-00001" summary="Setup gradle project">
       <option name="closed" value="true" />
@@ -550,14 +525,21 @@
       <option name="project" value="LOCAL" />
       <updated>1769365219392</updated>
     </task>
-    <option name="localTasksCounter" value="47" />
+    <task id="LOCAL-00047" summary="fix(code): change context to model">
+      <option name="closed" value="true" />
+      <created>1769449359776</created>
+      <option name="number" value="00047" />
+      <option name="presentableId" value="LOCAL-00047" />
+      <option name="project" value="LOCAL" />
+      <updated>1769449359776</updated>
+    </task>
+    <option name="localTasksCounter" value="48" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Add patch DAO file" />
     <MESSAGE value="Fix SQL command to insert in notes" />
     <MESSAGE value="Link controller and service for patch" />
     <MESSAGE value="Add display patches in UI and update project" />
@@ -582,7 +564,8 @@
     <MESSAGE value="feat(ui): add type to your version&#10;&#10;Four types are available : Alpha, Beta, Pre-release &amp; Hotfix" />
     <MESSAGE value="fix(db): error fetch the version type" />
     <MESSAGE value="fix(ui): invert export &amp; add patch button" />
-    <option name="LAST_COMMIT_MESSAGE" value="fix(ui): invert export &amp; add patch button" />
+    <MESSAGE value="fix(code): change context to model" />
+    <option name="LAST_COMMIT_MESSAGE" value="fix(code): change context to model" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/Patcher$Patcher__build_.ic" NAME="Patcher [build] Coverage Results" MODIFIED="1767013393295" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="true" />
