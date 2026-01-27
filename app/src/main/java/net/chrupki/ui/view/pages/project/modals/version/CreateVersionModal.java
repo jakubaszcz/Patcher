@@ -31,7 +31,7 @@ public class CreateVersionModal extends VBox {
         comboBox.getStyleClass().add("modal-combobox");
 
         comboBox.getItems().addAll(
-                "Alpha", "Beta", "Pre-Release", "HotFix"
+                "Alpha", "Beta", "Pre-release", "HotFix", "Stable"
         );
 
         comboBox.setPromptText("Select a type");

@@ -26,14 +26,14 @@ public class MarkdownExportService {
         System.out.println(request.type());
 
         String type = switch (request.type()) {
-            case "Alpha" -> "alpha";
-            case "Beta" -> "beta";
-            case "Pre-Release" -> "pre-release";
+            case "Alpha" -> "-alpha";
+            case "Beta" -> "-beta";
+            case "Pre-Release" -> "-pre";
             case "HotFix" -> "hotfix";
-            default -> null;
+            default -> "";
         };
 
-        md.append("# Project ").append(request.project()).append(" (v.").append(request.version()).append("-").append(type).append(")\n\n");
+        md.append("# Project ").append(request.project()).append(" (v.").append(request.version()).append(type).append(")\n\n");
 
         for (String note : notes) {
             if (PatchDAO.findByType(request.project(), note).isEmpty()) continue;
