@@ -12,6 +12,8 @@ public class GlobalModel {
 
     public GlobalModel() {}
 
+    private static final ObservableList<String> templates = FXCollections.observableArrayList();
+
     private static final ObservableList<VersionDTO> versions = FXCollections.observableArrayList();
     private static final ObservableList<ProjectDTO> projects = FXCollections.observableArrayList();
     private static final ObservableList<PatchDTO> patches = FXCollections.observableArrayList();
@@ -155,6 +157,8 @@ public class GlobalModel {
     public static BooleanProperty getEditPatchProperty() {
         return editPatch;
     }
+
+    public static ObservableList<String> getTemplates() { return templates; }
 
     public static ObservableList<VersionDTO> getVersions() {
         return versions;

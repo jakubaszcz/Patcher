@@ -1,11 +1,11 @@
 package net.chrupki.ui.view.pages.project.modals.export;
 
+import javafx.collections.ObservableList;
 import javafx.geometry.Insets;
 import javafx.geometry.Pos;
 import javafx.scene.control.Button;
 import javafx.scene.control.ComboBox;
 import javafx.scene.control.Label;
-import javafx.scene.control.TextField;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.Priority;
 import javafx.scene.layout.Region;
@@ -14,7 +14,6 @@ import javafx.stage.FileChooser;
 import net.chrupki.database.dao.VersionDAO;
 import net.chrupki.model.HubModel;
 import net.chrupki.request.ExportRequest;
-import net.chrupki.request.PatchRequest;
 import net.chrupki.ui.model.GlobalModel;
 
 import java.io.File;
@@ -24,13 +23,22 @@ import java.util.function.Consumer;
 public class ExportModal extends VBox {
 
     public ExportModal(Runnable onClose, Consumer<ExportRequest> onExport) {
+
+        ObservableList<String> templates = GlobalModel.getTemplates();
+
         Label title = new Label("Export version");
         title.getStyleClass().add("modal-title");
 
         ComboBox<String> comboBox = new ComboBox<>();
         comboBox.getStyleClass().add("modal-combobox");
-
         comboBox.setPromptText("Select a template");
+
+        boolean hasTemplates = templates != null && !templates.isEmpty();
+
+        if (hasTemplates) {
+            comboBox.setItems(templates);
+            comboBox.getSelectionModel().selectFirst();
+        }
 
         Button closeButton = new Button("Cancel");
         closeButton.getStyleClass().add("modal-button-close");
@@ -50,11 +58,14 @@ public class ExportModal extends VBox {
 
         createButton.setOnAction(e -> {
             FileChooser chooser = new FileChooser();
-
             File file = chooser.showSaveDialog(getScene().getWindow());
             if (file == null) {
                 return;
             }
+
+            String template = hasTemplates
+                    ? comboBox.getValue()
+                    : "default";
 
             try {
                 onExport.accept(new ExportRequest(
@@ -64,6 +75,7 @@ public class ExportModal extends VBox {
                         ),
                         HubModel.versionModel().getType().get(),
                         "markdown",
+                        template,
                         List.of(),
                         file.toPath()
                 ));
@@ -72,9 +84,7 @@ public class ExportModal extends VBox {
             }
         });
 
-        closeButton.setOnAction(e -> {
-            onClose.run();
-        });
+        closeButton.setOnAction(e -> onClose.run());
 
         setPrefWidth(360);
         setMaxWidth(360);
@@ -84,12 +94,10 @@ public class ExportModal extends VBox {
         visibleProperty().bind(GlobalModel.getSwitchExportModal());
         managedProperty().bind(GlobalModel.getSwitchExportModal());
 
-
-        getChildren().addAll(
-                title,
-                comboBox,
-                actions
-        );
+        if (hasTemplates) {
+            getChildren().addAll(title, comboBox, actions);
+        } else {
+            getChildren().addAll(title);
+        }
     }
-
 }

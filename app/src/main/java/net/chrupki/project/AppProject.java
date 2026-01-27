@@ -81,6 +81,24 @@ public class AppProject {
         return projectsName;
     }
 
+    public static List<String> FetchAllTemplates() throws IOException {
+        Path path = AppPath.getDataDir().resolve("templates");
+        List<String> templates = new ArrayList<>();
+
+        if (!Files.exists(path)) {
+            return templates;
+        }
+
+        try (var stream = Files.list(path)) {
+            stream
+                    .filter(p -> Files.isRegularFile(p) && p.getFileName().toString().endsWith(".md"))
+                    .map(p -> p.getFileName().toString())
+                    .forEach(templates::add);
+        }
+
+        return templates;
+    }
+
     public static void renameProject(String oldName, String newName) throws IOException {
         DatabaseHub.getInstance().closeAll();
 
