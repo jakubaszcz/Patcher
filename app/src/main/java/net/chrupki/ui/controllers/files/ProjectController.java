@@ -10,9 +10,9 @@ import java.io.IOException;
 
 public class ProjectController {
 
-    public void createProject(String name) {
-        AppProject.CreateProject(name);
-        HubModel.projectModel().from(new ProjectDTO(name));
+    public void createProject(ProjectDTO projectDTO) {
+        AppProject.CreateProject(projectDTO);
+        HubModel.projectModel().from(projectDTO);
         loadProjects();
     }
 

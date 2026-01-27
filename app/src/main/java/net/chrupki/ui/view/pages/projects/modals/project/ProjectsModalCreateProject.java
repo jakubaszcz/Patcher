@@ -9,6 +9,7 @@ import javafx.scene.layout.HBox;
 import javafx.scene.layout.Priority;
 import javafx.scene.layout.Region;
 import javafx.scene.layout.VBox;
+import net.chrupki.dto.ProjectDTO;
 import net.chrupki.ui.model.GlobalModel;
 
 import java.util.function.Consumer;
@@ -16,7 +17,7 @@ import java.util.function.Consumer;
 public class ProjectsModalCreateProject extends VBox {
 
     public ProjectsModalCreateProject(
-            Consumer<String> onCreate,
+            Consumer<ProjectDTO> onCreate,
             Runnable onClose
     ) {
 
@@ -40,7 +41,9 @@ public class ProjectsModalCreateProject extends VBox {
 
         createButton.setOnAction(e -> {
             if (!textField.getText().isBlank()) {
-                onCreate.accept(textField.getText());
+                onCreate.accept(new ProjectDTO(
+                        textField.getText()
+                ));
                 onClose.run();
                 textField.clear();
             }

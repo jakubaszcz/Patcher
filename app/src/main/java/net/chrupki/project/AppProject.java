@@ -37,17 +37,17 @@ public class AppProject {
         }
     }
 
-    public static void CreateProject(String name) {
+    public static void CreateProject(ProjectDTO projectDTO) {
         Path path = AppPath.getDataDir();
         Path directory = path.resolve("projects");
-        Path projectPath = directory.resolve(name);
+        Path projectPath = directory.resolve(projectDTO.getName());
 
         if (!projectPath.isAbsolute()) return;
 
         try {
             Files.createDirectories(projectPath);
             AddProjects(projectPath);
-            DatabaseInitializer.init(name);
+            DatabaseInitializer.init(projectDTO.getName());
         } catch (IOException e) {
             throw new RuntimeException(e);
         } catch (Exception e) {
