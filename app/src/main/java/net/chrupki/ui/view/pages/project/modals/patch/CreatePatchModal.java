@@ -10,9 +10,9 @@ import javafx.scene.layout.HBox;
 import javafx.scene.layout.Priority;
 import javafx.scene.layout.Region;
 import javafx.scene.layout.VBox;
-import net.chrupki.app.AppContext;
+import net.chrupki.model.HubModel;
 import net.chrupki.request.PatchRequest;
-import net.chrupki.ui.model.ProjectModel;
+import net.chrupki.ui.model.GlobalModel;
 
 import java.util.function.Consumer;
 
@@ -59,7 +59,7 @@ public class CreatePatchModal extends VBox {
 
         createButton.setOnAction(e -> {
             onCreate.accept(
-                    new PatchRequest(textField.getText(), comboBox.getValue(), AppContext.versionContext().getId().get())
+                    new PatchRequest(textField.getText(), comboBox.getValue(), HubModel.versionModel().getId().get())
             );
             textField.clear();
             comboBox.getSelectionModel().clearSelection();
@@ -74,8 +74,8 @@ public class CreatePatchModal extends VBox {
 
         getStyleClass().add("modal-card");
 
-        visibleProperty().bind(ProjectModel.getSwitchCreatePatchProjectModal());
-        managedProperty().bind(ProjectModel.getSwitchCreatePatchProjectModal());
+        visibleProperty().bind(GlobalModel.getSwitchCreatePatchProjectModal());
+        managedProperty().bind(GlobalModel.getSwitchCreatePatchProjectModal());
 
 
         getChildren().addAll(

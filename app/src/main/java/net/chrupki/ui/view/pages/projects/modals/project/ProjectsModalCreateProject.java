@@ -9,7 +9,7 @@ import javafx.scene.layout.HBox;
 import javafx.scene.layout.Priority;
 import javafx.scene.layout.Region;
 import javafx.scene.layout.VBox;
-import net.chrupki.ui.model.ProjectModel;
+import net.chrupki.ui.model.GlobalModel;
 
 import java.util.function.Consumer;
 
@@ -61,8 +61,8 @@ public class ProjectsModalCreateProject extends VBox {
 
         getStyleClass().add("modal-card");
 
-        visibleProperty().bind(ProjectModel.getSwitchCreateProjectsModal());
-        managedProperty().bind(ProjectModel.getSwitchCreateProjectsModal());
+        visibleProperty().bind(GlobalModel.getSwitchCreateProjectsModal());
+        managedProperty().bind(GlobalModel.getSwitchCreateProjectsModal());
 
         getChildren().addAll(
                 title,

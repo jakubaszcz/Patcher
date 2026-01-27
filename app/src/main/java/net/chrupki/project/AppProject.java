@@ -4,9 +4,9 @@ import javafx.beans.property.SimpleStringProperty;
 import javafx.beans.property.StringProperty;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
-import net.chrupki.app.AppContext;
+import net.chrupki.dto.ProjectDTO;
+import net.chrupki.model.HubModel;
 import net.chrupki.app.AppPath;
-import net.chrupki.database.Database;
 import net.chrupki.database.DatabaseHub;
 import net.chrupki.database.DatabaseInitializer;
 
@@ -63,9 +63,9 @@ public class AppProject {
         projects.add(path);
     }
 
-    public static List<String> FetchAllProjectNames() throws IOException {
+    public static List<ProjectDTO> FetchAllProjectNames() throws IOException {
         Path path = AppPath.getDataDir().resolve("projects");
-        List<String> projectsName = new ArrayList<>();
+        List<ProjectDTO> projectsName = new ArrayList<>();
 
         if (!Files.exists(path)) {
             return projectsName;
@@ -74,7 +74,7 @@ public class AppProject {
         try (var stream = Files.list(path)) {
             stream
                     .filter(Files::isDirectory)
-                    .map(p -> p.getFileName().toString())
+                    .map(p -> new ProjectDTO(p.getFileName().toString()))
                     .forEach(projectsName::add);
         }
 
@@ -90,13 +90,12 @@ public class AppProject {
         try { Thread.sleep(100); } catch (InterruptedException e) { }
 
         Files.move(oldPath, newPath);
-        AppContext.projectContext().setName(newName);
     }
 
     public static void deleteProject() throws IOException {
         Path projectDir = AppPath.getDataDir()
                 .resolve("projects")
-                .resolve(AppContext.projectContext().getName().get());
+                .resolve(HubModel.projectModel().getName().get());
 
         DatabaseHub.getInstance().closeAll();
 

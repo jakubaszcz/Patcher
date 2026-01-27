@@ -1,8 +1,8 @@
 package net.chrupki.database.dao;
 
-import net.chrupki.app.AppContext;
+import net.chrupki.model.HubModel;
 import net.chrupki.database.DatabaseHub;
-import net.chrupki.ui.view.pages.project.dto.PatchDTO;
+import net.chrupki.dto.PatchDTO;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -41,7 +41,7 @@ public class PatchDAO {
     public static String findPatch(int id, int vid) {
         String sql = "SELECT patch FROM notes WHERE id = ? AND version_id = ?";
 
-        String projectName = AppContext.projectContext().getName().get();
+        String projectName = HubModel.projectModel().getName().get();
         if (projectName == null || projectName.isBlank()) return null;
 
         try (Connection conn = DatabaseHub.getInstance().getConnection();
@@ -69,7 +69,7 @@ public class PatchDAO {
     public static String findContent(int id, int vid) {
         String sql = "SELECT content FROM notes WHERE id = ? AND version_id = ?";
 
-        String projectName = AppContext.projectContext().getName().get();
+        String projectName = HubModel.projectModel().getName().get();
         if (projectName == null || projectName.isBlank()) return null;
 
         try (Connection conn = DatabaseHub.getInstance().getConnection();
@@ -170,7 +170,7 @@ public class PatchDAO {
             WHERE id = ? AND version_id = ?
             """;
 
-        String projectName = AppContext.projectContext().getName().get();
+        String projectName = HubModel.projectModel().getName().get();
 
         if (projectName == null || projectName.isBlank()) return false;
 
@@ -199,7 +199,7 @@ public class PatchDAO {
             WHERE id = ? AND version_id = ?
             """;
 
-        String projectName = AppContext.projectContext().getName().get();
+        String projectName = HubModel.projectModel().getName().get();
 
         if (projectName == null || projectName.isBlank()) return false;
 
@@ -229,7 +229,7 @@ public class PatchDAO {
                 ORDER BY id ASC
                 """;
 
-        String projectName = AppContext.projectContext().getName().get();
+        String projectName = HubModel.projectModel().getName().get();
 
         if (projectName == null || projectName.isBlank()) return false;
 
@@ -266,7 +266,7 @@ public class PatchDAO {
         try (Connection conn = DatabaseHub.getInstance().getConnection();
              PreparedStatement stmt = conn.prepareStatement(sql)) {
 
-            stmt.setInt(1, AppContext.versionContext().getId().get());
+            stmt.setInt(1, HubModel.versionModel().getId().get());
 
             try (ResultSet rs = stmt.executeQuery()) {
                 while (rs.next()) {

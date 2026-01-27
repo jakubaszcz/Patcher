@@ -5,7 +5,7 @@ import javafx.geometry.Pos;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.layout.HBox;
-import net.chrupki.app.AppContext;
+import net.chrupki.model.HubModel;
 import net.chrupki.ui.view.manager.PageManager;
 import net.chrupki.ui.view.pages.projects.ProjectsView;
 
@@ -31,7 +31,7 @@ public class Header extends HBox {
 
         backButton.setOnAction(e -> {
             viewManager.show(new ProjectsView(viewManager));
-            AppContext.versionContext().clearId();
+            HubModel.versionModel().clear();
         });
     }
 }

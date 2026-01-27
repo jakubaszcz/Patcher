@@ -10,8 +10,8 @@ import javafx.scene.layout.HBox;
 import javafx.scene.layout.Priority;
 import javafx.scene.layout.Region;
 import javafx.scene.layout.VBox;
-import net.chrupki.app.AppContext;
-import net.chrupki.ui.model.ProjectModel;
+import net.chrupki.model.HubModel;
+import net.chrupki.ui.model.GlobalModel;
 
 import java.util.function.BiConsumer;
 
@@ -23,7 +23,7 @@ public class ProjectsModalEditProject extends VBox {
             Runnable onClose
     ) {
 
-        StringProperty projectName = AppContext.projectContext().getName();
+        StringProperty projectName = HubModel.projectModel().getName();
 
         Label title = new Label("Edit project");
         title.getStyleClass().add("modal-title");
@@ -59,7 +59,7 @@ public class ProjectsModalEditProject extends VBox {
 
         saveButton.setOnAction(e -> {
             if (!newName.getText().isBlank()) {
-                onSave.accept(AppContext.projectContext().getName().get(), newName.getText());
+                onSave.accept(HubModel.projectModel().getName().get(), newName.getText());
                 onClose.run();
                 newName.clear();
             }
@@ -86,8 +86,8 @@ public class ProjectsModalEditProject extends VBox {
 
         getStyleClass().add("modal-card");
 
-        visibleProperty().bind(ProjectModel.getSwitchEditProjectsModal());
-        managedProperty().bind(ProjectModel.getSwitchEditProjectsModal());
+        visibleProperty().bind(GlobalModel.getSwitchEditProjectsModal());
+        managedProperty().bind(GlobalModel.getSwitchEditProjectsModal());
 
         getChildren().addAll(
                 title,

@@ -10,10 +10,9 @@ import javafx.scene.layout.HBox;
 import javafx.scene.layout.Priority;
 import javafx.scene.layout.Region;
 import javafx.scene.layout.VBox;
-import net.chrupki.ui.model.ProjectModel;
+import net.chrupki.ui.model.GlobalModel;
 
 import java.util.function.BiConsumer;
-import java.util.function.Consumer;
 
 public class CreateVersionModal extends VBox {
 
@@ -68,8 +67,8 @@ public class CreateVersionModal extends VBox {
 
         getStyleClass().add("modal-card");
 
-        visibleProperty().bind(ProjectModel.getSwitchCreateVersionProjectModal());
-        managedProperty().bind(ProjectModel.getSwitchCreateVersionProjectModal());
+        visibleProperty().bind(GlobalModel.getSwitchCreateVersionProjectModal());
+        managedProperty().bind(GlobalModel.getSwitchCreateVersionProjectModal());
 
 
         getChildren().addAll(

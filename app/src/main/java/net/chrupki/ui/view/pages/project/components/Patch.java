@@ -5,10 +5,10 @@ import javafx.collections.ObservableList;
 import javafx.scene.control.ScrollPane;
 import javafx.scene.layout.Priority;
 import javafx.scene.layout.VBox;
-import net.chrupki.app.AppContext;
+import net.chrupki.model.HubModel;
 import net.chrupki.ui.controllers.HubController;
-import net.chrupki.ui.model.ProjectModel;
-import net.chrupki.ui.view.pages.project.dto.PatchDTO;
+import net.chrupki.ui.model.GlobalModel;
+import net.chrupki.dto.PatchDTO;
 
 public class Patch extends VBox {
 
@@ -17,9 +17,9 @@ public class Patch extends VBox {
 
     public Patch() {
 
-        ObservableList<PatchDTO> patches = ProjectModel.getPatches();
+        ObservableList<PatchDTO> patches = GlobalModel.getPatches();
 
-        scrollPane.visibleProperty().bind(AppContext.versionContext().getId().isNotNull());
+        scrollPane.visibleProperty().bind(HubModel.versionModel().getId().isNotNull());
         scrollPane.managedProperty().bind(scrollPane.visibleProperty());
         scrollPane.getStyleClass().add("invisible-scroll");
 

@@ -7,8 +7,9 @@ import javafx.geometry.Pos;
 import javafx.scene.control.ScrollPane;
 import javafx.scene.layout.FlowPane;
 import javafx.scene.layout.StackPane;
+import net.chrupki.dto.ProjectDTO;
 import net.chrupki.ui.controllers.HubController;
-import net.chrupki.ui.model.ProjectModel;
+import net.chrupki.ui.model.GlobalModel;
 import net.chrupki.ui.view.manager.PageManager;
 import net.chrupki.ui.view.pages.projects.components.CreateProjectButton;
 import net.chrupki.ui.view.pages.projects.components.ProjectsContainer;
@@ -31,7 +32,7 @@ public class ProjectsView extends StackPane {
     public ProjectsView(PageManager viewManager) {
         this.viewManager = viewManager;
 
-        ObservableList<String> projects = ProjectModel.getProjects();
+        ObservableList<ProjectDTO> projects = GlobalModel.getProjects();
 
         projectsView.setHgap(gap);
         projectsView.setVgap(gap);
@@ -56,7 +57,7 @@ public class ProjectsView extends StackPane {
 
         refresh(projects);
 
-        projects.addListener((ListChangeListener<String>) c ->
+        projects.addListener((ListChangeListener<ProjectDTO>) c ->
                 refresh(projects)
         );
 
@@ -79,7 +80,7 @@ public class ProjectsView extends StackPane {
         projectsView.setPrefWrapLength(wrapLength);
     }
 
-    private void refresh(ObservableList<String> projects) {
+    private void refresh(ObservableList<ProjectDTO> projects) {
 
         projectsView.getChildren().clear();
 
@@ -94,7 +95,7 @@ public class ProjectsView extends StackPane {
 
         projectsView.getChildren().add(createButton);
 
-        for (String p : projects) {
+        for (ProjectDTO p : projects) {
             projectsView.getChildren().add(
                     new ProjectsContainer(
                             new ProjectContainerDTO(

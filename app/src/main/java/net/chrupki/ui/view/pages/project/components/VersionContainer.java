@@ -8,15 +8,15 @@ import javafx.scene.layout.HBox;
 import javafx.scene.layout.Priority;
 import javafx.scene.layout.Region;
 import javafx.scene.layout.VBox;
-import net.chrupki.app.AppContext;
-import net.chrupki.ui.model.ProjectModel;
-import net.chrupki.ui.view.pages.project.dto.VersionDTO;
+import net.chrupki.model.HubModel;
+import net.chrupki.ui.model.GlobalModel;
+import net.chrupki.dto.VersionDTO;
 
 import java.util.function.Consumer;
 
 public class VersionContainer extends HBox {
 
-    public VersionContainer(VersionDTO version, Consumer<Integer> onSelectVersion) {
+    public VersionContainer(VersionDTO version, Consumer<VersionDTO> onSelectVersion) {
 
         // Labels (gauche)
         Label name = new Label("v" + version.getVersion());
@@ -37,10 +37,9 @@ public class VersionContainer extends HBox {
         editButton.getStyleClass().add("project-item-button");
 
         editButton.setOnAction(e -> {
-            AppContext.versionContext().setId(version.getId());
-            AppContext.versionContext().setType(version.getType());
-            ProjectModel.setSwitchProjectModal(true);
-            ProjectModel.setSwitchEditVersionProjectModal(true);
+            HubModel.versionModel().from(version);
+            GlobalModel.setSwitchProjectModal(true);
+            GlobalModel.setSwitchEditVersionProjectModal(true);
         });
 
         Region spacer = new Region();
@@ -53,8 +52,7 @@ public class VersionContainer extends HBox {
         getStyleClass().add("project-item");
 
         setOnMouseClicked(e -> {
-            onSelectVersion.accept(version.getId());
-            AppContext.versionContext().setType(version.getType());
+            onSelectVersion.accept(version);
         });
 
         getChildren().addAll(

@@ -5,9 +5,9 @@ import javafx.geometry.Pos;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.layout.*;
-import net.chrupki.app.AppContext;
-import net.chrupki.ui.model.ProjectModel;
-import net.chrupki.ui.view.pages.project.dto.PatchDTO;
+import net.chrupki.model.HubModel;
+import net.chrupki.ui.model.GlobalModel;
+import net.chrupki.dto.PatchDTO;
 
 public class PatchContainer extends HBox {
 
@@ -31,10 +31,9 @@ public class PatchContainer extends HBox {
         editButton.getStyleClass().add("project-item-button");
 
         editButton.setOnAction(e -> {
-            AppContext.patchContext().setId(patch.getId());
-            AppContext.patchContext().setVid(patch.getVid());
-            ProjectModel.setSwitchProjectModal(true);
-            ProjectModel.setSwitchEditPatchProjectModal(true);
+            HubModel.patchModel().from(patch);
+            GlobalModel.setSwitchProjectModal(true);
+            GlobalModel.setSwitchEditPatchProjectModal(true);
         });
 
         Region spacer = new Region();

@@ -9,9 +9,9 @@ import javafx.scene.layout.HBox;
 import javafx.scene.layout.Priority;
 import javafx.scene.layout.Region;
 import javafx.scene.layout.VBox;
-import net.chrupki.app.AppContext;
+import net.chrupki.model.HubModel;
 import net.chrupki.ui.controllers.files.dtos.EditVersion;
-import net.chrupki.ui.model.ProjectModel;
+import net.chrupki.ui.model.GlobalModel;
 
 import java.util.function.Consumer;
 
@@ -39,7 +39,7 @@ public class EditVersionModal extends VBox {
         saveButton.getStyleClass().add("modal-button-create");
 
         deleteButton.setOnAction(e -> {
-            onDelete.accept(AppContext.versionContext().getId().get());
+            onDelete.accept(HubModel.versionModel().getId().get());
             onClose.run();
             newName.clear();
         });
@@ -51,9 +51,9 @@ public class EditVersionModal extends VBox {
         saveButton.setOnAction(e -> {
             if (!newName.getText().isBlank()) {
                 onSave.accept(new EditVersion(
-                        AppContext.versionContext().getId().get(),
+                        HubModel.versionModel().getId().get(),
                         newName.getText(),
-                        AppContext.projectContext().getName().get()));
+                        HubModel.projectModel().getName().get()));
             }
             newName.clear();
         });
@@ -79,8 +79,8 @@ public class EditVersionModal extends VBox {
 
         getStyleClass().add("modal-card");
 
-        visibleProperty().bind(ProjectModel.getSwitchEditVersionProjectModal());
-        managedProperty().bind(ProjectModel.getSwitchEditVersionProjectModal());
+        visibleProperty().bind(GlobalModel.getSwitchEditVersionProjectModal());
+        managedProperty().bind(GlobalModel.getSwitchEditVersionProjectModal());
 
         getChildren().addAll(
                 title,

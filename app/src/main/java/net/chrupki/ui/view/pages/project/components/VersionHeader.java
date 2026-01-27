@@ -7,15 +7,15 @@ import javafx.scene.control.Label;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.Priority;
 import javafx.scene.layout.Region;
-import net.chrupki.app.AppContext;
-import net.chrupki.ui.model.ProjectModel;
+import net.chrupki.model.HubModel;
+import net.chrupki.ui.model.GlobalModel;
 
 public class VersionHeader extends HBox {
 
     public VersionHeader() {
 
         Label title = new Label();
-        title.textProperty().bind(AppContext.projectContext().getName());
+        title.textProperty().bind(HubModel.projectModel().getName());
         title.getStyleClass().add("project-title");
 
         Button addButton = new Button("+");
@@ -29,8 +29,8 @@ public class VersionHeader extends HBox {
         setSpacing(8);
 
         addButton.setOnAction(e -> {
-            ProjectModel.setSwitchProjectModal(true);
-            ProjectModel.setSwitchCreateVersionProjectModal(true);
+            GlobalModel.setSwitchProjectModal(true);
+            GlobalModel.setSwitchCreateVersionProjectModal(true);
         });
 
         setMaxWidth(Double.MAX_VALUE);

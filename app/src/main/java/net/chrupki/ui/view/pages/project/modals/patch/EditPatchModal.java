@@ -10,9 +10,9 @@ import javafx.scene.layout.HBox;
 import javafx.scene.layout.Priority;
 import javafx.scene.layout.Region;
 import javafx.scene.layout.VBox;
-import net.chrupki.app.AppContext;
+import net.chrupki.model.HubModel;
 import net.chrupki.ui.controllers.files.dtos.EditPatch;
-import net.chrupki.ui.model.ProjectModel;
+import net.chrupki.ui.model.GlobalModel;
 
 import java.util.function.BiConsumer;
 import java.util.function.Consumer;
@@ -65,8 +65,8 @@ public class EditPatchModal extends VBox {
         createButton.setOnAction(e -> {
             onSave.accept(
                     new EditPatch(
-                            AppContext.patchContext().getId().get(),
-                            AppContext.patchContext().getVid().get(),
+                            HubModel.patchModel().getId().get(),
+                            HubModel.patchModel().getVid().get(),
                             textField.getText(),
                             comboBox.getValue()
                     )
@@ -80,8 +80,8 @@ public class EditPatchModal extends VBox {
 
         deleteButton.setOnAction(e -> {
             onDelete.accept(
-                    AppContext.patchContext().getId().get(),
-                    AppContext.patchContext().getVid().get()
+                    HubModel.patchModel().getId().get(),
+                    HubModel.patchModel().getVid().get()
             );
         });
 
@@ -91,8 +91,8 @@ public class EditPatchModal extends VBox {
 
         getStyleClass().add("modal-card");
 
-        visibleProperty().bind(ProjectModel.getSwitchEditPatchProjectModal());
-        managedProperty().bind(ProjectModel.getSwitchEditPatchProjectModal());
+        visibleProperty().bind(GlobalModel.getSwitchEditPatchProjectModal());
+        managedProperty().bind(GlobalModel.getSwitchEditPatchProjectModal());
 
 
         getChildren().addAll(

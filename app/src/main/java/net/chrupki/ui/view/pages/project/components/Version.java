@@ -6,8 +6,8 @@ import javafx.scene.control.ScrollPane;
 import javafx.scene.layout.Priority;
 import javafx.scene.layout.VBox;
 import net.chrupki.ui.controllers.HubController;
-import net.chrupki.ui.model.ProjectModel;
-import net.chrupki.ui.view.pages.project.dto.VersionDTO;
+import net.chrupki.ui.model.GlobalModel;
+import net.chrupki.dto.VersionDTO;
 
 public class Version extends VBox {
 
@@ -16,7 +16,7 @@ public class Version extends VBox {
 
     public Version() {
 
-        ObservableList<VersionDTO> versions = ProjectModel.getVersions();
+        ObservableList<VersionDTO> versions = GlobalModel.getVersions();
 
         scrollPane.setContent(list);
         scrollPane.setFitToWidth(true);

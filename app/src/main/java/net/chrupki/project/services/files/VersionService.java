@@ -3,7 +3,7 @@ package net.chrupki.project.services.files;
 import net.chrupki.database.dao.PatchDAO;
 import net.chrupki.database.dao.VersionDAO;
 import net.chrupki.database.dao.dto.VersionDatabaseDTO;
-import net.chrupki.ui.view.pages.project.dto.VersionDTO;
+import net.chrupki.dto.VersionDTO;
 
 import java.util.List;
 
