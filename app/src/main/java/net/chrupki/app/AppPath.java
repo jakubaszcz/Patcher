@@ -7,6 +7,7 @@ import java.nio.file.Paths;
 public class AppPath {
 
     private static String APP_NAME = "patcher";
+    private static String TEMPLATES = "templates";
 
     private AppPath() {
     }
@@ -20,7 +21,9 @@ public class AppPath {
     public static Path getDataDir() {
         Path base = getBaseDataDir();
         Path appDir = base.resolve(APP_NAME);
+        Path templateDir = appDir.resolve(TEMPLATES);
         createIfMissing(appDir);
+        createIfMissing(templateDir);
         return appDir;
     }
 

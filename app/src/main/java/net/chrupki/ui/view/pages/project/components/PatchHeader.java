@@ -42,27 +42,8 @@ public class PatchHeader extends HBox {
         });
 
         exportButton.setOnAction(e -> {
-            FileChooser chooser = new FileChooser();
-
-            File file = chooser.showSaveDialog(getScene().getWindow());
-            if (file == null) {
-                return;
-            }
-
-            try {
-                onExport.accept(new ExportRequest(
-                        HubModel.projectModel().getName().get(),
-                        VersionDAO.findNameById(
-                                HubModel.versionModel().getId().get()
-                        ),
-                        HubModel.versionModel().getType().get(),
-                        "markdown",
-                        List.of(),
-                        file.toPath()
-                ));
-            } catch (Exception ex) {
-                throw new RuntimeException(ex);
-            }
+            GlobalModel.setSwitchProjectModal(true);
+            GlobalModel.setSwitchExportModal(true);
         });
 
         setMaxWidth(Double.MAX_VALUE);

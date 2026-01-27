@@ -45,6 +45,9 @@ public class GlobalModel {
     private static final BooleanProperty switchEditPatchProjectModal =
             new SimpleBooleanProperty(false);
 
+    private static final BooleanProperty switchExportModal =
+            new SimpleBooleanProperty(false);
+
     public static void setSwitchProjectsModal(boolean value) {
         switchProjectsModal.set(value);
     }
@@ -108,6 +111,15 @@ public class GlobalModel {
     public static BooleanProperty getSwitchEditPatchProjectModal() {
         return switchEditPatchProjectModal;
     }
+
+    public static BooleanProperty getSwitchExportModal() {
+        return switchExportModal;
+    }
+
+    public static void setSwitchExportModal(boolean booleanProperty) {
+        switchExportModal.set(booleanProperty);
+    }
+
 
     public static void setEditActiveProperty(boolean booleanProperty) {
         editActive.set(booleanProperty);

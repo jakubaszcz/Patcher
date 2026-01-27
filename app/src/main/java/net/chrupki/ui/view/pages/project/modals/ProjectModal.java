@@ -6,6 +6,7 @@ import javafx.scene.layout.StackPane;
 import javafx.scene.layout.VBox;
 import net.chrupki.ui.controllers.HubController;
 import net.chrupki.ui.model.GlobalModel;
+import net.chrupki.ui.view.pages.project.modals.export.ExportModal;
 import net.chrupki.ui.view.pages.project.modals.patch.CreatePatchModal;
 import net.chrupki.ui.view.pages.project.modals.patch.EditPatchModal;
 import net.chrupki.ui.view.pages.project.modals.version.CreateVersionModal;
@@ -29,6 +30,7 @@ public class ProjectModal extends StackPane {
             GlobalModel.setSwitchEditVersionProjectModal(false);
             GlobalModel.setSwitchCreatePatchProjectModal(false);
             GlobalModel.setSwitchEditPatchProjectModal(false);
+            GlobalModel.setSwitchExportModal(false);
         });
 
         getChildren().addAll(pane, vBox);
@@ -53,6 +55,10 @@ public class ProjectModal extends StackPane {
                     HubController.getPatchController()::savePatch,
                     HubController.getPatchController()::deletePatch,
                     HubController.getPatchController()::closeModal
+                ),
+                new ExportModal(
+                        HubController.getExportController()::closeModal,
+                        HubController.getExportController()::export
                 )
         );
 
