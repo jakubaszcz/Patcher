@@ -97,7 +97,7 @@ public class ExportModal extends VBox {
         if (hasTemplates) {
             getChildren().addAll(title, comboBox, actions);
         } else {
-            getChildren().addAll(title);
+            getChildren().addAll(title, actions);
         }
     }
 }

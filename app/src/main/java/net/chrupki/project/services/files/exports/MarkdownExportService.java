@@ -98,7 +98,7 @@ public class MarkdownExportService {
 
     public String generateMarkdown(ExportRequest request) {
 
-        if (request.templates().isEmpty() || request.templates().equals("Default")) return generateDefaultMarkdown(request);
+        if (request.templates().isEmpty() || request.templates().equals("default")) return generateDefaultMarkdown(request);
         else return generateCustomMarkdown(request);
     }
 }

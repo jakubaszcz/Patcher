@@ -4,9 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="c1aa160e-de6c-484d-8c28-5409cf16dc62" name="Changes" comment="feat(ui): create a export modal">
+    <list default="true" id="c1aa160e-de6c-484d-8c28-5409cf16dc62" name="Changes" comment="feat(ui): display patch on the custom Markodown">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/net/chrupki/project/services/files/exports/MarkdownExportService.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/net/chrupki/project/services/files/exports/MarkdownExportService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/net/chrupki/ui/view/pages/project/modals/export/ExportModal.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/net/chrupki/ui/view/pages/project/modals/export/ExportModal.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -146,14 +146,6 @@
       <workItem from="1767532221772" duration="784000" />
       <workItem from="1767544161784" duration="11911000" />
       <workItem from="1769514724911" duration="788000" />
-    </task>
-    <task id="LOCAL-00001" summary="Setup gradle project">
-      <option name="closed" value="true" />
-      <created>1766342649589</created>
-      <option name="number" value="00001" />
-      <option name="presentableId" value="LOCAL-00001" />
-      <option name="project" value="LOCAL" />
-      <updated>1766342649589</updated>
     </task>
     <task id="LOCAL-00002" summary="Refractor packages">
       <option name="closed" value="true" />
@@ -539,14 +531,21 @@
       <option name="project" value="LOCAL" />
       <updated>1769549240993</updated>
     </task>
-    <option name="localTasksCounter" value="50" />
+    <task id="LOCAL-00050" summary="feat(ui): display patch on the custom Markodown">
+      <option name="closed" value="true" />
+      <created>1769615860717</created>
+      <option name="number" value="00050" />
+      <option name="presentableId" value="LOCAL-00050" />
+      <option name="project" value="LOCAL" />
+      <updated>1769615860717</updated>
+    </task>
+    <option name="localTasksCounter" value="51" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Add display patches in UI and update project" />
     <MESSAGE value="Fix clear when version changement" />
     <MESSAGE value="Update code to display with controller and service" />
     <MESSAGE value="Fix patch creator by removing unnecessary changes and updating" />
@@ -571,7 +570,8 @@
     <MESSAGE value="fix(code): change context to model" />
     <MESSAGE value="feat(ui): add stable version type" />
     <MESSAGE value="feat(ui): create a export modal" />
-    <option name="LAST_COMMIT_MESSAGE" value="feat(ui): create a export modal" />
+    <MESSAGE value="feat(ui): display patch on the custom Markodown" />
+    <option name="LAST_COMMIT_MESSAGE" value="feat(ui): display patch on the custom Markodown" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
