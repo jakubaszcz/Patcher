@@ -32,17 +32,11 @@ public class MarkdownExportService {
         };
     }
 
-    public String generateDefaultMarkdown(ExportRequest request) {
+    public String getPatch(ExportRequest request) {
+
         StringBuilder md = new StringBuilder();
 
-
         List<String> notes = List.of("Patch", "Add", "Features", "Fix");
-
-        System.out.println(request.type());
-
-        String type = getType(request.type());
-
-        md.append("# Project ").append(request.project()).append(" (v.").append(request.version()).append(type).append(")\n\n");
 
         for (String note : notes) {
             if (PatchDAO.findByType(request.project(), note).isEmpty()) continue;
@@ -52,6 +46,20 @@ public class MarkdownExportService {
             }
             md.append("\n");
         }
+
+        return md.toString();
+    }
+
+    public String generateDefaultMarkdown(ExportRequest request) {
+        StringBuilder md = new StringBuilder();
+
+
+
+        System.out.println(request.type());
+
+        md.append("# Project ").append(request.project()).append(" (v.").append(request.version()).append(getType(request.type())).append(")\n\n");
+
+        md.append(getPatch(request));
 
         return md.toString();
     }
@@ -83,6 +91,7 @@ public class MarkdownExportService {
             case "project" -> request.project();
             case "version" -> request.version() + getType(request.type());
             case "date" -> LocalDate.now().toString();
+            case "patch" -> getPatch(request);
             default -> "";
         };
     }
