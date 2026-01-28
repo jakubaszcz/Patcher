@@ -99,6 +99,19 @@ public class AppProject {
         return templates;
     }
 
+    public static String fetchTemplateContent(String template) throws IOException {
+
+        Path path = AppPath.getDataDir()
+                .resolve("templates")
+                .resolve(template);
+
+        if (!Files.exists(path) || !Files.isRegularFile(path)) {
+            throw new IOException("Template not found or not a file: " + path);
+        }
+
+        return Files.readString(path);
+    }
+
     public static void renameProject(String oldName, String newName) throws IOException {
         DatabaseHub.getInstance().closeAll();
 

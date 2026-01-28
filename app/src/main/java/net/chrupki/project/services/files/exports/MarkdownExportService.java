@@ -1,11 +1,15 @@
 package net.chrupki.project.services.files.exports;
 
 import net.chrupki.database.dao.PatchDAO;
+import net.chrupki.project.AppProject;
 import net.chrupki.request.ExportRequest;
 
 import java.io.IOException;
 import java.nio.file.Files;
+import java.time.LocalDate;
 import java.util.List;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 public class MarkdownExportService {
 
@@ -18,20 +22,25 @@ public class MarkdownExportService {
         }
     }
 
-    public String generateMarkdown(ExportRequest request) {
-        StringBuilder md = new StringBuilder();
-
-        List<String> notes = List.of("Patch", "Add", "Features", "Fix");
-
-        System.out.println(request.type());
-
-        String type = switch (request.type()) {
+    public String getType(String type) {
+        return switch (type) {
             case "Alpha" -> "-alpha";
             case "Beta" -> "-beta";
             case "Pre-Release" -> "-pre";
             case "HotFix" -> "hotfix";
             default -> "";
         };
+    }
+
+    public String generateDefaultMarkdown(ExportRequest request) {
+        StringBuilder md = new StringBuilder();
+
+
+        List<String> notes = List.of("Patch", "Add", "Features", "Fix");
+
+        System.out.println(request.type());
+
+        String type = getType(request.type());
 
         md.append("# Project ").append(request.project()).append(" (v.").append(request.version()).append(type).append(")\n\n");
 
@@ -45,5 +54,42 @@ public class MarkdownExportService {
         }
 
         return md.toString();
+    }
+
+    private static final Pattern VAR_PATTERN = Pattern.compile("§(\\w+)");
+
+    public String generateCustomMarkdown(ExportRequest request) {
+        try {
+            String template = AppProject.fetchTemplateContent(request.templates());
+            Matcher matcher = VAR_PATTERN.matcher(template);
+
+            StringBuilder result = new StringBuilder();
+
+            while (matcher.find()) {
+                String key = matcher.group(1);
+                String replacement = resolveVariable(key, request);
+                matcher.appendReplacement(result, Matcher.quoteReplacement(replacement));
+            }
+            matcher.appendTail(result);
+            return result.toString();
+
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
+    }
+
+    private String resolveVariable(String key, ExportRequest request) {
+        return switch (key) {
+            case "project" -> request.project();
+            case "version" -> request.version() + getType(request.type());
+            case "date" -> LocalDate.now().toString();
+            default -> "";
+        };
+    }
+
+    public String generateMarkdown(ExportRequest request) {
+
+        if (request.templates().isEmpty() || request.templates().equals("Default")) return generateDefaultMarkdown(request);
+        else return generateCustomMarkdown(request);
     }
 }
