@@ -29,4 +29,11 @@ public final class Tables {
             tag TEXT NOT NULL
         );
         """;
+
+    public static final String TAGS = """
+        CREATE TABLE IF NOT EXISTS tags (
+            id INTEGER PRIMARY KEY AUTOINCREMENT,
+            tag TEXT NOT NULL,
+        );
+        """;
 }
