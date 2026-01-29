@@ -4,10 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="c1aa160e-de6c-484d-8c28-5409cf16dc62" name="Changes" comment="add(dto): create dto for tags">
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/net/chrupki/project/services/files/TagService.java" afterDir="false" />
+    <list default="true" id="c1aa160e-de6c-484d-8c28-5409cf16dc62" name="Changes" comment="add(service): create service for tag">
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/net/chrupki/ui/controllers/files/TagController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/net/chrupki/project/services/HubService.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/net/chrupki/project/services/HubService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/net/chrupki/ui/controllers/HubController.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/net/chrupki/ui/controllers/HubController.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -147,14 +147,6 @@
       <workItem from="1767532221772" duration="784000" />
       <workItem from="1767544161784" duration="11911000" />
       <workItem from="1769514724911" duration="788000" />
-    </task>
-    <task id="LOCAL-00004" summary="Add data directory">
-      <option name="closed" value="true" />
-      <created>1766510278506</created>
-      <option name="number" value="00004" />
-      <option name="presentableId" value="LOCAL-00004" />
-      <option name="project" value="LOCAL" />
-      <updated>1766510278506</updated>
     </task>
     <task id="LOCAL-00005" summary="Add UI to create projects">
       <option name="closed" value="true" />
@@ -540,14 +532,21 @@
       <option name="project" value="LOCAL" />
       <updated>1769707799308</updated>
     </task>
-    <option name="localTasksCounter" value="53" />
+    <task id="LOCAL-00053" summary="add(service): create service for tag">
+      <option name="closed" value="true" />
+      <created>1769709140430</created>
+      <option name="number" value="00053" />
+      <option name="presentableId" value="LOCAL-00053" />
+      <option name="project" value="LOCAL" />
+      <updated>1769709140430</updated>
+    </task>
+    <option name="localTasksCounter" value="54" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Fix patch creator by removing unnecessary changes and updating" />
     <MESSAGE value="Rename PatchContainer to PatchListView" />
     <MESSAGE value="Add patch container" />
     <MESSAGE value="Add export button" />
@@ -572,7 +571,8 @@
     <MESSAGE value="feat(ui): display patch on the custom Markodown" />
     <MESSAGE value="feat(db): create new table for the database" />
     <MESSAGE value="add(dto): create dto for tags" />
-    <option name="LAST_COMMIT_MESSAGE" value="add(dto): create dto for tags" />
+    <MESSAGE value="add(service): create service for tag" />
+    <option name="LAST_COMMIT_MESSAGE" value="add(service): create service for tag" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
