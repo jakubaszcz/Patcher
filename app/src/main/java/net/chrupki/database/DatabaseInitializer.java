@@ -13,6 +13,7 @@ public class DatabaseInitializer {
         ) {
             stmt.execute(Tables.VERSION);
             stmt.execute(Tables.PATCH);
+            stmt.execute(Tables.TAG);
         }
     }
 }

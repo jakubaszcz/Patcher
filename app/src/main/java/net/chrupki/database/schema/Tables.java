@@ -21,4 +21,11 @@ public final class Tables {
             FOREIGN KEY (version_id) REFERENCES versions(id)
         );
         """;
+
+    public static final String TAG = """
+        CREATE TABLE IF NOT EXISTS tags (
+            id INTEGER PRIMARY KEY AUTOINCREMENT,
+            tag TEXT NOT NULL
+        );
+        """;
 }
