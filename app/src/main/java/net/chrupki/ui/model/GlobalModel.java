@@ -6,6 +6,7 @@ import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import net.chrupki.dto.PatchDTO;
 import net.chrupki.dto.ProjectDTO;
+import net.chrupki.dto.TagDTO;
 import net.chrupki.dto.VersionDTO;
 
 public class GlobalModel {
@@ -17,6 +18,7 @@ public class GlobalModel {
     private static final ObservableList<VersionDTO> versions = FXCollections.observableArrayList();
     private static final ObservableList<ProjectDTO> projects = FXCollections.observableArrayList();
     private static final ObservableList<PatchDTO> patches = FXCollections.observableArrayList();
+    private static final ObservableList<TagDTO> tags = FXCollections.observableArrayList();
 
     private static final BooleanProperty editActive = new SimpleBooleanProperty(false);
     private static final BooleanProperty editProject = new SimpleBooleanProperty(false);
@@ -48,6 +50,9 @@ public class GlobalModel {
             new SimpleBooleanProperty(false);
 
     private static final BooleanProperty switchExportModal =
+            new SimpleBooleanProperty(false);
+
+    private static final BooleanProperty switchTagModal =
             new SimpleBooleanProperty(false);
 
     public static void setSwitchProjectsModal(boolean value) {
@@ -118,6 +123,10 @@ public class GlobalModel {
         return switchExportModal;
     }
 
+    public static BooleanProperty getSwitchTagModal() {
+        return switchTagModal;
+    }
+
     public static void setSwitchExportModal(boolean booleanProperty) {
         switchExportModal.set(booleanProperty);
     }
@@ -154,6 +163,10 @@ public class GlobalModel {
         editPatch.set(booleanProperty);
     }
 
+    public static void setSwitchTagModal(boolean booleanProperty) {
+        switchTagModal.set(booleanProperty);
+    }
+
     public static BooleanProperty getEditPatchProperty() {
         return editPatch;
     }
@@ -169,4 +182,6 @@ public class GlobalModel {
     }
 
     public static ObservableList<PatchDTO> getPatches() { return patches; }
+
+    public static ObservableList<TagDTO> getTags() { return tags; }
 }

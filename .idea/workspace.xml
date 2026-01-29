@@ -4,9 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="c1aa160e-de6c-484d-8c28-5409cf16dc62" name="Changes" comment="add(controller): create controller for tag">
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/net/chrupki/database/dao/TagDAO.java" afterDir="false" />
+    <list default="true" id="c1aa160e-de6c-484d-8c28-5409cf16dc62" name="Changes" comment="add(db): create dao for tag">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/net/chrupki/ui/model/GlobalModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/net/chrupki/ui/model/GlobalModel.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -146,14 +146,6 @@
       <workItem from="1767532221772" duration="784000" />
       <workItem from="1767544161784" duration="11911000" />
       <workItem from="1769514724911" duration="788000" />
-    </task>
-    <task id="LOCAL-00006" summary="Add database in each project folder">
-      <option name="closed" value="true" />
-      <created>1766573542015</created>
-      <option name="number" value="00006" />
-      <option name="presentableId" value="LOCAL-00006" />
-      <option name="project" value="LOCAL" />
-      <updated>1766573542015</updated>
     </task>
     <task id="LOCAL-00007" summary="Add combo box to change current project">
       <option name="closed" value="true" />
@@ -539,14 +531,21 @@
       <option name="project" value="LOCAL" />
       <updated>1769709369015</updated>
     </task>
-    <option name="localTasksCounter" value="55" />
+    <task id="LOCAL-00055" summary="add(db): create dao for tag">
+      <option name="closed" value="true" />
+      <created>1769709983896</created>
+      <option name="number" value="00055" />
+      <option name="presentableId" value="LOCAL-00055" />
+      <option name="project" value="LOCAL" />
+      <updated>1769709983896</updated>
+    </task>
+    <option name="localTasksCounter" value="56" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Add patch container" />
     <MESSAGE value="Add export button" />
     <MESSAGE value="Add default choice in export combo box" />
     <MESSAGE value="Add markdown exporter" />
@@ -571,7 +570,8 @@
     <MESSAGE value="add(dto): create dto for tags" />
     <MESSAGE value="add(service): create service for tag" />
     <MESSAGE value="add(controller): create controller for tag" />
-    <option name="LAST_COMMIT_MESSAGE" value="add(controller): create controller for tag" />
+    <MESSAGE value="add(db): create dao for tag" />
+    <option name="LAST_COMMIT_MESSAGE" value="add(db): create dao for tag" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
