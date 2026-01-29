@@ -1,9 +1,7 @@
 package net.chrupki.project.services;
 
-import net.chrupki.project.services.files.PatchService;
-import net.chrupki.project.services.files.ProjectService;
-import net.chrupki.project.services.files.TemplateService;
-import net.chrupki.project.services.files.VersionService;
+import net.chrupki.dto.TagDTO;
+import net.chrupki.project.services.files.*;
 import net.chrupki.project.services.files.exports.MarkdownExportService;
 
 public class HubService {
@@ -11,6 +9,7 @@ public class HubService {
     private static final VersionService versionService = new VersionService();
     private static final PatchService patchService = new PatchService();
     private static final TemplateService templateService = new TemplateService();
+    private static final TagService tagService = new TagService();
 
     // Export
     private static final MarkdownExportService markdownExportService = new MarkdownExportService();
@@ -21,4 +20,5 @@ public class HubService {
     public static PatchService getPatchService() { return patchService; }
     public static MarkdownExportService getMarkdownExportService() { return markdownExportService; }
     public static TemplateService getTemplateService() { return templateService; }
+    public static TagService getTagService() { return tagService; }
 }

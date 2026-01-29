@@ -4,10 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="c1aa160e-de6c-484d-8c28-5409cf16dc62" name="Changes" comment="feat(ui): display patch on the custom Markodown">
+    <list default="true" id="c1aa160e-de6c-484d-8c28-5409cf16dc62" name="Changes" comment="add(dto): create dto for tags">
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/net/chrupki/project/services/files/TagService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/net/chrupki/database/DatabaseInitializer.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/net/chrupki/database/DatabaseInitializer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/net/chrupki/database/schema/Tables.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/net/chrupki/database/schema/Tables.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/net/chrupki/project/services/HubService.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/net/chrupki/project/services/HubService.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -147,22 +147,6 @@
       <workItem from="1767532221772" duration="784000" />
       <workItem from="1767544161784" duration="11911000" />
       <workItem from="1769514724911" duration="788000" />
-    </task>
-    <task id="LOCAL-00002" summary="Refractor packages">
-      <option name="closed" value="true" />
-      <created>1766345516188</created>
-      <option name="number" value="00002" />
-      <option name="presentableId" value="LOCAL-00002" />
-      <option name="project" value="LOCAL" />
-      <updated>1766345516188</updated>
-    </task>
-    <task id="LOCAL-00003" summary="Add working sqlite locally">
-      <option name="closed" value="true" />
-      <created>1766437778858</created>
-      <option name="number" value="00003" />
-      <option name="presentableId" value="LOCAL-00003" />
-      <option name="project" value="LOCAL" />
-      <updated>1766437778858</updated>
     </task>
     <task id="LOCAL-00004" summary="Add data directory">
       <option name="closed" value="true" />
@@ -540,15 +524,29 @@
       <option name="project" value="LOCAL" />
       <updated>1769615860717</updated>
     </task>
-    <option name="localTasksCounter" value="51" />
+    <task id="LOCAL-00051" summary="feat(db): create new table for the database">
+      <option name="closed" value="true" />
+      <created>1769706800512</created>
+      <option name="number" value="00051" />
+      <option name="presentableId" value="LOCAL-00051" />
+      <option name="project" value="LOCAL" />
+      <updated>1769706800512</updated>
+    </task>
+    <task id="LOCAL-00052" summary="add(dto): create dto for tags">
+      <option name="closed" value="true" />
+      <created>1769707799308</created>
+      <option name="number" value="00052" />
+      <option name="presentableId" value="LOCAL-00052" />
+      <option name="project" value="LOCAL" />
+      <updated>1769707799308</updated>
+    </task>
+    <option name="localTasksCounter" value="53" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Fix clear when version changement" />
-    <MESSAGE value="Update code to display with controller and service" />
     <MESSAGE value="Fix patch creator by removing unnecessary changes and updating" />
     <MESSAGE value="Rename PatchContainer to PatchListView" />
     <MESSAGE value="Add patch container" />
@@ -572,7 +570,9 @@
     <MESSAGE value="feat(ui): add stable version type" />
     <MESSAGE value="feat(ui): create a export modal" />
     <MESSAGE value="feat(ui): display patch on the custom Markodown" />
-    <option name="LAST_COMMIT_MESSAGE" value="feat(ui): display patch on the custom Markodown" />
+    <MESSAGE value="feat(db): create new table for the database" />
+    <MESSAGE value="add(dto): create dto for tags" />
+    <option name="LAST_COMMIT_MESSAGE" value="add(dto): create dto for tags" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
