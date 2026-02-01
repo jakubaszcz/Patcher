@@ -53,10 +53,6 @@ public class MarkdownExportService {
     public String generateDefaultMarkdown(ExportRequest request) {
         StringBuilder md = new StringBuilder();
 
-
-
-        System.out.println(request.type());
-
         md.append("# Project ").append(request.project()).append(" (v.").append(request.version()).append(getType(request.type())).append(")\n\n");
 
         md.append(getPatch(request));
