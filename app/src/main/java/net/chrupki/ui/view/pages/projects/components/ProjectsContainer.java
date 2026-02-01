@@ -6,6 +6,7 @@ import javafx.scene.layout.HBox;
 import javafx.scene.control.Label;
 import net.chrupki.dto.ProjectDTO;
 import net.chrupki.model.HubModel;
+import net.chrupki.ui.controllers.HubController;
 import net.chrupki.ui.view.pages.project.ProjectView;
 import net.chrupki.ui.view.pages.projects.dto.ProjectContainerDTO;
 
@@ -40,6 +41,7 @@ public class ProjectsContainer extends HBox {
                     projectContainerModel.getProjectDTO().getName()
             );
             HubModel.projectModel().from(projectDTO);
+            HubController.getTagController().load();
         });
 
         edit.setOnAction(e -> {
