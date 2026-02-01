@@ -21,6 +21,10 @@ public class VersionHeader extends HBox {
         Button addButton = new Button("+");
         addButton.getStyleClass().add("project-add-button");
 
+        Button tagButton = new Button("Tags");
+        tagButton.getStyleClass().add("project-add-button");
+
+
         Region spacer = new Region();
         HBox.setHgrow(spacer, Priority.ALWAYS);
 
@@ -33,6 +37,12 @@ public class VersionHeader extends HBox {
             GlobalModel.setSwitchCreateVersionProjectModal(true);
         });
 
+        tagButton.setOnAction(e -> {
+            System.out.println(HubModel.projectModel().getName());
+            GlobalModel.setSwitchProjectModal(true);
+            GlobalModel.setSwitchTagModal(true);
+        });
+
         setMaxWidth(Double.MAX_VALUE);
 
         getStyleClass().add("project-header");
@@ -40,6 +50,7 @@ public class VersionHeader extends HBox {
         getChildren().addAll(
                 title,
                 spacer,
+                tagButton,
                 addButton
         );
     }
