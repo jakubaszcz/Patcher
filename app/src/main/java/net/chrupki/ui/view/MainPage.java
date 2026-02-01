@@ -62,6 +62,7 @@ public class MainPage {
         HubController.getProjectController().loadProjects();
         HubController.getPatchController().loadPatches();
         HubController.getTemplateController().loadTemplates();
+        HubController.getTagController().load();
 
         stage.show();
     }
