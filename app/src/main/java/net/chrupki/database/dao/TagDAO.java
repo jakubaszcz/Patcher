@@ -42,7 +42,7 @@ public class TagDAO {
         List<TagDTO> result = new ArrayList<>();
 
         String sql = """
-        SELECT id, tag
+        SELECT *
         FROM tags
         ORDER BY id ASC
         """;
