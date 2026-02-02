@@ -11,6 +11,7 @@ import javafx.scene.layout.Priority;
 import javafx.scene.layout.Region;
 import javafx.scene.layout.VBox;
 import javafx.stage.FileChooser;
+import net.chrupki.database.dao.TagDAO;
 import net.chrupki.database.dao.VersionDAO;
 import net.chrupki.model.HubModel;
 import net.chrupki.request.ExportRequest;
@@ -77,6 +78,7 @@ public class ExportModal extends VBox {
                         "markdown",
                         template,
                         List.of(),
+                        TagDAO.all(),
                         file.toPath()
                 ));
             } catch (Exception ex) {

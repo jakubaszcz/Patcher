@@ -1,6 +1,7 @@
 package net.chrupki.project.services.files.exports;
 
 import net.chrupki.database.dao.PatchDAO;
+import net.chrupki.dto.TagDTO;
 import net.chrupki.project.AppProject;
 import net.chrupki.request.ExportRequest;
 
@@ -36,9 +37,9 @@ public class MarkdownExportService {
 
         StringBuilder md = new StringBuilder();
 
-        List<String> notes = List.of("Patch", "Add", "Features", "Fix");
+        List<TagDTO> notes = request.tags();
 
-        for (String note : notes) {
+        for (String note : notes.stream().map(TagDTO::getName).toList()) {
             if (PatchDAO.findByType(request.project(), note).isEmpty()) continue;
             md.append("## ").append(note).append("\n\n");
             for (String patch : PatchDAO.findByType(request.project(), note)) {

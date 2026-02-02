@@ -4,9 +4,14 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="c1aa160e-de6c-484d-8c28-5409cf16dc62" name="Changes" comment="add(db): create dao for tag">
+    <list default="true" id="c1aa160e-de6c-484d-8c28-5409cf16dc62" name="Changes" comment="add(ui): load tags when a new project is selected">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/net/chrupki/ui/model/GlobalModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/net/chrupki/ui/model/GlobalModel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/net/chrupki/app/AppPath.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/net/chrupki/app/AppPath.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/net/chrupki/project/services/files/exports/MarkdownExportService.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/net/chrupki/project/services/files/exports/MarkdownExportService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/net/chrupki/request/ExportRequest.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/net/chrupki/request/ExportRequest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/net/chrupki/ui/view/pages/project/modals/export/ExportModal.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/net/chrupki/ui/view/pages/project/modals/export/ExportModal.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/net/chrupki/ui/view/pages/project/modals/patch/CreatePatchModal.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/net/chrupki/ui/view/pages/project/modals/patch/CreatePatchModal.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/net/chrupki/ui/view/pages/project/modals/patch/EditPatchModal.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/net/chrupki/ui/view/pages/project/modals/patch/EditPatchModal.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -14,7 +19,8 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="EmbeddingIndexingInfo">
-    <option name="cachedIndexableFilesCount" value="449" />
+    <option name="cachedIndexableFilesCount" value="462" />
+    <option name="fileBasedEmbeddingIndicesEnabled" value="true" />
   </component>
   <component name="ExternalProjectsData">
     <projectState path="$PROJECT_DIR$">
@@ -89,6 +95,11 @@
     &quot;settings.editor.selected.configurable&quot;: &quot;configurable.group.build&quot;,
     &quot;to.speed.mode.migration.done&quot;: &quot;true&quot;,
     &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  },
+  &quot;keyToStringList&quot;: {
+    &quot;DatabaseDriversLRU&quot;: [
+      &quot;sqlite&quot;
+    ]
   }
 }</component>
   <component name="RunManager">
@@ -126,7 +137,8 @@
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
-        <option value="bundled-jdk-30f59d01ecdd-cffe25b9f5b3-intellij.indexing.shared.core-IU-253.28294.334" />
+        <option value="bundled-jdk-30f59d01ecdd-2fc7cc6b9a17-intellij.indexing.shared.core-IU-253.30387.90" />
+        <option value="bundled-js-predefined-d6986cc7102b-9b0f141eb926-JavaScript-IU-253.30387.90" />
       </set>
     </attachedChunks>
   </component>
@@ -146,86 +158,10 @@
       <workItem from="1767532221772" duration="784000" />
       <workItem from="1767544161784" duration="11911000" />
       <workItem from="1769514724911" duration="788000" />
-    </task>
-    <task id="LOCAL-00007" summary="Add combo box to change current project">
-      <option name="closed" value="true" />
-      <created>1766683972568</created>
-      <option name="number" value="00007" />
-      <option name="presentableId" value="LOCAL-00007" />
-      <option name="project" value="LOCAL" />
-      <updated>1766683972568</updated>
-    </task>
-    <task id="LOCAL-00008" summary="Add project box with version creator button">
-      <option name="closed" value="true" />
-      <created>1766760712281</created>
-      <option name="number" value="00008" />
-      <option name="presentableId" value="LOCAL-00008" />
-      <option name="project" value="LOCAL" />
-      <updated>1766760712281</updated>
-    </task>
-    <task id="LOCAL-00009" summary="Fix windows run issue">
-      <option name="closed" value="true" />
-      <created>1767013916225</created>
-      <option name="number" value="00009" />
-      <option name="presentableId" value="LOCAL-00009" />
-      <option name="project" value="LOCAL" />
-      <updated>1767013916225</updated>
-    </task>
-    <task id="LOCAL-00010" summary="Refractor code base">
-      <option name="closed" value="true" />
-      <created>1767368896456</created>
-      <option name="number" value="00010" />
-      <option name="presentableId" value="LOCAL-00010" />
-      <option name="project" value="LOCAL" />
-      <updated>1767368896456</updated>
-    </task>
-    <task id="LOCAL-00011" summary="Refractor interface components and layout">
-      <option name="closed" value="true" />
-      <created>1767378034363</created>
-      <option name="number" value="00011" />
-      <option name="presentableId" value="LOCAL-00011" />
-      <option name="project" value="LOCAL" />
-      <updated>1767378034363</updated>
-    </task>
-    <task id="LOCAL-00012" summary="Add display all project versions">
-      <option name="closed" value="true" />
-      <created>1767396686281</created>
-      <option name="number" value="00012" />
-      <option name="presentableId" value="LOCAL-00012" />
-      <option name="project" value="LOCAL" />
-      <updated>1767396686281</updated>
-    </task>
-    <task id="LOCAL-00013" summary="Add display project dynamically">
-      <option name="closed" value="true" />
-      <created>1767401738161</created>
-      <option name="number" value="00013" />
-      <option name="presentableId" value="LOCAL-00013" />
-      <option name="project" value="LOCAL" />
-      <updated>1767401738161</updated>
-    </task>
-    <task id="LOCAL-00014" summary="Add version container">
-      <option name="closed" value="true" />
-      <created>1767439786542</created>
-      <option name="number" value="00014" />
-      <option name="presentableId" value="LOCAL-00014" />
-      <option name="project" value="LOCAL" />
-      <updated>1767439786542</updated>
-    </task>
-    <task id="LOCAL-00015" summary="Fetch id and version from versions table">
-      <option name="closed" value="true" />
-      <created>1767457572503</created>
-      <option name="number" value="00015" />
-      <option name="presentableId" value="LOCAL-00015" />
-      <option name="project" value="LOCAL" />
-      <updated>1767457572504</updated>
-    </task>
-    <task id="LOCAL-00016" summary="Add Controllers &amp; Services">
-      <option name="closed" value="true" />
-      <created>1767479768046</created>
-      <option name="number" value="00016" />
-      <option name="presentableId" value="LOCAL-00016" />
-      <option name="project" value="LOCAL" />
-      <updated>1767479768046</updated>
+      <workItem from="1769857704899" duration="214000" />
+      <workItem from="1769866331472" duration="4135000" />
+      <workItem from="1769966275277" duration="4387000" />
+      <workItem from="1770026455126" duration="591000" />
     </task>
     <task id="LOCAL-00017" summary="Add patch record">
       <option name="closed" value="true" />
@@ -539,22 +475,93 @@
       <option name="project" value="LOCAL" />
       <updated>1769709983896</updated>
     </task>
-    <option name="localTasksCounter" value="56" />
+    <task id="LOCAL-00056" summary="add(model): create model for tag and for modal">
+      <option name="closed" value="true" />
+      <created>1769710712074</created>
+      <option name="number" value="00056" />
+      <option name="presentableId" value="LOCAL-00056" />
+      <option name="project" value="LOCAL" />
+      <updated>1769710712074</updated>
+    </task>
+    <task id="LOCAL-00057" summary="refactor(db): select everything for the tag dao">
+      <option name="closed" value="true" />
+      <created>1769971220592</created>
+      <option name="number" value="00057" />
+      <option name="presentableId" value="LOCAL-00057" />
+      <option name="project" value="LOCAL" />
+      <updated>1769971220593</updated>
+    </task>
+    <task id="LOCAL-00058" summary="add(service): create service for tag">
+      <option name="closed" value="true" />
+      <created>1769971294358</created>
+      <option name="number" value="00058" />
+      <option name="presentableId" value="LOCAL-00058" />
+      <option name="project" value="LOCAL" />
+      <updated>1769971294358</updated>
+    </task>
+    <task id="LOCAL-00059" summary="feat(ui): create modal for tags">
+      <option name="closed" value="true" />
+      <created>1769971320036</created>
+      <option name="number" value="00059" />
+      <option name="presentableId" value="LOCAL-00059" />
+      <option name="project" value="LOCAL" />
+      <updated>1769971320036</updated>
+    </task>
+    <task id="LOCAL-00060" summary="add(ui): load every tags in main page">
+      <option name="closed" value="true" />
+      <created>1769971354841</created>
+      <option name="number" value="00060" />
+      <option name="presentableId" value="LOCAL-00060" />
+      <option name="project" value="LOCAL" />
+      <updated>1769971354841</updated>
+    </task>
+    <task id="LOCAL-00061" summary="refactor(service): get rid of console log print">
+      <option name="closed" value="true" />
+      <created>1769971398177</created>
+      <option name="number" value="00061" />
+      <option name="presentableId" value="LOCAL-00061" />
+      <option name="project" value="LOCAL" />
+      <updated>1769971398177</updated>
+    </task>
+    <task id="LOCAL-00062" summary="add(ui): add open button for the tag modal">
+      <option name="closed" value="true" />
+      <created>1769971491852</created>
+      <option name="number" value="00062" />
+      <option name="presentableId" value="LOCAL-00062" />
+      <option name="project" value="LOCAL" />
+      <updated>1769971491852</updated>
+    </task>
+    <task id="LOCAL-00063" summary="add(controller): create tag controller">
+      <option name="closed" value="true" />
+      <created>1769971508383</created>
+      <option name="number" value="00063" />
+      <option name="presentableId" value="LOCAL-00063" />
+      <option name="project" value="LOCAL" />
+      <updated>1769971508383</updated>
+    </task>
+    <task id="LOCAL-00064" summary="feat(ui): add tag button to version header">
+      <option name="closed" value="true" />
+      <created>1769971526020</created>
+      <option name="number" value="00064" />
+      <option name="presentableId" value="LOCAL-00064" />
+      <option name="project" value="LOCAL" />
+      <updated>1769971526020</updated>
+    </task>
+    <task id="LOCAL-00065" summary="add(ui): load tags when a new project is selected">
+      <option name="closed" value="true" />
+      <created>1769971635058</created>
+      <option name="number" value="00065" />
+      <option name="presentableId" value="LOCAL-00065" />
+      <option name="project" value="LOCAL" />
+      <updated>1769971635058</updated>
+    </task>
+    <option name="localTasksCounter" value="66" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Add export button" />
-    <MESSAGE value="Add default choice in export combo box" />
-    <MESSAGE value="Add markdown exporter" />
-    <MESSAGE value="Add export request and create request folder" />
-    <MESSAGE value="Add find name by id for the version" />
-    <MESSAGE value="Add markdown exporting" />
-    <MESSAGE value="Add type finder for patch content retrieval" />
-    <MESSAGE value="Add markdown generator" />
-    <MESSAGE value="Add licence" />
     <MESSAGE value="Add license" />
     <MESSAGE value="feat(ui): add scroll area for Patch area" />
     <MESSAGE value="feat(ui): add scroll area for Project area" />
@@ -568,10 +575,19 @@
     <MESSAGE value="feat(ui): display patch on the custom Markodown" />
     <MESSAGE value="feat(db): create new table for the database" />
     <MESSAGE value="add(dto): create dto for tags" />
-    <MESSAGE value="add(service): create service for tag" />
     <MESSAGE value="add(controller): create controller for tag" />
     <MESSAGE value="add(db): create dao for tag" />
-    <option name="LAST_COMMIT_MESSAGE" value="add(db): create dao for tag" />
+    <MESSAGE value="add(model): create model for tag and for modal" />
+    <MESSAGE value="refactor(db): select everything for the tag dao" />
+    <MESSAGE value="add(service): create service for tag" />
+    <MESSAGE value="feat(ui): create modal for tags" />
+    <MESSAGE value="add(ui): load every tags in main page" />
+    <MESSAGE value="refactor(service): get rid of console log print" />
+    <MESSAGE value="add(ui): add open button for the tag modal" />
+    <MESSAGE value="add(controller): create tag controller" />
+    <MESSAGE value="feat(ui): add tag button to version header" />
+    <MESSAGE value="add(ui): load tags when a new project is selected" />
+    <option name="LAST_COMMIT_MESSAGE" value="add(ui): load tags when a new project is selected" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

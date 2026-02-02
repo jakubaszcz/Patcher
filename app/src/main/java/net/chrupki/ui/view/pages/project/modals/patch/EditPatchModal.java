@@ -1,5 +1,6 @@
 package net.chrupki.ui.view.pages.project.modals.patch;
 
+import javafx.collections.ObservableList;
 import javafx.geometry.Insets;
 import javafx.geometry.Pos;
 import javafx.scene.control.Button;
@@ -10,6 +11,7 @@ import javafx.scene.layout.HBox;
 import javafx.scene.layout.Priority;
 import javafx.scene.layout.Region;
 import javafx.scene.layout.VBox;
+import net.chrupki.dto.TagDTO;
 import net.chrupki.model.HubModel;
 import net.chrupki.ui.controllers.files.dtos.EditPatch;
 import net.chrupki.ui.model.GlobalModel;
@@ -34,9 +36,21 @@ public class EditPatchModal extends VBox {
         ComboBox<String> comboBox = new ComboBox<>();
         comboBox.getStyleClass().add("modal-combobox");
 
-        comboBox.getItems().addAll(
-                "Patch", "Add", "Features", "Fix"
+        ObservableList<TagDTO> tags = GlobalModel.getTags();
+
+        comboBox.getItems().setAll(
+                tags.stream()
+                        .map(TagDTO::getName)
+                        .toList()
         );
+
+        tags.addListener((javafx.collections.ListChangeListener<TagDTO>) change -> {
+            comboBox.getItems().setAll(
+                    tags.stream()
+                            .map(TagDTO::getName)
+                            .toList()
+            );
+        });
 
         comboBox.setPromptText("Select a type");
 

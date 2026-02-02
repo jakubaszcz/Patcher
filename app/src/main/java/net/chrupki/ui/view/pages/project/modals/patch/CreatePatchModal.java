@@ -1,5 +1,6 @@
 package net.chrupki.ui.view.pages.project.modals.patch;
 
+import javafx.collections.ObservableList;
 import javafx.geometry.Insets;
 import javafx.geometry.Pos;
 import javafx.scene.control.Button;
@@ -10,6 +11,7 @@ import javafx.scene.layout.HBox;
 import javafx.scene.layout.Priority;
 import javafx.scene.layout.Region;
 import javafx.scene.layout.VBox;
+import net.chrupki.dto.TagDTO;
 import net.chrupki.model.HubModel;
 import net.chrupki.request.PatchRequest;
 import net.chrupki.ui.model.GlobalModel;
@@ -18,10 +20,14 @@ import java.util.function.Consumer;
 
 public class CreatePatchModal extends VBox {
 
+    public ComboBox<String> comboBox = new ComboBox<>();
+
     public CreatePatchModal(
             Consumer<PatchRequest> onCreate,
             Runnable onClose
     ) {
+        ObservableList<TagDTO> tags = GlobalModel.getTags();
+
         Label title = new Label("Create patch");
         title.getStyleClass().add("modal-title");
 
@@ -29,12 +35,21 @@ public class CreatePatchModal extends VBox {
         textField.setPromptText("Patch name");
         textField.getStyleClass().add("modal-textfield");
 
-        ComboBox<String> comboBox = new ComboBox<>();
         comboBox.getStyleClass().add("modal-combobox");
 
-        comboBox.getItems().addAll(
-                "Patch", "Add", "Features", "Fix"
+        comboBox.getItems().setAll(
+                tags.stream()
+                        .map(TagDTO::getName)
+                        .toList()
         );
+
+        tags.addListener((javafx.collections.ListChangeListener<TagDTO>) change -> {
+            comboBox.getItems().setAll(
+                    tags.stream()
+                            .map(TagDTO::getName)
+                            .toList()
+            );
+        });
 
         comboBox.setPromptText("Select a type");
 
@@ -84,6 +99,14 @@ public class CreatePatchModal extends VBox {
                 comboBox,
                 actions
         );
+    }
+
+    public void refresh(ObservableList<TagDTO> tags) {
+        comboBox.getItems().clear();
+
+        for (TagDTO s : tags) {
+            comboBox.getItems().add(s.getName());
+        }
     }
 
 }
