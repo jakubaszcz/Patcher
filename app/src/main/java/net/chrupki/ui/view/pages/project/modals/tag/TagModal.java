@@ -50,7 +50,7 @@ public class TagModal extends VBox {
 
         for (TagDTO t : tags) {
             list.getChildren().addAll(
-                    new Label("lkjfkofd")
+                    new Label(t.getName())
             );
         }
     }
