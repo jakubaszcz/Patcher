@@ -9,6 +9,14 @@ import java.util.List;
 
 public class TagService {
 
+    public TagDTO create(String name) {
+        try {
+            return TagDAO.insert(name);
+        } catch (Exception e) {
+            return null;
+        }
+    }
+
     public List<TagDTO> fetch(String projectName) throws Exception {
 
         if (projectName == null || projectName.isBlank()) {

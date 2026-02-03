@@ -4,14 +4,23 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="c1aa160e-de6c-484d-8c28-5409cf16dc62" name="Changes" comment="add(ui): load tags when a new project is selected">
+    <list default="true" id="c1aa160e-de6c-484d-8c28-5409cf16dc62" name="Changes" comment="feat(ui): export with new tags in Markdown format">
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/net/chrupki/ui/view/pages/project/components/lcontainer/LCHeader.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/net/chrupki/ui/view/pages/project/components/lcontainer/LContainer.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/net/chrupki/ui/view/pages/project/components/lcontainer/tag/LCTag.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/net/chrupki/ui/view/pages/project/components/lcontainer/tag/components/LCTagContainer.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/net/chrupki/ui/view/pages/project/components/lcontainer/version/LCVersion.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/net/chrupki/app/AppPath.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/net/chrupki/app/AppPath.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/net/chrupki/project/services/files/exports/MarkdownExportService.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/net/chrupki/project/services/files/exports/MarkdownExportService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/net/chrupki/request/ExportRequest.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/net/chrupki/request/ExportRequest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/net/chrupki/ui/view/pages/project/modals/export/ExportModal.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/net/chrupki/ui/view/pages/project/modals/export/ExportModal.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/net/chrupki/ui/view/pages/project/modals/patch/CreatePatchModal.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/net/chrupki/ui/view/pages/project/modals/patch/CreatePatchModal.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/net/chrupki/ui/view/pages/project/modals/patch/EditPatchModal.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/net/chrupki/ui/view/pages/project/modals/patch/EditPatchModal.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/net/chrupki/database/dao/TagDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/net/chrupki/database/dao/TagDAO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/net/chrupki/project/services/files/TagService.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/net/chrupki/project/services/files/TagService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/net/chrupki/ui/controllers/files/TagController.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/net/chrupki/ui/controllers/files/TagController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/net/chrupki/ui/view/pages/project/components/Body.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/net/chrupki/ui/view/pages/project/components/Body.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/net/chrupki/ui/view/pages/project/components/Header.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/net/chrupki/ui/view/pages/project/components/Header.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/net/chrupki/ui/view/pages/project/components/Version.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/net/chrupki/ui/view/pages/project/components/VersionContainer.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/net/chrupki/ui/view/pages/project/components/lcontainer/version/components/LCVersionContainer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/net/chrupki/ui/view/pages/project/components/VersionHeader.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/net/chrupki/ui/view/pages/project/modals/ProjectModal.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/net/chrupki/ui/view/pages/project/modals/ProjectModal.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/net/chrupki/ui/view/pages/project/modals/tag/TagModal.java" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -19,7 +28,7 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="EmbeddingIndexingInfo">
-    <option name="cachedIndexableFilesCount" value="462" />
+    <option name="cachedIndexableFilesCount" value="465" />
     <option name="fileBasedEmbeddingIndicesEnabled" value="true" />
   </component>
   <component name="ExternalProjectsData">
@@ -161,23 +170,8 @@
       <workItem from="1769857704899" duration="214000" />
       <workItem from="1769866331472" duration="4135000" />
       <workItem from="1769966275277" duration="4387000" />
-      <workItem from="1770026455126" duration="591000" />
-    </task>
-    <task id="LOCAL-00017" summary="Add patch record">
-      <option name="closed" value="true" />
-      <created>1767482574696</created>
-      <option name="number" value="00017" />
-      <option name="presentableId" value="LOCAL-00017" />
-      <option name="project" value="LOCAL" />
-      <updated>1767482574696</updated>
-    </task>
-    <task id="LOCAL-00018" summary="Add patch controller">
-      <option name="closed" value="true" />
-      <created>1767482861223</created>
-      <option name="number" value="00018" />
-      <option name="presentableId" value="LOCAL-00018" />
-      <option name="project" value="LOCAL" />
-      <updated>1767482861223</updated>
+      <workItem from="1770026455126" duration="12703000" />
+      <workItem from="1770119027273" duration="2714000" />
     </task>
     <task id="LOCAL-00019" summary="Add patch create container">
       <option name="closed" value="true" />
@@ -555,15 +549,29 @@
       <option name="project" value="LOCAL" />
       <updated>1769971635058</updated>
     </task>
-    <option name="localTasksCounter" value="66" />
+    <task id="LOCAL-00066" summary="feat(ui): export with new tags in Markdown format">
+      <option name="closed" value="true" />
+      <created>1770027281188</created>
+      <option name="number" value="00066" />
+      <option name="presentableId" value="LOCAL-00066" />
+      <option name="project" value="LOCAL" />
+      <updated>1770027281188</updated>
+    </task>
+    <task id="LOCAL-00067" summary="refactor(ui): print current tag name">
+      <option name="closed" value="true" />
+      <created>1770030901565</created>
+      <option name="number" value="00067" />
+      <option name="presentableId" value="LOCAL-00067" />
+      <option name="project" value="LOCAL" />
+      <updated>1770030901565</updated>
+    </task>
+    <option name="localTasksCounter" value="68" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Add license" />
-    <MESSAGE value="feat(ui): add scroll area for Patch area" />
     <MESSAGE value="feat(ui): add scroll area for Project area" />
     <MESSAGE value="feat(ui): add scroll area for Version area" />
     <MESSAGE value="feat(ui): add type to your version&#10;&#10;Four types are available : Alpha, Beta, Pre-release &amp; Hotfix" />
@@ -587,7 +595,9 @@
     <MESSAGE value="add(controller): create tag controller" />
     <MESSAGE value="feat(ui): add tag button to version header" />
     <MESSAGE value="add(ui): load tags when a new project is selected" />
-    <option name="LAST_COMMIT_MESSAGE" value="add(ui): load tags when a new project is selected" />
+    <MESSAGE value="feat(ui): export with new tags in Markdown format" />
+    <MESSAGE value="refactor(ui): print current tag name" />
+    <option name="LAST_COMMIT_MESSAGE" value="refactor(ui): print current tag name" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

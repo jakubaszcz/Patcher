@@ -1,19 +1,27 @@
-package net.chrupki.ui.view.pages.project.components;
+package net.chrupki.ui.view.pages.project.components.lcontainer;
 
 import javafx.geometry.Insets;
 import javafx.geometry.Pos;
+import javafx.scene.Node;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.Priority;
 import javafx.scene.layout.Region;
+import javafx.scene.layout.VBox;
 import net.chrupki.model.HubModel;
 import net.chrupki.ui.model.GlobalModel;
 
-public class VersionHeader extends HBox {
+import java.util.function.Consumer;
 
-    public VersionHeader() {
+public class LCHeader extends HBox {
 
+    private boolean isVersion = true;
+
+
+    public LCHeader(
+            Consumer<String> onToggle
+    ) {
         Label title = new Label();
         title.textProperty().bind(HubModel.projectModel().getName());
         title.getStyleClass().add("project-title");
@@ -21,8 +29,17 @@ public class VersionHeader extends HBox {
         Button addButton = new Button("+");
         addButton.getStyleClass().add("project-add-button");
 
-        Button tagButton = new Button("Tags");
-        tagButton.getStyleClass().add("project-add-button");
+        Button toggle = new Button("Tags");
+
+        toggle.setOnAction(e -> {
+            isVersion = !isVersion;
+
+            String view = isVersion ? "version" : "tag";
+            toggle.setText(isVersion ? "Tags" : "Versions");
+
+            onToggle.accept(view);
+        });
+        toggle.getStyleClass().add("project-add-button");
 
 
         Region spacer = new Region();
@@ -37,12 +54,6 @@ public class VersionHeader extends HBox {
             GlobalModel.setSwitchCreateVersionProjectModal(true);
         });
 
-        tagButton.setOnAction(e -> {
-            System.out.println(HubModel.projectModel().getName());
-            GlobalModel.setSwitchProjectModal(true);
-            GlobalModel.setSwitchTagModal(true);
-        });
-
         setMaxWidth(Double.MAX_VALUE);
 
         getStyleClass().add("project-header");
@@ -50,8 +61,9 @@ public class VersionHeader extends HBox {
         getChildren().addAll(
                 title,
                 spacer,
-                tagButton,
+                toggle,
                 addButton
         );
     }
+
 }

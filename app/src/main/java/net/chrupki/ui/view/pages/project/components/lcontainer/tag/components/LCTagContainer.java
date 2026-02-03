@@ -1,4 +1,4 @@
-package net.chrupki.ui.view.pages.project.components;
+package net.chrupki.ui.view.pages.project.components.lcontainer.tag.components;
 
 import javafx.geometry.Insets;
 import javafx.geometry.Pos;
@@ -8,26 +8,19 @@ import javafx.scene.layout.HBox;
 import javafx.scene.layout.Priority;
 import javafx.scene.layout.Region;
 import javafx.scene.layout.VBox;
+import net.chrupki.dto.TagDTO;
 import net.chrupki.model.HubModel;
 import net.chrupki.ui.model.GlobalModel;
-import net.chrupki.dto.VersionDTO;
 
-import java.util.function.Consumer;
+public class LCTagContainer extends HBox {
 
-public class VersionContainer extends HBox {
-
-    public VersionContainer(VersionDTO version, Consumer<VersionDTO> onSelectVersion) {
-
-        // Labels (gauche)
-        Label name = new Label("v" + version.getVersion());
+    public LCTagContainer(TagDTO tagDTO) {
+        Label name = new Label(tagDTO.getName());
         name.getStyleClass().add("project-item-title");
 
-        Label type = new Label(version.getType());
-        type.getStyleClass().add("version-type-badge");
+        HBox versionBox = new HBox(8, name);
 
-        HBox versionBox = new HBox(8, name, type);
-
-        Label meta = new Label("Version");
+        Label meta = new Label("Tag");
         meta.getStyleClass().add("project-item-meta");
 
         VBox textBox = new VBox(2, versionBox, meta);
@@ -35,12 +28,6 @@ public class VersionContainer extends HBox {
 
         Button editButton = new Button("Edit");
         editButton.getStyleClass().add("project-item-button");
-
-        editButton.setOnAction(e -> {
-            HubModel.versionModel().from(version);
-            GlobalModel.setSwitchProjectModal(true);
-            GlobalModel.setSwitchEditVersionProjectModal(true);
-        });
 
         Region spacer = new Region();
         HBox.setHgrow(spacer, Priority.ALWAYS);
@@ -51,14 +38,11 @@ public class VersionContainer extends HBox {
 
         getStyleClass().add("project-item");
 
-        setOnMouseClicked(e -> {
-            onSelectVersion.accept(version);
-        });
-
         getChildren().addAll(
                 textBox,
                 spacer,
                 editButton
         );
     }
+
 }

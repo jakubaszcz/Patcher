@@ -5,12 +5,13 @@ import javafx.scene.layout.HBox;
 import javafx.scene.layout.Priority;
 import javafx.scene.layout.VBox;
 import net.chrupki.model.HubModel;
+import net.chrupki.ui.view.pages.project.components.lcontainer.LContainer;
 
 public class Body extends HBox {
 
     public Body() {
 
-        Version versions = new Version();
+        LContainer lcontainer = new LContainer();
         Patch patches = new Patch();
 
         setSpacing(6);
@@ -18,7 +19,7 @@ public class Body extends HBox {
 
         setFillHeight(true);
 
-        versions.prefWidthProperty().bind(
+        lcontainer.prefWidthProperty().bind(
                 widthProperty().multiply(0.35)
         );
 
@@ -28,9 +29,9 @@ public class Body extends HBox {
                 widthProperty().multiply(0.65)
         );
 
-        VBox.setVgrow(versions, Priority.ALWAYS);
+        VBox.setVgrow(lcontainer, Priority.ALWAYS);
         VBox.setVgrow(patches, Priority.ALWAYS);
 
-        getChildren().addAll(versions, patches);
+        getChildren().addAll(lcontainer, patches);
     }
 }

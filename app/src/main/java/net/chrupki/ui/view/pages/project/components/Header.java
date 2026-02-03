@@ -1,11 +1,14 @@
 package net.chrupki.ui.view.pages.project.components;
 
+import javafx.collections.ObservableList;
 import javafx.geometry.Insets;
 import javafx.geometry.Pos;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.layout.HBox;
+import net.chrupki.dto.VersionDTO;
 import net.chrupki.model.HubModel;
+import net.chrupki.ui.model.GlobalModel;
 import net.chrupki.ui.view.manager.PageManager;
 import net.chrupki.ui.view.pages.projects.ProjectsView;
 

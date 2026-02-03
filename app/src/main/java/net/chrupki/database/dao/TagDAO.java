@@ -12,14 +12,14 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class TagDAO {
-    public static TagDTO insert(TagDTO tagDTO) {
+    public static TagDTO insert(String name) {
         String sql = "INSERT INTO tags (tag) VALUES (?)";
 
         try (Connection conn = DatabaseHub.getInstance().getConnection();
              PreparedStatement stmt =
                      conn.prepareStatement(sql, PreparedStatement.RETURN_GENERATED_KEYS)) {
 
-            stmt.setString(1, tagDTO.getName());
+            stmt.setString(1, name);
             stmt.executeUpdate();
 
             try (ResultSet rs = stmt.getGeneratedKeys()) {
