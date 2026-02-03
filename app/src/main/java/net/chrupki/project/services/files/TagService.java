@@ -4,6 +4,7 @@ import net.chrupki.database.dao.TagDAO;
 import net.chrupki.database.dao.VersionDAO;
 import net.chrupki.dto.TagDTO;
 import net.chrupki.dto.VersionDTO;
+import net.chrupki.ui.controllers.files.dtos.EditTag;
 
 import java.util.List;
 
@@ -24,6 +25,14 @@ public class TagService {
         }
 
         return TagDAO.all();
+    }
+
+    public boolean save(EditTag tag) {
+        return TagDAO.save(tag);
+    }
+
+    public boolean delete(Integer id) {
+        return TagDAO.delete(id);
     }
 
 }

@@ -29,6 +29,12 @@ public class LCTagContainer extends HBox {
         Button editButton = new Button("Edit");
         editButton.getStyleClass().add("project-item-button");
 
+        editButton.setOnAction(e -> {
+            HubModel.tagModel().from(tagDTO);
+            GlobalModel.setSwitchProjectModal(true);
+            GlobalModel.setSwitchEditTagProjectModal(true);
+        });
+
         Region spacer = new Region();
         HBox.setHgrow(spacer, Priority.ALWAYS);
 

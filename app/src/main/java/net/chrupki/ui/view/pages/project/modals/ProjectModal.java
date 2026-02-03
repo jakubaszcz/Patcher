@@ -9,6 +9,8 @@ import net.chrupki.ui.model.GlobalModel;
 import net.chrupki.ui.view.pages.project.modals.export.ExportModal;
 import net.chrupki.ui.view.pages.project.modals.patch.CreatePatchModal;
 import net.chrupki.ui.view.pages.project.modals.patch.EditPatchModal;
+import net.chrupki.ui.view.pages.project.modals.tags.CreateTagModal;
+import net.chrupki.ui.view.pages.project.modals.tags.EditTagModal;
 import net.chrupki.ui.view.pages.project.modals.version.CreateVersionModal;
 import net.chrupki.ui.view.pages.project.modals.version.EditVersionModal;
 
@@ -31,7 +33,8 @@ public class ProjectModal extends StackPane {
             GlobalModel.setSwitchCreatePatchProjectModal(false);
             GlobalModel.setSwitchEditPatchProjectModal(false);
             GlobalModel.setSwitchExportModal(false);
-            GlobalModel.setSwitchTagModal(false);
+            GlobalModel.setSwitchCreateTagProjectModal(false);
+            GlobalModel.setSwitchEditTagProjectModal(false);
         });
 
         getChildren().addAll(pane, vBox);
@@ -60,6 +63,15 @@ public class ProjectModal extends StackPane {
                 new ExportModal(
                         HubController.getExportController()::closeModal,
                         HubController.getExportController()::export
+                ),
+                new CreateTagModal(
+                        HubController.getTagController()::create,
+                        HubController.getTagController()::closeModal
+                ),
+                new EditTagModal(
+                        HubController.getTagController()::save,
+                        HubController.getTagController()::delete,
+                        HubController.getTagController()::closeModal
                 )
         );
 

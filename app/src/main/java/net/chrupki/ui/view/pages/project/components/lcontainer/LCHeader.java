@@ -50,8 +50,18 @@ public class LCHeader extends HBox {
         setSpacing(8);
 
         addButton.setOnAction(e -> {
+            isVersion = !isVersion;
+
+            String view = isVersion ? "version" : "tag";
+
             GlobalModel.setSwitchProjectModal(true);
-            GlobalModel.setSwitchCreateVersionProjectModal(true);
+
+            if (!view.equals("tag")) {
+                GlobalModel.setSwitchCreateTagProjectModal(true);
+            } else if (!view.equals("version")) {
+                GlobalModel.setSwitchCreateVersionProjectModal(true);
+            }
+
         });
 
         setMaxWidth(Double.MAX_VALUE);

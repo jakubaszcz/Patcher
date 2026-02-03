@@ -35,6 +35,7 @@ public class Header extends HBox {
         backButton.setOnAction(e -> {
             viewManager.show(new ProjectsView(viewManager));
             HubModel.versionModel().clear();
+            HubModel.tagModel().clear();
         });
     }
 }

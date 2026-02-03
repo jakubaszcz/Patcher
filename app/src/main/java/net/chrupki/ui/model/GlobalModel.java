@@ -52,7 +52,10 @@ public class GlobalModel {
     private static final BooleanProperty switchExportModal =
             new SimpleBooleanProperty(false);
 
-    private static final BooleanProperty switchTagModal =
+    private static final BooleanProperty switchCreateTagProjectModal =
+            new SimpleBooleanProperty(false);
+
+    private static final BooleanProperty switchEditTagProjectModal =
             new SimpleBooleanProperty(false);
 
     public static void setSwitchProjectsModal(boolean value) {
@@ -123,8 +126,12 @@ public class GlobalModel {
         return switchExportModal;
     }
 
-    public static BooleanProperty getSwitchTagModal() {
-        return switchTagModal;
+    public static BooleanProperty getSwitchCreateTagProjectModal() {
+        return switchCreateTagProjectModal;
+    }
+
+    public static BooleanProperty getSwitchEditTagProjectModal() {
+        return switchEditTagProjectModal;
     }
 
     public static void setSwitchExportModal(boolean booleanProperty) {
@@ -163,8 +170,12 @@ public class GlobalModel {
         editPatch.set(booleanProperty);
     }
 
-    public static void setSwitchTagModal(boolean booleanProperty) {
-        switchTagModal.set(booleanProperty);
+    public static void setSwitchCreateTagProjectModal(boolean booleanProperty) {
+        switchCreateTagProjectModal.set(booleanProperty);
+    }
+
+    public static void setSwitchEditTagProjectModal(boolean booleanProperty) {
+        switchEditTagProjectModal.set(booleanProperty);
     }
 
     public static BooleanProperty getEditPatchProperty() {
