@@ -39,10 +39,10 @@ public class MarkdownExportService {
 
         List<TagDTO> notes = request.tags();
 
-        for (String note : notes.stream().map(TagDTO::getName).toList()) {
-            if (PatchDAO.findByType(request.project(), note).isEmpty()) continue;
-            md.append("## ").append(note).append("\n\n");
-            for (String patch : PatchDAO.findByType(request.project(), note)) {
+        for (TagDTO note : notes) {
+            if (PatchDAO.findByType(request.project(), note.getId()).isEmpty()) continue;
+            md.append("## ").append(note.getName()).append("\n\n");
+            for (String patch : PatchDAO.findByType(request.project(), note.getId())) {
                 md.append("- ").append(patch).append("\n");
             }
             md.append("\n");

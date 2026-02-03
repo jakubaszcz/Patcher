@@ -95,18 +95,18 @@ public class PatchDAO {
         }
     }
 
-    public static List<String> findByType(String projectName, String type) {
+    public static List<String> findByType(String projectName, Integer tid) {
 
         List<String> result = new ArrayList<>();
 
-        String sql = "SELECT content FROM notes WHERE patch = ?";
+        String sql = "SELECT content FROM notes WHERE tag_id = ?";
 
         if (projectName == null || projectName.isBlank()) return List.of();
 
         try (Connection conn = DatabaseHub.getInstance().getConnection();
              PreparedStatement stmt = conn.prepareStatement(sql)) {
 
-            stmt.setString(1, type);
+            stmt.setInt(1, tid);
 
             try (ResultSet rs = stmt.executeQuery()) {
                 while (rs.next()) {
