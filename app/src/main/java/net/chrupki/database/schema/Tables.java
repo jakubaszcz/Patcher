@@ -16,9 +16,10 @@ public final class Tables {
         CREATE TABLE IF NOT EXISTS notes (
             id INTEGER PRIMARY KEY AUTOINCREMENT,
             version_id INTEGER NOT NULL,
-            patch TEXT NOT NULL,
+            tag_id INTEGER NOT NULL,
             content TEXT NOT NULL,
             FOREIGN KEY (version_id) REFERENCES versions(id)
+            FOREIGN KEY (tag_id) REFERENCES tags(id)
         );
         """;
 

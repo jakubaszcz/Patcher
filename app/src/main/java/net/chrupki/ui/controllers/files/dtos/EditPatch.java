@@ -3,14 +3,14 @@ package net.chrupki.ui.controllers.files.dtos;
 public class EditPatch {
     private final Integer id;
     private final Integer vid;
+    private final Integer tid;
     private final String content;
-    private final String type;
 
-    public EditPatch(Integer id, Integer vid, String content, String type) {
+    public EditPatch(Integer id, Integer vid, String content, Integer tid) {
         this.id = id;
         this.vid = vid;
         this.content = content;
-        this.type = type;
+        this.tid = tid;
     }
 
     public Integer getId() {
@@ -25,7 +25,7 @@ public class EditPatch {
         return content;
     }
 
-    public String getType() {
-        return type;
+    public Integer getTid() {
+        return tid;
     }
 }

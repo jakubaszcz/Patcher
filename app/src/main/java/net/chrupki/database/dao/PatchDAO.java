@@ -4,39 +4,41 @@ import net.chrupki.model.HubModel;
 import net.chrupki.database.DatabaseHub;
 import net.chrupki.dto.PatchDTO;
 
-import java.sql.Connection;
-import java.sql.PreparedStatement;
-import java.sql.ResultSet;
-import java.sql.SQLException;
+import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
 
 public class PatchDAO {
-    public static int insert(int id, String type, String content) {
-        String sql = "INSERT INTO notes (version_id, patch, content) VALUES (?, ?, ?)";
+    public static int insert(int versionId, int tagId, String content) {
+        String sql = """
+        INSERT INTO notes (version_id, tag_id, content)
+        VALUES (?, ?, ?)
+    """;
 
         try (Connection conn = DatabaseHub.getInstance().getConnection();
-             PreparedStatement stmt = conn.prepareStatement(sql)) {
+             PreparedStatement stmt = conn.prepareStatement(
+                     sql, Statement.RETURN_GENERATED_KEYS
+             )) {
 
-            stmt.setInt(1, id);
-            stmt.setString(2, type);
+            stmt.setInt(1, versionId);
+            stmt.setInt(2, tagId);
             stmt.setString(3, content);
 
             stmt.executeUpdate();
 
             try (ResultSet rs = stmt.getGeneratedKeys()) {
                 if (rs.next()) {
-                    return rs.getInt(1);
+                    return rs.getInt(1); // ← id auto-généré
                 }
             }
 
-        } catch (SQLException ex) {
-            ex.printStackTrace();
-        } catch (Exception e) {
+        } catch (SQLException e) {
             throw new RuntimeException(e);
         }
-        return id;
+
+        return -1;
     }
+
 
     public static String findPatch(int id, int vid) {
         String sql = "SELECT patch FROM notes WHERE id = ? AND version_id = ?";
@@ -192,10 +194,10 @@ public class PatchDAO {
         }
     }
 
-    public static boolean renamePatch(Integer id, Integer vid, String patch) {
+    public static boolean renamePatch(Integer id, Integer vid, Integer tid) {
         String sql = """
             UPDATE notes
-            SET patch = ?
+            SET tag_id = ?
             WHERE id = ? AND version_id = ?
             """;
 
@@ -206,7 +208,7 @@ public class PatchDAO {
         try (Connection conn = DatabaseHub.getInstance().getConnection();
              PreparedStatement stmt = conn.prepareStatement(sql)) {
 
-            stmt.setString(1, patch);
+            stmt.setInt(1, tid);
             stmt.setInt(2, id);
             stmt.setInt(3, vid);
 
@@ -271,7 +273,7 @@ public class PatchDAO {
             try (ResultSet rs = stmt.executeQuery()) {
                 while (rs.next()) {
                     result.add(new PatchDTO(rs.getString("content"),
-                            rs.getString("patch"),
+                            rs.getInt("tag_id"),
                             rs.getInt("id"),
                             rs.getInt("version_id")));
                 }

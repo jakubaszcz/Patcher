@@ -18,11 +18,11 @@ public class PatchController {
 
         GlobalModel.getPatches().add(new PatchDTO(
                         request.name(),
-                        request.type(),
+                        request.tid(),
                         HubService.getPatchService().createPatch(
                                 projectName,
                                 versionId,
-                                request.type(),
+                                request.tid(),
                                 request.name()
                         ),
                         request.vid()
@@ -42,7 +42,7 @@ public class PatchController {
     }
 
     public void savePatch(EditPatch patch) {
-        HubService.getPatchService().savePatch(patch.getId(), patch.getVid(), patch.getContent(), patch.getType());
+        HubService.getPatchService().savePatch(patch.getId(), patch.getVid(), patch.getContent(), patch.getTid());
         loadPatches();
         closeModal();
     }

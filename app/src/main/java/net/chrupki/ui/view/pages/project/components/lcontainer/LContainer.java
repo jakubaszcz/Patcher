@@ -37,6 +37,7 @@ public class LContainer extends VBox {
                 case "version" -> {
                     scrollPane.setContent(version);
                 }
+                default -> throw new IllegalStateException("Unexpected value: " + view);
             }
         });
 

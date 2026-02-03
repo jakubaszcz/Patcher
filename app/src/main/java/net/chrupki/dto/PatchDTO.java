@@ -2,13 +2,13 @@ package net.chrupki.dto;
 
 public class PatchDTO {
     private final String content;
-    private final String type;
+    private final int tid;
     private final int id;
     private final int vid;
 
-    public PatchDTO(String content, String type, int id, int vid) {
+    public PatchDTO(String content, int tid, int id, int vid) {
         this.content = content;
-        this.type = type;
+        this.tid = tid;
         this.id = id;
         this.vid = vid;
     }
@@ -16,8 +16,8 @@ public class PatchDTO {
     public String getContent() {
         return content;
     }
-    public String getType() {
-        return type;
+    public int getTid() {
+        return tid;
     }
     public int getId() { return id; }
     public int getVid() { return vid; }

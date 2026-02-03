@@ -11,6 +11,7 @@ import javafx.scene.layout.HBox;
 import javafx.scene.layout.Priority;
 import javafx.scene.layout.Region;
 import javafx.scene.layout.VBox;
+import javafx.util.StringConverter;
 import net.chrupki.dto.TagDTO;
 import net.chrupki.model.HubModel;
 import net.chrupki.ui.controllers.files.dtos.EditPatch;
@@ -20,6 +21,9 @@ import java.util.function.BiConsumer;
 import java.util.function.Consumer;
 
 public class EditPatchModal extends VBox {
+
+    public ComboBox<TagDTO> comboBox = new ComboBox<>();
+
 
     public EditPatchModal(
             Consumer<EditPatch> onSave,
@@ -33,23 +37,27 @@ public class EditPatchModal extends VBox {
         textField.setPromptText("Patch name");
         textField.getStyleClass().add("modal-textfield");
 
-        ComboBox<String> comboBox = new ComboBox<>();
         comboBox.getStyleClass().add("modal-combobox");
 
         ObservableList<TagDTO> tags = GlobalModel.getTags();
 
-        comboBox.getItems().setAll(
-                tags.stream()
-                        .map(TagDTO::getName)
-                        .toList()
-        );
+        comboBox.getItems().setAll(tags);
+
+        comboBox.setConverter(new StringConverter<>() {
+            @Override
+            public String toString(TagDTO tag) {
+                return tag == null ? "" : tag.getName();
+            }
+
+            @Override
+            public TagDTO fromString(String string) {
+                return null;
+            }
+        });
+
 
         tags.addListener((javafx.collections.ListChangeListener<TagDTO>) change -> {
-            comboBox.getItems().setAll(
-                    tags.stream()
-                            .map(TagDTO::getName)
-                            .toList()
-            );
+            comboBox.getItems().setAll(tags);
         });
 
         comboBox.setPromptText("Select a type");
@@ -82,7 +90,7 @@ public class EditPatchModal extends VBox {
                             HubModel.patchModel().getId().get(),
                             HubModel.patchModel().getVid().get(),
                             textField.getText(),
-                            comboBox.getValue()
+                            comboBox.getValue().getId()
                     )
             );
             textField.clear();

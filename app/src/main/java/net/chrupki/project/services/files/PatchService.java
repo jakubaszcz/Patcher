@@ -9,14 +9,21 @@ public class PatchService {
     public int createPatch(
             String projectName,
             int versionId,
-            String type,
+            int tagId,
             String content
     ) {
-        return PatchDAO.insert(
-                versionId,
-                type,
-                content
-        );
+
+        try {
+            return PatchDAO.insert(
+                    versionId,
+                    tagId,
+                    content
+            );
+        } catch (Exception e) {
+            System.out.println(e.getMessage());
+        }
+
+        return -1;
     }
 
     public List<PatchDTO> fetchVersions(String projectName) throws Exception {
@@ -35,7 +42,7 @@ public class PatchService {
         PatchDAO.deleteThis(id, vid);
     }
 
-    public void savePatch(Integer id, Integer vid, String content, String type) {
+    public void savePatch(Integer id, Integer vid, String content, Integer tid) {
         if (id == null || vid == null || !PatchDAO.doesThisPatchByIdsExist(id, vid)) {
             throw new IllegalArgumentException("Patch ids are unavailable or corrupted !");
         }
@@ -46,8 +53,8 @@ public class PatchService {
         }
 
         String currentType = PatchDAO.findPatch(id, vid);
-        if (type != null && !type.isEmpty() && !type.equals(currentType)) {
-            PatchDAO.renamePatch(id, vid, type);
+        if (tid != null) {
+            PatchDAO.renamePatch(id, vid, tid);
         }
     }
 

@@ -11,6 +11,7 @@ import javafx.scene.layout.HBox;
 import javafx.scene.layout.Priority;
 import javafx.scene.layout.Region;
 import javafx.scene.layout.VBox;
+import javafx.util.StringConverter;
 import net.chrupki.dto.TagDTO;
 import net.chrupki.model.HubModel;
 import net.chrupki.request.PatchRequest;
@@ -20,7 +21,7 @@ import java.util.function.Consumer;
 
 public class CreatePatchModal extends VBox {
 
-    public ComboBox<String> comboBox = new ComboBox<>();
+    public ComboBox<TagDTO> comboBox = new ComboBox<>();
 
     public CreatePatchModal(
             Consumer<PatchRequest> onCreate,
@@ -37,18 +38,24 @@ public class CreatePatchModal extends VBox {
 
         comboBox.getStyleClass().add("modal-combobox");
 
-        comboBox.getItems().setAll(
-                tags.stream()
-                        .map(TagDTO::getName)
-                        .toList()
-        );
+        comboBox.getItems().setAll(tags);
+
+        comboBox.setConverter(new StringConverter<>() {
+            @Override
+            public String toString(TagDTO tag) {
+                return tag == null ? "" : tag.getName();
+            }
+
+            @Override
+            public TagDTO fromString(String string) {
+                return null;
+            }
+        });
+
+        refresh(tags);
 
         tags.addListener((javafx.collections.ListChangeListener<TagDTO>) change -> {
-            comboBox.getItems().setAll(
-                    tags.stream()
-                            .map(TagDTO::getName)
-                            .toList()
-            );
+            comboBox.getItems().setAll(tags);
         });
 
         comboBox.setPromptText("Select a type");
@@ -74,7 +81,7 @@ public class CreatePatchModal extends VBox {
 
         createButton.setOnAction(e -> {
             onCreate.accept(
-                    new PatchRequest(textField.getText(), comboBox.getValue(), HubModel.versionModel().getId().get())
+                    new PatchRequest(textField.getText(), comboBox.getValue().getId(), HubModel.versionModel().getId().get())
             );
             textField.clear();
             comboBox.getSelectionModel().clearSelection();
@@ -105,7 +112,7 @@ public class CreatePatchModal extends VBox {
         comboBox.getItems().clear();
 
         for (TagDTO s : tags) {
-            comboBox.getItems().add(s.getName());
+            comboBox.getItems().add(s);
         }
     }
 

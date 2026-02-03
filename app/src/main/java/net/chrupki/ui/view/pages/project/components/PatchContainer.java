@@ -1,10 +1,14 @@
 package net.chrupki.ui.view.pages.project.components;
 
+import javafx.beans.property.SimpleStringProperty;
+import javafx.beans.property.StringProperty;
 import javafx.geometry.Insets;
 import javafx.geometry.Pos;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.layout.*;
+import net.chrupki.database.dao.TagDAO;
+import net.chrupki.dto.TagDTO;
 import net.chrupki.model.HubModel;
 import net.chrupki.ui.model.GlobalModel;
 import net.chrupki.dto.PatchDTO;
@@ -13,7 +17,15 @@ public class PatchContainer extends HBox {
 
     public PatchContainer(PatchDTO patch) {
 
-        Label typeLabel = new Label(patch.getType());
+        Label typeLabel = new Label();
+        StringProperty type = new SimpleStringProperty(
+                GlobalModel.getTags().stream()
+                        .filter(tag -> tag.getId() == patch.getTid())
+                        .map(TagDTO::getName)
+                        .findFirst()
+                        .orElse("")
+        );
+        typeLabel.textProperty().bind(type);
         typeLabel.getStyleClass().add("project-item-patch-type");
 
         typeLabel.setAlignment(Pos.CENTER);

@@ -12,7 +12,7 @@ public class TagService {
 
     public TagDTO create(String name) {
         try {
-            return TagDAO.insert(name);
+            return new TagDTO(name, TagDAO.insert(name));
         } catch (Exception e) {
             return null;
         }

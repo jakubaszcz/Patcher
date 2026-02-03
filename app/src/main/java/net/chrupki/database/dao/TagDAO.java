@@ -6,38 +6,32 @@ import net.chrupki.dto.VersionDTO;
 import net.chrupki.model.HubModel;
 import net.chrupki.ui.controllers.files.dtos.EditTag;
 
-import java.sql.Connection;
-import java.sql.PreparedStatement;
-import java.sql.ResultSet;
-import java.sql.SQLException;
+import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
 
 public class TagDAO {
-    public static TagDTO insert(String name) {
+    public static int insert(String name) {
         String sql = "INSERT INTO tags (tag) VALUES (?)";
 
         try (Connection conn = DatabaseHub.getInstance().getConnection();
-             PreparedStatement stmt =
-                     conn.prepareStatement(sql, PreparedStatement.RETURN_GENERATED_KEYS)) {
+             PreparedStatement stmt = conn.prepareStatement(
+                     sql, Statement.RETURN_GENERATED_KEYS
+             )) {
 
             stmt.setString(1, name);
             stmt.executeUpdate();
 
             try (ResultSet rs = stmt.getGeneratedKeys()) {
                 if (rs.next()) {
-                    return new TagDTO(
-                            rs.getString("tag"),
-                            rs.getInt("id")
-                    );
+                    return rs.getInt(1); // ✅ ID seulement
                 }
             }
 
-        } catch (SQLException ex) {
-            ex.printStackTrace();
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
         }
-
-        return null;
+        return -1;
     }
 
     public static List<TagDTO> all() {
@@ -114,4 +108,26 @@ public class TagDAO {
         }
         return false;
     }
+
+    public static String getTag(Integer id) {
+
+        String sql = "SELECT tag FROM tags WHERE id = ?";
+
+        try (Connection conn = DatabaseHub.getInstance().getConnection();
+             PreparedStatement stmt = conn.prepareStatement(sql)) {
+
+            stmt.setInt(1,  id);
+
+            try (ResultSet rs = stmt.executeQuery()) {
+                if (rs.next()) {
+                    return rs.getString("tag");
+                }
+                return null; // ou throw si id invalide
+            }
+
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
+    }
+
 }
