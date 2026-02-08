@@ -1,0 +1,62 @@
+/* =========================
+   TEXT SIZE
+   ========================= */
+
+.text-xs { -fx-font-size: 10px; }
+.text-sm { -fx-font-size: 12px; }
+.text-md { -fx-font-size: 14px; }
+.text-lg { -fx-font-size: 16px; }
+.text-xl { -fx-font-size: 20px; }
+.text-2xl { -fx-font-size: 24px; }
+
+/* =========================
+   TEXT COLOR - PRIMARY
+   ========================= */
+
+.text-primary-50  { -fx-text-fill: -color-primary-50; }
+.text-primary-100 { -fx-text-fill: -color-primary-100; }
+.text-primary-200 { -fx-text-fill: -color-primary-200; }
+.text-primary-300 { -fx-text-fill: -color-primary-300; }
+.text-primary-400 { -fx-text-fill: -color-primary-400; }
+.text-primary-500 { -fx-text-fill: -color-primary-500; }
+.text-primary-600 { -fx-text-fill: -color-primary-600; }
+.text-primary-700 { -fx-text-fill: -color-primary-700; }
+.text-primary-800 { -fx-text-fill: -color-primary-800; }
+.text-primary-900 { -fx-text-fill: -color-primary-900; }
+.text-primary-950 { -fx-text-fill: -color-primary-950; }
+
+/* =========================
+   TEXT COLOR - BASE
+   ========================= */
+
+.text-base-50  { -fx-text-fill: -color-base-50; }
+.text-base-100 { -fx-text-fill: -color-base-100; }
+.text-base-200 { -fx-text-fill: -color-base-200; }
+.text-base-300 { -fx-text-fill: -color-base-300; }
+.text-base-400 { -fx-text-fill: -color-base-400; }
+.text-base-500 { -fx-text-fill: -color-base-500; }
+.text-base-600 { -fx-text-fill: -color-base-600; }
+.text-base-700 { -fx-text-fill: -color-base-700; }
+.text-base-800 { -fx-text-fill: -color-base-800; }
+.text-base-900 { -fx-text-fill: -color-base-900; }
+.text-base-950 { -fx-text-fill: -color-base-950; }
+
+/* =========================
+   OPACITY
+   ========================= */
+
+.opacity-100 { -fx-opacity: 1; }
+.opacity-90  { -fx-opacity: 0.9; }
+.opacity-75  { -fx-opacity: 0.75; }
+.opacity-50  { -fx-opacity: 0.5; }
+.opacity-25  { -fx-opacity: 0.25; }
+.opacity-10  { -fx-opacity: 0.1; }
+
+/* =========================
+   FONT WEIGHT
+   ========================= */
+
+.font-light  { -fx-font-weight: 300; }
+.font-normal { -fx-font-weight: 400; }
+.font-medium { -fx-font-weight: 500; }
+.font-bold   { -fx-font-weight: 700; }

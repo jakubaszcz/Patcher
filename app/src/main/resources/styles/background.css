@@ -1,0 +1,43 @@
+/* =========================
+   BACKGROUND COLOR - PRIMARY
+   ========================= */
+
+.bg-primary-50  { -fx-background-color: -color-primary-50; }
+.bg-primary-100 { -fx-background-color: -color-primary-100; }
+.bg-primary-200 { -fx-background-color: -color-primary-200; }
+.bg-primary-300 { -fx-background-color: -color-primary-300; }
+.bg-primary-400 { -fx-background-color: -color-primary-400; }
+.bg-primary-500 { -fx-background-color: -color-primary-500; }
+.bg-primary-600 { -fx-background-color: -color-primary-600; }
+.bg-primary-700 { -fx-background-color: -color-primary-700; }
+.bg-primary-800 { -fx-background-color: -color-primary-800; }
+.bg-primary-900 { -fx-background-color: -color-primary-900; }
+.bg-primary-950 { -fx-background-color: -color-primary-950; }
+
+
+/* =========================
+   BACKGROUND COLOR - BASE
+   ========================= */
+
+.bg-base-50  { -fx-background-color: -color-base-50; }
+.bg-base-100 { -fx-background-color: -color-base-100; }
+.bg-base-200 { -fx-background-color: -color-base-200; }
+.bg-base-300 { -fx-background-color: -color-base-300; }
+.bg-base-400 { -fx-background-color: -color-base-400; }
+.bg-base-500 { -fx-background-color: -color-base-500; }
+.bg-base-600 { -fx-background-color: -color-base-600; }
+.bg-base-700 { -fx-background-color: -color-base-700; }
+.bg-base-800 { -fx-background-color: -color-base-800; }
+.bg-base-900 { -fx-background-color: -color-base-900; }
+.bg-base-950 { -fx-background-color: -color-base-950; }
+
+
+/* =========================
+   BORDER RADIUS
+   ========================= */
+
+.round-sm { -fx-background-radius: 4; }
+.round-md { -fx-background-radius: 8; }
+.round-lg { -fx-background-radius: 12; }
+.round-xl { -fx-background-radius: 16; }
+.round-full { -fx-background-radius: 999; }
