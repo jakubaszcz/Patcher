@@ -42,8 +42,7 @@ public class Patch extends VBox {
         getStyleClass().add("project-panel");
         getChildren().addAll(
                 new PatchHeader(HubController.getExportController()::export),
-                scrollPane,
-                new PatchFooter()
+                scrollPane
         );
     }
 
