@@ -26,7 +26,8 @@ public class MainPage {
                 Css.load("card-container.css"),
                 Css.load("modal.css"),
                 Css.load("empty-projects.css"),
-                Css.load("project.css")
+                Css.load("project.css"),
+                Css.load("scroll.css")
         );
 
         stage.setScene(scene);

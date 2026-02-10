@@ -9,6 +9,7 @@ import net.chrupki.model.HubModel;
 import net.chrupki.ui.controllers.HubController;
 import net.chrupki.ui.model.GlobalModel;
 import net.chrupki.dto.PatchDTO;
+import net.chrupki.ui.styles.scroll.ScrollStyle;
 
 public class Patch extends VBox {
 
@@ -26,8 +27,7 @@ public class Patch extends VBox {
         scrollPane.setContent(list);
         scrollPane.setFitToWidth(true);
 
-        scrollPane.setVbarPolicy(ScrollPane.ScrollBarPolicy.NEVER);
-        scrollPane.setHbarPolicy(ScrollPane.ScrollBarPolicy.NEVER);
+        new ScrollStyle().apply(scrollPane, true);
 
         scrollPane.setPannable(true);
 
