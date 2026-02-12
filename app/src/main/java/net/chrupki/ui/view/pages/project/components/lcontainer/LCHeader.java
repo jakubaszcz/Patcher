@@ -11,6 +11,8 @@ import javafx.scene.layout.Region;
 import javafx.scene.layout.VBox;
 import net.chrupki.model.HubModel;
 import net.chrupki.ui.model.GlobalModel;
+import net.chrupki.ui.styles.Styles;
+import net.chrupki.ui.styles.theme.TextTheme;
 
 import java.util.function.Consumer;
 
@@ -24,7 +26,8 @@ public class LCHeader extends HBox {
     ) {
         Label title = new Label();
         title.textProperty().bind(HubModel.projectModel().getName());
-        title.getStyleClass().add("project-title");
+        new Styles().apply(title, TextTheme.SUBTITLE);
+
 
         Button addButton = new Button("+");
         addButton.getStyleClass().add("project-add-button");

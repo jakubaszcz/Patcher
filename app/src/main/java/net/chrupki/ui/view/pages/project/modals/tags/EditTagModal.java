@@ -16,6 +16,8 @@ import net.chrupki.model.HubModel;
 import net.chrupki.ui.controllers.files.dtos.EditPatch;
 import net.chrupki.ui.controllers.files.dtos.EditTag;
 import net.chrupki.ui.model.GlobalModel;
+import net.chrupki.ui.styles.Styles;
+import net.chrupki.ui.styles.theme.TextTheme;
 
 import java.util.function.Consumer;
 
@@ -27,7 +29,8 @@ public class EditTagModal extends VBox {
             Runnable onClose
     ) {
         Label title = new Label("Edit tag");
-        title.getStyleClass().add("modal-title");
+        new Styles().apply(title, TextTheme.SUBTITLE);
+
 
         TextField textField = new TextField();
         textField.setPromptText("Tag name");

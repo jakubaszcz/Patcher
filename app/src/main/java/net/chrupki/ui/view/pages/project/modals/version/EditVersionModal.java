@@ -12,6 +12,8 @@ import javafx.scene.layout.VBox;
 import net.chrupki.model.HubModel;
 import net.chrupki.ui.controllers.files.dtos.EditVersion;
 import net.chrupki.ui.model.GlobalModel;
+import net.chrupki.ui.styles.Styles;
+import net.chrupki.ui.styles.theme.TextTheme;
 
 import java.util.function.Consumer;
 
@@ -23,7 +25,8 @@ public class EditVersionModal extends VBox {
             Runnable onClose
     ) {
         Label title = new Label("Edit version");
-        title.getStyleClass().add("modal-title");
+        new Styles().apply(title, TextTheme.SUBTITLE);
+
 
         TextField newName = new TextField();
         newName.setPromptText("New version name");

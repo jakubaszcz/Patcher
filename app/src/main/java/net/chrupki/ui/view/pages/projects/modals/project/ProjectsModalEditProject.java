@@ -12,6 +12,8 @@ import javafx.scene.layout.Region;
 import javafx.scene.layout.VBox;
 import net.chrupki.model.HubModel;
 import net.chrupki.ui.model.GlobalModel;
+import net.chrupki.ui.styles.Styles;
+import net.chrupki.ui.styles.theme.TextTheme;
 
 import java.util.function.BiConsumer;
 
@@ -26,7 +28,7 @@ public class ProjectsModalEditProject extends VBox {
         StringProperty projectName = HubModel.projectModel().getName();
 
         Label title = new Label("Edit project");
-        title.getStyleClass().add("modal-title");
+        new Styles().apply(title, TextTheme.SUBTITLE);
 
         TextField currentName = new TextField();
         currentName.textProperty().bind(projectName);

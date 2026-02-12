@@ -16,6 +16,8 @@ import net.chrupki.dto.TagDTO;
 import net.chrupki.model.HubModel;
 import net.chrupki.ui.controllers.files.dtos.EditPatch;
 import net.chrupki.ui.model.GlobalModel;
+import net.chrupki.ui.styles.Styles;
+import net.chrupki.ui.styles.theme.TextTheme;
 
 import java.util.function.BiConsumer;
 import java.util.function.Consumer;
@@ -31,7 +33,7 @@ public class EditPatchModal extends VBox {
             Runnable onClose
     ) {
         Label title = new Label("Edit patch");
-        title.getStyleClass().add("modal-title");
+        new Styles().apply(title, TextTheme.SUBTITLE);
 
         TextField textField = new TextField();
         textField.setPromptText("Patch name");

@@ -14,6 +14,8 @@ import net.chrupki.dto.TagDTO;
 import net.chrupki.model.HubModel;
 import net.chrupki.request.PatchRequest;
 import net.chrupki.ui.model.GlobalModel;
+import net.chrupki.ui.styles.Styles;
+import net.chrupki.ui.styles.theme.TextTheme;
 
 import java.util.function.Consumer;
 
@@ -26,7 +28,8 @@ public class CreateTagModal extends VBox {
         ObservableList<TagDTO> tags = GlobalModel.getTags();
 
         Label title = new Label("Create patch");
-        title.getStyleClass().add("modal-title");
+        new Styles().apply(title, TextTheme.SUBTITLE);
+
 
         TextField textField = new TextField();
         textField.setPromptText("Tag name");

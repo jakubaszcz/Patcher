@@ -27,6 +27,7 @@ public class MainPage {
                 Css.load("modal.css"),
                 Css.load("empty-projects.css"),
                 Css.load("project.css"),
+                Css.load("text.css"),
                 Css.load("scroll.css")
         );
 

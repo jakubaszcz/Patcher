@@ -26,7 +26,6 @@ public class PatchContainer extends HBox {
                         .orElse("")
         );
         typeLabel.textProperty().bind(type);
-        typeLabel.getStyleClass().add("project-item-patch-type");
 
         typeLabel.setAlignment(Pos.CENTER);
         typeLabel.setPadding(new Insets(4, 10, 4, 10));

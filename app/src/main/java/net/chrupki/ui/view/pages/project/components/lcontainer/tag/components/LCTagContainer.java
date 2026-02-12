@@ -11,17 +11,19 @@ import javafx.scene.layout.VBox;
 import net.chrupki.dto.TagDTO;
 import net.chrupki.model.HubModel;
 import net.chrupki.ui.model.GlobalModel;
+import net.chrupki.ui.styles.Styles;
+import net.chrupki.ui.styles.theme.TextTheme;
 
 public class LCTagContainer extends HBox {
 
     public LCTagContainer(TagDTO tagDTO) {
         Label name = new Label(tagDTO.getName());
-        name.getStyleClass().add("project-item-title");
+        new Styles().apply(name, TextTheme.TEXT_ITEM);
 
         HBox versionBox = new HBox(8, name);
 
         Label meta = new Label("Tag");
-        meta.getStyleClass().add("project-item-meta");
+        new Styles().apply(meta, TextTheme.TEXT_MAIN);
 
         VBox textBox = new VBox(2, versionBox, meta);
         textBox.setAlignment(Pos.CENTER_LEFT);

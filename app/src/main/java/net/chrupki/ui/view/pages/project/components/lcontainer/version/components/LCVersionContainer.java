@@ -11,6 +11,8 @@ import javafx.scene.layout.VBox;
 import net.chrupki.model.HubModel;
 import net.chrupki.ui.model.GlobalModel;
 import net.chrupki.dto.VersionDTO;
+import net.chrupki.ui.styles.Styles;
+import net.chrupki.ui.styles.theme.TextTheme;
 
 import java.util.function.Consumer;
 
@@ -19,7 +21,7 @@ public class LCVersionContainer extends HBox {
     public LCVersionContainer(VersionDTO version, Consumer<VersionDTO> onSelectVersion) {
 
         Label name = new Label("v" + version.getVersion());
-        name.getStyleClass().add("project-item-title");
+        new Styles().apply(name, TextTheme.TEXT_ITEM);
 
         Label type = new Label(version.getType());
         type.getStyleClass().add("version-type-badge");
@@ -27,7 +29,8 @@ public class LCVersionContainer extends HBox {
         HBox versionBox = new HBox(8, name, type);
 
         Label meta = new Label("Version");
-        meta.getStyleClass().add("project-item-meta");
+        new Styles().apply(meta, TextTheme.TEXT_MAIN);
+
 
         VBox textBox = new VBox(2, versionBox, meta);
         textBox.setAlignment(Pos.CENTER_LEFT);

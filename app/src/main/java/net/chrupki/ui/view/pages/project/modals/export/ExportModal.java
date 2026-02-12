@@ -16,6 +16,8 @@ import net.chrupki.database.dao.VersionDAO;
 import net.chrupki.model.HubModel;
 import net.chrupki.request.ExportRequest;
 import net.chrupki.ui.model.GlobalModel;
+import net.chrupki.ui.styles.Styles;
+import net.chrupki.ui.styles.theme.TextTheme;
 
 import java.io.File;
 import java.util.List;
@@ -28,7 +30,7 @@ public class ExportModal extends VBox {
         ObservableList<String> templates = GlobalModel.getTemplates();
 
         Label title = new Label("Export version");
-        title.getStyleClass().add("modal-title");
+        new Styles().apply(title, TextTheme.SUBTITLE);
 
         ComboBox<String> comboBox = new ComboBox<>();
         comboBox.getStyleClass().add("modal-combobox");

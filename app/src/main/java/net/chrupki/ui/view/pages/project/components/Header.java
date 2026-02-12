@@ -9,6 +9,8 @@ import javafx.scene.layout.HBox;
 import net.chrupki.dto.VersionDTO;
 import net.chrupki.model.HubModel;
 import net.chrupki.ui.model.GlobalModel;
+import net.chrupki.ui.styles.Styles;
+import net.chrupki.ui.styles.theme.TextTheme;
 import net.chrupki.ui.view.manager.PageManager;
 import net.chrupki.ui.view.pages.projects.ProjectsView;
 
@@ -20,7 +22,8 @@ public class Header extends HBox {
         backButton.getStyleClass().add("header-back-button");
 
         Label backLabel = new Label("Go back");
-        backLabel.getStyleClass().add("header-back-text");
+        new Styles().apply(backLabel, TextTheme.TEXT_MAIN);
+
 
         HBox backGroup = new HBox(8, backButton, backLabel);
         backGroup.setAlignment(Pos.CENTER_LEFT);

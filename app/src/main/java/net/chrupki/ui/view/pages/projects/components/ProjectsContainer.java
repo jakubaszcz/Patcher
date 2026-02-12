@@ -7,6 +7,8 @@ import javafx.scene.control.Label;
 import net.chrupki.dto.ProjectDTO;
 import net.chrupki.model.HubModel;
 import net.chrupki.ui.controllers.HubController;
+import net.chrupki.ui.styles.Styles;
+import net.chrupki.ui.styles.theme.TextTheme;
 import net.chrupki.ui.view.pages.project.ProjectView;
 import net.chrupki.ui.view.pages.projects.dto.ProjectContainerDTO;
 
@@ -20,7 +22,8 @@ public class ProjectsContainer extends HBox {
     ) {
 
         Label title = new Label(projectContainerModel.getProjectDTO().getName());
-        title.getStyleClass().add("card-title");
+        new Styles().apply(title, TextTheme.TEXT_ITEM);
+
 
         Button edit = new Button("Edit");
         edit.getStyleClass().add("card-action");

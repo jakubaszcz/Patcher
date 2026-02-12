@@ -12,6 +12,8 @@ import net.chrupki.model.HubModel;
 import net.chrupki.database.dao.VersionDAO;
 import net.chrupki.request.ExportRequest;
 import net.chrupki.ui.model.GlobalModel;
+import net.chrupki.ui.styles.Styles;
+import net.chrupki.ui.styles.theme.TextTheme;
 
 import java.io.File;
 import java.util.List;
@@ -21,7 +23,8 @@ public class PatchHeader extends HBox {
 
     public PatchHeader(Consumer<ExportRequest> onExport) {
         Label title = new Label("Patches");
-        title.getStyleClass().add("project-title");
+        new Styles().apply(title, TextTheme.TITLE);
+
 
         Button addButton = new Button("+");
         addButton.getStyleClass().add("project-add-button");
