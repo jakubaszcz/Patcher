@@ -25,7 +25,7 @@ public class LCVersionContainer extends HBox {
         new Styles().apply(name, TextTheme.TEXT_ITEM);
 
         Label type = new Label(version.getType());
-        type.getStyleClass().add("version-type-badge");
+        new Styles().apply(type, TextTheme.TEXT_BADGE);
 
         HBox versionBox = new HBox(8, name, type);
 

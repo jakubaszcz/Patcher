@@ -14,6 +14,7 @@ import net.chrupki.ui.model.GlobalModel;
 import net.chrupki.dto.PatchDTO;
 import net.chrupki.ui.styles.Styles;
 import net.chrupki.ui.styles.theme.ButtonTheme;
+import net.chrupki.ui.styles.theme.TextTheme;
 
 public class PatchContainer extends HBox {
 
@@ -31,7 +32,7 @@ public class PatchContainer extends HBox {
 
         typeLabel.setAlignment(Pos.CENTER);
         typeLabel.setPadding(new Insets(4, 10, 4, 10));
-        typeLabel.getStyleClass().add("project-item-patch-type-box");
+        new Styles().apply(typeLabel, TextTheme.TEXT_BADGE);
 
         Label content = new Label(patch.getContent());
         content.getStyleClass().add("project-item-meta");
