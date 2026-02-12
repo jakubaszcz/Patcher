@@ -3,7 +3,9 @@ package net.chrupki.ui.view.pages.project.components.lcontainer;
 import javafx.scene.control.ScrollPane;
 import javafx.scene.layout.VBox;
 import net.chrupki.model.HubModel;
+import net.chrupki.ui.styles.Styles;
 import net.chrupki.ui.styles.scroll.ScrollStyle;
+import net.chrupki.ui.styles.theme.ContainerTheme;
 import net.chrupki.ui.view.pages.project.components.lcontainer.tag.LCTag;
 import net.chrupki.ui.view.pages.project.components.lcontainer.version.LCVersion;
 
@@ -39,7 +41,8 @@ public class LContainer extends VBox {
             }
         });
 
-        getStyleClass().add("project-panel");
+        new Styles().apply(this, ContainerTheme.CONTAINER);
+
         getChildren().addAll(
                 header,
                 scrollPane

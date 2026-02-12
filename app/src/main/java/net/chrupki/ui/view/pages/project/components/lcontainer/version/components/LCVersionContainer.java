@@ -13,6 +13,7 @@ import net.chrupki.ui.model.GlobalModel;
 import net.chrupki.dto.VersionDTO;
 import net.chrupki.ui.styles.Styles;
 import net.chrupki.ui.styles.theme.ButtonTheme;
+import net.chrupki.ui.styles.theme.ContainerTheme;
 import net.chrupki.ui.styles.theme.TextTheme;
 
 import java.util.function.Consumer;
@@ -52,7 +53,8 @@ public class LCVersionContainer extends HBox {
         setPadding(new Insets(10, 12, 10, 12));
         setSpacing(8);
 
-        getStyleClass().add("project-item");
+        new Styles().apply(this, ContainerTheme.BODY);
+
 
         setOnMouseClicked(e -> {
             onSelectVersion.accept(version);

@@ -9,7 +9,9 @@ import net.chrupki.model.HubModel;
 import net.chrupki.ui.controllers.HubController;
 import net.chrupki.ui.model.GlobalModel;
 import net.chrupki.dto.PatchDTO;
+import net.chrupki.ui.styles.Styles;
 import net.chrupki.ui.styles.scroll.ScrollStyle;
+import net.chrupki.ui.styles.theme.ContainerTheme;
 
 public class Patch extends VBox {
 
@@ -39,7 +41,8 @@ public class Patch extends VBox {
                 refresh(patches)
         );
 
-        getStyleClass().add("project-panel");
+        new Styles().apply(this, ContainerTheme.CONTAINER);
+
         getChildren().addAll(
                 new PatchHeader(HubController.getExportController()::export),
                 scrollPane

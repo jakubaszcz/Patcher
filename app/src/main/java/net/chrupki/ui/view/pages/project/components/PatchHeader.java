@@ -14,6 +14,7 @@ import net.chrupki.request.ExportRequest;
 import net.chrupki.ui.model.GlobalModel;
 import net.chrupki.ui.styles.Styles;
 import net.chrupki.ui.styles.theme.ButtonTheme;
+import net.chrupki.ui.styles.theme.ContainerTheme;
 import net.chrupki.ui.styles.theme.TextTheme;
 
 import java.io.File;
@@ -52,7 +53,7 @@ public class PatchHeader extends HBox {
 
         setMaxWidth(Double.MAX_VALUE);
 
-        getStyleClass().add("project-header");
+        new Styles().apply(this, ContainerTheme.HEADER);
 
         getChildren().addAll(
                 title,

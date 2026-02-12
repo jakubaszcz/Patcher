@@ -14,6 +14,7 @@ import net.chrupki.ui.model.GlobalModel;
 import net.chrupki.dto.PatchDTO;
 import net.chrupki.ui.styles.Styles;
 import net.chrupki.ui.styles.theme.ButtonTheme;
+import net.chrupki.ui.styles.theme.ContainerTheme;
 import net.chrupki.ui.styles.theme.TextTheme;
 
 public class PatchContainer extends HBox {
@@ -57,7 +58,8 @@ public class PatchContainer extends HBox {
         setPadding(new Insets(10, 12, 10, 12));
         setSpacing(12);
 
-        getStyleClass().add("project-item");
+        new Styles().apply(this, ContainerTheme.BODY);
+
 
         getChildren().addAll(
                 textBox,

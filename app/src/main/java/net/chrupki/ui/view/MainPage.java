@@ -24,7 +24,7 @@ public class MainPage {
                 Css.load("theme.css"),
                 Css.load("header.css"),
                 Css.load("card.css"),
-                Css.load("project.css"),
+                Css.load("container.css"),
                 Css.load("text.css"),
                 Css.load("button.css"),
                 Css.load("combo-box.css"),

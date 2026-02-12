@@ -13,6 +13,7 @@ import net.chrupki.model.HubModel;
 import net.chrupki.ui.model.GlobalModel;
 import net.chrupki.ui.styles.Styles;
 import net.chrupki.ui.styles.theme.ButtonTheme;
+import net.chrupki.ui.styles.theme.ContainerTheme;
 import net.chrupki.ui.styles.theme.TextTheme;
 
 public class LCTagContainer extends HBox {
@@ -45,7 +46,7 @@ public class LCTagContainer extends HBox {
         setPadding(new Insets(10, 12, 10, 12));
         setSpacing(8);
 
-        getStyleClass().add("project-item");
+        new Styles().apply(this, ContainerTheme.BODY);
 
         getChildren().addAll(
                 textBox,
