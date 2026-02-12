@@ -38,7 +38,7 @@ public class ProjectsModalCreateProject extends VBox {
         new Styles().apply(closeButton, ButtonTheme.CANCEL);
 
         Button createButton = new Button("Create");
-        new Styles().apply(closeButton, ButtonTheme.NORMAL);
+        new Styles().apply(createButton, ButtonTheme.NORMAL);
 
         closeButton.setOnAction(e -> {
             textField.clear();
