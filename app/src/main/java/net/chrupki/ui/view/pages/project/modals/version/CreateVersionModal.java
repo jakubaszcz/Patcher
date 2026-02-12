@@ -13,6 +13,7 @@ import javafx.scene.layout.VBox;
 import net.chrupki.ui.model.GlobalModel;
 import net.chrupki.ui.styles.Styles;
 import net.chrupki.ui.styles.theme.ButtonTheme;
+import net.chrupki.ui.styles.theme.ComboBoxTheme;
 import net.chrupki.ui.styles.theme.TextTheme;
 
 import java.util.function.BiConsumer;
@@ -32,7 +33,8 @@ public class CreateVersionModal extends VBox {
         textField.getStyleClass().add("modal-textfield");
 
         ComboBox<String> comboBox = new ComboBox<>();
-        comboBox.getStyleClass().add("modal-combobox");
+        new Styles().apply(comboBox, ComboBoxTheme.NORMAL);
+
 
         comboBox.getItems().addAll(
                 "Alpha", "Beta", "Pre-release", "HotFix", "Stable"

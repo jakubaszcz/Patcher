@@ -18,6 +18,7 @@ import net.chrupki.request.PatchRequest;
 import net.chrupki.ui.model.GlobalModel;
 import net.chrupki.ui.styles.Styles;
 import net.chrupki.ui.styles.theme.ButtonTheme;
+import net.chrupki.ui.styles.theme.ComboBoxTheme;
 import net.chrupki.ui.styles.theme.TextTheme;
 
 import java.util.function.Consumer;
@@ -39,7 +40,7 @@ public class CreatePatchModal extends VBox {
         textField.setPromptText("Patch name");
         textField.getStyleClass().add("modal-textfield");
 
-        comboBox.getStyleClass().add("modal-combobox");
+        new Styles().apply(comboBox, ComboBoxTheme.NORMAL);
 
         comboBox.getItems().setAll(tags);
 

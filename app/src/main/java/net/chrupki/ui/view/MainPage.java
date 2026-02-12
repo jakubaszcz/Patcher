@@ -28,6 +28,7 @@ public class MainPage {
                 Css.load("project.css"),
                 Css.load("text.css"),
                 Css.load("button.css"),
+                Css.load("combo-box.css"),
                 Css.load("scroll.css")
         );
 
