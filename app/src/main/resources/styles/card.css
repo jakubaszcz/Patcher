@@ -1,0 +1,4 @@
+.card {
+    -fx-background-color: -color-base-900;
+    -fx-background-radius: 5px;
+}
