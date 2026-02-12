@@ -18,6 +18,7 @@ import net.chrupki.ui.controllers.files.dtos.EditTag;
 import net.chrupki.ui.model.GlobalModel;
 import net.chrupki.ui.styles.Styles;
 import net.chrupki.ui.styles.theme.ButtonTheme;
+import net.chrupki.ui.styles.theme.TextFieldTheme;
 import net.chrupki.ui.styles.theme.TextTheme;
 
 import java.util.function.Consumer;
@@ -35,7 +36,8 @@ public class EditTagModal extends VBox {
 
         TextField textField = new TextField();
         textField.setPromptText("Tag name");
-        textField.getStyleClass().add("modal-textfield");
+        new Styles().apply(textField, TextFieldTheme.NORMAL);
+
 
         Button deleteButton = new Button("Delete");
         new Styles().apply(deleteButton, ButtonTheme.DANGER);

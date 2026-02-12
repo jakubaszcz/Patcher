@@ -24,11 +24,12 @@ public class MainPage {
                 Css.load("theme.css"),
                 Css.load("header.css"),
                 Css.load("card-container.css"),
-                Css.load("modal.css"),
+                Css.load("card.css"),
                 Css.load("project.css"),
                 Css.load("text.css"),
                 Css.load("button.css"),
                 Css.load("combo-box.css"),
+                Css.load("text-field.css"),
                 Css.load("scroll.css")
         );
 

@@ -14,6 +14,7 @@ import net.chrupki.ui.model.GlobalModel;
 import net.chrupki.ui.styles.Styles;
 import net.chrupki.ui.styles.theme.ButtonTheme;
 import net.chrupki.ui.styles.theme.ComboBoxTheme;
+import net.chrupki.ui.styles.theme.TextFieldTheme;
 import net.chrupki.ui.styles.theme.TextTheme;
 
 import java.util.function.BiConsumer;
@@ -30,7 +31,7 @@ public class CreateVersionModal extends VBox {
 
         TextField textField = new TextField();
         textField.setPromptText("Version name");
-        textField.getStyleClass().add("modal-textfield");
+        new Styles().apply(textField, TextFieldTheme.NORMAL);
 
         ComboBox<String> comboBox = new ComboBox<>();
         new Styles().apply(comboBox, ComboBoxTheme.NORMAL);

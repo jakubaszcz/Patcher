@@ -13,6 +13,7 @@ import net.chrupki.dto.ProjectDTO;
 import net.chrupki.ui.model.GlobalModel;
 import net.chrupki.ui.styles.Styles;
 import net.chrupki.ui.styles.theme.ButtonTheme;
+import net.chrupki.ui.styles.theme.TextFieldTheme;
 import net.chrupki.ui.styles.theme.TextTheme;
 
 import java.util.function.Consumer;
@@ -29,7 +30,8 @@ public class ProjectsModalCreateProject extends VBox {
 
         TextField textField = new TextField();
         textField.setPromptText("Project name");
-        textField.getStyleClass().add("modal-textfield");
+        new Styles().apply(textField, TextFieldTheme.NORMAL);
+
 
         Button closeButton = new Button("Cancel");
         new Styles().apply(closeButton, ButtonTheme.CANCEL);

@@ -14,6 +14,7 @@ import net.chrupki.ui.controllers.files.dtos.EditVersion;
 import net.chrupki.ui.model.GlobalModel;
 import net.chrupki.ui.styles.Styles;
 import net.chrupki.ui.styles.theme.ButtonTheme;
+import net.chrupki.ui.styles.theme.TextFieldTheme;
 import net.chrupki.ui.styles.theme.TextTheme;
 
 import java.util.function.Consumer;
@@ -31,7 +32,8 @@ public class EditVersionModal extends VBox {
 
         TextField newName = new TextField();
         newName.setPromptText("New version name");
-        newName.getStyleClass().add("modal-textfield");
+        new Styles().apply(newName, TextFieldTheme.NORMAL);
+
 
         Button deleteButton = new Button("Delete");
         new Styles().apply(deleteButton, ButtonTheme.DANGER);
