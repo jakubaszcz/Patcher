@@ -1,0 +1,19 @@
+.container {
+    -fx-background-color: -color-base-800;
+    -fx-pref-width: 280;
+}
+
+.container-header {
+    -fx-background-color: -color-base-900;
+    -fx-padding: 12;
+    -fx-pref-width: 280;
+}
+
+.container-body {
+    -fx-background-color: -color-base-800;
+    -fx-cursor: hand;
+}
+
+.container-body:hover {
+    -fx-background-color: -color-primary-800;
+}
