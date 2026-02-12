@@ -13,6 +13,7 @@ import net.chrupki.database.dao.VersionDAO;
 import net.chrupki.request.ExportRequest;
 import net.chrupki.ui.model.GlobalModel;
 import net.chrupki.ui.styles.Styles;
+import net.chrupki.ui.styles.theme.ButtonTheme;
 import net.chrupki.ui.styles.theme.TextTheme;
 
 import java.io.File;
@@ -27,10 +28,10 @@ public class PatchHeader extends HBox {
 
 
         Button addButton = new Button("+");
-        addButton.getStyleClass().add("project-add-button");
+        new Styles().apply(addButton, ButtonTheme.NORMAL);
 
         Button exportButton = new Button("Export");
-        exportButton.getStyleClass().add("project-add-button");
+        new Styles().apply(exportButton, ButtonTheme.NORMAL);
 
         Region spacer = new Region();
         HBox.setHgrow(spacer, Priority.ALWAYS);

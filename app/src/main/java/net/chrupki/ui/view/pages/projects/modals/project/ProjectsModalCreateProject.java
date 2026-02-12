@@ -12,6 +12,7 @@ import javafx.scene.layout.VBox;
 import net.chrupki.dto.ProjectDTO;
 import net.chrupki.ui.model.GlobalModel;
 import net.chrupki.ui.styles.Styles;
+import net.chrupki.ui.styles.theme.ButtonTheme;
 import net.chrupki.ui.styles.theme.TextTheme;
 
 import java.util.function.Consumer;
@@ -31,10 +32,10 @@ public class ProjectsModalCreateProject extends VBox {
         textField.getStyleClass().add("modal-textfield");
 
         Button closeButton = new Button("Cancel");
-        closeButton.getStyleClass().add("modal-button-close");
+        new Styles().apply(closeButton, ButtonTheme.CANCEL);
 
         Button createButton = new Button("Create");
-        createButton.getStyleClass().add("modal-button-create");
+        new Styles().apply(closeButton, ButtonTheme.NORMAL);
 
         closeButton.setOnAction(e -> {
             textField.clear();

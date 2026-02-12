@@ -4,11 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="c1aa160e-de6c-484d-8c28-5409cf16dc62" name="Changes" comment="add(style): custom style files">
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/net/chrupki/ui/styles/HasCss.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/net/chrupki/ui/styles/Styles.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/net/chrupki/ui/styles/theme/TextTheme.java" afterDir="false" />
+    <list default="true" id="c1aa160e-de6c-484d-8c28-5409cf16dc62" name="Changes" comment="refactor(style): change text style">
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/net/chrupki/ui/styles/theme/ButtonTheme.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/resources/styles/button.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/net/chrupki/ui/styles/Styles.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/net/chrupki/ui/styles/Styles.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/net/chrupki/ui/view/MainPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/net/chrupki/ui/view/MainPage.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/net/chrupki/ui/view/pages/project/components/Header.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/net/chrupki/ui/view/pages/project/components/Header.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/net/chrupki/ui/view/pages/project/components/PatchContainer.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/net/chrupki/ui/view/pages/project/components/PatchContainer.java" afterDir="false" />
@@ -23,12 +23,14 @@
       <change beforePath="$PROJECT_DIR$/app/src/main/java/net/chrupki/ui/view/pages/project/modals/tags/EditTagModal.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/net/chrupki/ui/view/pages/project/modals/tags/EditTagModal.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/net/chrupki/ui/view/pages/project/modals/version/CreateVersionModal.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/net/chrupki/ui/view/pages/project/modals/version/CreateVersionModal.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/net/chrupki/ui/view/pages/project/modals/version/EditVersionModal.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/net/chrupki/ui/view/pages/project/modals/version/EditVersionModal.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/net/chrupki/ui/view/pages/projects/EmptyProjectsView.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/net/chrupki/ui/view/pages/projects/EmptyProjectsView.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/net/chrupki/ui/view/pages/projects/components/CreateProjectButton.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/net/chrupki/ui/view/pages/projects/components/CreateProjectButton.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/net/chrupki/ui/view/pages/projects/components/ProjectsContainer.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/net/chrupki/ui/view/pages/projects/components/ProjectsContainer.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/net/chrupki/ui/view/pages/projects/modals/project/ProjectsModalCreateProject.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/net/chrupki/ui/view/pages/projects/modals/project/ProjectsModalCreateProject.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/net/chrupki/ui/view/pages/projects/modals/project/ProjectsModalEditProject.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/net/chrupki/ui/view/pages/projects/modals/project/ProjectsModalEditProject.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/resources/styles/text.css" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/resources/styles/text.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/resources/styles/card-container.css" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/resources/styles/card-container.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/resources/styles/empty-projects.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/resources/styles/modal.css" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/resources/styles/modal.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/resources/styles/project.css" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/resources/styles/project.css" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -187,23 +189,7 @@
       <workItem from="1770026455126" duration="12703000" />
       <workItem from="1770119027273" duration="12667000" />
       <workItem from="1770895896091" duration="89000" />
-      <workItem from="1770922101369" duration="1496000" />
-    </task>
-    <task id="LOCAL-00025" summary="Add display patches in UI and update project">
-      <option name="closed" value="true" />
-      <created>1767553310839</created>
-      <option name="number" value="00025" />
-      <option name="presentableId" value="LOCAL-00025" />
-      <option name="project" value="LOCAL" />
-      <updated>1767553310839</updated>
-    </task>
-    <task id="LOCAL-00026" summary="Fix clear when version changement">
-      <option name="closed" value="true" />
-      <created>1767555549467</created>
-      <option name="number" value="00026" />
-      <option name="presentableId" value="LOCAL-00026" />
-      <option name="project" value="LOCAL" />
-      <updated>1767555549467</updated>
+      <workItem from="1770922101369" duration="3399000" />
     </task>
     <task id="LOCAL-00027" summary="Update code to display with controller and service">
       <option name="closed" value="true" />
@@ -581,15 +567,29 @@
       <option name="project" value="LOCAL" />
       <updated>1770731779626</updated>
     </task>
-    <option name="localTasksCounter" value="74" />
+    <task id="LOCAL-00074" summary="add(style): custom style enum">
+      <option name="closed" value="true" />
+      <created>1770929063733</created>
+      <option name="number" value="00074" />
+      <option name="presentableId" value="LOCAL-00074" />
+      <option name="project" value="LOCAL" />
+      <updated>1770929063733</updated>
+    </task>
+    <task id="LOCAL-00075" summary="refactor(style): change text style">
+      <option name="closed" value="true" />
+      <created>1770929113186</created>
+      <option name="number" value="00075" />
+      <option name="presentableId" value="LOCAL-00075" />
+      <option name="project" value="LOCAL" />
+      <updated>1770929113186</updated>
+    </task>
+    <option name="localTasksCounter" value="76" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="feat(ui): add stable version type" />
-    <MESSAGE value="feat(ui): create a export modal" />
     <MESSAGE value="feat(ui): display patch on the custom Markodown" />
     <MESSAGE value="feat(db): create new table for the database" />
     <MESSAGE value="add(dto): create dto for tags" />
@@ -613,7 +613,9 @@
     <MESSAGE value="fix(ui): creating version or tag isn't link to any toggle" />
     <MESSAGE value="delete(ui): remove unused components, patch footer" />
     <MESSAGE value="add(style): interface to apply styling" />
-    <option name="LAST_COMMIT_MESSAGE" value="add(style): interface to apply styling" />
+    <MESSAGE value="add(style): custom style enum" />
+    <MESSAGE value="refactor(style): change text style" />
+    <option name="LAST_COMMIT_MESSAGE" value="refactor(style): change text style" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

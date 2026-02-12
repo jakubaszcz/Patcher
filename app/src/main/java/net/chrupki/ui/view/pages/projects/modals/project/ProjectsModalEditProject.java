@@ -13,6 +13,7 @@ import javafx.scene.layout.VBox;
 import net.chrupki.model.HubModel;
 import net.chrupki.ui.model.GlobalModel;
 import net.chrupki.ui.styles.Styles;
+import net.chrupki.ui.styles.theme.ButtonTheme;
 import net.chrupki.ui.styles.theme.TextTheme;
 
 import java.util.function.BiConsumer;
@@ -41,13 +42,13 @@ public class ProjectsModalEditProject extends VBox {
         newName.getStyleClass().add("modal-textfield");
 
         Button deleteButton = new Button("Delete");
-        deleteButton.getStyleClass().add("modal-button-danger");
+        new Styles().apply(deleteButton, ButtonTheme.DANGER);
 
         Button closeButton = new Button("Cancel");
-        closeButton.getStyleClass().add("modal-button-close");
+        new Styles().apply(closeButton, ButtonTheme.CANCEL);
 
         Button saveButton = new Button("Save");
-        saveButton.getStyleClass().add("modal-button-create");
+        new Styles().apply(saveButton, ButtonTheme.NORMAL);
 
         deleteButton.setOnAction(e -> {
             onDelete.run();

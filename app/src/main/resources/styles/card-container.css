@@ -20,14 +20,6 @@
     -fx-spacing: 6;
 }
 
-.card-action {
-    -fx-background-color: transparent;
-    -fx-text-fill: -color-base-500;
-    -fx-font-size: 12px;
-    -fx-padding: 6 10;
-    -fx-background-radius: 5px;
-}
-
 .card-action:hover {
     -fx-text-fill: -color-base-400;
 }

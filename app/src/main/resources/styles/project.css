@@ -46,17 +46,6 @@
     -fx-font-size: 10px;
 }
 
-.project-item-button {
-    -fx-background-color: transparent;
-    -fx-text-fill: -color-base-500;
-    -fx-padding: 4 10;
-    -fx-background-radius: 5px;
-}
-
-.project-item-button:hover {
-    -fx-text-fill: -color-base-400;
-}
-
 .project-item-patch-type {
     -fx-text-fill: -color-primary-100;
     -fx-font-size: 11px;

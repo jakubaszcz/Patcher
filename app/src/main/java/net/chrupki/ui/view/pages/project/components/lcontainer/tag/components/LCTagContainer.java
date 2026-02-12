@@ -12,6 +12,7 @@ import net.chrupki.dto.TagDTO;
 import net.chrupki.model.HubModel;
 import net.chrupki.ui.model.GlobalModel;
 import net.chrupki.ui.styles.Styles;
+import net.chrupki.ui.styles.theme.ButtonTheme;
 import net.chrupki.ui.styles.theme.TextTheme;
 
 public class LCTagContainer extends HBox {
@@ -29,7 +30,7 @@ public class LCTagContainer extends HBox {
         textBox.setAlignment(Pos.CENTER_LEFT);
 
         Button editButton = new Button("Edit");
-        editButton.getStyleClass().add("project-item-button");
+        new Styles().apply(editButton, ButtonTheme.EDIT);
 
         editButton.setOnAction(e -> {
             HubModel.tagModel().from(tagDTO);

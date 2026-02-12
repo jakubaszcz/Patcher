@@ -12,6 +12,7 @@ import javafx.scene.layout.VBox;
 import net.chrupki.model.HubModel;
 import net.chrupki.ui.model.GlobalModel;
 import net.chrupki.ui.styles.Styles;
+import net.chrupki.ui.styles.theme.ButtonTheme;
 import net.chrupki.ui.styles.theme.TextTheme;
 
 import java.util.function.Consumer;
@@ -30,7 +31,7 @@ public class LCHeader extends HBox {
 
 
         Button addButton = new Button("+");
-        addButton.getStyleClass().add("project-add-button");
+        new Styles().apply(addButton, ButtonTheme.NORMAL);
 
         Button toggle = new Button("Tags");
 
@@ -42,8 +43,7 @@ public class LCHeader extends HBox {
 
             onToggle.accept(view);
         });
-        toggle.getStyleClass().add("project-add-button");
-
+        new Styles().apply(toggle, ButtonTheme.NORMAL);
 
         Region spacer = new Region();
         HBox.setHgrow(spacer, Priority.ALWAYS);

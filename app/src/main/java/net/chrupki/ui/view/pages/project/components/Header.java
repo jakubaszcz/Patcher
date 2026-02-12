@@ -10,6 +10,7 @@ import net.chrupki.dto.VersionDTO;
 import net.chrupki.model.HubModel;
 import net.chrupki.ui.model.GlobalModel;
 import net.chrupki.ui.styles.Styles;
+import net.chrupki.ui.styles.theme.ButtonTheme;
 import net.chrupki.ui.styles.theme.TextTheme;
 import net.chrupki.ui.view.manager.PageManager;
 import net.chrupki.ui.view.pages.projects.ProjectsView;
@@ -19,7 +20,7 @@ public class Header extends HBox {
     public Header(PageManager viewManager) {
 
         Button backButton = new Button("←");
-        backButton.getStyleClass().add("header-back-button");
+        new Styles().apply(backButton, ButtonTheme.NORMAL);
 
         Label backLabel = new Label("Go back");
         new Styles().apply(backLabel, TextTheme.TEXT_MAIN);

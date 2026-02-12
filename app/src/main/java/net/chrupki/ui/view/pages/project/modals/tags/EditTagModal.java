@@ -17,6 +17,7 @@ import net.chrupki.ui.controllers.files.dtos.EditPatch;
 import net.chrupki.ui.controllers.files.dtos.EditTag;
 import net.chrupki.ui.model.GlobalModel;
 import net.chrupki.ui.styles.Styles;
+import net.chrupki.ui.styles.theme.ButtonTheme;
 import net.chrupki.ui.styles.theme.TextTheme;
 
 import java.util.function.Consumer;
@@ -37,13 +38,13 @@ public class EditTagModal extends VBox {
         textField.getStyleClass().add("modal-textfield");
 
         Button deleteButton = new Button("Delete");
-        deleteButton.getStyleClass().add("modal-button-danger");
+        new Styles().apply(deleteButton, ButtonTheme.DANGER);
 
         Button closeButton = new Button("Cancel");
-        closeButton.getStyleClass().add("modal-button-close");
+        new Styles().apply(closeButton, ButtonTheme.CANCEL);
 
         Button createButton = new Button("Save");
-        createButton.getStyleClass().add("modal-button-create");
+        new Styles().apply(createButton, ButtonTheme.NORMAL);
 
         Region spacer = new Region();
         HBox.setHgrow(spacer, Priority.ALWAYS);

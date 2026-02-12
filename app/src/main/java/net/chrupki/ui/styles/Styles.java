@@ -6,7 +6,6 @@ public class Styles implements StyleApplier<HasCss> {
 
     @Override
     public void apply(Node node, HasCss option) {
-        System.out.println(option.css());
         node.getStyleClass().add(option.css());
     }
 

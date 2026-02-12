@@ -25,9 +25,9 @@ public class MainPage {
                 Css.load("header.css"),
                 Css.load("card-container.css"),
                 Css.load("modal.css"),
-                Css.load("empty-projects.css"),
                 Css.load("project.css"),
                 Css.load("text.css"),
+                Css.load("button.css"),
                 Css.load("scroll.css")
         );
 

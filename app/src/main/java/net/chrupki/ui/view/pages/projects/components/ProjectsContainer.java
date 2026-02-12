@@ -8,6 +8,7 @@ import net.chrupki.dto.ProjectDTO;
 import net.chrupki.model.HubModel;
 import net.chrupki.ui.controllers.HubController;
 import net.chrupki.ui.styles.Styles;
+import net.chrupki.ui.styles.theme.ButtonTheme;
 import net.chrupki.ui.styles.theme.TextTheme;
 import net.chrupki.ui.view.pages.project.ProjectView;
 import net.chrupki.ui.view.pages.projects.dto.ProjectContainerDTO;
@@ -26,7 +27,7 @@ public class ProjectsContainer extends HBox {
 
 
         Button edit = new Button("Edit");
-        edit.getStyleClass().add("card-action");
+        new Styles().apply(edit, ButtonTheme.EDIT);
 
         HBox actions = new HBox(edit);
         actions.getStyleClass().add("card-actions");
