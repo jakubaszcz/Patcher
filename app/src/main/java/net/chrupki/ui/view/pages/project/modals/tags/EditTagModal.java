@@ -18,6 +18,7 @@ import net.chrupki.ui.controllers.files.dtos.EditTag;
 import net.chrupki.ui.model.GlobalModel;
 import net.chrupki.ui.styles.Styles;
 import net.chrupki.ui.styles.theme.ButtonTheme;
+import net.chrupki.ui.styles.theme.CardTheme;
 import net.chrupki.ui.styles.theme.TextFieldTheme;
 import net.chrupki.ui.styles.theme.TextTheme;
 
@@ -84,7 +85,7 @@ public class EditTagModal extends VBox {
             onClose.run();
         });
 
-        getStyleClass().add("modal-card");
+        new Styles().apply(this, CardTheme.NORMAL);
 
         visibleProperty().bind(GlobalModel.getSwitchEditTagProjectModal());
         managedProperty().bind(GlobalModel.getSwitchEditTagProjectModal());

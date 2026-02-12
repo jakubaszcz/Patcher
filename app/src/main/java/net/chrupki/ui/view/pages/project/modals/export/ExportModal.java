@@ -18,6 +18,7 @@ import net.chrupki.request.ExportRequest;
 import net.chrupki.ui.model.GlobalModel;
 import net.chrupki.ui.styles.Styles;
 import net.chrupki.ui.styles.theme.ButtonTheme;
+import net.chrupki.ui.styles.theme.CardTheme;
 import net.chrupki.ui.styles.theme.TextTheme;
 
 import java.io.File;
@@ -94,7 +95,7 @@ public class ExportModal extends VBox {
         setPrefWidth(360);
         setMaxWidth(360);
 
-        getStyleClass().add("modal-card");
+        new Styles().apply(this, CardTheme.NORMAL);
 
         visibleProperty().bind(GlobalModel.getSwitchExportModal());
         managedProperty().bind(GlobalModel.getSwitchExportModal());

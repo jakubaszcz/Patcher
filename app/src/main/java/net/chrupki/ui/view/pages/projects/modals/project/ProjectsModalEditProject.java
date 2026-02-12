@@ -14,6 +14,7 @@ import net.chrupki.model.HubModel;
 import net.chrupki.ui.model.GlobalModel;
 import net.chrupki.ui.styles.Styles;
 import net.chrupki.ui.styles.theme.ButtonTheme;
+import net.chrupki.ui.styles.theme.CardTheme;
 import net.chrupki.ui.styles.theme.TextFieldTheme;
 import net.chrupki.ui.styles.theme.TextTheme;
 
@@ -88,7 +89,7 @@ public class ProjectsModalEditProject extends VBox {
         setPrefWidth(360);
         setMaxWidth(360);
 
-        getStyleClass().add("modal-card");
+        new Styles().apply(this, CardTheme.NORMAL);
 
         visibleProperty().bind(GlobalModel.getSwitchEditProjectsModal());
         managedProperty().bind(GlobalModel.getSwitchEditProjectsModal());

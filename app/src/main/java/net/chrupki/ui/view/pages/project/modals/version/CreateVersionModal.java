@@ -12,10 +12,7 @@ import javafx.scene.layout.Region;
 import javafx.scene.layout.VBox;
 import net.chrupki.ui.model.GlobalModel;
 import net.chrupki.ui.styles.Styles;
-import net.chrupki.ui.styles.theme.ButtonTheme;
-import net.chrupki.ui.styles.theme.ComboBoxTheme;
-import net.chrupki.ui.styles.theme.TextFieldTheme;
-import net.chrupki.ui.styles.theme.TextTheme;
+import net.chrupki.ui.styles.theme.*;
 
 import java.util.function.BiConsumer;
 
@@ -72,7 +69,7 @@ public class CreateVersionModal extends VBox {
             onClose.run();
         });
 
-        getStyleClass().add("modal-card");
+        new Styles().apply(this, CardTheme.NORMAL);
 
         visibleProperty().bind(GlobalModel.getSwitchCreateVersionProjectModal());
         managedProperty().bind(GlobalModel.getSwitchCreateVersionProjectModal());

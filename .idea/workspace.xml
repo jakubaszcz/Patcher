@@ -4,22 +4,22 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="c1aa160e-de6c-484d-8c28-5409cf16dc62" name="Changes" comment="refactor(style): apply new combo box style">
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/net/chrupki/ui/styles/theme/CardTheme.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/net/chrupki/ui/styles/theme/TextFieldTheme.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/resources/styles/card.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/resources/styles/text-field.css" afterDir="false" />
+    <list default="true" id="c1aa160e-de6c-484d-8c28-5409cf16dc62" name="Changes" comment="add(style): create card style">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/net/chrupki/ui/styles/theme/CardTheme.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/net/chrupki/ui/styles/theme/CardTheme.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/net/chrupki/ui/view/MainPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/net/chrupki/ui/view/MainPage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/net/chrupki/ui/view/pages/project/modals/export/ExportModal.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/net/chrupki/ui/view/pages/project/modals/export/ExportModal.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/net/chrupki/ui/view/pages/project/modals/patch/CreatePatchModal.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/net/chrupki/ui/view/pages/project/modals/patch/CreatePatchModal.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/net/chrupki/ui/view/pages/project/modals/patch/EditPatchModal.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/net/chrupki/ui/view/pages/project/modals/patch/EditPatchModal.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/net/chrupki/ui/view/pages/project/modals/tags/CreateTagModal.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/net/chrupki/ui/view/pages/project/modals/tags/CreateTagModal.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/net/chrupki/ui/view/pages/project/modals/tags/EditTagModal.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/net/chrupki/ui/view/pages/project/modals/tags/EditTagModal.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/net/chrupki/ui/view/pages/project/modals/version/CreateVersionModal.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/net/chrupki/ui/view/pages/project/modals/version/CreateVersionModal.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/net/chrupki/ui/view/pages/project/modals/version/EditVersionModal.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/net/chrupki/ui/view/pages/project/modals/version/EditVersionModal.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/net/chrupki/ui/view/pages/projects/components/ProjectsContainer.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/net/chrupki/ui/view/pages/projects/components/ProjectsContainer.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/net/chrupki/ui/view/pages/projects/modals/project/ProjectsModalCreateProject.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/net/chrupki/ui/view/pages/projects/modals/project/ProjectsModalCreateProject.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/net/chrupki/ui/view/pages/projects/modals/project/ProjectsModalEditProject.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/net/chrupki/ui/view/pages/projects/modals/project/ProjectsModalEditProject.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/resources/styles/modal.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/resources/styles/card-container.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/resources/styles/card.css" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/resources/styles/card.css" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -178,31 +178,7 @@
       <workItem from="1770026455126" duration="12703000" />
       <workItem from="1770119027273" duration="12667000" />
       <workItem from="1770895896091" duration="89000" />
-      <workItem from="1770922101369" duration="4336000" />
-    </task>
-    <task id="LOCAL-00031" summary="Add export button">
-      <option name="closed" value="true" />
-      <created>1767639100302</created>
-      <option name="number" value="00031" />
-      <option name="presentableId" value="LOCAL-00031" />
-      <option name="project" value="LOCAL" />
-      <updated>1767639100302</updated>
-    </task>
-    <task id="LOCAL-00032" summary="Add default choice in export combo box">
-      <option name="closed" value="true" />
-      <created>1767639322290</created>
-      <option name="number" value="00032" />
-      <option name="presentableId" value="LOCAL-00032" />
-      <option name="project" value="LOCAL" />
-      <updated>1767639322290</updated>
-    </task>
-    <task id="LOCAL-00033" summary="Add markdown exporter">
-      <option name="closed" value="true" />
-      <created>1767645686379</created>
-      <option name="number" value="00033" />
-      <option name="presentableId" value="LOCAL-00033" />
-      <option name="project" value="LOCAL" />
-      <updated>1767645686379</updated>
+      <workItem from="1770922101369" duration="4855000" />
     </task>
     <task id="LOCAL-00034" summary="Add export request and create request folder">
       <option name="closed" value="true" />
@@ -572,16 +548,37 @@
       <option name="project" value="LOCAL" />
       <updated>1770931551241</updated>
     </task>
-    <option name="localTasksCounter" value="80" />
+    <task id="LOCAL-00080" summary="add(style): create text field style">
+      <option name="closed" value="true" />
+      <created>1770931930469</created>
+      <option name="number" value="00080" />
+      <option name="presentableId" value="LOCAL-00080" />
+      <option name="project" value="LOCAL" />
+      <updated>1770931930469</updated>
+    </task>
+    <task id="LOCAL-00081" summary="refactor(style): apply text field style">
+      <option name="closed" value="true" />
+      <created>1770931951407</created>
+      <option name="number" value="00081" />
+      <option name="presentableId" value="LOCAL-00081" />
+      <option name="project" value="LOCAL" />
+      <updated>1770931951407</updated>
+    </task>
+    <task id="LOCAL-00082" summary="add(style): create card style">
+      <option name="closed" value="true" />
+      <created>1770931971363</created>
+      <option name="number" value="00082" />
+      <option name="presentableId" value="LOCAL-00082" />
+      <option name="project" value="LOCAL" />
+      <updated>1770931971363</updated>
+    </task>
+    <option name="localTasksCounter" value="83" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="add(db): create dao for tag" />
-    <MESSAGE value="add(model): create model for tag and for modal" />
-    <MESSAGE value="refactor(db): select everything for the tag dao" />
     <MESSAGE value="add(service): create service for tag" />
     <MESSAGE value="feat(ui): create modal for tags" />
     <MESSAGE value="add(ui): load every tags in main page" />
@@ -604,7 +601,10 @@
     <MESSAGE value="refactor(style): apply new button style" />
     <MESSAGE value="add(style): combo box style" />
     <MESSAGE value="refactor(style): apply new combo box style" />
-    <option name="LAST_COMMIT_MESSAGE" value="refactor(style): apply new combo box style" />
+    <MESSAGE value="add(style): create text field style" />
+    <MESSAGE value="refactor(style): apply text field style" />
+    <MESSAGE value="add(style): create card style" />
+    <option name="LAST_COMMIT_MESSAGE" value="add(style): create card style" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

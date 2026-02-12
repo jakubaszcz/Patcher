@@ -3,7 +3,8 @@ package net.chrupki.ui.styles.theme;
 import net.chrupki.ui.styles.HasCss;
 
 public enum CardTheme implements HasCss {
-    NORMAL("card");
+    NORMAL("card-static"),
+    DYNAMIC("card-dynamic");
 
     private final String css;
 

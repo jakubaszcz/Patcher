@@ -23,7 +23,6 @@ public class MainPage {
         scene.getStylesheets().addAll(
                 Css.load("theme.css"),
                 Css.load("header.css"),
-                Css.load("card-container.css"),
                 Css.load("card.css"),
                 Css.load("project.css"),
                 Css.load("text.css"),
