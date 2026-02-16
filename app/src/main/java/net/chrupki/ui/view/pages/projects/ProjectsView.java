@@ -5,8 +5,9 @@ import javafx.collections.ObservableList;
 import javafx.geometry.Insets;
 import javafx.geometry.Pos;
 import javafx.scene.control.ScrollPane;
-import javafx.scene.layout.FlowPane;
+import javafx.scene.layout.HBox;
 import javafx.scene.layout.StackPane;
+import javafx.scene.layout.VBox;
 import net.chrupki.dto.ProjectDTO;
 import net.chrupki.ui.controllers.HubController;
 import net.chrupki.ui.model.GlobalModel;
@@ -24,7 +25,7 @@ public class ProjectsView extends StackPane {
     private final double HEIGHT = 110;
     private final double gap = 6;
 
-    private final FlowPane projectsView = new FlowPane();
+    private final HBox projectsView = new HBox(gap);
     private final ScrollPane scrollPane = new ScrollPane();
 
     private final PageManager viewManager;
@@ -35,8 +36,6 @@ public class ProjectsView extends StackPane {
 
         ObservableList<ProjectDTO> projects = GlobalModel.getProjects();
 
-        projectsView.setHgap(gap);
-        projectsView.setVgap(gap);
         projectsView.setPadding(new Insets(gap));
         projectsView.setAlignment(Pos.TOP_CENTER);
 
@@ -45,9 +44,11 @@ public class ProjectsView extends StackPane {
         scrollPane.setPannable(true);
         new ScrollStyle().apply(scrollPane, true);
 
-        scrollPane.viewportBoundsProperty().addListener((obs, oldB, newB) ->
-                updateWrapLength(newB.getWidth())
-        );
+        scrollPane.viewportBoundsProperty().addListener((obs, oldB, newB) -> {
+            if (oldB == null || Math.abs(oldB.getWidth() - newB.getWidth()) > 1) {
+                refresh(projects);
+            }
+        });
 
         createButton = new CreateProjectButton(
                 new CreateProjectButtonDTO(WIDTH, HEIGHT),
@@ -66,21 +67,11 @@ public class ProjectsView extends StackPane {
         );
     }
 
-    private void updateWrapLength(double availableWidth) {
-
-        int columns = Math.max(
-                1,
-                (int) ((availableWidth + gap) / (WIDTH + gap))
-        );
-
-        double wrapLength =
-                (columns * WIDTH) + ((columns - 1) * gap);
-
-        projectsView.setPrefWrapLength(wrapLength);
+    private int getColumnCount(double availableWidth) {
+        return Math.max(1, (int) ((availableWidth - (2 * gap) + gap) / (WIDTH + gap)));
     }
 
     private void refresh(ObservableList<ProjectDTO> projects) {
-
         projectsView.getChildren().clear();
 
         if (projects.isEmpty()) {
@@ -92,10 +83,27 @@ public class ProjectsView extends StackPane {
             return;
         }
 
-        projectsView.getChildren().add(createButton);
+        double availableWidth = scrollPane.getViewportBounds().getWidth();
+        if (availableWidth <= 0) {
+            availableWidth = scrollPane.getWidth();
+        }
 
+        int columns = getColumnCount(availableWidth);
+        VBox[] columnNodes = new VBox[columns];
+
+        for (int i = 0; i < columns; i++) {
+            columnNodes[i] = new VBox(gap);
+            columnNodes[i].setAlignment(Pos.TOP_CENTER);
+            columnNodes[i].setMinWidth(WIDTH);
+            columnNodes[i].setMaxWidth(WIDTH);
+            projectsView.getChildren().add(columnNodes[i]);
+        }
+
+        columnNodes[0].getChildren().add(createButton);
+
+        int currentColumn = 1;
         for (ProjectDTO p : projects) {
-            projectsView.getChildren().add(
+            columnNodes[currentColumn % columns].getChildren().add(
                     new ProjectsContainer(
                             new ProjectContainerDTO(
                                     viewManager,
@@ -106,6 +114,7 @@ public class ProjectsView extends StackPane {
                             HubController.getProjectController()::openEditProjectsModal
                     )
             );
+            currentColumn++;
         }
     }
 }

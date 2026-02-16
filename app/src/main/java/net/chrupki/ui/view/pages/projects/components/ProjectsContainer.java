@@ -32,17 +32,20 @@ public class ProjectsContainer extends VBox {
         Label title = new Label(projectContainerModel.getProjectDTO().getName());
         new Styles().apply(title, TextTheme.SUBTITLE);
 
+        Label description = new Label();
+        description.setWrapText(true);
+        description.setMaxWidth(projectContainerModel.getWidth() - 28);
+
         String descriptionText = projectContainerModel.getProjectDTO().getDescription();
         if (descriptionText == null || descriptionText.isBlank()) {
             descriptionText = "no description found";
+            new Styles().apply(description, TextTheme.TEXT_MUTED);
         } else if (descriptionText.length() > descLimit) {
             descriptionText = "description too long (max " + descLimit + " chars)";
+            new Styles().apply(description, TextTheme.TEXT_MUTED);
         }
-
-        Label description = new Label(descriptionText);
-        description.setWrapText(true);
-        description.setMaxWidth(projectContainerModel.getWidth() - 28);
-        new Styles().apply(description, TextTheme.TEXT_ITEM);
+        new Styles().apply(description, TextTheme.TEXT_MAIN);
+        description.setText(descriptionText);
 
         Button edit = new Button("Edit");
         new Styles().apply(edit, ButtonTheme.EDIT);
