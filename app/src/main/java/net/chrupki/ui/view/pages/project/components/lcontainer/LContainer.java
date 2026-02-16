@@ -1,6 +1,7 @@
 package net.chrupki.ui.view.pages.project.components.lcontainer;
 
 import javafx.scene.control.ScrollPane;
+import javafx.scene.layout.Priority;
 import javafx.scene.layout.VBox;
 import net.chrupki.model.HubModel;
 import net.chrupki.ui.styles.Styles;
@@ -21,7 +22,9 @@ public class LContainer extends VBox {
 
         scrollPane.setContent(list);
         scrollPane.setFitToWidth(true);
+        scrollPane.setFitToHeight(true);
         scrollPane.setPannable(true);
+        VBox.setVgrow(scrollPane, Priority.ALWAYS);
 
         scrollPane.setContent(version);
 

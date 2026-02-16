@@ -6,6 +6,7 @@ import javafx.scene.control.ScrollPane;
 import javafx.scene.layout.Priority;
 import javafx.scene.layout.VBox;
 import net.chrupki.model.HubModel;
+import net.chrupki.ui.EmptyStateView;
 import net.chrupki.ui.model.GlobalModel;
 import net.chrupki.dto.PatchDTO;
 import net.chrupki.ui.styles.Styles;
@@ -23,16 +24,16 @@ public class Patch extends VBox {
 
         scrollPane.visibleProperty().bind(HubModel.versionModel().getId().isNotNull());
         scrollPane.managedProperty().bind(scrollPane.visibleProperty());
-        scrollPane.getStyleClass().add("invisible-scroll");
 
         scrollPane.setContent(list);
         scrollPane.setFitToWidth(true);
-
+        scrollPane.setFitToHeight(true);
+        scrollPane.getStyleClass().add("invisible-scroll");
         new ScrollStyle().apply(scrollPane, true);
-
         scrollPane.setPannable(true);
-
         VBox.setVgrow(scrollPane, Priority.ALWAYS);
+
+        list.setFillWidth(true);
 
         refresh(patches);
 
@@ -50,6 +51,21 @@ public class Patch extends VBox {
 
     private void refresh(ObservableList<PatchDTO> patches) {
         list.getChildren().clear();
+
+        if (patches.isEmpty()) {
+            EmptyStateView emptyView = new EmptyStateView(
+                    "Patch",
+                    "It seems you don't have any patches yet.",
+                    () -> {
+                        GlobalModel.setSwitchProjectModal(true);
+                        GlobalModel.setSwitchCreateTagProjectModal(true);
+                    }
+            );
+            VBox.setVgrow(emptyView, Priority.ALWAYS);
+            list.getChildren().add(emptyView);
+            return;
+        }
+
         for (PatchDTO p : patches) {
             list.getChildren().add(new PatchContainer(p));
         }

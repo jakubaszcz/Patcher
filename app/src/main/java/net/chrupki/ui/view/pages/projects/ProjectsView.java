@@ -10,6 +10,7 @@ import javafx.scene.layout.Priority;
 import javafx.scene.layout.StackPane;
 import javafx.scene.layout.VBox;
 import net.chrupki.dto.ProjectDTO;
+import net.chrupki.ui.EmptyStateView;
 import net.chrupki.ui.controllers.HubController;
 import net.chrupki.ui.model.GlobalModel;
 import net.chrupki.ui.styles.scroll.ScrollStyle;
@@ -43,6 +44,7 @@ public class ProjectsView extends StackPane {
 
         scrollPane.setContent(projectsView);
         scrollPane.setFitToWidth(true);
+        scrollPane.setFitToHeight(true);
         scrollPane.setPannable(true);
         new ScrollStyle().apply(scrollPane, true);
 
@@ -80,13 +82,18 @@ public class ProjectsView extends StackPane {
         projectsView.getChildren().clear();
 
         if (projects.isEmpty()) {
-            projectsView.getChildren().add(
-                    new EmptyProjectsView(
-                            HubController.getProjectController()::openCreateProjectsModal
-                    )
+            projectsView.setAlignment(Pos.CENTER);
+            EmptyStateView emptyView = new EmptyStateView(
+                    "Project",
+                    "It seems you don’t have any project yet.\nLet’s create your first one.",
+                    HubController.getProjectController()::openCreateProjectsModal
             );
+            HBox.setHgrow(emptyView, Priority.ALWAYS);
+            projectsView.getChildren().add(emptyView);
             return;
         }
+
+        projectsView.setAlignment(Pos.TOP_CENTER);
 
         double availableWidth = scrollPane.getViewportBounds().getWidth();
         if (availableWidth <= 0) {
