@@ -6,6 +6,7 @@ import javafx.geometry.Insets;
 import javafx.geometry.Pos;
 import javafx.scene.control.ScrollPane;
 import javafx.scene.layout.HBox;
+import javafx.scene.layout.Priority;
 import javafx.scene.layout.StackPane;
 import javafx.scene.layout.VBox;
 import net.chrupki.dto.ProjectDTO;
@@ -27,6 +28,7 @@ public class ProjectsView extends StackPane {
 
     private final HBox projectsView = new HBox(gap);
     private final ScrollPane scrollPane = new ScrollPane();
+    private final VBox container = new VBox();
 
     private final PageManager viewManager;
     private final CreateProjectButton createButton;
@@ -61,8 +63,11 @@ public class ProjectsView extends StackPane {
                 refresh(projects)
         );
 
+        container.getChildren().addAll(new Header(), scrollPane);
+        VBox.setVgrow(scrollPane, Priority.ALWAYS);
+
         getChildren().addAll(
-                scrollPane,
+                container,
                 new ProjectsModal()
         );
     }
