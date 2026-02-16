@@ -30,7 +30,7 @@ public class CreateTagModal extends VBox {
     ) {
         ObservableList<TagDTO> tags = GlobalModel.getTags();
 
-        Label title = new Label("Create patch");
+        Label title = new Label("Create tag");
         new Styles().apply(title, TextTheme.SUBTITLE);
 
 
