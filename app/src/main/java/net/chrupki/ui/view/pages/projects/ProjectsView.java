@@ -63,7 +63,7 @@ public class ProjectsView extends StackPane {
                 refresh(projects)
         );
 
-        container.getChildren().addAll(new Header(), scrollPane);
+        container.getChildren().addAll(new Header(), scrollPane, new Footer());
         VBox.setVgrow(scrollPane, Priority.ALWAYS);
 
         getChildren().addAll(
