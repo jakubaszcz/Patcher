@@ -7,24 +7,18 @@ import javafx.scene.control.Label;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.Priority;
 import javafx.scene.layout.Region;
-import javafx.stage.FileChooser;
 import net.chrupki.model.HubModel;
-import net.chrupki.database.dao.VersionDAO;
-import net.chrupki.request.ExportRequest;
 import net.chrupki.ui.model.GlobalModel;
 import net.chrupki.ui.styles.Styles;
 import net.chrupki.ui.styles.theme.ButtonTheme;
 import net.chrupki.ui.styles.theme.ContainerTheme;
 import net.chrupki.ui.styles.theme.TextTheme;
 
-import java.io.File;
-import java.util.List;
-import java.util.function.Consumer;
-
 public class PatchHeader extends HBox {
 
-    public PatchHeader(Consumer<ExportRequest> onExport) {
-        Label title = new Label("Patches");
+    public PatchHeader() {
+        Label title = new Label();
+        title.textProperty().bind(HubModel.versionModel().getName());
         new Styles().apply(title, TextTheme.TITLE);
 
 

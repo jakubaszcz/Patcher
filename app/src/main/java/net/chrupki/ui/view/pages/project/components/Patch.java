@@ -6,7 +6,6 @@ import javafx.scene.control.ScrollPane;
 import javafx.scene.layout.Priority;
 import javafx.scene.layout.VBox;
 import net.chrupki.model.HubModel;
-import net.chrupki.ui.controllers.HubController;
 import net.chrupki.ui.model.GlobalModel;
 import net.chrupki.dto.PatchDTO;
 import net.chrupki.ui.styles.Styles;
@@ -44,7 +43,7 @@ public class Patch extends VBox {
         new Styles().apply(this, ContainerTheme.CONTAINER);
 
         getChildren().addAll(
-                new PatchHeader(HubController.getExportController()::export),
+                new PatchHeader(),
                 scrollPane
         );
     }

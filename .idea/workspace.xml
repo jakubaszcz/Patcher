@@ -4,11 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="c1aa160e-de6c-484d-8c28-5409cf16dc62" name="Changes" comment="refactor(style): apply text badge">
+    <list default="true" id="c1aa160e-de6c-484d-8c28-5409cf16dc62" name="Changes" comment="refactor(style): change container text style">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/net/chrupki/database/schema/Tables.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/net/chrupki/database/schema/Tables.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/net/chrupki/ui/view/pages/project/components/PatchContainer.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/net/chrupki/ui/view/pages/project/components/PatchContainer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/resources/styles/text-field.css" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/resources/styles/text-field.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/net/chrupki/ui/view/pages/project/components/Patch.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/net/chrupki/ui/view/pages/project/components/Patch.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/net/chrupki/ui/view/pages/project/components/PatchHeader.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/net/chrupki/ui/view/pages/project/components/PatchHeader.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -183,14 +182,6 @@
       <workItem from="1770119027273" duration="12667000" />
       <workItem from="1770895896091" duration="89000" />
       <workItem from="1770922101369" duration="5592000" />
-    </task>
-    <task id="LOCAL-00036" summary="Add markdown exporting">
-      <option name="closed" value="true" />
-      <created>1767647209952</created>
-      <option name="number" value="00036" />
-      <option name="presentableId" value="LOCAL-00036" />
-      <option name="project" value="LOCAL" />
-      <updated>1767647209952</updated>
     </task>
     <task id="LOCAL-00037" summary="Add type finder for patch content retrieval">
       <option name="closed" value="true" />
@@ -576,14 +567,21 @@
       <option name="project" value="LOCAL" />
       <updated>1770932976502</updated>
     </task>
-    <option name="localTasksCounter" value="85" />
+    <task id="LOCAL-00085" summary="refactor(style): change container text style">
+      <option name="closed" value="true" />
+      <created>1771233024102</created>
+      <option name="number" value="00085" />
+      <option name="presentableId" value="LOCAL-00085" />
+      <option name="project" value="LOCAL" />
+      <updated>1771233024103</updated>
+    </task>
+    <option name="localTasksCounter" value="86" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="add(ui): load every tags in main page" />
     <MESSAGE value="refactor(service): get rid of console log print" />
     <MESSAGE value="add(ui): add open button for the tag modal" />
     <MESSAGE value="add(controller): create tag controller" />
@@ -608,7 +606,8 @@
     <MESSAGE value="add(style): create card style" />
     <MESSAGE value="refactor(style): apply card style" />
     <MESSAGE value="refactor(style): apply text badge" />
-    <option name="LAST_COMMIT_MESSAGE" value="refactor(style): apply text badge" />
+    <MESSAGE value="refactor(style): change container text style" />
+    <option name="LAST_COMMIT_MESSAGE" value="refactor(style): change container text style" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
