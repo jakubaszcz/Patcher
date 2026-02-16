@@ -51,7 +51,7 @@ public class ProjectController {
 
     }
 
-    public void saveProject(String oldProjectName, String newProjectName) {
+    public void saveProject(String oldProjectName, String newProjectName, String description) {
 
         if (oldProjectName == null || oldProjectName.isBlank()) {
             throw new IllegalStateException("No project selected");
@@ -62,9 +62,9 @@ public class ProjectController {
         }
 
         try {
-            AppProject.renameProject(oldProjectName, newProjectName);
+            AppProject.saveProject(oldProjectName, newProjectName, description);
         } catch (IOException e) {
-            throw new RuntimeException("Failed to rename project", e);
+            throw new RuntimeException("Failed to save project", e);
         }
 
         loadProjects();

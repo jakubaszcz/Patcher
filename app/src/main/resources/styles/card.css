@@ -6,7 +6,6 @@
 .card-dynamic {
     -fx-background-color: -color-base-800;
     -fx-background-radius: 5px;
-    -fx-alignment: center-left;
     -fx-cursor: hand;
 }
 

@@ -21,7 +21,7 @@ import net.chrupki.ui.view.pages.projects.modals.ProjectsModal;
 public class ProjectsView extends StackPane {
 
     private final double WIDTH = 280;
-    private final double HEIGHT = 72;
+    private final double HEIGHT = 110;
     private final double gap = 6;
 
     private final FlowPane projectsView = new FlowPane();

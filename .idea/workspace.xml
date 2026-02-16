@@ -4,9 +4,18 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="c1aa160e-de6c-484d-8c28-5409cf16dc62" name="Changes" comment="refactor(style): display the version name in the patcher header">
+    <list default="true" id="c1aa160e-de6c-484d-8c28-5409cf16dc62" name="Changes" comment="feat(ui): add visuel to header type, version or tag">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/net/chrupki/ui/view/pages/project/components/lcontainer/LCHeader.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/net/chrupki/ui/view/pages/project/components/lcontainer/LCHeader.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/net/chrupki/dto/ProjectDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/net/chrupki/dto/ProjectDTO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/net/chrupki/model/files/ProjectModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/net/chrupki/model/files/ProjectModel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/net/chrupki/project/AppProject.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/net/chrupki/project/AppProject.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/net/chrupki/ui/controllers/files/ProjectController.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/net/chrupki/ui/controllers/files/ProjectController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/net/chrupki/ui/view/pages/projects/ProjectsView.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/net/chrupki/ui/view/pages/projects/ProjectsView.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/net/chrupki/ui/view/pages/projects/components/ProjectsContainer.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/net/chrupki/ui/view/pages/projects/components/ProjectsContainer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/net/chrupki/ui/view/pages/projects/modals/project/ProjectsModalCreateProject.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/net/chrupki/ui/view/pages/projects/modals/project/ProjectsModalCreateProject.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/net/chrupki/ui/view/pages/projects/modals/project/ProjectsModalEditProject.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/net/chrupki/ui/view/pages/projects/modals/project/ProjectsModalEditProject.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/resources/styles/card.css" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/resources/styles/card.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/resources/styles/text-field.css" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/resources/styles/text-field.css" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -181,22 +190,6 @@
       <workItem from="1770119027273" duration="12667000" />
       <workItem from="1770895896091" duration="89000" />
       <workItem from="1770922101369" duration="5592000" />
-    </task>
-    <task id="LOCAL-00038" summary="Add markdown generator">
-      <option name="closed" value="true" />
-      <created>1767652093593</created>
-      <option name="number" value="00038" />
-      <option name="presentableId" value="LOCAL-00038" />
-      <option name="project" value="LOCAL" />
-      <updated>1767652093593</updated>
-    </task>
-    <task id="LOCAL-00039" summary="Add licence">
-      <option name="closed" value="true" />
-      <created>1767652343952</created>
-      <option name="number" value="00039" />
-      <option name="presentableId" value="LOCAL-00039" />
-      <option name="project" value="LOCAL" />
-      <updated>1767652343952</updated>
     </task>
     <task id="LOCAL-00040" summary="Add license">
       <option name="closed" value="true" />
@@ -574,15 +567,29 @@
       <option name="project" value="LOCAL" />
       <updated>1771233858421</updated>
     </task>
-    <option name="localTasksCounter" value="87" />
+    <task id="LOCAL-00087" summary="feat(ui): add visuel to header type, version or tag">
+      <option name="closed" value="true" />
+      <created>1771234363561</created>
+      <option name="number" value="00087" />
+      <option name="presentableId" value="LOCAL-00087" />
+      <option name="project" value="LOCAL" />
+      <updated>1771234363561</updated>
+    </task>
+    <task id="LOCAL-00088" summary="fix(ui): change name to create tag">
+      <option name="closed" value="true" />
+      <created>1771234689504</created>
+      <option name="number" value="00088" />
+      <option name="presentableId" value="LOCAL-00088" />
+      <option name="project" value="LOCAL" />
+      <updated>1771234689504</updated>
+    </task>
+    <option name="localTasksCounter" value="89" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="add(ui): add open button for the tag modal" />
-    <MESSAGE value="add(controller): create tag controller" />
     <MESSAGE value="feat(ui): add tag button to version header" />
     <MESSAGE value="add(ui): load tags when a new project is selected" />
     <MESSAGE value="feat(ui): export with new tags in Markdown format" />
@@ -606,7 +613,9 @@
     <MESSAGE value="refactor(style): apply text badge" />
     <MESSAGE value="refactor(style): change container text style" />
     <MESSAGE value="refactor(style): display the version name in the patcher header" />
-    <option name="LAST_COMMIT_MESSAGE" value="refactor(style): display the version name in the patcher header" />
+    <MESSAGE value="feat(ui): add visuel to header type, version or tag" />
+    <MESSAGE value="fix(ui): change name to create tag" />
+    <option name="LAST_COMMIT_MESSAGE" value="fix(ui): change name to create tag" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
