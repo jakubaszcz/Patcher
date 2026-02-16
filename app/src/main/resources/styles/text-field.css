@@ -1,7 +1,7 @@
 .text-field {
     -fx-background-color: -color-base-800;
     -fx-text-fill: -color-base-100;
-    -fx-prompt-text-fill: -color-base-400100;
+    -fx-prompt-text-fill: -color-base-400;
     -fx-background-radius: 5px;
     -fx-padding: 8 10;
 }

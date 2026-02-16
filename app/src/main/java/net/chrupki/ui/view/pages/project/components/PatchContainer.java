@@ -36,7 +36,7 @@ public class PatchContainer extends HBox {
         new Styles().apply(typeLabel, TextTheme.TEXT_BADGE);
 
         Label content = new Label(patch.getContent());
-        content.getStyleClass().add("project-item-meta");
+        new Styles().apply(content, TextTheme.TEXT_ITEM);
         content.setWrapText(true);
 
         VBox textBox = new VBox(4, typeLabel, content);
