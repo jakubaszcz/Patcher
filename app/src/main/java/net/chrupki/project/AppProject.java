@@ -10,6 +10,7 @@ import net.chrupki.app.AppPath;
 import net.chrupki.database.DatabaseHub;
 import net.chrupki.database.DatabaseInitializer;
 
+import java.io.File;
 import java.io.IOException;
 import java.nio.file.FileVisitResult;
 import java.nio.file.Files;
@@ -42,11 +43,13 @@ public class AppProject {
         Path directory = path.resolve("projects");
         Path projectPath = directory.resolve(projectDTO.getName());
 
+
         if (!projectPath.isAbsolute()) return;
 
         try {
             Files.createDirectories(projectPath);
             AddProjects(projectPath);
+            Files.writeString(projectPath.resolve("description.md"), projectDTO.getDescription() != null ? projectDTO.getDescription() : "");
             DatabaseInitializer.init(projectDTO.getName());
         } catch (IOException e) {
             throw new RuntimeException(e);
@@ -72,10 +75,15 @@ public class AppProject {
         }
 
         try (var stream = Files.list(path)) {
-            stream
-                    .filter(Files::isDirectory)
-                    .map(p -> new ProjectDTO(p.getFileName().toString()))
-                    .forEach(projectsName::add);
+            for (Path p : stream.filter(Files::isDirectory).toList()) {
+                String name = p.getFileName().toString();
+                String description = "";
+                Path descPath = p.resolve("description.md");
+                if (Files.exists(descPath)) {
+                    description = Files.readString(descPath);
+                }
+                projectsName.add(new ProjectDTO(name, description));
+            }
         }
 
         return projectsName;
@@ -112,7 +120,7 @@ public class AppProject {
         return Files.readString(path);
     }
 
-    public static void renameProject(String oldName, String newName) throws IOException {
+    public static void saveProject(String oldName, String newName, String description) throws IOException {
         DatabaseHub.getInstance().closeAll();
 
         Path oldPath = AppPath.getDataDir().resolve("projects").resolve(oldName);
@@ -120,7 +128,15 @@ public class AppProject {
 
         try { Thread.sleep(100); } catch (InterruptedException e) { }
 
-        Files.move(oldPath, newPath);
+        if (!oldPath.equals(newPath)) {
+            Files.move(oldPath, newPath);
+        }
+
+        Files.writeString(newPath.resolve("description.md"), description != null ? description : "");
+    }
+
+    public static void renameProject(String oldName, String newName) throws IOException {
+        saveProject(oldName, newName, null);
     }
 
     public static void deleteProject() throws IOException {

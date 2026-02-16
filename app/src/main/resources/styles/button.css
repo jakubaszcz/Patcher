@@ -1,0 +1,44 @@
+.button-edit {
+    -fx-background-color: transparent;
+    -fx-text-fill: -color-base-500;
+    -fx-padding: 4 10;
+    -fx-background-radius: 5px;
+}
+
+.button-edit:hover {
+    -fx-text-fill: -color-base-400;
+}
+
+
+.button-cancel {
+    -fx-background-color: transparent;
+    -fx-text-fill: -color-primary-800;
+    -fx-padding: 8 14;
+}
+
+.button-cancel:hover {
+    -fx-text-fill: -color-primary-900;
+}
+
+.button-normal {
+    -fx-background-color: -color-primary-800;
+    -fx-text-fill: -color-primary-100;
+    -fx-background-radius: 5px;
+    -fx-padding: 8 18;
+    -fx-font-weight: bold;
+}
+
+.button-normal:hover {
+    -fx-background-color: -color-primary-900;
+}
+
+.button-danger {
+    -fx-background-color: transparent;
+    -fx-text-fill: -color-primary-800;
+    -fx-padding: 8 14;
+}
+
+.button-danger:hover {
+    -fx-background-color: -color-primary-900;
+
+}

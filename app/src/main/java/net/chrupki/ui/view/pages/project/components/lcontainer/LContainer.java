@@ -3,6 +3,9 @@ package net.chrupki.ui.view.pages.project.components.lcontainer;
 import javafx.scene.control.ScrollPane;
 import javafx.scene.layout.VBox;
 import net.chrupki.model.HubModel;
+import net.chrupki.ui.styles.Styles;
+import net.chrupki.ui.styles.scroll.ScrollStyle;
+import net.chrupki.ui.styles.theme.ContainerTheme;
 import net.chrupki.ui.view.pages.project.components.lcontainer.tag.LCTag;
 import net.chrupki.ui.view.pages.project.components.lcontainer.version.LCVersion;
 
@@ -22,10 +25,7 @@ public class LContainer extends VBox {
 
         scrollPane.setContent(version);
 
-        scrollPane.setVbarPolicy(ScrollPane.ScrollBarPolicy.NEVER);
-        scrollPane.setHbarPolicy(ScrollPane.ScrollBarPolicy.NEVER);
-
-        scrollPane.getStyleClass().add("invisible-scroll");
+        new ScrollStyle().apply(scrollPane, true);
 
         LCHeader header = new LCHeader(view -> {
 
@@ -41,7 +41,8 @@ public class LContainer extends VBox {
             }
         });
 
-        getStyleClass().add("project-panel");
+        new Styles().apply(this, ContainerTheme.CONTAINER);
+
         getChildren().addAll(
                 header,
                 scrollPane

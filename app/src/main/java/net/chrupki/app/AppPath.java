@@ -6,7 +6,7 @@ import java.nio.file.Paths;
 
 public class AppPath {
 
-    private static String APP_NAME = "patcher_test";
+    private static String APP_NAME = "patcher";
     private static String TEMPLATES = "templates";
 
     private AppPath() {

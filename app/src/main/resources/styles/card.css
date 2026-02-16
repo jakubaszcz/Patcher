@@ -1,0 +1,15 @@
+.card-static {
+    -fx-background-color: -color-base-900;
+    -fx-background-radius: 5px;
+}
+
+.card-dynamic {
+    -fx-background-color: -color-base-800;
+    -fx-background-radius: 5px;
+    -fx-cursor: hand;
+}
+
+.card-dynamic:hover {
+    -fx-background-color: -color-base-900;
+}
+

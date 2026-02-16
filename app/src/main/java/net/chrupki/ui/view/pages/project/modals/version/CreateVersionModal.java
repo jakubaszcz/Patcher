@@ -11,6 +11,8 @@ import javafx.scene.layout.Priority;
 import javafx.scene.layout.Region;
 import javafx.scene.layout.VBox;
 import net.chrupki.ui.model.GlobalModel;
+import net.chrupki.ui.styles.Styles;
+import net.chrupki.ui.styles.theme.*;
 
 import java.util.function.BiConsumer;
 
@@ -21,14 +23,16 @@ public class CreateVersionModal extends VBox {
             Runnable onClose
     ) {
         Label title = new Label("Create version");
-        title.getStyleClass().add("modal-title");
+        new Styles().apply(title, TextTheme.SUBTITLE);
+
 
         TextField textField = new TextField();
         textField.setPromptText("Version name");
-        textField.getStyleClass().add("modal-textfield");
+        new Styles().apply(textField, TextFieldTheme.NORMAL);
 
         ComboBox<String> comboBox = new ComboBox<>();
-        comboBox.getStyleClass().add("modal-combobox");
+        new Styles().apply(comboBox, ComboBoxTheme.NORMAL);
+
 
         comboBox.getItems().addAll(
                 "Alpha", "Beta", "Pre-release", "HotFix", "Stable"
@@ -37,10 +41,10 @@ public class CreateVersionModal extends VBox {
         comboBox.setPromptText("Select a type");
 
         Button closeButton = new Button("Cancel");
-        closeButton.getStyleClass().add("modal-button-close");
+        new Styles().apply(closeButton, ButtonTheme.CANCEL);
 
         Button createButton = new Button("Create");
-        createButton.getStyleClass().add("modal-button-create");
+        new Styles().apply(createButton, ButtonTheme.NORMAL);
 
         Region spacer = new Region();
         HBox.setHgrow(spacer, Priority.ALWAYS);
@@ -65,7 +69,7 @@ public class CreateVersionModal extends VBox {
             onClose.run();
         });
 
-        getStyleClass().add("modal-card");
+        new Styles().apply(this, CardTheme.NORMAL);
 
         visibleProperty().bind(GlobalModel.getSwitchCreateVersionProjectModal());
         managedProperty().bind(GlobalModel.getSwitchCreateVersionProjectModal());

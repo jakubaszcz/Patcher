@@ -12,6 +12,10 @@ import net.chrupki.dto.TagDTO;
 import net.chrupki.model.HubModel;
 import net.chrupki.ui.model.GlobalModel;
 import net.chrupki.dto.PatchDTO;
+import net.chrupki.ui.styles.Styles;
+import net.chrupki.ui.styles.theme.ButtonTheme;
+import net.chrupki.ui.styles.theme.ContainerTheme;
+import net.chrupki.ui.styles.theme.TextTheme;
 
 public class PatchContainer extends HBox {
 
@@ -26,21 +30,20 @@ public class PatchContainer extends HBox {
                         .orElse("")
         );
         typeLabel.textProperty().bind(type);
-        typeLabel.getStyleClass().add("project-item-patch-type");
 
         typeLabel.setAlignment(Pos.CENTER);
         typeLabel.setPadding(new Insets(4, 10, 4, 10));
-        typeLabel.getStyleClass().add("project-item-patch-type-box");
+        new Styles().apply(typeLabel, TextTheme.TEXT_BADGE);
 
         Label content = new Label(patch.getContent());
-        content.getStyleClass().add("project-item-meta");
+        new Styles().apply(content, TextTheme.TEXT_ITEM);
         content.setWrapText(true);
 
         VBox textBox = new VBox(4, typeLabel, content);
         textBox.setAlignment(Pos.CENTER_LEFT);
 
         Button editButton = new Button("Edit");
-        editButton.getStyleClass().add("project-item-button");
+        new Styles().apply(editButton, ButtonTheme.EDIT);
 
         editButton.setOnAction(e -> {
             HubModel.patchModel().from(patch);
@@ -55,7 +58,8 @@ public class PatchContainer extends HBox {
         setPadding(new Insets(10, 12, 10, 12));
         setSpacing(12);
 
-        getStyleClass().add("project-item");
+        new Styles().apply(this, ContainerTheme.BODY);
+
 
         getChildren().addAll(
                 textBox,

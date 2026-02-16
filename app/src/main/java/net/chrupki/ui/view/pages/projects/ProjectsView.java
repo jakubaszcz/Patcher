@@ -10,6 +10,7 @@ import javafx.scene.layout.StackPane;
 import net.chrupki.dto.ProjectDTO;
 import net.chrupki.ui.controllers.HubController;
 import net.chrupki.ui.model.GlobalModel;
+import net.chrupki.ui.styles.scroll.ScrollStyle;
 import net.chrupki.ui.view.manager.PageManager;
 import net.chrupki.ui.view.pages.projects.components.CreateProjectButton;
 import net.chrupki.ui.view.pages.projects.components.ProjectsContainer;
@@ -20,7 +21,7 @@ import net.chrupki.ui.view.pages.projects.modals.ProjectsModal;
 public class ProjectsView extends StackPane {
 
     private final double WIDTH = 280;
-    private final double HEIGHT = 72;
+    private final double HEIGHT = 110;
     private final double gap = 6;
 
     private final FlowPane projectsView = new FlowPane();
@@ -42,9 +43,7 @@ public class ProjectsView extends StackPane {
         scrollPane.setContent(projectsView);
         scrollPane.setFitToWidth(true);
         scrollPane.setPannable(true);
-        scrollPane.setVbarPolicy(ScrollPane.ScrollBarPolicy.NEVER);
-        scrollPane.setHbarPolicy(ScrollPane.ScrollBarPolicy.NEVER);
-        scrollPane.getStyleClass().add("invisible-scroll");
+        new ScrollStyle().apply(scrollPane, true);
 
         scrollPane.viewportBoundsProperty().addListener((obs, oldB, newB) ->
                 updateWrapLength(newB.getWidth())

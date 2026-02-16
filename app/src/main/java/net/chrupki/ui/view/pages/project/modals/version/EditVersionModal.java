@@ -12,6 +12,11 @@ import javafx.scene.layout.VBox;
 import net.chrupki.model.HubModel;
 import net.chrupki.ui.controllers.files.dtos.EditVersion;
 import net.chrupki.ui.model.GlobalModel;
+import net.chrupki.ui.styles.Styles;
+import net.chrupki.ui.styles.theme.ButtonTheme;
+import net.chrupki.ui.styles.theme.CardTheme;
+import net.chrupki.ui.styles.theme.TextFieldTheme;
+import net.chrupki.ui.styles.theme.TextTheme;
 
 import java.util.function.Consumer;
 
@@ -23,20 +28,22 @@ public class EditVersionModal extends VBox {
             Runnable onClose
     ) {
         Label title = new Label("Edit version");
-        title.getStyleClass().add("modal-title");
+        new Styles().apply(title, TextTheme.SUBTITLE);
+
 
         TextField newName = new TextField();
         newName.setPromptText("New version name");
-        newName.getStyleClass().add("modal-textfield");
+        new Styles().apply(newName, TextFieldTheme.NORMAL);
+
 
         Button deleteButton = new Button("Delete");
-        deleteButton.getStyleClass().add("modal-button-danger");
+        new Styles().apply(deleteButton, ButtonTheme.DANGER);
 
         Button closeButton = new Button("Cancel");
-        closeButton.getStyleClass().add("modal-button-close");
+        new Styles().apply(closeButton, ButtonTheme.CANCEL);
 
         Button saveButton = new Button("Save");
-        saveButton.getStyleClass().add("modal-button-create");
+        new Styles().apply(saveButton, ButtonTheme.NORMAL);
 
         deleteButton.setOnAction(e -> {
             onDelete.accept(HubModel.versionModel().getId().get());
@@ -77,7 +84,7 @@ public class EditVersionModal extends VBox {
         setPrefWidth(360);
         setMaxWidth(360);
 
-        getStyleClass().add("modal-card");
+        new Styles().apply(this, CardTheme.NORMAL);
 
         visibleProperty().bind(GlobalModel.getSwitchEditVersionProjectModal());
         managedProperty().bind(GlobalModel.getSwitchEditVersionProjectModal());

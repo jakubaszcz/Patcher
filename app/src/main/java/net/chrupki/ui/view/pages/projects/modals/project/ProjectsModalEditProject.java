@@ -5,6 +5,7 @@ import javafx.geometry.Insets;
 import javafx.geometry.Pos;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
+import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.Priority;
@@ -12,40 +13,57 @@ import javafx.scene.layout.Region;
 import javafx.scene.layout.VBox;
 import net.chrupki.model.HubModel;
 import net.chrupki.ui.model.GlobalModel;
+import net.chrupki.ui.styles.Styles;
+import net.chrupki.ui.styles.theme.ButtonTheme;
+import net.chrupki.ui.styles.theme.CardTheme;
+import net.chrupki.ui.styles.theme.TextFieldTheme;
+import net.chrupki.ui.styles.theme.TextTheme;
 
-import java.util.function.BiConsumer;
+import java.util.function.Consumer;
 
 public class ProjectsModalEditProject extends VBox {
 
+    public interface SaveProjectHandler {
+        void accept(String oldName, String newName, String description);
+    }
+
     public ProjectsModalEditProject(
-            BiConsumer<String, String> onSave,
+            SaveProjectHandler onSave,
             Runnable onDelete,
             Runnable onClose
     ) {
 
         StringProperty projectName = HubModel.projectModel().getName();
+        StringProperty projectDescription = HubModel.projectModel().getDescription();
 
         Label title = new Label("Edit project");
-        title.getStyleClass().add("modal-title");
+        new Styles().apply(title, TextTheme.SUBTITLE);
 
         TextField currentName = new TextField();
         currentName.textProperty().bind(projectName);
 
         currentName.setDisable(true);
-        currentName.getStyleClass().add("modal-textfield");
+        new Styles().apply(currentName, TextFieldTheme.NORMAL);
 
         TextField newName = new TextField();
         newName.setPromptText("New project name");
-        newName.getStyleClass().add("modal-textfield");
+        new Styles().apply(newName, TextFieldTheme.NORMAL);
+
+        TextArea descriptionArea = new TextArea();
+        descriptionArea.setPromptText("Description");
+        descriptionArea.setPrefHeight(100);
+        descriptionArea.setWrapText(true);
+        descriptionArea.textProperty().bindBidirectional(projectDescription);
+        new Styles().apply(descriptionArea, TextFieldTheme.NORMAL);
 
         Button deleteButton = new Button("Delete");
-        deleteButton.getStyleClass().add("modal-button-danger");
+        new Styles().apply(deleteButton, ButtonTheme.DANGER);
 
         Button closeButton = new Button("Cancel");
-        closeButton.getStyleClass().add("modal-button-close");
+        new Styles().apply(closeButton, ButtonTheme.CANCEL);
 
         Button saveButton = new Button("Save");
-        saveButton.getStyleClass().add("modal-button-create");
+        new Styles().apply(saveButton, ButtonTheme.NORMAL);
 
         deleteButton.setOnAction(e -> {
             onDelete.run();
@@ -58,11 +76,10 @@ public class ProjectsModalEditProject extends VBox {
         });
 
         saveButton.setOnAction(e -> {
-            if (!newName.getText().isBlank()) {
-                onSave.accept(HubModel.projectModel().getName().get(), newName.getText());
-                onClose.run();
-                newName.clear();
-            }
+            String nameToSave = newName.getText().isBlank() ? HubModel.projectModel().getName().get() : newName.getText();
+            onSave.accept(HubModel.projectModel().getName().get(), nameToSave, descriptionArea.getText());
+            onClose.run();
+            newName.clear();
         });
 
         Region spacer = new Region();
@@ -84,7 +101,7 @@ public class ProjectsModalEditProject extends VBox {
         setPrefWidth(360);
         setMaxWidth(360);
 
-        getStyleClass().add("modal-card");
+        new Styles().apply(this, CardTheme.NORMAL);
 
         visibleProperty().bind(GlobalModel.getSwitchEditProjectsModal());
         managedProperty().bind(GlobalModel.getSwitchEditProjectsModal());
@@ -93,6 +110,7 @@ public class ProjectsModalEditProject extends VBox {
                 title,
                 currentName,
                 newName,
+                descriptionArea,
                 actions
         );
     }

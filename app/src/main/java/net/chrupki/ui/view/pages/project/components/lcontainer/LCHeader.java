@@ -11,6 +11,10 @@ import javafx.scene.layout.Region;
 import javafx.scene.layout.VBox;
 import net.chrupki.model.HubModel;
 import net.chrupki.ui.model.GlobalModel;
+import net.chrupki.ui.styles.Styles;
+import net.chrupki.ui.styles.theme.ButtonTheme;
+import net.chrupki.ui.styles.theme.ContainerTheme;
+import net.chrupki.ui.styles.theme.TextTheme;
 
 import java.util.function.Consumer;
 
@@ -24,10 +28,17 @@ public class LCHeader extends HBox {
     ) {
         Label title = new Label();
         title.textProperty().bind(HubModel.projectModel().getName());
-        title.getStyleClass().add("project-title");
+        new Styles().apply(title, TextTheme.SUBTITLE);
+
+        Label meta = new Label("Versions");
+        new Styles().apply(meta, TextTheme.TEXT_MAIN);
+
+        VBox titleBox = new VBox(2, title, meta);
+        titleBox.setAlignment(Pos.CENTER_LEFT);
+
 
         Button addButton = new Button("+");
-        addButton.getStyleClass().add("project-add-button");
+        new Styles().apply(addButton, ButtonTheme.NORMAL);
 
         Button toggle = new Button("Tags");
 
@@ -36,11 +47,11 @@ public class LCHeader extends HBox {
 
             String view = isVersion ? "version" : "tag";
             toggle.setText(isVersion ? "Tags" : "Versions");
+            meta.setText(isVersion ? "Versions" : "Tags");
 
             onToggle.accept(view);
         });
-        toggle.getStyleClass().add("project-add-button");
-
+        new Styles().apply(toggle, ButtonTheme.NORMAL);
 
         Region spacer = new Region();
         HBox.setHgrow(spacer, Priority.ALWAYS);
@@ -66,10 +77,10 @@ public class LCHeader extends HBox {
 
         setMaxWidth(Double.MAX_VALUE);
 
-        getStyleClass().add("project-header");
+        new Styles().apply(this, ContainerTheme.HEADER);
 
         getChildren().addAll(
-                title,
+                titleBox,
                 spacer,
                 toggle,
                 addButton

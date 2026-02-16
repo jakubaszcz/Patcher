@@ -23,10 +23,13 @@ public class MainPage {
         scene.getStylesheets().addAll(
                 Css.load("theme.css"),
                 Css.load("header.css"),
-                Css.load("card-container.css"),
-                Css.load("modal.css"),
-                Css.load("empty-projects.css"),
-                Css.load("project.css")
+                Css.load("card.css"),
+                Css.load("container.css"),
+                Css.load("text.css"),
+                Css.load("button.css"),
+                Css.load("combo-box.css"),
+                Css.load("text-field.css"),
+                Css.load("scroll.css")
         );
 
         stage.setScene(scene);

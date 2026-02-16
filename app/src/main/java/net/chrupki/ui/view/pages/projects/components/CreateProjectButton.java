@@ -1,6 +1,9 @@
 package net.chrupki.ui.view.pages.projects.components;
 
 import javafx.scene.layout.HBox;
+import net.chrupki.ui.styles.Styles;
+import net.chrupki.ui.styles.theme.ButtonTheme;
+import net.chrupki.ui.styles.theme.TextTheme;
 import net.chrupki.ui.view.pages.projects.dto.CreateProjectButtonDTO;
 import javafx.scene.control.Label;
 
@@ -13,10 +16,11 @@ public class CreateProjectButton extends HBox {
     ) {
 
         Label label = new Label("+");
-        label.getStyleClass().add("add-button-title");
+        new Styles().apply(label, TextTheme.TEXT_ITEM);
+
 
         getChildren().add(label);
-        getStyleClass().add("add-button");
+        new Styles().apply(this, ButtonTheme.NORMAL);
 
         setOnMouseClicked(e -> {
             onCreateProjectModal.run();

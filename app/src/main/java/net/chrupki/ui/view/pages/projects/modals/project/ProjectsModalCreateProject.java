@@ -4,6 +4,7 @@ import javafx.geometry.Insets;
 import javafx.geometry.Pos;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
+import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.Priority;
@@ -11,6 +12,11 @@ import javafx.scene.layout.Region;
 import javafx.scene.layout.VBox;
 import net.chrupki.dto.ProjectDTO;
 import net.chrupki.ui.model.GlobalModel;
+import net.chrupki.ui.styles.Styles;
+import net.chrupki.ui.styles.theme.ButtonTheme;
+import net.chrupki.ui.styles.theme.CardTheme;
+import net.chrupki.ui.styles.theme.TextFieldTheme;
+import net.chrupki.ui.styles.theme.TextTheme;
 
 import java.util.function.Consumer;
 
@@ -22,30 +28,43 @@ public class ProjectsModalCreateProject extends VBox {
     ) {
 
         Label title = new Label("Create project");
-        title.getStyleClass().add("modal-title");
+        new Styles().apply(title, TextTheme.SUBTITLE);
 
         TextField textField = new TextField();
         textField.setPromptText("Project name");
-        textField.getStyleClass().add("modal-textfield");
+        new Styles().apply(textField, TextFieldTheme.NORMAL);
+
+        TextArea textArea = new TextArea();
+        textArea.setPromptText("Description");
+        textArea.setPrefHeight(100);
+        textArea.setWrapText(true);
+        new Styles().apply(textArea, TextFieldTheme.NORMAL);
 
         Button closeButton = new Button("Cancel");
-        closeButton.getStyleClass().add("modal-button-close");
+        new Styles().apply(closeButton, ButtonTheme.CANCEL);
 
         Button createButton = new Button("Create");
-        createButton.getStyleClass().add("modal-button-create");
+        new Styles().apply(createButton, ButtonTheme.NORMAL);
 
         closeButton.setOnAction(e -> {
             textField.clear();
+            textArea.clear();
             onClose.run();
         });
 
         createButton.setOnAction(e -> {
             if (!textField.getText().isBlank()) {
+                String desc = textArea.getText();
+                if (desc != null && desc.length() > 300) {
+                    desc = desc.substring(0, 300);
+                }
                 onCreate.accept(new ProjectDTO(
-                        textField.getText()
+                        textField.getText(),
+                        desc
                 ));
                 onClose.run();
                 textField.clear();
+                textArea.clear();
             }
         });
 
@@ -62,7 +81,7 @@ public class ProjectsModalCreateProject extends VBox {
         setPrefWidth(360);
         setMaxWidth(360);
 
-        getStyleClass().add("modal-card");
+        new Styles().apply(this, CardTheme.NORMAL);
 
         visibleProperty().bind(GlobalModel.getSwitchCreateProjectsModal());
         managedProperty().bind(GlobalModel.getSwitchCreateProjectsModal());
@@ -70,6 +89,7 @@ public class ProjectsModalCreateProject extends VBox {
         getChildren().addAll(
                 title,
                 textField,
+                textArea,
                 actions
         );
     }

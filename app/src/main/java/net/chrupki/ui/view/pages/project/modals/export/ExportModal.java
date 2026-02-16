@@ -16,6 +16,10 @@ import net.chrupki.database.dao.VersionDAO;
 import net.chrupki.model.HubModel;
 import net.chrupki.request.ExportRequest;
 import net.chrupki.ui.model.GlobalModel;
+import net.chrupki.ui.styles.Styles;
+import net.chrupki.ui.styles.theme.ButtonTheme;
+import net.chrupki.ui.styles.theme.CardTheme;
+import net.chrupki.ui.styles.theme.TextTheme;
 
 import java.io.File;
 import java.util.List;
@@ -28,7 +32,7 @@ public class ExportModal extends VBox {
         ObservableList<String> templates = GlobalModel.getTemplates();
 
         Label title = new Label("Export version");
-        title.getStyleClass().add("modal-title");
+        new Styles().apply(title, TextTheme.SUBTITLE);
 
         ComboBox<String> comboBox = new ComboBox<>();
         comboBox.getStyleClass().add("modal-combobox");
@@ -42,10 +46,10 @@ public class ExportModal extends VBox {
         }
 
         Button closeButton = new Button("Cancel");
-        closeButton.getStyleClass().add("modal-button-close");
+        new Styles().apply(closeButton, ButtonTheme.CANCEL);
 
         Button createButton = new Button("Export");
-        createButton.getStyleClass().add("modal-button-create");
+        new Styles().apply(createButton, ButtonTheme.NORMAL);
 
         Region spacer = new Region();
         HBox.setHgrow(spacer, Priority.ALWAYS);
@@ -91,7 +95,7 @@ public class ExportModal extends VBox {
         setPrefWidth(360);
         setMaxWidth(360);
 
-        getStyleClass().add("modal-card");
+        new Styles().apply(this, CardTheme.NORMAL);
 
         visibleProperty().bind(GlobalModel.getSwitchExportModal());
         managedProperty().bind(GlobalModel.getSwitchExportModal());

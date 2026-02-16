@@ -1,0 +1,93 @@
+/* ============================= */
+/* === Scroll Invisible Mode === */
+/* ============================= */
+
+.scroll-invisible {
+    -fx-background-color: inherit;
+}
+
+.scroll-invisible .viewport {
+    -fx-background-color: inherit;
+}
+
+.scroll-invisible .scroll-bar:vertical,
+.scroll-invisible .scroll-bar:horizontal {
+    -fx-opacity: 0;
+    -fx-pref-width: 0;
+    -fx-pref-height: 0;
+    -fx-min-width: 0;
+    -fx-min-height: 0;
+    -fx-max-width: 0;
+    -fx-max-height: 0;
+}
+
+.scroll-invisible .increment-button,
+.scroll-invisible .decrement-button {
+    -fx-opacity: 0;
+    -fx-padding: 0;
+}
+
+.scroll-invisible .track,
+.scroll-invisible .thumb {
+    -fx-opacity: 0;
+}
+
+
+/* ============================= */
+/* === Scroll Visible (Themed) === */
+/* ============================= */
+
+.scroll-visible {
+    -fx-background-color: inherit;
+}
+
+.scroll-visible .viewport {
+    -fx-background-color: inherit;
+}
+
+
+/* Scrollbars only */
+.scroll-visible .scroll-bar:vertical,
+.scroll-visible .scroll-bar:horizontal {
+    -fx-background-color: transparent;
+    -fx-pref-width: 8px;
+    -fx-pref-height: 8px;
+}
+
+
+/* Track */
+.scroll-visible .track {
+    -fx-background-color: transparent;
+}
+
+
+/* Thumb */
+.scroll-visible .thumb {
+    -fx-background-color: -color-primary-700;
+    -fx-background-radius: 6px;
+}
+
+
+/* Hover */
+.scroll-visible .thumb:hover {
+    -fx-background-color: -color-primary-800;
+}
+
+
+/* Hide arrows */
+.scroll-visible .increment-button,
+.scroll-visible .decrement-button {
+    -fx-opacity: 0;
+    -fx-padding: 0;
+}
+
+/* Remove internal padding / gap */
+.scroll-visible,
+.scroll-invisible {
+    -fx-padding: 0;
+}
+
+.scroll-visible .viewport,
+.scroll-invisible .viewport {
+    -fx-padding: 0;
+}

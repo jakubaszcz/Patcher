@@ -16,6 +16,8 @@ import net.chrupki.dto.TagDTO;
 import net.chrupki.model.HubModel;
 import net.chrupki.request.PatchRequest;
 import net.chrupki.ui.model.GlobalModel;
+import net.chrupki.ui.styles.Styles;
+import net.chrupki.ui.styles.theme.*;
 
 import java.util.function.Consumer;
 
@@ -30,13 +32,13 @@ public class CreatePatchModal extends VBox {
         ObservableList<TagDTO> tags = GlobalModel.getTags();
 
         Label title = new Label("Create patch");
-        title.getStyleClass().add("modal-title");
+        new Styles().apply(title, TextTheme.SUBTITLE);
 
         TextField textField = new TextField();
         textField.setPromptText("Patch name");
-        textField.getStyleClass().add("modal-textfield");
+        new Styles().apply(textField, TextFieldTheme.NORMAL);
 
-        comboBox.getStyleClass().add("modal-combobox");
+        new Styles().apply(comboBox, ComboBoxTheme.NORMAL);
 
         comboBox.getItems().setAll(tags);
 
@@ -61,10 +63,10 @@ public class CreatePatchModal extends VBox {
         comboBox.setPromptText("Select a type");
 
         Button closeButton = new Button("Cancel");
-        closeButton.getStyleClass().add("modal-button-close");
+        new Styles().apply(closeButton, ButtonTheme.CANCEL);
 
         Button createButton = new Button("Create");
-        createButton.getStyleClass().add("modal-button-create");
+        new Styles().apply(createButton, ButtonTheme.NORMAL);
 
         Region spacer = new Region();
         HBox.setHgrow(spacer, Priority.ALWAYS);
@@ -94,7 +96,7 @@ public class CreatePatchModal extends VBox {
             onClose.run();
         });
 
-        getStyleClass().add("modal-card");
+        new Styles().apply(this, CardTheme.NORMAL);
 
         visibleProperty().bind(GlobalModel.getSwitchCreatePatchProjectModal());
         managedProperty().bind(GlobalModel.getSwitchCreatePatchProjectModal());

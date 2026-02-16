@@ -16,6 +16,11 @@ import net.chrupki.model.HubModel;
 import net.chrupki.ui.controllers.files.dtos.EditPatch;
 import net.chrupki.ui.controllers.files.dtos.EditTag;
 import net.chrupki.ui.model.GlobalModel;
+import net.chrupki.ui.styles.Styles;
+import net.chrupki.ui.styles.theme.ButtonTheme;
+import net.chrupki.ui.styles.theme.CardTheme;
+import net.chrupki.ui.styles.theme.TextFieldTheme;
+import net.chrupki.ui.styles.theme.TextTheme;
 
 import java.util.function.Consumer;
 
@@ -27,20 +32,22 @@ public class EditTagModal extends VBox {
             Runnable onClose
     ) {
         Label title = new Label("Edit tag");
-        title.getStyleClass().add("modal-title");
+        new Styles().apply(title, TextTheme.SUBTITLE);
+
 
         TextField textField = new TextField();
         textField.setPromptText("Tag name");
-        textField.getStyleClass().add("modal-textfield");
+        new Styles().apply(textField, TextFieldTheme.NORMAL);
+
 
         Button deleteButton = new Button("Delete");
-        deleteButton.getStyleClass().add("modal-button-danger");
+        new Styles().apply(deleteButton, ButtonTheme.DANGER);
 
         Button closeButton = new Button("Cancel");
-        closeButton.getStyleClass().add("modal-button-close");
+        new Styles().apply(closeButton, ButtonTheme.CANCEL);
 
         Button createButton = new Button("Save");
-        createButton.getStyleClass().add("modal-button-create");
+        new Styles().apply(createButton, ButtonTheme.NORMAL);
 
         Region spacer = new Region();
         HBox.setHgrow(spacer, Priority.ALWAYS);
@@ -78,7 +85,7 @@ public class EditTagModal extends VBox {
             onClose.run();
         });
 
-        getStyleClass().add("modal-card");
+        new Styles().apply(this, CardTheme.NORMAL);
 
         visibleProperty().bind(GlobalModel.getSwitchEditTagProjectModal());
         managedProperty().bind(GlobalModel.getSwitchEditTagProjectModal());
