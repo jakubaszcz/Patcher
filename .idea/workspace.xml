@@ -4,10 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="c1aa160e-de6c-484d-8c28-5409cf16dc62" name="Changes" comment="refactor(style): change container text style">
+    <list default="true" id="c1aa160e-de6c-484d-8c28-5409cf16dc62" name="Changes" comment="refactor(style): display the version name in the patcher header">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/net/chrupki/ui/view/pages/project/components/Patch.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/net/chrupki/ui/view/pages/project/components/Patch.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/net/chrupki/ui/view/pages/project/components/PatchHeader.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/net/chrupki/ui/view/pages/project/components/PatchHeader.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/net/chrupki/ui/view/pages/project/components/lcontainer/LCHeader.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/net/chrupki/ui/view/pages/project/components/lcontainer/LCHeader.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -182,14 +181,6 @@
       <workItem from="1770119027273" duration="12667000" />
       <workItem from="1770895896091" duration="89000" />
       <workItem from="1770922101369" duration="5592000" />
-    </task>
-    <task id="LOCAL-00037" summary="Add type finder for patch content retrieval">
-      <option name="closed" value="true" />
-      <created>1767652047094</created>
-      <option name="number" value="00037" />
-      <option name="presentableId" value="LOCAL-00037" />
-      <option name="project" value="LOCAL" />
-      <updated>1767652047094</updated>
     </task>
     <task id="LOCAL-00038" summary="Add markdown generator">
       <option name="closed" value="true" />
@@ -575,14 +566,21 @@
       <option name="project" value="LOCAL" />
       <updated>1771233024103</updated>
     </task>
-    <option name="localTasksCounter" value="86" />
+    <task id="LOCAL-00086" summary="refactor(style): display the version name in the patcher header">
+      <option name="closed" value="true" />
+      <created>1771233858421</created>
+      <option name="number" value="00086" />
+      <option name="presentableId" value="LOCAL-00086" />
+      <option name="project" value="LOCAL" />
+      <updated>1771233858421</updated>
+    </task>
+    <option name="localTasksCounter" value="87" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="refactor(service): get rid of console log print" />
     <MESSAGE value="add(ui): add open button for the tag modal" />
     <MESSAGE value="add(controller): create tag controller" />
     <MESSAGE value="feat(ui): add tag button to version header" />
@@ -607,7 +605,8 @@
     <MESSAGE value="refactor(style): apply card style" />
     <MESSAGE value="refactor(style): apply text badge" />
     <MESSAGE value="refactor(style): change container text style" />
-    <option name="LAST_COMMIT_MESSAGE" value="refactor(style): change container text style" />
+    <MESSAGE value="refactor(style): display the version name in the patcher header" />
+    <option name="LAST_COMMIT_MESSAGE" value="refactor(style): display the version name in the patcher header" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

@@ -30,6 +30,12 @@ public class LCHeader extends HBox {
         title.textProperty().bind(HubModel.projectModel().getName());
         new Styles().apply(title, TextTheme.SUBTITLE);
 
+        Label meta = new Label("Versions");
+        new Styles().apply(meta, TextTheme.TEXT_MAIN);
+
+        VBox titleBox = new VBox(2, title, meta);
+        titleBox.setAlignment(Pos.CENTER_LEFT);
+
 
         Button addButton = new Button("+");
         new Styles().apply(addButton, ButtonTheme.NORMAL);
@@ -41,6 +47,7 @@ public class LCHeader extends HBox {
 
             String view = isVersion ? "version" : "tag";
             toggle.setText(isVersion ? "Tags" : "Versions");
+            meta.setText(isVersion ? "Versions" : "Tags");
 
             onToggle.accept(view);
         });
@@ -73,7 +80,7 @@ public class LCHeader extends HBox {
         new Styles().apply(this, ContainerTheme.HEADER);
 
         getChildren().addAll(
-                title,
+                titleBox,
                 spacer,
                 toggle,
                 addButton
