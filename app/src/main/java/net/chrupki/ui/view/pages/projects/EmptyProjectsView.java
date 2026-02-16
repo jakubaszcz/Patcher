@@ -13,11 +13,15 @@ public class EmptyProjectsView extends VBox {
     public EmptyProjectsView(Runnable onCreateProjectModal) {
 
         Label title = new Label("Welcome to Patcher");
+        title.setMaxWidth(Double.MAX_VALUE);
+        title.setAlignment(Pos.CENTER);
         new Styles().apply(title, TextTheme.TITLE);
 
         Label subtitle = new Label(
                 "It seems you don’t have any project yet.\nLet’s create your first one."
         );
+        subtitle.setMaxWidth(Double.MAX_VALUE);
+        subtitle.setAlignment(Pos.CENTER);
         new Styles().apply(subtitle, TextTheme.SUBTITLE);
 
 
