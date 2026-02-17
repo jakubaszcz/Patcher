@@ -55,7 +55,7 @@ public class PatchController {
 
 
     public void closeModal() {
-        GlobalModel.setSwitchProjectModal(false);
+        GlobalModel.setSwitchProjectsModal(false);
         GlobalModel.setSwitchCreatePatchProjectModal(false);
         GlobalModel.setSwitchEditPatchProjectModal(false);
     }

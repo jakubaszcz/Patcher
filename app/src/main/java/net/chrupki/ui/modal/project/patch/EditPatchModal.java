@@ -1,5 +1,6 @@
-package net.chrupki.ui.view.pages.project.modals.patch;
+package net.chrupki.ui.modal.project.patch;
 
+import javafx.beans.binding.Bindings;
 import javafx.collections.ObservableList;
 import javafx.geometry.Insets;
 import javafx.geometry.Pos;
@@ -15,17 +16,16 @@ import javafx.util.StringConverter;
 import net.chrupki.dto.TagDTO;
 import net.chrupki.model.HubModel;
 import net.chrupki.ui.controllers.files.dtos.EditPatch;
+import net.chrupki.ui.modal.ModalTemplate;
 import net.chrupki.ui.model.GlobalModel;
 import net.chrupki.ui.styles.Styles;
 import net.chrupki.ui.styles.theme.ButtonTheme;
-import net.chrupki.ui.styles.theme.CardTheme;
 import net.chrupki.ui.styles.theme.TextFieldTheme;
-import net.chrupki.ui.styles.theme.TextTheme;
 
 import java.util.function.BiConsumer;
 import java.util.function.Consumer;
 
-public class EditPatchModal extends VBox {
+public class EditPatchModal extends ModalTemplate {
 
     public ComboBox<TagDTO> comboBox = new ComboBox<>();
 
@@ -35,12 +35,12 @@ public class EditPatchModal extends VBox {
             BiConsumer<Integer, Integer> onDelete,
             Runnable onClose
     ) {
-        Label title = new Label("Edit patch");
-        new Styles().apply(title, TextTheme.SUBTITLE);
+        super("Edit patch", onClose);
+        titleLabel.textProperty().bind(Bindings.concat("Edit patch : ", HubModel.patchModel().getContent()));
 
-        TextField textField = new TextField();
-        textField.setPromptText("Patch name");
-        new Styles().apply(textField, TextFieldTheme.NORMAL);
+        TextField nameField = new TextField();
+        nameField.setPromptText("Patch name");
+        new Styles().apply(nameField, TextFieldTheme.NORMAL);
 
         comboBox.getStyleClass().add("modal-combobox");
 
@@ -70,38 +70,18 @@ public class EditPatchModal extends VBox {
         Button deleteButton = new Button("Delete");
         new Styles().apply(deleteButton, ButtonTheme.DANGER);
 
-        Button closeButton = new Button("Cancel");
-        new Styles().apply(closeButton, ButtonTheme.CANCEL);
+        Button saveButton = new Button("Save");
+        new Styles().apply(saveButton, ButtonTheme.NORMAL);
 
-        Button createButton = new Button("Save");
-        new Styles().apply(createButton, ButtonTheme.NORMAL);
-
-        Region spacer = new Region();
-        HBox.setHgrow(spacer, Priority.ALWAYS);
-
-        HBox actions = new HBox(12, deleteButton, closeButton, spacer, createButton);
-        actions.setAlignment(Pos.CENTER);
-
-        setSpacing(16);
-        setPadding(new Insets(18));
-        setAlignment(Pos.CENTER_LEFT);
-
-        setPrefWidth(360);
-        setMaxWidth(360);
-
-        createButton.setOnAction(e -> {
+        saveButton.setOnAction(e -> {
             onSave.accept(
                     new EditPatch(
                             HubModel.patchModel().getId().get(),
                             HubModel.patchModel().getVid().get(),
-                            textField.getText(),
+                            nameField.getText(),
                             comboBox.getValue().getId()
                     )
             );
-            textField.clear();
-            comboBox.getSelectionModel().clearSelection();
-            comboBox.setValue(null);
-            comboBox.setPromptText("Select a type");
             onClose.run();
         });
 
@@ -110,24 +90,55 @@ public class EditPatchModal extends VBox {
                     HubModel.patchModel().getId().get(),
                     HubModel.patchModel().getVid().get()
             );
-        });
-
-        closeButton.setOnAction(e -> {
             onClose.run();
         });
 
-        new Styles().apply(this, CardTheme.NORMAL);
+        visibleProperty().addListener((obs, oldVal, newVal) -> {
+            if (newVal) {
+                String currentContent = HubModel.patchModel().getContent().get();
+                nameField.setText(currentContent != null ? currentContent : "");
+                updateComboBoxSelection();
+            } else {
+                nameField.clear();
+                comboBox.getSelectionModel().clearSelection();
+                comboBox.setValue(null);
+                comboBox.setPromptText("Select a type");
+            }
+        });
+
+        HubModel.patchModel().getContent().addListener((obs, oldVal, newVal) -> {
+            if (isVisible()) {
+                nameField.setText(newVal != null ? newVal : "");
+            }
+        });
+
+        HubModel.patchModel().getTid().addListener((obs, oldVal, newVal) -> {
+            if (isVisible()) {
+                updateComboBoxSelection();
+            }
+        });
 
         visibleProperty().bind(GlobalModel.getSwitchEditPatchProjectModal());
         managedProperty().bind(GlobalModel.getSwitchEditPatchProjectModal());
 
 
         getChildren().addAll(
-                title,
-                textField,
-                comboBox,
-                actions
+                nameField,
+                comboBox
         );
+
+        actions.getChildren().add(0, deleteButton);
+        addActions(saveButton);
+    }
+
+    private void updateComboBoxSelection() {
+        int tid = HubModel.patchModel().getTid().get();
+        for (TagDTO tag : GlobalModel.getTags()) {
+            if (tag.getId() == tid) {
+                comboBox.getSelectionModel().select(tag);
+                break;
+            }
+        }
     }
 
 }

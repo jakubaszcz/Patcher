@@ -1,4 +1,4 @@
-package net.chrupki.ui.view.pages.project.modals.patch;
+package net.chrupki.ui.modal.project.patch;
 
 import javafx.collections.ObservableList;
 import javafx.geometry.Insets;
@@ -15,13 +15,14 @@ import javafx.util.StringConverter;
 import net.chrupki.dto.TagDTO;
 import net.chrupki.model.HubModel;
 import net.chrupki.request.PatchRequest;
+import net.chrupki.ui.modal.ModalTemplate;
 import net.chrupki.ui.model.GlobalModel;
 import net.chrupki.ui.styles.Styles;
 import net.chrupki.ui.styles.theme.*;
 
 import java.util.function.Consumer;
 
-public class CreatePatchModal extends VBox {
+public class CreatePatchModal extends ModalTemplate {
 
     public ComboBox<TagDTO> comboBox = new ComboBox<>();
 
@@ -29,10 +30,8 @@ public class CreatePatchModal extends VBox {
             Consumer<PatchRequest> onCreate,
             Runnable onClose
     ) {
+        super("Create patch", onClose);
         ObservableList<TagDTO> tags = GlobalModel.getTags();
-
-        Label title = new Label("Create patch");
-        new Styles().apply(title, TextTheme.SUBTITLE);
 
         TextField textField = new TextField();
         textField.setPromptText("Patch name");
@@ -62,24 +61,8 @@ public class CreatePatchModal extends VBox {
 
         comboBox.setPromptText("Select a type");
 
-        Button closeButton = new Button("Cancel");
-        new Styles().apply(closeButton, ButtonTheme.CANCEL);
-
         Button createButton = new Button("Create");
         new Styles().apply(createButton, ButtonTheme.NORMAL);
-
-        Region spacer = new Region();
-        HBox.setHgrow(spacer, Priority.ALWAYS);
-
-        HBox actions = new HBox(12, closeButton, spacer, createButton);
-        actions.setAlignment(Pos.CENTER);
-
-        setSpacing(16);
-        setPadding(new Insets(18));
-        setAlignment(Pos.CENTER_LEFT);
-
-        setPrefWidth(360);
-        setMaxWidth(360);
 
         createButton.setOnAction(e -> {
             onCreate.accept(
@@ -92,22 +75,16 @@ public class CreatePatchModal extends VBox {
             onClose.run();
         });
 
-        closeButton.setOnAction(e -> {
-            onClose.run();
-        });
-
-        new Styles().apply(this, CardTheme.NORMAL);
-
         visibleProperty().bind(GlobalModel.getSwitchCreatePatchProjectModal());
         managedProperty().bind(GlobalModel.getSwitchCreatePatchProjectModal());
 
 
         getChildren().addAll(
-                title,
                 textField,
-                comboBox,
-                actions
+                comboBox
         );
+
+        addActions(createButton);
     }
 
     public void refresh(ObservableList<TagDTO> tags) {

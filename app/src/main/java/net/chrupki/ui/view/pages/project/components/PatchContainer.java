@@ -47,7 +47,7 @@ public class PatchContainer extends HBox {
 
         editButton.setOnAction(e -> {
             HubModel.patchModel().from(patch);
-            GlobalModel.setSwitchProjectModal(true);
+            GlobalModel.setSwitchProjectsModal(true);
             GlobalModel.setSwitchEditPatchProjectModal(true);
         });
 

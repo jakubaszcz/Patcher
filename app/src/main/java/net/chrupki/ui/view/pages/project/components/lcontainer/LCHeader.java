@@ -62,7 +62,7 @@ public class LCHeader extends HBox {
 
         addButton.setOnAction(e -> {
 
-            GlobalModel.setSwitchProjectModal(true);
+            GlobalModel.setSwitchProjectsModal(true);
 
             if (isVersion) {
                 GlobalModel.setSwitchCreateVersionProjectModal(true);

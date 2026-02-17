@@ -36,12 +36,12 @@ public class PatchHeader extends HBox {
         setSpacing(8);
 
         addButton.setOnAction(e -> {
-            GlobalModel.setSwitchProjectModal(true);
+            GlobalModel.setSwitchProjectsModal(true);
             GlobalModel.setSwitchCreatePatchProjectModal(true);
         });
 
         exportButton.setOnAction(e -> {
-            GlobalModel.setSwitchProjectModal(true);
+            GlobalModel.setSwitchProjectsModal(true);
             GlobalModel.setSwitchExportModal(true);
         });
 

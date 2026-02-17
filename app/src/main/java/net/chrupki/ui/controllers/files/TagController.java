@@ -49,7 +49,7 @@ public class TagController {
     }
 
     public void closeModal() {
-        GlobalModel.setSwitchProjectModal(false);
+        GlobalModel.setSwitchProjectsModal(false);
         GlobalModel.setSwitchCreateTagProjectModal(false);
         GlobalModel.setSwitchEditTagProjectModal(false);
     }

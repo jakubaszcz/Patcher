@@ -1,4 +1,4 @@
-package net.chrupki.ui.view.pages.project.modals.tags;
+package net.chrupki.ui.modal.project.tags;
 
 import javafx.collections.ObservableList;
 import javafx.geometry.Insets;
@@ -11,52 +11,29 @@ import javafx.scene.layout.Priority;
 import javafx.scene.layout.Region;
 import javafx.scene.layout.VBox;
 import net.chrupki.dto.TagDTO;
-import net.chrupki.model.HubModel;
-import net.chrupki.request.PatchRequest;
+import net.chrupki.ui.modal.ModalTemplate;
 import net.chrupki.ui.model.GlobalModel;
 import net.chrupki.ui.styles.Styles;
 import net.chrupki.ui.styles.theme.ButtonTheme;
-import net.chrupki.ui.styles.theme.CardTheme;
 import net.chrupki.ui.styles.theme.TextFieldTheme;
-import net.chrupki.ui.styles.theme.TextTheme;
 
 import java.util.function.Consumer;
 
-public class CreateTagModal extends VBox {
+public class CreateTagModal extends ModalTemplate {
 
     public CreateTagModal(
             Consumer<TagDTO> onCreate,
             Runnable onClose
     ) {
-        ObservableList<TagDTO> tags = GlobalModel.getTags();
-
-        Label title = new Label("Create tag");
-        new Styles().apply(title, TextTheme.SUBTITLE);
-
+        super("Create tag", onClose);
 
         TextField textField = new TextField();
         textField.setPromptText("Tag name");
         new Styles().apply(textField, TextFieldTheme.NORMAL);
 
 
-        Button closeButton = new Button("Cancel");
-        new Styles().apply(closeButton, ButtonTheme.CANCEL);
-
         Button createButton = new Button("Create");
         new Styles().apply(createButton, ButtonTheme.NORMAL);
-
-        Region spacer = new Region();
-        HBox.setHgrow(spacer, Priority.ALWAYS);
-
-        HBox actions = new HBox(12, closeButton, spacer, createButton);
-        actions.setAlignment(Pos.CENTER);
-
-        setSpacing(16);
-        setPadding(new Insets(18));
-        setAlignment(Pos.CENTER_LEFT);
-
-        setPrefWidth(360);
-        setMaxWidth(360);
 
         createButton.setOnAction(e -> {
             onCreate.accept(
@@ -65,20 +42,14 @@ public class CreateTagModal extends VBox {
             onClose.run();
         });
 
-        closeButton.setOnAction(e -> {
-            onClose.run();
-        });
-
-        new Styles().apply(this, CardTheme.NORMAL);
-
         visibleProperty().bind(GlobalModel.getSwitchCreateTagProjectModal());
         managedProperty().bind(GlobalModel.getSwitchCreateTagProjectModal());
 
         getChildren().addAll(
-                title,
-                textField,
-                actions
+                textField
         );
+
+        addActions(createButton);
     }
 
 }

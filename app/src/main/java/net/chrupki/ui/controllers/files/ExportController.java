@@ -16,7 +16,7 @@ public class ExportController {
     }
 
     public void closeModal() {
-        GlobalModel.setSwitchProjectModal(false);
+        GlobalModel.setSwitchProjectsModal(false);
         GlobalModel.setSwitchExportModal(false);
     }
 }

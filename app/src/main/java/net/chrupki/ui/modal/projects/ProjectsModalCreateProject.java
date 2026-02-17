@@ -1,4 +1,4 @@
-package net.chrupki.ui.view.pages.projects.modals.project;
+package net.chrupki.ui.modal.projects;
 
 import javafx.geometry.Insets;
 import javafx.geometry.Pos;
@@ -11,24 +11,21 @@ import javafx.scene.layout.Priority;
 import javafx.scene.layout.Region;
 import javafx.scene.layout.VBox;
 import net.chrupki.dto.ProjectDTO;
+import net.chrupki.ui.modal.ModalTemplate;
 import net.chrupki.ui.model.GlobalModel;
 import net.chrupki.ui.styles.Styles;
 import net.chrupki.ui.styles.theme.ButtonTheme;
-import net.chrupki.ui.styles.theme.CardTheme;
 import net.chrupki.ui.styles.theme.TextFieldTheme;
-import net.chrupki.ui.styles.theme.TextTheme;
 
 import java.util.function.Consumer;
 
-public class ProjectsModalCreateProject extends VBox {
+public class ProjectsModalCreateProject extends ModalTemplate {
 
     public ProjectsModalCreateProject(
             Consumer<ProjectDTO> onCreate,
             Runnable onClose
     ) {
-
-        Label title = new Label("Create project");
-        new Styles().apply(title, TextTheme.SUBTITLE);
+        super("Create project", onClose);
 
         TextField textField = new TextField();
         textField.setPromptText("Project name");
@@ -40,17 +37,8 @@ public class ProjectsModalCreateProject extends VBox {
         textArea.setWrapText(true);
         new Styles().apply(textArea, TextFieldTheme.NORMAL);
 
-        Button closeButton = new Button("Cancel");
-        new Styles().apply(closeButton, ButtonTheme.CANCEL);
-
         Button createButton = new Button("Create");
         new Styles().apply(createButton, ButtonTheme.NORMAL);
-
-        closeButton.setOnAction(e -> {
-            textField.clear();
-            textArea.clear();
-            onClose.run();
-        });
 
         createButton.setOnAction(e -> {
             if (!textField.getText().isBlank()) {
@@ -68,29 +56,14 @@ public class ProjectsModalCreateProject extends VBox {
             }
         });
 
-        Region spacer = new Region();
-        HBox.setHgrow(spacer, Priority.ALWAYS);
-
-        HBox actions = new HBox(12, closeButton, spacer, createButton);
-        actions.setAlignment(Pos.CENTER);
-
-        setSpacing(16);
-        setPadding(new Insets(18));
-        setAlignment(Pos.CENTER_LEFT);
-
-        setPrefWidth(360);
-        setMaxWidth(360);
-
-        new Styles().apply(this, CardTheme.NORMAL);
-
         visibleProperty().bind(GlobalModel.getSwitchCreateProjectsModal());
         managedProperty().bind(GlobalModel.getSwitchCreateProjectsModal());
 
         getChildren().addAll(
-                title,
                 textField,
-                textArea,
-                actions
+                textArea
         );
+
+        addActions(createButton);
     }
 }

@@ -1,5 +1,6 @@
-package net.chrupki.ui.view.pages.project.modals.version;
+package net.chrupki.ui.modal.project.version;
 
+import javafx.beans.binding.Bindings;
 import javafx.geometry.Insets;
 import javafx.geometry.Pos;
 import javafx.scene.control.Button;
@@ -11,36 +12,30 @@ import javafx.scene.layout.Region;
 import javafx.scene.layout.VBox;
 import net.chrupki.model.HubModel;
 import net.chrupki.ui.controllers.files.dtos.EditVersion;
+import net.chrupki.ui.modal.ModalTemplate;
 import net.chrupki.ui.model.GlobalModel;
 import net.chrupki.ui.styles.Styles;
 import net.chrupki.ui.styles.theme.ButtonTheme;
-import net.chrupki.ui.styles.theme.CardTheme;
 import net.chrupki.ui.styles.theme.TextFieldTheme;
-import net.chrupki.ui.styles.theme.TextTheme;
 
 import java.util.function.Consumer;
 
-public class EditVersionModal extends VBox {
+public class EditVersionModal extends ModalTemplate {
 
     public EditVersionModal(
             Consumer<EditVersion> onSave,
             Consumer<Integer> onDelete,
             Runnable onClose
     ) {
-        Label title = new Label("Edit version");
-        new Styles().apply(title, TextTheme.SUBTITLE);
+        super("Edit version", onClose);
+        titleLabel.textProperty().bind(Bindings.concat("Edit version : ", HubModel.versionModel().getName()));
 
-
-        TextField newName = new TextField();
-        newName.setPromptText("New version name");
-        new Styles().apply(newName, TextFieldTheme.NORMAL);
-
+        TextField nameField = new TextField();
+        nameField.setPromptText("Version name");
+        new Styles().apply(nameField, TextFieldTheme.NORMAL);
 
         Button deleteButton = new Button("Delete");
         new Styles().apply(deleteButton, ButtonTheme.DANGER);
-
-        Button closeButton = new Button("Cancel");
-        new Styles().apply(closeButton, ButtonTheme.CANCEL);
 
         Button saveButton = new Button("Save");
         new Styles().apply(saveButton, ButtonTheme.NORMAL);
@@ -48,51 +43,41 @@ public class EditVersionModal extends VBox {
         deleteButton.setOnAction(e -> {
             onDelete.accept(HubModel.versionModel().getId().get());
             onClose.run();
-            newName.clear();
-        });
-        closeButton.setOnAction(e -> {
-            onClose.run();
-            newName.clear();
         });
 
         saveButton.setOnAction(e -> {
-            if (!newName.getText().isBlank()) {
+            if (!nameField.getText().isBlank()) {
                 onSave.accept(new EditVersion(
                         HubModel.versionModel().getId().get(),
-                        newName.getText(),
+                        nameField.getText(),
                         HubModel.projectModel().getName().get()));
             }
-            newName.clear();
+            onClose.run();
         });
 
-        Region spacer = new Region();
-        HBox.setHgrow(spacer, Priority.ALWAYS);
+        visibleProperty().addListener((obs, oldVal, newVal) -> {
+            if (newVal) {
+                String currentName = HubModel.versionModel().getName().get();
+                nameField.setText(currentName != null ? currentName : "");
+            } else {
+                nameField.clear();
+            }
+        });
 
-        HBox actions = new HBox(
-                12,
-                deleteButton,
-                spacer,
-                closeButton,
-                saveButton
-        );
-        actions.setAlignment(Pos.CENTER);
-
-        setSpacing(16);
-        setPadding(new Insets(18));
-        setAlignment(Pos.CENTER_LEFT);
-
-        setPrefWidth(360);
-        setMaxWidth(360);
-
-        new Styles().apply(this, CardTheme.NORMAL);
+        HubModel.versionModel().getName().addListener((obs, oldVal, newVal) -> {
+            if (isVisible()) {
+                nameField.setText(newVal != null ? newVal : "");
+            }
+        });
 
         visibleProperty().bind(GlobalModel.getSwitchEditVersionProjectModal());
         managedProperty().bind(GlobalModel.getSwitchEditVersionProjectModal());
 
         getChildren().addAll(
-                title,
-                newName,
-                actions
+                nameField
         );
+
+        actions.getChildren().add(0, deleteButton);
+        addActions(saveButton);
     }
 }

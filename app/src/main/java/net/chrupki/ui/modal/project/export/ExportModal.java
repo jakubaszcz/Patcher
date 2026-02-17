@@ -1,4 +1,4 @@
-package net.chrupki.ui.view.pages.project.modals.export;
+package net.chrupki.ui.modal.project.export;
 
 import javafx.collections.ObservableList;
 import javafx.geometry.Insets;
@@ -15,24 +15,21 @@ import net.chrupki.database.dao.TagDAO;
 import net.chrupki.database.dao.VersionDAO;
 import net.chrupki.model.HubModel;
 import net.chrupki.request.ExportRequest;
+import net.chrupki.ui.modal.ModalTemplate;
 import net.chrupki.ui.model.GlobalModel;
 import net.chrupki.ui.styles.Styles;
 import net.chrupki.ui.styles.theme.ButtonTheme;
-import net.chrupki.ui.styles.theme.CardTheme;
-import net.chrupki.ui.styles.theme.TextTheme;
 
 import java.io.File;
 import java.util.List;
 import java.util.function.Consumer;
 
-public class ExportModal extends VBox {
+public class ExportModal extends ModalTemplate {
 
     public ExportModal(Runnable onClose, Consumer<ExportRequest> onExport) {
+        super("Export version", onClose);
 
         ObservableList<String> templates = GlobalModel.getTemplates();
-
-        Label title = new Label("Export version");
-        new Styles().apply(title, TextTheme.SUBTITLE);
 
         ComboBox<String> comboBox = new ComboBox<>();
         comboBox.getStyleClass().add("modal-combobox");
@@ -45,21 +42,8 @@ public class ExportModal extends VBox {
             comboBox.getSelectionModel().selectFirst();
         }
 
-        Button closeButton = new Button("Cancel");
-        new Styles().apply(closeButton, ButtonTheme.CANCEL);
-
         Button createButton = new Button("Export");
         new Styles().apply(createButton, ButtonTheme.NORMAL);
-
-        Region spacer = new Region();
-        HBox.setHgrow(spacer, Priority.ALWAYS);
-
-        HBox actions = new HBox(12, closeButton, spacer, createButton);
-        actions.setAlignment(Pos.CENTER);
-
-        setSpacing(16);
-        setPadding(new Insets(18));
-        setAlignment(Pos.CENTER_LEFT);
 
         createButton.setOnAction(e -> {
             FileChooser chooser = new FileChooser();
@@ -90,20 +74,13 @@ public class ExportModal extends VBox {
             }
         });
 
-        closeButton.setOnAction(e -> onClose.run());
-
-        setPrefWidth(360);
-        setMaxWidth(360);
-
-        new Styles().apply(this, CardTheme.NORMAL);
-
         visibleProperty().bind(GlobalModel.getSwitchExportModal());
         managedProperty().bind(GlobalModel.getSwitchExportModal());
 
         if (hasTemplates) {
-            getChildren().addAll(title, comboBox, actions);
-        } else {
-            getChildren().addAll(title, actions);
+            getChildren().add(comboBox);
         }
+
+        addActions(createButton);
     }
 }

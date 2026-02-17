@@ -33,7 +33,7 @@ public class LCVersion extends VBox {
                     "Version",
                     "Click here to create your first version",
                     () -> {
-                        GlobalModel.setSwitchProjectModal(true);
+                        GlobalModel.setSwitchProjectsModal(true);
                         GlobalModel.setSwitchCreateVersionProjectModal(true);
                     }
             );

@@ -42,7 +42,7 @@ public class LCVersionContainer extends HBox {
 
         editButton.setOnAction(e -> {
             HubModel.versionModel().from(version);
-            GlobalModel.setSwitchProjectModal(true);
+            GlobalModel.setSwitchProjectsModal(true);
             GlobalModel.setSwitchEditVersionProjectModal(true);
         });
 

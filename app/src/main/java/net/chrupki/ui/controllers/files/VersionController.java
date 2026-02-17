@@ -82,7 +82,7 @@ public class VersionController {
     }
 
     public void closeModal() {
-        GlobalModel.setSwitchProjectModal(false);
+        GlobalModel.setSwitchProjectsModal(false);
         GlobalModel.setSwitchCreateVersionProjectModal(false);
         GlobalModel.setSwitchEditVersionProjectModal(false);
     }

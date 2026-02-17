@@ -35,7 +35,7 @@ public class LCTagContainer extends HBox {
 
         editButton.setOnAction(e -> {
             HubModel.tagModel().from(tagDTO);
-            GlobalModel.setSwitchProjectModal(true);
+            GlobalModel.setSwitchProjectsModal(true);
             GlobalModel.setSwitchEditTagProjectModal(true);
         });
 

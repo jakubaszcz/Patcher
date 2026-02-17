@@ -1,8 +1,10 @@
 package net.chrupki.ui.view;
 
 import javafx.scene.Scene;
+import javafx.scene.layout.StackPane;
 import javafx.stage.Stage;
 import net.chrupki.ui.controllers.HubController;
+import net.chrupki.ui.modal.Modal;
 import net.chrupki.ui.util.Css;
 import net.chrupki.ui.view.manager.PageManager;
 import net.chrupki.ui.view.pages.projects.ProjectsView;
@@ -17,8 +19,8 @@ public class MainPage {
         stage.setMinHeight(400);
     }
 
-    private static void scene(Stage stage, PageManager viewManager) {
-        Scene scene = new Scene(viewManager.getContainer(), 1000, 800);
+    private static void scene(Stage stage, StackPane root) {
+        Scene scene = new Scene(root, 1000, 800);
 
         scene.getStylesheets().addAll(
                 Css.load("theme.css"),
@@ -39,28 +41,16 @@ public class MainPage {
 
         PageManager viewManager = new PageManager();
 
+        StackPane root = new StackPane();
+        root.getChildren().add(viewManager.getContainer());
+        root.getChildren().add(new Modal());
+
         viewManager.show(new ProjectsView(viewManager));
 
         // Set up the application stage
         setup(stage);
 
-/*        VBox mainContent = new VBox(10,
-                new Header(model, projectController::createProject, projectController::selectProject),
-                new ProjectSelector(model, projectController::selectProject),
-                new ProjectView(model, projectController, versionController),
-                new VersionView(model, patchController, exportController)
-        );*/
-
-/*        StackPane root = new StackPane();
-        root.getChildren().add(mainContent);*/
-
-        // Modal View
-        /*root.getChildren().add(new ModalView(model,
-                projectController,
-                versionController,
-                patchController));*/
-
-        scene(stage, viewManager);
+        scene(stage, root);
 
         HubController.getProjectController().loadProjects();
         HubController.getPatchController().loadPatches();

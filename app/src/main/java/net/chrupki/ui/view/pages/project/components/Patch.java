@@ -57,8 +57,8 @@ public class Patch extends VBox {
                     "Patch",
                     "It seems you don't have any patches yet.",
                     () -> {
-                        GlobalModel.setSwitchProjectModal(true);
-                        GlobalModel.setSwitchCreateTagProjectModal(true);
+                        GlobalModel.setSwitchProjectsModal(true);
+                        GlobalModel.setSwitchCreatePatchProjectModal(true);
                     }
             );
             VBox.setVgrow(emptyView, Priority.ALWAYS);

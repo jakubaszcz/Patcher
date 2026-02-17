@@ -71,8 +71,8 @@ public class ProjectsContainer extends VBox {
         });
 
         edit.setOnAction(e -> {
-            onEditProjectModal.run();
             HubModel.projectModel().from(projectContainerModel.getProjectDTO());
+            onEditProjectModal.run();
         });
 
         setPrefWidth(projectContainerModel.getWidth());

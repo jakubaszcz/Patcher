@@ -34,7 +34,7 @@ public class LCTag extends VBox {
                     "Tag",
                     "Click here to create your first tag",
                     () -> {
-                        GlobalModel.setSwitchProjectModal(true);
+                        GlobalModel.setSwitchProjectsModal(true);
                         GlobalModel.setSwitchCreateTagProjectModal(true);
                     }
             );

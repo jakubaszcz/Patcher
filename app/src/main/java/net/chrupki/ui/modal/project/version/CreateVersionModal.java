@@ -1,4 +1,4 @@
-package net.chrupki.ui.view.pages.project.modals.version;
+package net.chrupki.ui.modal.project.version;
 
 import javafx.geometry.Insets;
 import javafx.geometry.Pos;
@@ -10,21 +10,20 @@ import javafx.scene.layout.HBox;
 import javafx.scene.layout.Priority;
 import javafx.scene.layout.Region;
 import javafx.scene.layout.VBox;
+import net.chrupki.ui.modal.ModalTemplate;
 import net.chrupki.ui.model.GlobalModel;
 import net.chrupki.ui.styles.Styles;
 import net.chrupki.ui.styles.theme.*;
 
 import java.util.function.BiConsumer;
 
-public class CreateVersionModal extends VBox {
+public class CreateVersionModal extends ModalTemplate {
 
     public CreateVersionModal(
             BiConsumer<String, String> onCreate,
             Runnable onClose
     ) {
-        Label title = new Label("Create version");
-        new Styles().apply(title, TextTheme.SUBTITLE);
-
+        super("Create version", onClose);
 
         TextField textField = new TextField();
         textField.setPromptText("Version name");
@@ -40,24 +39,8 @@ public class CreateVersionModal extends VBox {
 
         comboBox.setPromptText("Select a type");
 
-        Button closeButton = new Button("Cancel");
-        new Styles().apply(closeButton, ButtonTheme.CANCEL);
-
         Button createButton = new Button("Create");
         new Styles().apply(createButton, ButtonTheme.NORMAL);
-
-        Region spacer = new Region();
-        HBox.setHgrow(spacer, Priority.ALWAYS);
-
-        HBox actions = new HBox(12, closeButton, spacer, createButton);
-        actions.setAlignment(Pos.CENTER);
-
-        setSpacing(16);
-        setPadding(new Insets(18));
-        setAlignment(Pos.CENTER_LEFT);
-
-        setPrefWidth(360);
-        setMaxWidth(360);
 
         createButton.setOnAction(e -> {
             onCreate.accept(textField.getText(), comboBox.getValue());
@@ -65,22 +48,16 @@ public class CreateVersionModal extends VBox {
             onClose.run();
         });
 
-        closeButton.setOnAction(e -> {
-            onClose.run();
-        });
-
-        new Styles().apply(this, CardTheme.NORMAL);
-
         visibleProperty().bind(GlobalModel.getSwitchCreateVersionProjectModal());
         managedProperty().bind(GlobalModel.getSwitchCreateVersionProjectModal());
 
 
         getChildren().addAll(
-                title,
                 textField,
-                comboBox,
-                actions
+                comboBox
         );
+
+        addActions(createButton);
     }
 
 }

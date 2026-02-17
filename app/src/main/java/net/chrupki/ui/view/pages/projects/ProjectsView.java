@@ -19,7 +19,6 @@ import net.chrupki.ui.view.pages.projects.components.CreateProjectButton;
 import net.chrupki.ui.view.pages.projects.components.ProjectsContainer;
 import net.chrupki.ui.view.pages.projects.dto.CreateProjectButtonDTO;
 import net.chrupki.ui.view.pages.projects.dto.ProjectContainerDTO;
-import net.chrupki.ui.view.pages.projects.modals.ProjectsModal;
 
 public class ProjectsView extends StackPane {
 
@@ -69,8 +68,7 @@ public class ProjectsView extends StackPane {
         VBox.setVgrow(scrollPane, Priority.ALWAYS);
 
         getChildren().addAll(
-                container,
-                new ProjectsModal()
+                container
         );
     }
 

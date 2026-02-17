@@ -7,7 +7,6 @@ import javafx.scene.layout.VBox;
 import net.chrupki.ui.view.manager.PageManager;
 import net.chrupki.ui.view.pages.project.components.Body;
 import net.chrupki.ui.view.pages.project.components.Header;
-import net.chrupki.ui.view.pages.project.modals.ProjectModal;
 
 public class ProjectView extends StackPane {
 
@@ -23,11 +22,6 @@ public class ProjectView extends StackPane {
         VBox.setVgrow(borderPane, Priority.ALWAYS);
 
         getChildren().add(borderPane);
-
-        // Modal
-        getChildren().add(
-                new ProjectModal()
-        );
     }
 }
 

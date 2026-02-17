@@ -1,5 +1,6 @@
-package net.chrupki.ui.view.pages.projects.modals.project;
+package net.chrupki.ui.modal.projects;
 
+import javafx.beans.binding.Bindings;
 import javafx.beans.property.StringProperty;
 import javafx.geometry.Insets;
 import javafx.geometry.Pos;
@@ -12,16 +13,13 @@ import javafx.scene.layout.Priority;
 import javafx.scene.layout.Region;
 import javafx.scene.layout.VBox;
 import net.chrupki.model.HubModel;
+import net.chrupki.ui.modal.ModalTemplate;
 import net.chrupki.ui.model.GlobalModel;
 import net.chrupki.ui.styles.Styles;
 import net.chrupki.ui.styles.theme.ButtonTheme;
-import net.chrupki.ui.styles.theme.CardTheme;
 import net.chrupki.ui.styles.theme.TextFieldTheme;
-import net.chrupki.ui.styles.theme.TextTheme;
 
-import java.util.function.Consumer;
-
-public class ProjectsModalEditProject extends VBox {
+public class ProjectsModalEditProject extends ModalTemplate {
 
     public interface SaveProjectHandler {
         void accept(String oldName, String newName, String description);
@@ -32,35 +30,22 @@ public class ProjectsModalEditProject extends VBox {
             Runnable onDelete,
             Runnable onClose
     ) {
+        super("Edit project", onClose);
+        titleLabel.textProperty().bind(Bindings.concat("Edit project : ", HubModel.projectModel().getName()));
 
-        StringProperty projectName = HubModel.projectModel().getName();
         StringProperty projectDescription = HubModel.projectModel().getDescription();
 
-        Label title = new Label("Edit project");
-        new Styles().apply(title, TextTheme.SUBTITLE);
-
-        TextField currentName = new TextField();
-        currentName.textProperty().bind(projectName);
-
-        currentName.setDisable(true);
-        new Styles().apply(currentName, TextFieldTheme.NORMAL);
-
-        TextField newName = new TextField();
-        newName.setPromptText("New project name");
-        new Styles().apply(newName, TextFieldTheme.NORMAL);
+        TextField nameField = new TextField();
+        new Styles().apply(nameField, TextFieldTheme.NORMAL);
 
         TextArea descriptionArea = new TextArea();
         descriptionArea.setPromptText("Description");
         descriptionArea.setPrefHeight(100);
         descriptionArea.setWrapText(true);
-        descriptionArea.textProperty().bindBidirectional(projectDescription);
         new Styles().apply(descriptionArea, TextFieldTheme.NORMAL);
 
         Button deleteButton = new Button("Delete");
         new Styles().apply(deleteButton, ButtonTheme.DANGER);
-
-        Button closeButton = new Button("Cancel");
-        new Styles().apply(closeButton, ButtonTheme.CANCEL);
 
         Button saveButton = new Button("Save");
         new Styles().apply(saveButton, ButtonTheme.NORMAL);
@@ -68,50 +53,47 @@ public class ProjectsModalEditProject extends VBox {
         deleteButton.setOnAction(e -> {
             onDelete.run();
             onClose.run();
-            newName.clear();
-        });
-        closeButton.setOnAction(e -> {
-            onClose.run();
-            newName.clear();
         });
 
         saveButton.setOnAction(e -> {
-            String nameToSave = newName.getText().isBlank() ? HubModel.projectModel().getName().get() : newName.getText();
+            String nameToSave = nameField.getText().isBlank() ? HubModel.projectModel().getName().get() : nameField.getText();
             onSave.accept(HubModel.projectModel().getName().get(), nameToSave, descriptionArea.getText());
             onClose.run();
-            newName.clear();
         });
 
-        Region spacer = new Region();
-        HBox.setHgrow(spacer, Priority.ALWAYS);
+        visibleProperty().addListener((obs, oldVal, newVal) -> {
+            if (newVal) {
+                String currentName = HubModel.projectModel().getName().get();
+                String currentDesc = HubModel.projectModel().getDescription().get();
+                nameField.setText(currentName != null ? currentName : "");
+                descriptionArea.setText(currentDesc != null ? currentDesc : "");
+            } else {
+                nameField.clear();
+                descriptionArea.clear();
+            }
+        });
 
-        HBox actions = new HBox(
-                12,
-                deleteButton,
-                spacer,
-                closeButton,
-                saveButton
-        );
-        actions.setAlignment(Pos.CENTER);
+        HubModel.projectModel().getName().addListener((obs, oldVal, newVal) -> {
+            if (isVisible()) {
+                nameField.setText(newVal != null ? newVal : "");
+            }
+        });
 
-        setSpacing(16);
-        setPadding(new Insets(18));
-        setAlignment(Pos.CENTER_LEFT);
-
-        setPrefWidth(360);
-        setMaxWidth(360);
-
-        new Styles().apply(this, CardTheme.NORMAL);
+        HubModel.projectModel().getDescription().addListener((obs, oldVal, newVal) -> {
+            if (isVisible()) {
+                descriptionArea.setText(newVal != null ? newVal : "");
+            }
+        });
 
         visibleProperty().bind(GlobalModel.getSwitchEditProjectsModal());
         managedProperty().bind(GlobalModel.getSwitchEditProjectsModal());
 
         getChildren().addAll(
-                title,
-                currentName,
-                newName,
-                descriptionArea,
-                actions
+                nameField,
+                descriptionArea
         );
+
+        actions.getChildren().add(0, deleteButton);
+        addActions(saveButton);
     }
 }
