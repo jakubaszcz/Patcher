@@ -10,10 +10,17 @@
 }
 
 .container-body {
-    -fx-background-color: -color-base-800;
-    -fx-cursor: hand;
+    -fx-background-color: -color-base-900;
 }
 
 .container-body:hover {
+    -fx-background-color: -color-primary-800;
+}
+
+.container-body-pair {
+    -fx-background-color: -color-base-800;
+}
+
+.container-body-pair:hover {
     -fx-background-color: -color-primary-800;
 }

@@ -20,7 +20,7 @@ import java.util.function.Consumer;
 
 public class LCVersionContainer extends HBox {
 
-    public LCVersionContainer(VersionDTO version, Consumer<VersionDTO> onSelectVersion) {
+    public LCVersionContainer(VersionDTO version, Consumer<VersionDTO> onSelectVersion, boolean pair) {
 
         Label name = new Label("v" + version.getVersion());
         new Styles().apply(name, TextTheme.TEXT_ITEM);
@@ -53,8 +53,8 @@ public class LCVersionContainer extends HBox {
         setPadding(new Insets(10, 12, 10, 12));
         setSpacing(8);
 
-        new Styles().apply(this, ContainerTheme.BODY);
-
+        if (pair) new Styles().apply(this, ContainerTheme.BODY_PAIR);
+        else new Styles().apply(this, ContainerTheme.BODY);
 
         setOnMouseClicked(e -> {
             onSelectVersion.accept(version);

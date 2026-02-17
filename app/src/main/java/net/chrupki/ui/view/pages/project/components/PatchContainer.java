@@ -19,7 +19,7 @@ import net.chrupki.ui.styles.theme.TextTheme;
 
 public class PatchContainer extends HBox {
 
-    public PatchContainer(PatchDTO patch) {
+    public PatchContainer(PatchDTO patch, boolean pair) {
 
         Label typeLabel = new Label();
         StringProperty type = new SimpleStringProperty(
@@ -58,8 +58,8 @@ public class PatchContainer extends HBox {
         setPadding(new Insets(10, 12, 10, 12));
         setSpacing(12);
 
-        new Styles().apply(this, ContainerTheme.BODY);
-
+        if (pair) new Styles().apply(this, ContainerTheme.BODY_PAIR);
+        else new Styles().apply(this, ContainerTheme.BODY);
 
         getChildren().addAll(
                 textBox,

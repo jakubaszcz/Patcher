@@ -18,7 +18,7 @@ import net.chrupki.ui.styles.theme.TextTheme;
 
 public class LCTagContainer extends HBox {
 
-    public LCTagContainer(TagDTO tagDTO) {
+    public LCTagContainer(TagDTO tagDTO, boolean pair) {
         Label name = new Label(tagDTO.getName());
         new Styles().apply(name, TextTheme.TEXT_ITEM);
 
@@ -46,7 +46,8 @@ public class LCTagContainer extends HBox {
         setPadding(new Insets(10, 12, 10, 12));
         setSpacing(8);
 
-        new Styles().apply(this, ContainerTheme.BODY);
+        if (pair) new Styles().apply(this, ContainerTheme.BODY_PAIR);
+        else new Styles().apply(this, ContainerTheme.BODY);
 
         getChildren().addAll(
                 textBox,

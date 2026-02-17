@@ -4,36 +4,16 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="c1aa160e-de6c-484d-8c28-5409cf16dc62" name="Changes" comment="feat(ui): create header for the projects">
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/net/chrupki/ui/modal/Modal.java" afterDir="false" />
+    <list default="true" id="c1aa160e-de6c-484d-8c28-5409cf16dc62" name="Changes" comment="add: modal template">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/net/chrupki/ui/controllers/files/ExportController.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/net/chrupki/ui/controllers/files/ExportController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/net/chrupki/ui/controllers/files/PatchController.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/net/chrupki/ui/controllers/files/PatchController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/net/chrupki/ui/controllers/files/TagController.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/net/chrupki/ui/controllers/files/TagController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/net/chrupki/ui/controllers/files/VersionController.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/net/chrupki/ui/controllers/files/VersionController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/net/chrupki/ui/view/MainPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/net/chrupki/ui/view/MainPage.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/net/chrupki/ui/view/pages/project/ProjectView.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/net/chrupki/ui/view/pages/project/ProjectView.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/net/chrupki/ui/styles/theme/ContainerTheme.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/net/chrupki/ui/styles/theme/ContainerTheme.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/net/chrupki/ui/view/pages/project/components/Patch.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/net/chrupki/ui/view/pages/project/components/Patch.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/net/chrupki/ui/view/pages/project/components/PatchContainer.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/net/chrupki/ui/view/pages/project/components/PatchContainer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/net/chrupki/ui/view/pages/project/components/PatchHeader.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/net/chrupki/ui/view/pages/project/components/PatchHeader.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/net/chrupki/ui/view/pages/project/components/lcontainer/LCHeader.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/net/chrupki/ui/view/pages/project/components/lcontainer/LCHeader.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/net/chrupki/ui/view/pages/project/components/lcontainer/tag/LCTag.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/net/chrupki/ui/view/pages/project/components/lcontainer/tag/LCTag.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/net/chrupki/ui/view/pages/project/components/lcontainer/tag/components/LCTagContainer.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/net/chrupki/ui/view/pages/project/components/lcontainer/tag/components/LCTagContainer.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/net/chrupki/ui/view/pages/project/components/lcontainer/version/LCVersion.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/net/chrupki/ui/view/pages/project/components/lcontainer/version/LCVersion.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/net/chrupki/ui/view/pages/project/components/lcontainer/version/components/LCVersionContainer.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/net/chrupki/ui/view/pages/project/components/lcontainer/version/components/LCVersionContainer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/net/chrupki/ui/view/pages/project/modals/ProjectModal.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/net/chrupki/ui/view/pages/project/modals/export/ExportModal.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/net/chrupki/ui/modal/project/export/ExportModal.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/net/chrupki/ui/view/pages/project/modals/patch/CreatePatchModal.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/net/chrupki/ui/modal/project/patch/CreatePatchModal.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/net/chrupki/ui/view/pages/project/modals/patch/EditPatchModal.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/net/chrupki/ui/modal/project/patch/EditPatchModal.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/net/chrupki/ui/view/pages/project/modals/tags/CreateTagModal.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/net/chrupki/ui/modal/project/tags/CreateTagModal.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/net/chrupki/ui/view/pages/project/modals/tags/EditTagModal.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/net/chrupki/ui/modal/project/tags/EditTagModal.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/net/chrupki/ui/view/pages/project/modals/version/CreateVersionModal.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/net/chrupki/ui/modal/project/version/CreateVersionModal.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/net/chrupki/ui/view/pages/project/modals/version/EditVersionModal.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/net/chrupki/ui/modal/project/version/EditVersionModal.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/net/chrupki/ui/view/pages/projects/ProjectsView.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/net/chrupki/ui/view/pages/projects/ProjectsView.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/net/chrupki/ui/view/pages/projects/components/ProjectsContainer.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/net/chrupki/ui/view/pages/projects/components/ProjectsContainer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/net/chrupki/ui/view/pages/projects/modals/ProjectsModal.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/net/chrupki/ui/view/pages/projects/modals/project/ProjectsModalCreateProject.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/net/chrupki/ui/modal/projects/ProjectsModalCreateProject.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/net/chrupki/ui/view/pages/projects/modals/project/ProjectsModalEditProject.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/net/chrupki/ui/modal/projects/ProjectsModalEditProject.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/resources/styles/container.css" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/resources/styles/container.css" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -210,22 +190,6 @@
       <workItem from="1770119027273" duration="12667000" />
       <workItem from="1770895896091" duration="89000" />
       <workItem from="1770922101369" duration="5592000" />
-    </task>
-    <task id="LOCAL-00042" summary="feat(ui): add scroll area for Project area">
-      <option name="closed" value="true" />
-      <created>1769184477595</created>
-      <option name="number" value="00042" />
-      <option name="presentableId" value="LOCAL-00042" />
-      <option name="project" value="LOCAL" />
-      <updated>1769184477595</updated>
-    </task>
-    <task id="LOCAL-00043" summary="feat(ui): add scroll area for Version area">
-      <option name="closed" value="true" />
-      <created>1769184494759</created>
-      <option name="number" value="00043" />
-      <option name="presentableId" value="LOCAL-00043" />
-      <option name="project" value="LOCAL" />
-      <updated>1769184494759</updated>
     </task>
     <task id="LOCAL-00044" summary="feat(ui): add type to your version&#10;&#10;Four types are available : Alpha, Beta, Pre-release &amp; Hotfix">
       <option name="closed" value="true" />
@@ -603,15 +567,29 @@
       <option name="project" value="LOCAL" />
       <updated>1771248079274</updated>
     </task>
-    <option name="localTasksCounter" value="91" />
+    <task id="LOCAL-00091" summary="refactor(ui): rework the modal structure">
+      <option name="closed" value="true" />
+      <created>1771323039105</created>
+      <option name="number" value="00091" />
+      <option name="presentableId" value="LOCAL-00091" />
+      <option name="project" value="LOCAL" />
+      <updated>1771323039106</updated>
+    </task>
+    <task id="LOCAL-00092" summary="add: modal template">
+      <option name="closed" value="true" />
+      <created>1771323266511</created>
+      <option name="number" value="00092" />
+      <option name="presentableId" value="LOCAL-00092" />
+      <option name="project" value="LOCAL" />
+      <updated>1771323266511</updated>
+    </task>
+    <option name="localTasksCounter" value="93" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="feat(ui): export with new tags in Markdown format" />
-    <MESSAGE value="refactor(ui): print current tag name" />
     <MESSAGE value="feat(ui): create left container that handle versions and tags" />
     <MESSAGE value="feat(ui): create tag and edit tag modal components and logic" />
     <MESSAGE value="feat(ui): display tag dynamically in the patch container and update" />
@@ -635,7 +613,9 @@
     <MESSAGE value="fix(ui): change name to create tag" />
     <MESSAGE value="feat(ui): different size of container" />
     <MESSAGE value="feat(ui): create header for the projects" />
-    <option name="LAST_COMMIT_MESSAGE" value="feat(ui): create header for the projects" />
+    <MESSAGE value="refactor(ui): rework the modal structure" />
+    <MESSAGE value="add: modal template" />
+    <option name="LAST_COMMIT_MESSAGE" value="add: modal template" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

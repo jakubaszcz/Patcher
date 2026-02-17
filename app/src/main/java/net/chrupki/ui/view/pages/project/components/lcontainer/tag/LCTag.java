@@ -43,9 +43,9 @@ public class LCTag extends VBox {
             return;
         }
 
-        for (TagDTO t : tags) {
+        for (int i = 0; i < tags.size(); i++) {
             getChildren().add(
-                    new LCTagContainer(t)
+                    new LCTagContainer(tags.get(i), i % 2 == 0 ? true : false)
             );
         }
     }

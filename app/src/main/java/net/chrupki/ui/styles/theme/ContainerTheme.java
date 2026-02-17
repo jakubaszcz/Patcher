@@ -5,7 +5,8 @@ import net.chrupki.ui.styles.HasCss;
 public enum ContainerTheme implements HasCss {
     CONTAINER("container"),
     HEADER("container-header"),
-    BODY("container-body");
+    BODY("container-body"),
+    BODY_PAIR("container-body-pair");
 
     private final String css;
 

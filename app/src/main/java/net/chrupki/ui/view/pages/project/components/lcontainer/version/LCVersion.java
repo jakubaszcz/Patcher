@@ -43,11 +43,12 @@ public class LCVersion extends VBox {
         }
 
 
-        for (VersionDTO v : versions) {
+        for (int i = 0; i < versions.size(); i++) {
             getChildren().add(
                     new LCVersionContainer(
-                            v,
-                            HubController.getVersionController()::selectVersion
+                            versions.get(i),
+                            HubController.getVersionController()::selectVersion,
+                            i % 2 == 0 ? true : false
                     )
             );
         }

@@ -66,8 +66,8 @@ public class Patch extends VBox {
             return;
         }
 
-        for (PatchDTO p : patches) {
-            list.getChildren().add(new PatchContainer(p));
+        for (int i = 0; i < patches.size(); i++) {
+            list.getChildren().add(new PatchContainer(patches.get(i), i % 2 == 0 ? true : false));
         }
     }
 }
