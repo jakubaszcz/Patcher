@@ -57,6 +57,7 @@ public class CreateVersionModal extends ModalTemplate {
                 comboBox
         );
 
+        setOnMouseClicked(e -> e.consume());
         addActions(createButton);
     }
 

@@ -49,6 +49,7 @@ public class CreateTagModal extends ModalTemplate {
                 textField
         );
 
+        setOnMouseClicked(e -> e.consume());
         addActions(createButton);
     }
 

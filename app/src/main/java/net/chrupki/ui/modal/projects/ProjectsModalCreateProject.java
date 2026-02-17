@@ -64,6 +64,7 @@ public class ProjectsModalCreateProject extends ModalTemplate {
                 textArea
         );
 
+        setOnMouseClicked(e -> e.consume());
         addActions(createButton);
     }
 }

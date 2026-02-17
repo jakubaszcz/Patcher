@@ -81,6 +81,7 @@ public class EditTagModal extends ModalTemplate {
         );
 
         actions.getChildren().add(0, deleteButton);
+        setOnMouseClicked(e -> e.consume());
         addActions(saveButton);
     }
 

@@ -81,6 +81,7 @@ public class ExportModal extends ModalTemplate {
             getChildren().add(comboBox);
         }
 
+        setOnMouseClicked(e -> e.consume());
         addActions(createButton);
     }
 }

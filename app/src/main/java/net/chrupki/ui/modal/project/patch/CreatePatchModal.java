@@ -84,6 +84,7 @@ public class CreatePatchModal extends ModalTemplate {
                 comboBox
         );
 
+        setOnMouseClicked(e -> e.consume());
         addActions(createButton);
     }
 
