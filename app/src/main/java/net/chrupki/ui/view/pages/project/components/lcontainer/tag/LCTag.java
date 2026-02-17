@@ -45,7 +45,7 @@ public class LCTag extends VBox {
 
         for (int i = 0; i < tags.size(); i++) {
             getChildren().add(
-                    new LCTagContainer(tags.get(i), i % 2 == 0 ? true : false)
+                    new LCTagContainer(tags.get(i), i % 2 == 0)
             );
         }
     }

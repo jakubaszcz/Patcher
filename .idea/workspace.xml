@@ -4,16 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="c1aa160e-de6c-484d-8c28-5409cf16dc62" name="Changes" comment="add: modal template">
+    <list default="true" id="c1aa160e-de6c-484d-8c28-5409cf16dc62" name="Changes" comment="feat(ui): pair and even container themes change">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/net/chrupki/ui/styles/theme/ContainerTheme.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/net/chrupki/ui/styles/theme/ContainerTheme.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/net/chrupki/ui/view/pages/project/components/Patch.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/net/chrupki/ui/view/pages/project/components/Patch.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/net/chrupki/ui/view/pages/project/components/PatchContainer.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/net/chrupki/ui/view/pages/project/components/PatchContainer.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/net/chrupki/ui/view/pages/project/components/lcontainer/tag/LCTag.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/net/chrupki/ui/view/pages/project/components/lcontainer/tag/LCTag.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/net/chrupki/ui/view/pages/project/components/lcontainer/tag/components/LCTagContainer.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/net/chrupki/ui/view/pages/project/components/lcontainer/tag/components/LCTagContainer.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/net/chrupki/ui/view/pages/project/components/lcontainer/version/LCVersion.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/net/chrupki/ui/view/pages/project/components/lcontainer/version/LCVersion.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/net/chrupki/ui/view/pages/project/components/lcontainer/version/components/LCVersionContainer.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/net/chrupki/ui/view/pages/project/components/lcontainer/version/components/LCVersionContainer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/resources/styles/container.css" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/resources/styles/container.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/resources/styles/text-field.css" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/resources/styles/text-field.css" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -190,14 +186,6 @@
       <workItem from="1770119027273" duration="12667000" />
       <workItem from="1770895896091" duration="89000" />
       <workItem from="1770922101369" duration="5592000" />
-    </task>
-    <task id="LOCAL-00044" summary="feat(ui): add type to your version&#10;&#10;Four types are available : Alpha, Beta, Pre-release &amp; Hotfix">
-      <option name="closed" value="true" />
-      <created>1769365038139</created>
-      <option name="number" value="00044" />
-      <option name="presentableId" value="LOCAL-00044" />
-      <option name="project" value="LOCAL" />
-      <updated>1769365038139</updated>
     </task>
     <task id="LOCAL-00045" summary="fix(db): error fetch the version type">
       <option name="closed" value="true" />
@@ -583,14 +571,21 @@
       <option name="project" value="LOCAL" />
       <updated>1771323266511</updated>
     </task>
-    <option name="localTasksCounter" value="93" />
+    <task id="LOCAL-00093" summary="feat(ui): pair and even container themes change">
+      <option name="closed" value="true" />
+      <created>1771323891180</created>
+      <option name="number" value="00093" />
+      <option name="presentableId" value="LOCAL-00093" />
+      <option name="project" value="LOCAL" />
+      <updated>1771323891181</updated>
+    </task>
+    <option name="localTasksCounter" value="94" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="feat(ui): create left container that handle versions and tags" />
     <MESSAGE value="feat(ui): create tag and edit tag modal components and logic" />
     <MESSAGE value="feat(ui): display tag dynamically in the patch container and update" />
     <MESSAGE value="fix(ui): creating version or tag isn't link to any toggle" />
@@ -615,7 +610,8 @@
     <MESSAGE value="feat(ui): create header for the projects" />
     <MESSAGE value="refactor(ui): rework the modal structure" />
     <MESSAGE value="add: modal template" />
-    <option name="LAST_COMMIT_MESSAGE" value="add: modal template" />
+    <MESSAGE value="feat(ui): pair and even container themes change" />
+    <option name="LAST_COMMIT_MESSAGE" value="feat(ui): pair and even container themes change" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

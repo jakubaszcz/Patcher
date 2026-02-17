@@ -48,7 +48,7 @@ public class LCVersion extends VBox {
                     new LCVersionContainer(
                             versions.get(i),
                             HubController.getVersionController()::selectVersion,
-                            i % 2 == 0 ? true : false
+                            i % 2 == 0
                     )
             );
         }

@@ -13,3 +13,15 @@
 .text-field:focused, .text-area:focused {
     -fx-background-color: -color-base-700;
 }
+
+.text-area .viewport {
+    -fx-background-color: transparent;
+}
+
+.text-area .content {
+    -fx-background-color: -color-base-800;
+}
+
+.text-area:focused .content {
+    -fx-background-color: -color-base-700;
+}
