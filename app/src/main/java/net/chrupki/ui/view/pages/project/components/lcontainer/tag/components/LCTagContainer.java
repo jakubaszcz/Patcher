@@ -10,6 +10,7 @@ import javafx.scene.layout.Region;
 import javafx.scene.layout.VBox;
 import net.chrupki.dto.TagDTO;
 import net.chrupki.model.HubModel;
+import net.chrupki.ui.modal.ConfirmModal;
 import net.chrupki.ui.model.GlobalModel;
 import net.chrupki.ui.styles.Styles;
 import net.chrupki.ui.styles.theme.ButtonTheme;
@@ -30,14 +31,28 @@ public class LCTagContainer extends HBox {
         VBox textBox = new VBox(2, versionBox, meta);
         textBox.setAlignment(Pos.CENTER_LEFT);
 
-        Button editButton = new Button("Edit");
-        new Styles().apply(editButton, ButtonTheme.EDIT);
+        HBox horizontal = new HBox();
 
-        editButton.setOnAction(e -> {
+        Button edit = new Button("Edit");
+        new Styles().apply(edit, ButtonTheme.EDIT);
+
+        edit.setOnAction(e -> {
             HubModel.tagModel().from(tagDTO);
             GlobalModel.setSwitchProjectsModal(true);
             GlobalModel.setSwitchEditTagProjectModal(true);
         });
+
+        Button delete = new Button("Delete");
+        new Styles().apply(delete, ButtonTheme.EDIT);
+
+        delete.setOnAction(e -> {
+            HubModel.tagModel().from(tagDTO);
+            ConfirmModal.changeType(ConfirmModal.Type.Tag);
+            GlobalModel.setSwitchProjectsModal(true);
+            GlobalModel.setSwitchConfirmModal(true);
+        });
+
+        horizontal.getChildren().addAll(edit, delete);
 
         Region spacer = new Region();
         HBox.setHgrow(spacer, Priority.ALWAYS);
@@ -52,7 +67,7 @@ public class LCTagContainer extends HBox {
         getChildren().addAll(
                 textBox,
                 spacer,
-                editButton
+                horizontal
         );
     }
 

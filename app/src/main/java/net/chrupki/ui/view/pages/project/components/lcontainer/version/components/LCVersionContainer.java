@@ -9,6 +9,7 @@ import javafx.scene.layout.Priority;
 import javafx.scene.layout.Region;
 import javafx.scene.layout.VBox;
 import net.chrupki.model.HubModel;
+import net.chrupki.ui.modal.ConfirmModal;
 import net.chrupki.ui.model.GlobalModel;
 import net.chrupki.dto.VersionDTO;
 import net.chrupki.ui.styles.Styles;
@@ -33,18 +34,31 @@ public class LCVersionContainer extends HBox {
         Label meta = new Label("Version");
         new Styles().apply(meta, TextTheme.TEXT_MAIN);
 
-
         VBox textBox = new VBox(2, versionBox, meta);
         textBox.setAlignment(Pos.CENTER_LEFT);
 
-        Button editButton = new Button("Edit");
-        new Styles().apply(editButton, ButtonTheme.EDIT);
+        HBox horizontal = new HBox();
 
-        editButton.setOnAction(e -> {
+        Button edit = new Button("Edit");
+        new Styles().apply(edit, ButtonTheme.EDIT);
+
+        Button delete = new Button("Delete");
+        new Styles().apply(delete, ButtonTheme.EDIT);
+
+        edit.setOnAction(e -> {
             HubModel.versionModel().from(version);
             GlobalModel.setSwitchProjectsModal(true);
             GlobalModel.setSwitchEditVersionProjectModal(true);
         });
+
+        delete.setOnAction(e -> {
+            HubModel.versionModel().from(version);
+            ConfirmModal.changeType(ConfirmModal.Type.Version);
+            GlobalModel.setSwitchProjectsModal(true);
+            GlobalModel.setSwitchConfirmModal(true);
+        });
+
+        horizontal.getChildren().addAll(edit, delete);
 
         Region spacer = new Region();
         HBox.setHgrow(spacer, Priority.ALWAYS);
@@ -63,7 +77,7 @@ public class LCVersionContainer extends HBox {
         getChildren().addAll(
                 textBox,
                 spacer,
-                editButton
+                horizontal
         );
     }
 }

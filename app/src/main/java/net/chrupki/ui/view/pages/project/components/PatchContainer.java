@@ -10,6 +10,7 @@ import javafx.scene.layout.*;
 import net.chrupki.database.dao.TagDAO;
 import net.chrupki.dto.TagDTO;
 import net.chrupki.model.HubModel;
+import net.chrupki.ui.modal.ConfirmModal;
 import net.chrupki.ui.model.GlobalModel;
 import net.chrupki.dto.PatchDTO;
 import net.chrupki.ui.styles.Styles;
@@ -42,13 +43,27 @@ public class PatchContainer extends HBox {
         VBox textBox = new VBox(4, typeLabel, content);
         textBox.setAlignment(Pos.CENTER_LEFT);
 
-        Button editButton = new Button("Edit");
-        new Styles().apply(editButton, ButtonTheme.EDIT);
+        HBox horizontal = new HBox();
 
-        editButton.setOnAction(e -> {
+        Button edit = new Button("Edit");
+        new Styles().apply(edit, ButtonTheme.EDIT);
+
+        Button delete = new Button("Delete");
+        new Styles().apply(delete, ButtonTheme.EDIT);
+
+        horizontal.getChildren().addAll(edit, delete);
+
+        edit.setOnAction(e -> {
             HubModel.patchModel().from(patch);
             GlobalModel.setSwitchProjectsModal(true);
             GlobalModel.setSwitchEditPatchProjectModal(true);
+        });
+
+        delete.setOnAction(e -> {
+            HubModel.patchModel().from(patch);
+            ConfirmModal.changeType(ConfirmModal.Type.Patch);
+            GlobalModel.setSwitchProjectsModal(true);
+            GlobalModel.setSwitchConfirmModal(true);
         });
 
         Region spacer = new Region();
@@ -64,7 +79,7 @@ public class PatchContainer extends HBox {
         getChildren().addAll(
                 textBox,
                 spacer,
-                editButton
+                horizontal
         );
     }
 }

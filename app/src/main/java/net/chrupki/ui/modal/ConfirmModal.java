@@ -87,11 +87,11 @@ public class ConfirmModal extends ModalTemplate {
 
             case Project -> "Delete project : " + HubModel.projectModel().getName().get();
 
-            case Version -> "Delete version : " + HubModel.versionModel().getName();
+            case Version -> "Delete version : " + HubModel.versionModel().getName().get();
 
-            case Tag -> "Delete tag : " + HubModel.tagModel().getName();
+            case Tag -> "Delete tag : " + HubModel.tagModel().getName().get();
 
-            case Patch -> "Delete patch : " + HubModel.patchModel().getContent();
+            case Patch -> "Delete patch : " + HubModel.patchModel().getContent().get();
         };
     }
 
@@ -149,8 +149,11 @@ public class ConfirmModal extends ModalTemplate {
                             onClose.run();
                         }
                     }
-                    content.getChildren().addAll(title, confirm);
                 });
+                content.getChildren().addAll(title, confirm);
+            }
+            default -> {
+                content.getChildren().add(new Label("Nothing has been found."));
             }
         }
     }
