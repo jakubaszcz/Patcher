@@ -24,7 +24,6 @@ public class EditVersionModal extends ModalTemplate {
 
     public EditVersionModal(
             Consumer<EditVersion> onSave,
-            Consumer<Integer> onDelete,
             Runnable onClose
     ) {
         super("Edit version", onClose);
@@ -34,16 +33,8 @@ public class EditVersionModal extends ModalTemplate {
         nameField.setPromptText("Version name");
         new Styles().apply(nameField, TextFieldTheme.NORMAL);
 
-        Button deleteButton = new Button("Delete");
-        new Styles().apply(deleteButton, ButtonTheme.DANGER);
-
         Button saveButton = new Button("Save");
         new Styles().apply(saveButton, ButtonTheme.NORMAL);
-
-        deleteButton.setOnAction(e -> {
-            onDelete.accept(HubModel.versionModel().getId().get());
-            onClose.run();
-        });
 
         saveButton.setOnAction(e -> {
             if (!nameField.getText().isBlank()) {
@@ -77,7 +68,6 @@ public class EditVersionModal extends ModalTemplate {
                 nameField
         );
 
-        actions.getChildren().add(0, deleteButton);
         setOnMouseClicked(e -> e.consume());
         addActions(saveButton);
     }

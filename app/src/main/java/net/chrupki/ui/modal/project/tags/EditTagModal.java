@@ -24,7 +24,6 @@ public class EditTagModal extends ModalTemplate {
 
     public EditTagModal(
             Consumer<EditTag> onSave,
-            Consumer<Integer> onDelete,
             Runnable onClose
     ) {
         super("Edit tag", onClose);
@@ -33,10 +32,6 @@ public class EditTagModal extends ModalTemplate {
         TextField nameField = new TextField();
         nameField.setPromptText("Tag name");
         new Styles().apply(nameField, TextFieldTheme.NORMAL);
-
-
-        Button deleteButton = new Button("Delete");
-        new Styles().apply(deleteButton, ButtonTheme.DANGER);
 
         Button saveButton = new Button("Save");
         new Styles().apply(saveButton, ButtonTheme.NORMAL);
@@ -47,13 +42,6 @@ public class EditTagModal extends ModalTemplate {
                             HubModel.tagModel().getId().get(),
                             nameField.getText()
                     )
-            );
-            onClose.run();
-        });
-
-        deleteButton.setOnAction(e -> {
-            onDelete.accept(
-                    HubModel.tagModel().getId().get()
             );
             onClose.run();
         });
@@ -80,7 +68,6 @@ public class EditTagModal extends ModalTemplate {
                 nameField
         );
 
-        actions.getChildren().add(0, deleteButton);
         setOnMouseClicked(e -> e.consume());
         addActions(saveButton);
     }

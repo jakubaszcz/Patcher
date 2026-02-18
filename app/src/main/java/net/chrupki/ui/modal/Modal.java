@@ -57,7 +57,6 @@ public class Modal extends StackPane {
                 ),
                 new ProjectsModalEditProject(
                         HubController.getProjectController()::saveProject,
-                        HubController.getProjectController()::onDelete,
                         HubController.getProjectController()::closeEditProjectsModal
                 ),
                 new CreateVersionModal(
@@ -66,7 +65,6 @@ public class Modal extends StackPane {
                 ),
                 new EditVersionModal(
                         HubController.getVersionController()::saveVersion,
-                        HubController.getVersionController()::deleteVersion,
                         HubController.getVersionController()::closeModal
                 ),
                 new CreatePatchModal(
@@ -75,7 +73,6 @@ public class Modal extends StackPane {
                 ),
                 new EditPatchModal(
                         HubController.getPatchController()::savePatch,
-                        HubController.getPatchController()::deletePatch,
                         HubController.getPatchController()::closeModal
                 ),
                 new ExportModal(
@@ -88,7 +85,6 @@ public class Modal extends StackPane {
                 ),
                 new EditTagModal(
                         HubController.getTagController()::save,
-                        HubController.getTagController()::delete,
                         HubController.getTagController()::closeModal
                 ),
                 new ConfirmModal(

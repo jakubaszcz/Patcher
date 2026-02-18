@@ -32,7 +32,6 @@ public class EditPatchModal extends ModalTemplate {
 
     public EditPatchModal(
             Consumer<EditPatch> onSave,
-            BiConsumer<Integer, Integer> onDelete,
             Runnable onClose
     ) {
         super("Edit patch", onClose);
@@ -67,9 +66,6 @@ public class EditPatchModal extends ModalTemplate {
 
         comboBox.setPromptText("Select a type");
 
-        Button deleteButton = new Button("Delete");
-        new Styles().apply(deleteButton, ButtonTheme.DANGER);
-
         Button saveButton = new Button("Save");
         new Styles().apply(saveButton, ButtonTheme.NORMAL);
 
@@ -81,14 +77,6 @@ public class EditPatchModal extends ModalTemplate {
                             nameField.getText(),
                             comboBox.getValue().getId()
                     )
-            );
-            onClose.run();
-        });
-
-        deleteButton.setOnAction(e -> {
-            onDelete.accept(
-                    HubModel.patchModel().getId().get(),
-                    HubModel.patchModel().getVid().get()
             );
             onClose.run();
         });
@@ -127,7 +115,6 @@ public class EditPatchModal extends ModalTemplate {
                 comboBox
         );
 
-        actions.getChildren().add(0, deleteButton);
         setOnMouseClicked(e -> e.consume());
         addActions(saveButton);
     }

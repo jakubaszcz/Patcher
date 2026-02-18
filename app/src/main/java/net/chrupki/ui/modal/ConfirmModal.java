@@ -131,7 +131,8 @@ public class ConfirmModal extends ModalTemplate {
                 content.getChildren().addAll(title, textField, confirm);
             }
             case Version, Tag, Patch -> {
-                Label title = new Label("Do you really want to delete it ?");
+                Label title = new Label("After deleting, you won't be able to recover it back. Are you sure you want to delete that ?");
+                title.setWrapText(true);
                 new Styles().apply(title, TextTheme.TEXT_MAIN);
 
                 confirm.setOnAction(e -> {

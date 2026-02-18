@@ -28,7 +28,6 @@ public class ProjectsModalEditProject extends ModalTemplate {
 
     public ProjectsModalEditProject(
             SaveProjectHandler onSave,
-            Runnable onDelete,
             Runnable onClose
     ) {
         super("Edit project", onClose);
