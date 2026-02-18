@@ -28,6 +28,9 @@ public class GlobalModel {
     private static final BooleanProperty switchProjectsModal =
             new SimpleBooleanProperty(false);
 
+    private static final BooleanProperty switchConfirmModal =
+            new SimpleBooleanProperty(false);
+
     private static final BooleanProperty switchEditProjectsModal =
             new SimpleBooleanProperty(false);
 
@@ -61,9 +64,15 @@ public class GlobalModel {
     public static void setSwitchProjectsModal(boolean value) {
         switchProjectsModal.set(value);
     }
+    public static void setSwitchConfirmModal(boolean value) {
+        switchConfirmModal.set(value);
+    }
 
     public static BooleanProperty getSwitchProjectsModal() {
         return switchProjectsModal;
+    }
+    public static BooleanProperty getSwitchConfirmModal() {
+        return switchConfirmModal;
     }
 
     public static void setSwitchEditProjectsModal(boolean value) {

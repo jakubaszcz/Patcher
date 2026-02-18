@@ -39,6 +39,7 @@ public class Modal extends StackPane {
             GlobalModel.setSwitchExportModal(false);
             GlobalModel.setSwitchCreateTagProjectModal(false);
             GlobalModel.setSwitchEditTagProjectModal(false);
+            GlobalModel.setSwitchConfirmModal(false);
         });
 
         getChildren().addAll(pane, vBox);
@@ -89,6 +90,15 @@ public class Modal extends StackPane {
                         HubController.getTagController()::save,
                         HubController.getTagController()::delete,
                         HubController.getTagController()::closeModal
+                ),
+                new ConfirmModal(
+                        HubController.getProjectController()::closeCreateProjectsModal,
+                        HubController.getProjectController()::onDelete,
+                        HubController.getVersionController()::deleteVersion,
+                        HubController.getTagController()::delete,
+                        HubController.getPatchController()::deletePatch
+
+
                 )
         );
 

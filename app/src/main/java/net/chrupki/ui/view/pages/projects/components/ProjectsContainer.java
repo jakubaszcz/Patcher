@@ -11,6 +11,8 @@ import javafx.scene.layout.VBox;
 import net.chrupki.dto.ProjectDTO;
 import net.chrupki.model.HubModel;
 import net.chrupki.ui.controllers.HubController;
+import net.chrupki.ui.modal.ConfirmModal;
+import net.chrupki.ui.model.GlobalModel;
 import net.chrupki.ui.styles.Styles;
 import net.chrupki.ui.styles.theme.ButtonTheme;
 import net.chrupki.ui.styles.theme.CardTheme;
@@ -47,13 +49,20 @@ public class ProjectsContainer extends VBox {
         new Styles().apply(description, TextTheme.TEXT_MAIN);
         description.setText(descriptionText);
 
+        HBox horizontal = new HBox();
+
         Button edit = new Button("Edit");
         new Styles().apply(edit, ButtonTheme.EDIT);
+
+        Button delete = new Button("Delete");
+        new Styles().apply(delete, ButtonTheme.EDIT);
+
+        horizontal.getChildren().addAll(edit, delete);
 
         Region spacer = new Region();
         HBox.setHgrow(spacer, Priority.ALWAYS);
 
-        HBox header = new HBox(title, spacer, edit);
+        HBox header = new HBox(title, spacer, horizontal);
         header.setAlignment(Pos.CENTER_LEFT);
 
         getChildren().addAll(header, description);
@@ -73,6 +82,13 @@ public class ProjectsContainer extends VBox {
         edit.setOnAction(e -> {
             HubModel.projectModel().from(projectContainerModel.getProjectDTO());
             onEditProjectModal.run();
+        });
+
+        delete.setOnAction(e -> {
+            HubModel.projectModel().from(projectContainerModel.getProjectDTO());
+            ConfirmModal.changeType(ConfirmModal.Type.Project);
+            GlobalModel.setSwitchProjectsModal(true);
+            GlobalModel.setSwitchConfirmModal(true);
         });
 
         setPrefWidth(projectContainerModel.getWidth());

@@ -2,6 +2,7 @@ package net.chrupki.ui.modal.projects;
 
 import javafx.beans.binding.Bindings;
 import javafx.beans.property.StringProperty;
+import javafx.event.Event;
 import javafx.geometry.Insets;
 import javafx.geometry.Pos;
 import javafx.scene.control.Button;
@@ -44,16 +45,8 @@ public class ProjectsModalEditProject extends ModalTemplate {
         descriptionArea.setWrapText(true);
         new Styles().apply(descriptionArea, TextFieldTheme.NORMAL);
 
-        Button deleteButton = new Button("Delete");
-        new Styles().apply(deleteButton, ButtonTheme.DANGER);
-
         Button saveButton = new Button("Save");
         new Styles().apply(saveButton, ButtonTheme.NORMAL);
-
-        deleteButton.setOnAction(e -> {
-            onDelete.run();
-            onClose.run();
-        });
 
         saveButton.setOnAction(e -> {
             String nameToSave = nameField.getText().isBlank() ? HubModel.projectModel().getName().get() : nameField.getText();
@@ -93,8 +86,7 @@ public class ProjectsModalEditProject extends ModalTemplate {
                 descriptionArea
         );
 
-        actions.getChildren().add(0, deleteButton);
-        setOnMouseClicked(e -> e.consume());
+        setOnMouseClicked(Event::consume);
         addActions(saveButton);
     }
 }
