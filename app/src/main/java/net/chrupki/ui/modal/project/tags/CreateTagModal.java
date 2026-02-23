@@ -36,6 +36,10 @@ public class CreateTagModal extends ModalTemplate {
         new Styles().apply(createButton, ButtonTheme.NORMAL);
 
         createButton.setOnAction(e -> {
+            if (textField.getText().isBlank()) {
+                GlobalModel.setErrorMessage("No tag name provided");
+                return;
+            }
             onCreate.accept(
                     new TagDTO(textField.getText(), -1)
             );

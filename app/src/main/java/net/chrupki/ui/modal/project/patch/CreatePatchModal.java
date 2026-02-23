@@ -65,6 +65,16 @@ public class CreatePatchModal extends ModalTemplate {
         new Styles().apply(createButton, ButtonTheme.NORMAL);
 
         createButton.setOnAction(e -> {
+            if (textField.getText().isBlank()) {
+                GlobalModel.setErrorMessage("No patch name provided");
+                return;
+            }
+
+            if (comboBox.getValue() == null) {
+                GlobalModel.setErrorMessage("No tag provided");
+                return;
+            }
+
             onCreate.accept(
                     new PatchRequest(textField.getText(), comboBox.getValue().getId(), HubModel.versionModel().getId().get())
             );

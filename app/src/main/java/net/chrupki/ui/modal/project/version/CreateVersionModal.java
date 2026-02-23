@@ -1,5 +1,6 @@
 package net.chrupki.ui.modal.project.version;
 
+import javafx.event.Event;
 import javafx.geometry.Insets;
 import javafx.geometry.Pos;
 import javafx.scene.control.Button;
@@ -43,6 +44,15 @@ public class CreateVersionModal extends ModalTemplate {
         new Styles().apply(createButton, ButtonTheme.NORMAL);
 
         createButton.setOnAction(e -> {
+            if (textField.getText() == null || textField.getText().isBlank()) {
+                GlobalModel.setErrorMessage("No version name provided");
+                return;
+            }
+
+            if (comboBox.getValue() == null || comboBox.getValue().isBlank()) {
+                GlobalModel.setErrorMessage("No type provided");
+                return;
+            }
             onCreate.accept(textField.getText(), comboBox.getValue());
             textField.clear();
             onClose.run();
@@ -57,7 +67,7 @@ public class CreateVersionModal extends ModalTemplate {
                 comboBox
         );
 
-        setOnMouseClicked(e -> e.consume());
+        setOnMouseClicked(Event::consume);
         addActions(createButton);
     }
 

@@ -125,6 +125,9 @@ public class ConfirmModal extends ModalTemplate {
                     {
                         onDeleteProject.run();
                         onClose.run();
+                    } else {
+                        GlobalModel.setErrorMessage("Project name doesn't match");
+                        return;
                     }
                 });
 

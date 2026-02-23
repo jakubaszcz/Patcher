@@ -88,7 +88,19 @@ public class ProjectController {
 
 
     public void closeModal() {
-        GlobalModel.setEditActiveProperty(false);
-        GlobalModel.setEditProjectProperty(false);
+        GlobalModel.setSwitchProjectsModal(false);
+        GlobalModel.setSwitchProjectModal(false);
+        GlobalModel.setSwitchCreateProjectsModal(false);
+        GlobalModel.setSwitchEditProjectsModal(false);
+        GlobalModel.setSwitchCreateVersionProjectModal(false);
+        GlobalModel.setSwitchEditVersionProjectModal(false);
+        GlobalModel.setSwitchCreatePatchProjectModal(false);
+        GlobalModel.setSwitchEditPatchProjectModal(false);
+        GlobalModel.setSwitchExportModal(false);
+        GlobalModel.setSwitchCreateTagProjectModal(false);
+        GlobalModel.setSwitchEditTagProjectModal(false);
+        GlobalModel.setSwitchConfirmModal(false);
+
+        GlobalModel.setErrorMessage(null);
     }
 }

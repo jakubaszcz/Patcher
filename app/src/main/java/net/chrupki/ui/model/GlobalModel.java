@@ -2,6 +2,8 @@ package net.chrupki.ui.model;
 
 import javafx.beans.property.BooleanProperty;
 import javafx.beans.property.SimpleBooleanProperty;
+import javafx.beans.property.SimpleStringProperty;
+import javafx.beans.property.StringProperty;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import net.chrupki.dto.PatchDTO;
@@ -12,6 +14,11 @@ import net.chrupki.dto.VersionDTO;
 public class GlobalModel {
 
     public GlobalModel() {}
+
+    private static final StringProperty errorMessage = new SimpleStringProperty(null);
+
+    public static StringProperty getErrorMessage() { return errorMessage; }
+    public static void setErrorMessage(String message) { errorMessage.set(message); }
 
     private static final ObservableList<String> templates = FXCollections.observableArrayList();
 

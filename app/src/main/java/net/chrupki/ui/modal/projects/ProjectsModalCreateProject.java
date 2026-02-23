@@ -53,6 +53,8 @@ public class ProjectsModalCreateProject extends ModalTemplate {
                 onClose.run();
                 textField.clear();
                 textArea.clear();
+            } else {
+                GlobalModel.setErrorMessage("Project name cannot be empty");
             }
         });
 

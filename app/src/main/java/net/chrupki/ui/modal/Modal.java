@@ -40,6 +40,8 @@ public class Modal extends StackPane {
             GlobalModel.setSwitchCreateTagProjectModal(false);
             GlobalModel.setSwitchEditTagProjectModal(false);
             GlobalModel.setSwitchConfirmModal(false);
+
+            GlobalModel.setErrorMessage(null);
         });
 
         getChildren().addAll(pane, vBox);
@@ -61,31 +63,31 @@ public class Modal extends StackPane {
                 ),
                 new CreateVersionModal(
                         HubController.getVersionController()::createVersion,
-                        HubController.getVersionController()::closeModal
+                        HubController.getProjectController()::closeEditProjectsModal
                 ),
                 new EditVersionModal(
                         HubController.getVersionController()::saveVersion,
-                        HubController.getVersionController()::closeModal
+                        HubController.getProjectController()::closeEditProjectsModal
                 ),
                 new CreatePatchModal(
                         HubController.getPatchController()::createPatch,
-                        HubController.getPatchController()::closeModal
+                        HubController.getProjectController()::closeEditProjectsModal
                 ),
                 new EditPatchModal(
                         HubController.getPatchController()::savePatch,
-                        HubController.getPatchController()::closeModal
+                        HubController.getProjectController()::closeEditProjectsModal
                 ),
                 new ExportModal(
-                        HubController.getExportController()::closeModal,
+                        HubController.getProjectController()::closeEditProjectsModal,
                         HubController.getExportController()::export
                 ),
                 new CreateTagModal(
                         HubController.getTagController()::create,
-                        HubController.getTagController()::closeModal
+                        HubController.getProjectController()::closeEditProjectsModal
                 ),
                 new EditTagModal(
                         HubController.getTagController()::save,
-                        HubController.getTagController()::closeModal
+                        HubController.getProjectController()::closeEditProjectsModal
                 ),
                 new ConfirmModal(
                         HubController.getProjectController()::closeCreateProjectsModal,

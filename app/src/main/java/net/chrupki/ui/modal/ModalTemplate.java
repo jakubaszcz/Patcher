@@ -8,6 +8,7 @@ import javafx.scene.layout.HBox;
 import javafx.scene.layout.Priority;
 import javafx.scene.layout.Region;
 import javafx.scene.layout.VBox;
+import net.chrupki.ui.model.GlobalModel;
 import net.chrupki.ui.styles.Styles;
 import net.chrupki.ui.styles.theme.ButtonTheme;
 import net.chrupki.ui.styles.theme.CardTheme;
@@ -30,13 +31,13 @@ public abstract class ModalTemplate extends VBox {
         new Styles().apply(closeButton, ButtonTheme.CANCEL);
         this.closeButton.setStyle("-fx-font-size: 20px; -fx-padding: 0 4;");
 
-        Runnable cleanupAndClose = () -> {
-            onClose.run();
-        };
-        
-        this.closeButton.setOnAction(e -> cleanupAndClose.run());
+        this.closeButton.setOnAction(e -> onClose.run());
 
-        this.errorLabel = new Label("hdsfkjd");
+        this.errorLabel = new Label();
+        this.errorLabel.visibleProperty().bind(GlobalModel.getErrorMessage().isNotNull());
+        this.errorLabel.managedProperty().bind(GlobalModel.getErrorMessage().isNotNull());
+
+        this.errorLabel.textProperty().bind(GlobalModel.getErrorMessage());
         this.errorLabel.setWrapText(true);
         this.errorLabel.setMaxWidth(Double.MAX_VALUE);
         this.errorLabel.setWrapText(true);
