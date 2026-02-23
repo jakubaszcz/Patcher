@@ -50,6 +50,8 @@ public class ProjectsModalEditProject extends ModalTemplate {
         saveButton.setOnAction(e -> {
             String nameToSave = nameField.getText().isBlank() ? HubModel.projectModel().getName().get() : nameField.getText();
             onSave.accept(HubModel.projectModel().getName().get(), nameToSave, descriptionArea.getText());
+            descriptionArea.clear();
+            nameField.clear();
             onClose.run();
         });
 

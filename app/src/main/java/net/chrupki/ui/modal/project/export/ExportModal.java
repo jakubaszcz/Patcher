@@ -1,6 +1,7 @@
 package net.chrupki.ui.modal.project.export;
 
 import javafx.collections.ObservableList;
+import javafx.event.Event;
 import javafx.geometry.Insets;
 import javafx.geometry.Pos;
 import javafx.scene.control.Button;
@@ -35,7 +36,7 @@ public class ExportModal extends ModalTemplate {
         comboBox.getStyleClass().add("modal-combobox");
         comboBox.setPromptText("Select a template");
 
-        boolean hasTemplates = templates != null && !templates.isEmpty();
+        boolean hasTemplates = !templates.isEmpty();
 
         if (hasTemplates) {
             comboBox.setItems(templates);
@@ -69,6 +70,7 @@ public class ExportModal extends ModalTemplate {
                         TagDAO.all(),
                         file.toPath()
                 ));
+                onClose.run();
             } catch (Exception ex) {
                 throw new RuntimeException(ex);
             }
@@ -81,7 +83,7 @@ public class ExportModal extends ModalTemplate {
             getChildren().add(comboBox);
         }
 
-        setOnMouseClicked(e -> e.consume());
+        setOnMouseClicked(Event::consume);
         addActions(createButton);
     }
 }

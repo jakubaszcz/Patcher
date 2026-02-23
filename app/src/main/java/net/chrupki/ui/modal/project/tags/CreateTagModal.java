@@ -43,6 +43,7 @@ public class CreateTagModal extends ModalTemplate {
             onCreate.accept(
                     new TagDTO(textField.getText(), -1)
             );
+            textField.clear();
             onClose.run();
         });
 

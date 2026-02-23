@@ -78,6 +78,8 @@ public class EditPatchModal extends ModalTemplate {
                             comboBox.getValue().getId()
                     )
             );
+            nameField.clear();
+            comboBox.getSelectionModel().clearSelection();
             onClose.run();
         });
 

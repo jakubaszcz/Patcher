@@ -43,6 +43,7 @@ public class EditTagModal extends ModalTemplate {
                             nameField.getText()
                     )
             );
+            nameField.clear();
             onClose.run();
         });
 

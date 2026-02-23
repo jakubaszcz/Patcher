@@ -80,8 +80,6 @@ public class CreatePatchModal extends ModalTemplate {
             );
             textField.clear();
             comboBox.getSelectionModel().clearSelection();
-            comboBox.setValue(null);
-            comboBox.setPromptText("Select a type");
             onClose.run();
         });
 

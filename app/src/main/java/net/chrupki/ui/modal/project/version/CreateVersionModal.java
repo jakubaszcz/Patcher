@@ -55,6 +55,7 @@ public class CreateVersionModal extends ModalTemplate {
             }
             onCreate.accept(textField.getText(), comboBox.getValue());
             textField.clear();
+            comboBox.getSelectionModel().clearSelection();
             onClose.run();
         });
 

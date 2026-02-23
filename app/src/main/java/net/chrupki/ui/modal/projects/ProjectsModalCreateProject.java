@@ -1,5 +1,8 @@
 package net.chrupki.ui.modal.projects;
 
+import com.sun.javafx.scene.control.IDisconnectable;
+import javafx.application.Platform;
+import javafx.event.Event;
 import javafx.geometry.Insets;
 import javafx.geometry.Pos;
 import javafx.scene.control.Button;
@@ -66,7 +69,7 @@ public class ProjectsModalCreateProject extends ModalTemplate {
                 textArea
         );
 
-        setOnMouseClicked(e -> e.consume());
+        setOnMouseClicked(Event::consume);
         addActions(createButton);
     }
 }
