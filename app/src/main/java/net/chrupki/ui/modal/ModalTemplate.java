@@ -13,11 +13,14 @@ import net.chrupki.ui.styles.theme.ButtonTheme;
 import net.chrupki.ui.styles.theme.CardTheme;
 import net.chrupki.ui.styles.theme.TextTheme;
 
+import javax.swing.text.Style;
+
 public abstract class ModalTemplate extends VBox {
 
     protected final Label titleLabel;
     protected final Button closeButton;
     protected final HBox actions;
+    protected final Label errorLabel;
 
     public ModalTemplate(String title, Runnable onClose) {
         this.titleLabel = new Label(title);
@@ -32,6 +35,13 @@ public abstract class ModalTemplate extends VBox {
         };
         
         this.closeButton.setOnAction(e -> cleanupAndClose.run());
+
+        this.errorLabel = new Label("hdsfkjd");
+        this.errorLabel.setWrapText(true);
+        this.errorLabel.setMaxWidth(Double.MAX_VALUE);
+        this.errorLabel.setWrapText(true);
+
+        new Styles().apply(this.errorLabel, TextTheme.TEXT_ERROR_BADGE);
 
         Region titleSpacer = new Region();
         HBox.setHgrow(titleSpacer, Priority.ALWAYS);
@@ -54,7 +64,7 @@ public abstract class ModalTemplate extends VBox {
 
         new Styles().apply(this, CardTheme.NORMAL);
 
-        getChildren().add(header);
+        getChildren().addAll(header, errorLabel);
     }
 
     protected void addActions(Button... additionalButtons) {

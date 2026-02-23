@@ -4,14 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="c1aa160e-de6c-484d-8c28-5409cf16dc62" name="Changes" comment="feat(ui): add new delete system for everything">
+    <list default="true" id="c1aa160e-de6c-484d-8c28-5409cf16dc62" name="Changes" comment="fix(code): refactor code for modals">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/net/chrupki/ui/modal/ConfirmModal.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/net/chrupki/ui/modal/ConfirmModal.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/net/chrupki/ui/modal/Modal.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/net/chrupki/ui/modal/Modal.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/net/chrupki/ui/modal/project/patch/EditPatchModal.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/net/chrupki/ui/modal/project/patch/EditPatchModal.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/net/chrupki/ui/modal/project/tags/EditTagModal.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/net/chrupki/ui/modal/project/tags/EditTagModal.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/net/chrupki/ui/modal/project/version/EditVersionModal.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/net/chrupki/ui/modal/project/version/EditVersionModal.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/net/chrupki/ui/modal/projects/ProjectsModalEditProject.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/net/chrupki/ui/modal/projects/ProjectsModalEditProject.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/net/chrupki/ui/modal/ModalTemplate.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/net/chrupki/ui/modal/ModalTemplate.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/net/chrupki/ui/styles/theme/TextTheme.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/net/chrupki/ui/styles/theme/TextTheme.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/net/chrupki/ui/view/pages/projects/ProjectsView.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/net/chrupki/ui/view/pages/projects/ProjectsView.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/resources/styles/text.css" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/resources/styles/text.css" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -19,7 +17,7 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="EmbeddingIndexingInfo">
-    <option name="cachedIndexableFilesCount" value="113" />
+    <option name="cachedIndexableFilesCount" value="114" />
     <option name="fileBasedEmbeddingIndicesEnabled" value="true" />
   </component>
   <component name="ExternalProjectsData">
@@ -188,22 +186,6 @@
       <workItem from="1770119027273" duration="12667000" />
       <workItem from="1770895896091" duration="89000" />
       <workItem from="1770922101369" duration="5592000" />
-    </task>
-    <task id="LOCAL-00047" summary="fix(code): change context to model">
-      <option name="closed" value="true" />
-      <created>1769449359776</created>
-      <option name="number" value="00047" />
-      <option name="presentableId" value="LOCAL-00047" />
-      <option name="project" value="LOCAL" />
-      <updated>1769449359776</updated>
-    </task>
-    <task id="LOCAL-00048" summary="feat(ui): add stable version type">
-      <option name="closed" value="true" />
-      <created>1769525434901</created>
-      <option name="number" value="00048" />
-      <option name="presentableId" value="LOCAL-00048" />
-      <option name="project" value="LOCAL" />
-      <updated>1769525434901</updated>
     </task>
     <task id="LOCAL-00049" summary="feat(ui): create a export modal">
       <option name="closed" value="true" />
@@ -581,15 +563,29 @@
       <option name="project" value="LOCAL" />
       <updated>1771425922546</updated>
     </task>
-    <option name="localTasksCounter" value="96" />
+    <task id="LOCAL-00096" summary="fix(code): refactor code for modals">
+      <option name="closed" value="true" />
+      <created>1771426888158</created>
+      <option name="number" value="00096" />
+      <option name="presentableId" value="LOCAL-00096" />
+      <option name="project" value="LOCAL" />
+      <updated>1771426888158</updated>
+    </task>
+    <task id="LOCAL-00097" summary="add(ui); error color in theme CSS">
+      <option name="closed" value="true" />
+      <created>1771850860639</created>
+      <option name="number" value="00097" />
+      <option name="presentableId" value="LOCAL-00097" />
+      <option name="project" value="LOCAL" />
+      <updated>1771850860641</updated>
+    </task>
+    <option name="localTasksCounter" value="98" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="fix(ui): creating version or tag isn't link to any toggle" />
-    <MESSAGE value="delete(ui): remove unused components, patch footer" />
     <MESSAGE value="add(style): interface to apply styling" />
     <MESSAGE value="add(style): custom style enum" />
     <MESSAGE value="refactor(style): change text style" />
@@ -613,7 +609,9 @@
     <MESSAGE value="feat(ui): pair and even container themes change" />
     <MESSAGE value="fix(ui): delete the project has his own button on the container" />
     <MESSAGE value="feat(ui): add new delete system for everything" />
-    <option name="LAST_COMMIT_MESSAGE" value="feat(ui): add new delete system for everything" />
+    <MESSAGE value="fix(code): refactor code for modals" />
+    <MESSAGE value="add(ui); error color in theme CSS" />
+    <option name="LAST_COMMIT_MESSAGE" value="add(ui); error color in theme CSS" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

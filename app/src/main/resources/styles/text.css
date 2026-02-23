@@ -82,3 +82,14 @@
     -fx-background-radius: 5;
     -fx-font-size: 12px;
 }
+
+.text-error-badge {
+    -fx-background-color: rgba(214, 59, 59, 0.12);
+    -fx-border-color: -color-error-500;
+    -fx-border-width: 1.5;
+    -fx-text-fill: -color-error-600;
+    -fx-padding: 10 14;
+    -fx-font-size: 13px;
+    -fx-border-radius: 6;
+    -fx-background-radius: 6;
+}
