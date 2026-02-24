@@ -4,6 +4,8 @@ import javafx.geometry.Insets;
 import javafx.geometry.Pos;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
+import javafx.scene.input.KeyCode;
+import javafx.scene.input.KeyEvent;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.Priority;
 import javafx.scene.layout.Region;
@@ -66,6 +68,20 @@ public abstract class ModalTemplate extends VBox {
         new Styles().apply(this, CardTheme.NORMAL);
 
         getChildren().addAll(header, errorLabel);
+
+        sceneProperty().addListener((obs, oldScene, newScene) -> {
+            if (newScene != null) {
+
+                newScene.addEventFilter(KeyEvent.KEY_PRESSED, e -> {
+
+                    if (e.getCode() == KeyCode.ESCAPE) {
+                        onClose.run();
+                        e.consume();
+                    }
+
+                });
+            }
+        });
     }
 
     protected void addActions(Button... additionalButtons) {

@@ -31,24 +31,9 @@ public class ProjectController {
         GlobalModel.setSwitchCreateProjectsModal(true);
     }
 
-    public void closeCreateProjectsModal() {
-        GlobalModel.setSwitchProjectsModal(false);
-        GlobalModel.setSwitchCreateProjectsModal(false);
-    }
-
     public void openEditProjectsModal() {
         GlobalModel.setSwitchProjectsModal(true);
         GlobalModel.setSwitchEditProjectsModal(true);
-    }
-
-    public void closeEditProjectsModal() {
-        GlobalModel.setSwitchProjectsModal(false);
-        GlobalModel.setSwitchEditProjectsModal(false);
-    }
-
-    public void selectProject(String name) {
-        HubModel.projectModel().from(new ProjectDTO(name));
-
     }
 
     public void saveProject(String oldProjectName, String newProjectName, String description) {

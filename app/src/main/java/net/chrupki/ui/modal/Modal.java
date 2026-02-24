@@ -55,42 +55,42 @@ public class Modal extends StackPane {
         vBox.getChildren().addAll(
                 new ProjectsModalCreateProject(
                         HubController.getProjectController()::createProject,
-                        HubController.getProjectController()::closeCreateProjectsModal
+                        HubController.getProjectController()::closeModal
                 ),
                 new ProjectsModalEditProject(
                         HubController.getProjectController()::saveProject,
-                        HubController.getProjectController()::closeEditProjectsModal
+                        HubController.getProjectController()::closeModal
                 ),
                 new CreateVersionModal(
                         HubController.getVersionController()::createVersion,
-                        HubController.getProjectController()::closeEditProjectsModal
+                        HubController.getProjectController()::closeModal
                 ),
                 new EditVersionModal(
                         HubController.getVersionController()::saveVersion,
-                        HubController.getProjectController()::closeEditProjectsModal
+                        HubController.getProjectController()::closeModal
                 ),
                 new CreatePatchModal(
                         HubController.getPatchController()::createPatch,
-                        HubController.getProjectController()::closeEditProjectsModal
+                        HubController.getProjectController()::closeModal
                 ),
                 new EditPatchModal(
                         HubController.getPatchController()::savePatch,
-                        HubController.getProjectController()::closeEditProjectsModal
+                        HubController.getProjectController()::closeModal
                 ),
                 new ExportModal(
-                        HubController.getProjectController()::closeEditProjectsModal,
+                        HubController.getProjectController()::closeModal,
                         HubController.getExportController()::export
                 ),
                 new CreateTagModal(
                         HubController.getTagController()::create,
-                        HubController.getProjectController()::closeEditProjectsModal
+                        HubController.getProjectController()::closeModal
                 ),
                 new EditTagModal(
                         HubController.getTagController()::save,
-                        HubController.getProjectController()::closeEditProjectsModal
+                        HubController.getProjectController()::closeModal
                 ),
                 new ConfirmModal(
-                        HubController.getProjectController()::closeCreateProjectsModal,
+                        HubController.getProjectController()::closeModal,
                         HubController.getProjectController()::onDelete,
                         HubController.getVersionController()::deleteVersion,
                         HubController.getTagController()::delete,
