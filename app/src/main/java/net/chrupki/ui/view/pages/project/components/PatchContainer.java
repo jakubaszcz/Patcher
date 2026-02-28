@@ -16,11 +16,21 @@ import net.chrupki.dto.PatchDTO;
 import net.chrupki.ui.styles.Styles;
 import net.chrupki.ui.styles.theme.ButtonTheme;
 import net.chrupki.ui.styles.theme.ContainerTheme;
+import net.chrupki.ui.styles.theme.IconTheme;
 import net.chrupki.ui.styles.theme.TextTheme;
+import org.kordamp.ikonli.javafx.FontIcon;
 
 public class PatchContainer extends HBox {
 
     public PatchContainer(PatchDTO patch, boolean pair) {
+
+        FontIcon editIcon = new FontIcon("fas-pen");
+        new Styles().apply(editIcon, IconTheme.EDIT);
+        editIcon.setPickOnBounds(true);
+
+        FontIcon trashIcon = new FontIcon("fas-trash");
+        new Styles().apply(trashIcon, IconTheme.EDIT);
+        trashIcon.setPickOnBounds(true);
 
         Label typeLabel = new Label();
         StringProperty type = new SimpleStringProperty(
@@ -45,10 +55,10 @@ public class PatchContainer extends HBox {
 
         HBox horizontal = new HBox();
 
-        Button edit = new Button("Edit");
+        Button edit = new Button(null, editIcon);
         new Styles().apply(edit, ButtonTheme.EDIT);
 
-        Button delete = new Button("Delete");
+        Button delete = new Button(null, trashIcon);
         new Styles().apply(delete, ButtonTheme.EDIT);
 
         horizontal.getChildren().addAll(edit, delete);

@@ -7,7 +7,9 @@ import javafx.scene.layout.VBox;
 import javafx.scene.text.TextAlignment;
 import net.chrupki.ui.styles.Styles;
 import net.chrupki.ui.styles.theme.ButtonTheme;
+import net.chrupki.ui.styles.theme.IconTheme;
 import net.chrupki.ui.styles.theme.TextTheme;
+import org.kordamp.ikonli.javafx.FontIcon;
 
 public class EmptyStateView extends VBox {
 
@@ -28,8 +30,10 @@ public class EmptyStateView extends VBox {
         text_message.setWrapText(true);
         new Styles().apply(text_message, TextTheme.TEXT_MUTED);
 
+        FontIcon icon = new FontIcon("fas-plus");
+        new Styles().apply(icon, IconTheme.PRIMARY);
 
-        Button button = new Button("+ Create " + title.toLowerCase());
+        Button button = new Button("Create " + title.toLowerCase(), icon);
         new Styles().apply(button, ButtonTheme.NORMAL);
 
         button.setOnAction(e -> onClick.run());

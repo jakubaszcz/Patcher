@@ -11,15 +11,20 @@ import net.chrupki.model.HubModel;
 import net.chrupki.ui.model.GlobalModel;
 import net.chrupki.ui.styles.Styles;
 import net.chrupki.ui.styles.theme.ButtonTheme;
+import net.chrupki.ui.styles.theme.IconTheme;
 import net.chrupki.ui.styles.theme.TextTheme;
 import net.chrupki.ui.view.manager.PageManager;
 import net.chrupki.ui.view.pages.projects.ProjectsView;
+import org.kordamp.ikonli.javafx.FontIcon;
 
 public class Header extends HBox {
 
     public Header(PageManager viewManager) {
 
-        Button backButton = new Button("←");
+        FontIcon icon = new FontIcon("fas-arrow-left");
+        new Styles().apply(icon, IconTheme.PRIMARY);
+
+        Button backButton = new Button(null, icon);
         new Styles().apply(backButton, ButtonTheme.NORMAL);
 
         Label backLabel = new Label("Go back");

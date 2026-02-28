@@ -4,10 +4,20 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="c1aa160e-de6c-484d-8c28-5409cf16dc62" name="Changes" comment="feat(ui): add button to open templates path">
+    <list default="true" id="c1aa160e-de6c-484d-8c28-5409cf16dc62" name="Changes" comment="feat(ui): create icon styling">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/app/build.gradle" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/net/chrupki/ui/view/pages/projects/Header.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/net/chrupki/ui/view/pages/projects/Header.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/net/chrupki/ui/EmptyStateView.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/net/chrupki/ui/EmptyStateView.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/net/chrupki/ui/styles/theme/IconTheme.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/net/chrupki/ui/styles/theme/IconTheme.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/net/chrupki/ui/view/pages/project/components/Header.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/net/chrupki/ui/view/pages/project/components/Header.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/net/chrupki/ui/view/pages/project/components/PatchContainer.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/net/chrupki/ui/view/pages/project/components/PatchContainer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/net/chrupki/ui/view/pages/project/components/PatchHeader.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/net/chrupki/ui/view/pages/project/components/PatchHeader.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/net/chrupki/ui/view/pages/project/components/lcontainer/LCHeader.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/net/chrupki/ui/view/pages/project/components/lcontainer/LCHeader.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/net/chrupki/ui/view/pages/project/components/lcontainer/tag/components/LCTagContainer.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/net/chrupki/ui/view/pages/project/components/lcontainer/tag/components/LCTagContainer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/net/chrupki/ui/view/pages/project/components/lcontainer/version/components/LCVersionContainer.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/net/chrupki/ui/view/pages/project/components/lcontainer/version/components/LCVersionContainer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/net/chrupki/ui/view/pages/projects/components/CreateProjectButton.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/net/chrupki/ui/view/pages/projects/components/CreateProjectButton.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/net/chrupki/ui/view/pages/projects/components/ProjectsContainer.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/net/chrupki/ui/view/pages/projects/components/ProjectsContainer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/resources/styles/button.css" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/resources/styles/button.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/resources/styles/icon.css" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/resources/styles/icon.css" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -105,6 +115,11 @@
     ]
   }
 }</component>
+  <component name="RecentsManager">
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="net.chrupki.ui.styles.theme" />
+    </key>
+  </component>
   <component name="RunManager">
     <configuration name="Patcher [run]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
@@ -170,14 +185,6 @@
       <workItem from="1770895896091" duration="89000" />
       <workItem from="1770922101369" duration="5592000" />
       <workItem from="1772293333222" duration="3897000" />
-    </task>
-    <task id="LOCAL-00053" summary="add(service): create service for tag">
-      <option name="closed" value="true" />
-      <created>1769709140430</created>
-      <option name="number" value="00053" />
-      <option name="presentableId" value="LOCAL-00053" />
-      <option name="project" value="LOCAL" />
-      <updated>1769709140430</updated>
     </task>
     <task id="LOCAL-00054" summary="add(controller): create controller for tag">
       <option name="closed" value="true" />
@@ -563,14 +570,21 @@
       <option name="project" value="LOCAL" />
       <updated>1772305731518</updated>
     </task>
-    <option name="localTasksCounter" value="102" />
+    <task id="LOCAL-00102" summary="feat(ui): create icon styling">
+      <option name="closed" value="true" />
+      <created>1772311427828</created>
+      <option name="number" value="00102" />
+      <option name="presentableId" value="LOCAL-00102" />
+      <option name="project" value="LOCAL" />
+      <updated>1772311427828</updated>
+    </task>
+    <option name="localTasksCounter" value="103" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="refactor(style): apply new button style" />
     <MESSAGE value="add(style): combo box style" />
     <MESSAGE value="refactor(style): apply new combo box style" />
     <MESSAGE value="add(style): create text field style" />
@@ -595,7 +609,8 @@
     <MESSAGE value="feat(ui): display error in modal" />
     <MESSAGE value="fix(ui): clear field on create or save" />
     <MESSAGE value="feat(ui): add button to open templates path" />
-    <option name="LAST_COMMIT_MESSAGE" value="feat(ui): add button to open templates path" />
+    <MESSAGE value="feat(ui): create icon styling" />
+    <option name="LAST_COMMIT_MESSAGE" value="feat(ui): create icon styling" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

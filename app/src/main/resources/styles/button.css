@@ -1,7 +1,6 @@
 .button-edit {
     -fx-background-color: transparent;
     -fx-text-fill: -color-base-500;
-    -fx-padding: 4 10;
     -fx-background-radius: 5px;
 }
 

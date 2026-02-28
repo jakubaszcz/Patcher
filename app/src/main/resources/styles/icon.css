@@ -1,9 +1,16 @@
 .icon-primary {
-    -fx-font-size: 18px;
     -fx-icon-color: -color-primary-200;
 }
 
 .icon-base {
     -fx-font-size: 18px;
     -fx-icon-color: -color-base-200;
+}
+
+.icon-edit {
+    -fx-icon-color: -color-base-500;
+}
+
+.icon-edit:hover {
+    -fx-icon-color: -color-base-400;
 }

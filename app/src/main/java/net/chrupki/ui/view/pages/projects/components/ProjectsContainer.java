@@ -16,9 +16,11 @@ import net.chrupki.ui.model.GlobalModel;
 import net.chrupki.ui.styles.Styles;
 import net.chrupki.ui.styles.theme.ButtonTheme;
 import net.chrupki.ui.styles.theme.CardTheme;
+import net.chrupki.ui.styles.theme.IconTheme;
 import net.chrupki.ui.styles.theme.TextTheme;
 import net.chrupki.ui.view.pages.project.ProjectView;
 import net.chrupki.ui.view.pages.projects.dto.ProjectContainerDTO;
+import org.kordamp.ikonli.javafx.FontIcon;
 
 
 public class ProjectsContainer extends VBox {
@@ -28,6 +30,15 @@ public class ProjectsContainer extends VBox {
             ProjectContainerDTO projectContainerModel,
             Runnable onEditProjectModal
     ) {
+
+        FontIcon editIcon = new FontIcon("fas-pen");
+        new Styles().apply(editIcon, IconTheme.EDIT);
+        editIcon.setPickOnBounds(true);
+
+        FontIcon trashIcon = new FontIcon("fas-trash");
+        new Styles().apply(trashIcon, IconTheme.EDIT);
+        trashIcon.setPickOnBounds(true);
+
 
         int descLimit = 200;
 
@@ -51,10 +62,10 @@ public class ProjectsContainer extends VBox {
 
         HBox horizontal = new HBox();
 
-        Button edit = new Button("Edit");
+        Button edit = new Button(null, editIcon);
         new Styles().apply(edit, ButtonTheme.EDIT);
 
-        Button delete = new Button("Delete");
+        Button delete = new Button(null, trashIcon);
         new Styles().apply(delete, ButtonTheme.EDIT);
 
         horizontal.getChildren().addAll(edit, delete);

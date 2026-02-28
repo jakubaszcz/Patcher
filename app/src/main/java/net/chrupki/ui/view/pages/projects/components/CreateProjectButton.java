@@ -3,9 +3,11 @@ package net.chrupki.ui.view.pages.projects.components;
 import javafx.scene.layout.HBox;
 import net.chrupki.ui.styles.Styles;
 import net.chrupki.ui.styles.theme.ButtonTheme;
+import net.chrupki.ui.styles.theme.IconTheme;
 import net.chrupki.ui.styles.theme.TextTheme;
 import net.chrupki.ui.view.pages.projects.dto.CreateProjectButtonDTO;
 import javafx.scene.control.Label;
+import org.kordamp.ikonli.javafx.FontIcon;
 
 
 public class CreateProjectButton extends HBox {
@@ -15,7 +17,10 @@ public class CreateProjectButton extends HBox {
             Runnable onCreateProjectModal
     ) {
 
-        Label label = new Label("+");
+        FontIcon icon = new FontIcon("fas-plus");
+        new Styles().apply(icon, IconTheme.PRIMARY);
+
+        Label label = new Label(null, icon);
         new Styles().apply(label, TextTheme.TEXT_ITEM);
 
 
