@@ -29,6 +29,7 @@ public class MainPage {
                 Css.load("container.css"),
                 Css.load("text.css"),
                 Css.load("button.css"),
+                Css.load("icon.css"),
                 Css.load("combo-box.css"),
                 Css.load("text-field.css"),
                 Css.load("scroll.css")
