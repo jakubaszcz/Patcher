@@ -4,20 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="c1aa160e-de6c-484d-8c28-5409cf16dc62" name="Changes" comment="feat(ui): create icon styling">
+    <list default="true" id="c1aa160e-de6c-484d-8c28-5409cf16dc62" name="Changes" comment="feat(ui): add every icons needed">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/net/chrupki/ui/EmptyStateView.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/net/chrupki/ui/EmptyStateView.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/net/chrupki/ui/styles/theme/IconTheme.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/net/chrupki/ui/styles/theme/IconTheme.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/net/chrupki/ui/view/pages/project/components/Header.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/net/chrupki/ui/view/pages/project/components/Header.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/net/chrupki/ui/view/pages/project/components/PatchContainer.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/net/chrupki/ui/view/pages/project/components/PatchContainer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/net/chrupki/ui/view/pages/project/components/PatchHeader.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/net/chrupki/ui/view/pages/project/components/PatchHeader.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/net/chrupki/ui/view/pages/project/components/lcontainer/LCHeader.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/net/chrupki/ui/view/pages/project/components/lcontainer/LCHeader.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/net/chrupki/ui/view/pages/project/components/lcontainer/tag/components/LCTagContainer.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/net/chrupki/ui/view/pages/project/components/lcontainer/tag/components/LCTagContainer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/net/chrupki/ui/view/pages/project/components/lcontainer/version/components/LCVersionContainer.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/net/chrupki/ui/view/pages/project/components/lcontainer/version/components/LCVersionContainer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/net/chrupki/ui/view/pages/projects/components/CreateProjectButton.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/net/chrupki/ui/view/pages/projects/components/CreateProjectButton.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/net/chrupki/ui/view/pages/projects/components/ProjectsContainer.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/net/chrupki/ui/view/pages/projects/components/ProjectsContainer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/resources/styles/button.css" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/resources/styles/button.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/resources/styles/icon.css" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/resources/styles/icon.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/net/chrupki/ui/modal/ConfirmModal.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/net/chrupki/ui/modal/ConfirmModal.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -185,14 +174,6 @@
       <workItem from="1770895896091" duration="89000" />
       <workItem from="1770922101369" duration="5592000" />
       <workItem from="1772293333222" duration="3897000" />
-    </task>
-    <task id="LOCAL-00054" summary="add(controller): create controller for tag">
-      <option name="closed" value="true" />
-      <created>1769709369015</created>
-      <option name="number" value="00054" />
-      <option name="presentableId" value="LOCAL-00054" />
-      <option name="project" value="LOCAL" />
-      <updated>1769709369015</updated>
     </task>
     <task id="LOCAL-00055" summary="add(db): create dao for tag">
       <option name="closed" value="true" />
@@ -578,14 +559,21 @@
       <option name="project" value="LOCAL" />
       <updated>1772311427828</updated>
     </task>
-    <option name="localTasksCounter" value="103" />
+    <task id="LOCAL-00103" summary="feat(ui): add every icons needed">
+      <option name="closed" value="true" />
+      <created>1772312531105</created>
+      <option name="number" value="00103" />
+      <option name="presentableId" value="LOCAL-00103" />
+      <option name="project" value="LOCAL" />
+      <updated>1772312531105</updated>
+    </task>
+    <option name="localTasksCounter" value="104" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="add(style): combo box style" />
     <MESSAGE value="refactor(style): apply new combo box style" />
     <MESSAGE value="add(style): create text field style" />
     <MESSAGE value="refactor(style): apply text field style" />
@@ -610,7 +598,8 @@
     <MESSAGE value="fix(ui): clear field on create or save" />
     <MESSAGE value="feat(ui): add button to open templates path" />
     <MESSAGE value="feat(ui): create icon styling" />
-    <option name="LAST_COMMIT_MESSAGE" value="feat(ui): create icon styling" />
+    <MESSAGE value="feat(ui): add every icons needed" />
+    <option name="LAST_COMMIT_MESSAGE" value="feat(ui): add every icons needed" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

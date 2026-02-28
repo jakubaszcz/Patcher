@@ -123,9 +123,11 @@ public class ConfirmModal extends ModalTemplate {
                 confirm.setOnAction(e -> {
                     if (textField.getText().equals(HubModel.projectModel().getName().get()))
                     {
+                        textField.clear();
                         onDeleteProject.run();
                         onClose.run();
                     } else {
+                        textField.clear();
                         GlobalModel.setErrorMessage("Project name doesn't match");
                         return;
                     }
