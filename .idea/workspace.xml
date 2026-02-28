@@ -4,8 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="c1aa160e-de6c-484d-8c28-5409cf16dc62" name="Changes" comment="feat(ui): add new delete system for everything">
+    <list default="true" id="c1aa160e-de6c-484d-8c28-5409cf16dc62" name="Changes" comment="feat(ui): add button to open templates path">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/app/build.gradle" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/net/chrupki/ui/view/pages/projects/Header.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/net/chrupki/ui/view/pages/projects/Header.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -168,15 +169,7 @@
       <workItem from="1770119027273" duration="12667000" />
       <workItem from="1770895896091" duration="89000" />
       <workItem from="1770922101369" duration="5592000" />
-      <workItem from="1772293333222" duration="2598000" />
-    </task>
-    <task id="LOCAL-00052" summary="add(dto): create dto for tags">
-      <option name="closed" value="true" />
-      <created>1769707799308</created>
-      <option name="number" value="00052" />
-      <option name="presentableId" value="LOCAL-00052" />
-      <option name="project" value="LOCAL" />
-      <updated>1769707799308</updated>
+      <workItem from="1772293333222" duration="3897000" />
     </task>
     <task id="LOCAL-00053" summary="add(service): create service for tag">
       <option name="closed" value="true" />
@@ -562,14 +555,21 @@
       <option name="project" value="LOCAL" />
       <updated>1771855575202</updated>
     </task>
-    <option name="localTasksCounter" value="101" />
+    <task id="LOCAL-00101" summary="feat(ui): add button to open templates path">
+      <option name="closed" value="true" />
+      <created>1772305731518</created>
+      <option name="number" value="00101" />
+      <option name="presentableId" value="LOCAL-00101" />
+      <option name="project" value="LOCAL" />
+      <updated>1772305731518</updated>
+    </task>
+    <option name="localTasksCounter" value="102" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="add(style): create button style" />
     <MESSAGE value="refactor(style): apply new button style" />
     <MESSAGE value="add(style): combo box style" />
     <MESSAGE value="refactor(style): apply new combo box style" />
@@ -594,7 +594,8 @@
     <MESSAGE value="feat(ui): create error label" />
     <MESSAGE value="feat(ui): display error in modal" />
     <MESSAGE value="fix(ui): clear field on create or save" />
-    <option name="LAST_COMMIT_MESSAGE" value="fix(ui): clear field on create or save" />
+    <MESSAGE value="feat(ui): add button to open templates path" />
+    <option name="LAST_COMMIT_MESSAGE" value="feat(ui): add button to open templates path" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

@@ -40,31 +40,33 @@ public class Header extends VBox {
         Region spacer = new Region();
         HBox.setHgrow(spacer, Priority.ALWAYS);
 
-        Label templateTitle = new Label("Manage your templates");
-        new Styles().apply(templateTitle, TextTheme.TEXT_MUTED);
+        {
+            Label templateTitle = new Label("Manage your templates");
+            new Styles().apply(templateTitle, TextTheme.TEXT_MUTED);
 
 
-        Button openTemplate = new Button("Templates");
-        new Styles().apply(openTemplate, ButtonTheme.NORMAL);
+            Button openTemplate = new Button("Templates");
+            new Styles().apply(openTemplate, ButtonTheme.NORMAL);
 
-        contentRight.getChildren().addAll(templateTitle, openTemplate);
-        contentRight.setAlignment(Pos.CENTER_RIGHT);
+            contentRight.getChildren().addAll(templateTitle, openTemplate);
+            contentRight.setAlignment(Pos.CENTER_RIGHT);
+
+            openTemplate.setOnAction(e -> {
+                File directory = new File(AppPath.getDataDir().resolve("templates").toString());
+                try {
+                    if (Desktop.isDesktopSupported()) {
+                        Desktop.getDesktop().open(directory);
+                    }
+                    else {
+                        System.out.println("Desktop not supported");
+                    }
+                } catch (Exception ex) {
+                    System.out.println(ex.getMessage());
+                }
+            });
+        }
 
         container.getChildren().addAll(contentLeft, spacer, contentRight);
-
-        openTemplate.setOnAction(e -> {
-            File directory = new File(AppPath.getDataDir().resolve("templates").toString());
-            try {
-                if (Desktop.isDesktopSupported()) {
-                    Desktop.getDesktop().open(directory);
-                }
-                else {
-                    System.out.println("Desktop not supported");
-                }
-            } catch (Exception ex) {
-                System.out.println(ex.getMessage());
-            }
-        });
 
         setSpacing(4);
         setPadding(new Insets(20, 20, 10, 20));
