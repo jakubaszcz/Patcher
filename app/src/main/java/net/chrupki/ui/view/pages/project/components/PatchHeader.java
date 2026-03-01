@@ -7,6 +7,7 @@ import javafx.scene.control.Label;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.Priority;
 import javafx.scene.layout.Region;
+import javafx.scene.layout.VBox;
 import net.chrupki.model.HubModel;
 import net.chrupki.ui.model.GlobalModel;
 import net.chrupki.ui.styles.Styles;
@@ -21,7 +22,13 @@ public class PatchHeader extends HBox {
     public PatchHeader() {
         Label title = new Label();
         title.textProperty().bind(HubModel.versionModel().getName());
-        new Styles().apply(title, TextTheme.TITLE);
+        new Styles().apply(title, TextTheme.SUBTITLE);
+
+        Label meta = new Label("Patch");
+        new Styles().apply(meta, TextTheme.TEXT_MAIN);
+
+        VBox titleBox = new VBox(2, title, meta);
+        titleBox.setAlignment(Pos.CENTER_LEFT);
 
         FontIcon icon = new FontIcon("fas-plus");
         new Styles().apply(icon, IconTheme.PRIMARY);
@@ -54,7 +61,7 @@ public class PatchHeader extends HBox {
         new Styles().apply(this, ContainerTheme.HEADER);
 
         getChildren().addAll(
-                title,
+                titleBox,
                 spacer,
                 addButton,
                 exportButton
