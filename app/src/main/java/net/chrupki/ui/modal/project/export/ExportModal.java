@@ -20,6 +20,7 @@ import net.chrupki.ui.modal.ModalTemplate;
 import net.chrupki.ui.model.GlobalModel;
 import net.chrupki.ui.styles.Styles;
 import net.chrupki.ui.styles.theme.ButtonTheme;
+import net.chrupki.ui.styles.theme.TextTheme;
 
 import java.io.File;
 import java.util.List;
@@ -41,6 +42,13 @@ public class ExportModal extends ModalTemplate {
         if (hasTemplates) {
             comboBox.setItems(templates);
             comboBox.getSelectionModel().selectFirst();
+        } else {
+            Label label = new Label("No templates available, but don't worry, you can always create your own ! By now, you will have a default template.");
+            new Styles().apply(label, TextTheme.TEXT_MAIN);
+            label.setAlignment(Pos.CENTER);
+            label.setWrapText(true);
+            label.getStyleClass().add("modal-label");
+            getChildren().add(label);
         }
 
         Button createButton = new Button("Export");

@@ -4,9 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="c1aa160e-de6c-484d-8c28-5409cf16dc62" name="Changes" comment="fix(ui): clear the input field for the confirmation modal (project)">
+    <list default="true" id="c1aa160e-de6c-484d-8c28-5409cf16dc62" name="Changes" comment="fix(ui): the patch header is now the same size as tag/version header">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/net/chrupki/ui/view/pages/project/components/PatchHeader.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/net/chrupki/ui/view/pages/project/components/PatchHeader.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/net/chrupki/project/services/files/exports/MarkdownExportService.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/net/chrupki/project/services/files/exports/MarkdownExportService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/net/chrupki/ui/controllers/files/ExportController.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/net/chrupki/ui/controllers/files/ExportController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/net/chrupki/ui/modal/project/export/ExportModal.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/net/chrupki/ui/modal/project/export/ExportModal.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -174,15 +176,7 @@
       <workItem from="1770895896091" duration="89000" />
       <workItem from="1770922101369" duration="5592000" />
       <workItem from="1772293333222" duration="3897000" />
-      <workItem from="1772362352966" duration="1151000" />
-    </task>
-    <task id="LOCAL-00055" summary="add(db): create dao for tag">
-      <option name="closed" value="true" />
-      <created>1769709983896</created>
-      <option name="number" value="00055" />
-      <option name="presentableId" value="LOCAL-00055" />
-      <option name="project" value="LOCAL" />
-      <updated>1769709983896</updated>
+      <workItem from="1772362352966" duration="1776000" />
     </task>
     <task id="LOCAL-00056" summary="add(model): create model for tag and for modal">
       <option name="closed" value="true" />
@@ -568,14 +562,21 @@
       <option name="project" value="LOCAL" />
       <updated>1772312531105</updated>
     </task>
-    <option name="localTasksCounter" value="104" />
+    <task id="LOCAL-00104" summary="fix(ui): the patch header is now the same size as tag/version header">
+      <option name="closed" value="true" />
+      <created>1772363653818</created>
+      <option name="number" value="00104" />
+      <option name="presentableId" value="LOCAL-00104" />
+      <option name="project" value="LOCAL" />
+      <updated>1772363653818</updated>
+    </task>
+    <option name="localTasksCounter" value="105" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="refactor(style): apply new combo box style" />
     <MESSAGE value="add(style): create text field style" />
     <MESSAGE value="refactor(style): apply text field style" />
     <MESSAGE value="add(style): create card style" />
@@ -600,7 +601,8 @@
     <MESSAGE value="feat(ui): add button to open templates path" />
     <MESSAGE value="feat(ui): create icon styling" />
     <MESSAGE value="feat(ui): add every icons needed" />
-    <option name="LAST_COMMIT_MESSAGE" value="feat(ui): add every icons needed" />
+    <MESSAGE value="fix(ui): the patch header is now the same size as tag/version header" />
+    <option name="LAST_COMMIT_MESSAGE" value="fix(ui): the patch header is now the same size as tag/version header" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

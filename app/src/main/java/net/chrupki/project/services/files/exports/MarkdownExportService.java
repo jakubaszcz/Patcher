@@ -7,6 +7,7 @@ import net.chrupki.request.ExportRequest;
 
 import java.io.IOException;
 import java.nio.file.Files;
+import java.nio.file.Path;
 import java.time.LocalDate;
 import java.util.List;
 import java.util.regex.Matcher;
@@ -16,8 +17,18 @@ public class MarkdownExportService {
 
     public void exportMarkdown(ExportRequest request) {
         String markdown = generateMarkdown(request);
+
+        Path exportPath = request.exportPath();
+
+        switch (request.format()) {
+            case "markdown" -> {
+                exportPath = exportPath.resolveSibling(exportPath.getFileName() + ".md");
+            }
+            default -> { }
+        }
+
         try {
-            Files.writeString(request.exportPath(), markdown);
+            Files.writeString(exportPath, markdown);
         } catch (IOException e) {
             throw new RuntimeException(e);
         }

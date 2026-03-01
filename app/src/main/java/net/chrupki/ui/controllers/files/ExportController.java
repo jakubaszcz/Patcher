@@ -9,7 +9,6 @@ public class ExportController {
 
 
     public void export(ExportRequest request) {
-        System.out.println("Exporting to " + request.exportPath());
         if (request.format().equals("markdown")) {
             HubService.getMarkdownExportService().exportMarkdown(request);
         }
