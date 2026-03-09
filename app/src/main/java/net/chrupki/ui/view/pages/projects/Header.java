@@ -41,6 +41,9 @@ public class Header extends VBox {
         HBox.setHgrow(spacer, Priority.ALWAYS);
 
         {
+            Region templateSpacer = new Region();
+            VBox.setVgrow(templateSpacer, Priority.ALWAYS);
+
             Label templateTitle = new Label("Manage your templates");
             new Styles().apply(templateTitle, TextTheme.TEXT_MUTED);
 
@@ -48,7 +51,8 @@ public class Header extends VBox {
             Button openTemplate = new Button("Templates");
             new Styles().apply(openTemplate, ButtonTheme.NORMAL);
 
-            contentRight.getChildren().addAll(templateTitle, openTemplate);
+            contentRight.getChildren().addAll(templateTitle, templateSpacer, openTemplate);
+            contentRight.setSpacing(5);
             contentRight.setAlignment(Pos.CENTER_RIGHT);
 
             openTemplate.setOnAction(e -> {

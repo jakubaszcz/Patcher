@@ -4,10 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="c1aa160e-de6c-484d-8c28-5409cf16dc62" name="Changes" comment="fix(ui): template button in header can now open on any OS">
+    <list default="true" id="c1aa160e-de6c-484d-8c28-5409cf16dc62" name="Changes" comment="fix(ui): the export can now get all the custom templates">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/net/chrupki/ui/modal/project/export/ExportModal.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/net/chrupki/ui/modal/project/export/ExportModal.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/net/chrupki/ui/view/pages/project/components/PatchHeader.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/net/chrupki/ui/view/pages/project/components/PatchHeader.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/net/chrupki/ui/view/pages/projects/Header.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/net/chrupki/ui/view/pages/projects/Header.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -175,14 +174,6 @@
       <workItem from="1770922101369" duration="5592000" />
       <workItem from="1772293333222" duration="3897000" />
       <workItem from="1772362352966" duration="1776000" />
-    </task>
-    <task id="LOCAL-00057" summary="refactor(db): select everything for the tag dao">
-      <option name="closed" value="true" />
-      <created>1769971220592</created>
-      <option name="number" value="00057" />
-      <option name="presentableId" value="LOCAL-00057" />
-      <option name="project" value="LOCAL" />
-      <updated>1769971220593</updated>
     </task>
     <task id="LOCAL-00058" summary="add(service): create service for tag">
       <option name="closed" value="true" />
@@ -568,14 +559,21 @@
       <option name="project" value="LOCAL" />
       <updated>1773048735583</updated>
     </task>
-    <option name="localTasksCounter" value="106" />
+    <task id="LOCAL-00106" summary="fix(ui): the export can now get all the custom templates">
+      <option name="closed" value="true" />
+      <created>1773063801472</created>
+      <option name="number" value="00106" />
+      <option name="presentableId" value="LOCAL-00106" />
+      <option name="project" value="LOCAL" />
+      <updated>1773063801474</updated>
+    </task>
+    <option name="localTasksCounter" value="107" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="refactor(style): apply text field style" />
     <MESSAGE value="add(style): create card style" />
     <MESSAGE value="refactor(style): apply card style" />
     <MESSAGE value="refactor(style): apply text badge" />
@@ -600,7 +598,8 @@
     <MESSAGE value="feat(ui): add every icons needed" />
     <MESSAGE value="fix(ui): the patch header is now the same size as tag/version header" />
     <MESSAGE value="fix(ui): template button in header can now open on any OS" />
-    <option name="LAST_COMMIT_MESSAGE" value="fix(ui): template button in header can now open on any OS" />
+    <MESSAGE value="fix(ui): the export can now get all the custom templates" />
+    <option name="LAST_COMMIT_MESSAGE" value="fix(ui): the export can now get all the custom templates" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
