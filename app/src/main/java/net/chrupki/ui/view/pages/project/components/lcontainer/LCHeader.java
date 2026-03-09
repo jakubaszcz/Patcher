@@ -25,6 +25,8 @@ public class LCHeader extends HBox {
     private boolean isVersion = true;
 
 
+    Button buttonCreate;
+
     public LCHeader(
             Consumer<String> onToggle
     ) {
@@ -41,8 +43,8 @@ public class LCHeader extends HBox {
         FontIcon icon = new FontIcon("fas-plus");
         new Styles().apply(icon, IconTheme.PRIMARY);
 
-        Button addButton = new Button(null, icon);
-        new Styles().apply(addButton, ButtonTheme.NORMAL);
+        buttonCreate = new Button("Version", icon);
+        new Styles().apply(buttonCreate, ButtonTheme.NORMAL);
 
         Button toggle = new Button("Tags");
 
@@ -50,6 +52,7 @@ public class LCHeader extends HBox {
             isVersion = !isVersion;
 
             String view = isVersion ? "version" : "tag";
+            buttonCreate.setText(isVersion ? "Version" : "Tag");
             toggle.setText(isVersion ? "Tags" : "Versions");
             meta.setText(isVersion ? "Versions" : "Tags");
 
@@ -64,7 +67,7 @@ public class LCHeader extends HBox {
         setPadding(new Insets(10, 12, 10, 12));
         setSpacing(8);
 
-        addButton.setOnAction(e -> {
+        buttonCreate.setOnAction(e -> {
 
             GlobalModel.setSwitchProjectsModal(true);
 
@@ -87,7 +90,7 @@ public class LCHeader extends HBox {
                 titleBox,
                 spacer,
                 toggle,
-                addButton
+                buttonCreate
         );
     }
 
