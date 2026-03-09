@@ -26,9 +26,35 @@ public class CreateVersionModal extends ModalTemplate {
     ) {
         super("Create version", onClose);
 
-        TextField textField = new TextField();
-        textField.setPromptText("Version name");
-        new Styles().apply(textField, TextFieldTheme.NORMAL);
+        HBox versionContainer = new HBox();
+        versionContainer.setAlignment(Pos.CENTER_LEFT);
+        versionContainer.setSpacing(5);
+
+        Label vLabel = new Label("v");
+        new Styles().apply(vLabel, TextTheme.TEXT_MAIN);
+
+        TextField xField = new TextField();
+        xField.setPrefWidth(50);
+        xField.setPromptText("x");
+        new Styles().apply(xField, TextFieldTheme.NORMAL);
+
+        Label dot1 = new Label(".");
+        new Styles().apply(dot1, TextTheme.TEXT_MAIN);
+
+        TextField yField = new TextField();
+        yField.setPrefWidth(50);
+        yField.setPromptText("y");
+        new Styles().apply(yField, TextFieldTheme.NORMAL);
+
+        Label dot2 = new Label(".");
+        new Styles().apply(dot2, TextTheme.TEXT_MAIN);
+
+        TextField zField = new TextField();
+        zField.setPrefWidth(50);
+        zField.setPromptText("z");
+        new Styles().apply(zField, TextFieldTheme.NORMAL);
+
+        versionContainer.getChildren().addAll(vLabel, xField, dot1, yField, dot2, zField);
 
         ComboBox<String> comboBox = new ComboBox<>();
         new Styles().apply(comboBox, ComboBoxTheme.NORMAL);
@@ -44,17 +70,25 @@ public class CreateVersionModal extends ModalTemplate {
         new Styles().apply(createButton, ButtonTheme.NORMAL);
 
         createButton.setOnAction(e -> {
-            if (textField.getText() == null || textField.getText().isBlank()) {
-                GlobalModel.setErrorMessage("No version name provided");
+            String x = xField.getText();
+            String y = yField.getText();
+            String z = zField.getText();
+
+            if (x.isBlank() || y.isBlank() || z.isBlank()) {
+                GlobalModel.setErrorMessage("Version name must be in format x.y.z");
                 return;
             }
+
+            String versionName = "v" + x + "." + y + "." + z;
 
             if (comboBox.getValue() == null || comboBox.getValue().isBlank()) {
                 GlobalModel.setErrorMessage("No type provided");
                 return;
             }
-            onCreate.accept(textField.getText(), comboBox.getValue());
-            textField.clear();
+            onCreate.accept(versionName, comboBox.getValue());
+            xField.clear();
+            yField.clear();
+            zField.clear();
             comboBox.getSelectionModel().clearSelection();
             onClose.run();
         });
@@ -64,7 +98,7 @@ public class CreateVersionModal extends ModalTemplate {
 
 
         getChildren().addAll(
-                textField,
+                versionContainer,
                 comboBox
         );
 

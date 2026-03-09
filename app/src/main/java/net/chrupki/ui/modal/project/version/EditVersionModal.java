@@ -19,6 +19,7 @@ import net.chrupki.ui.styles.Styles;
 import net.chrupki.ui.styles.theme.ButtonTheme;
 import net.chrupki.ui.styles.theme.ComboBoxTheme;
 import net.chrupki.ui.styles.theme.TextFieldTheme;
+import net.chrupki.ui.styles.theme.TextTheme;
 
 import java.util.function.Consumer;
 
@@ -31,9 +32,35 @@ public class EditVersionModal extends ModalTemplate {
         super("Edit version", onClose);
         titleLabel.textProperty().bind(Bindings.concat("Edit version : ", HubModel.versionModel().getName()));
 
-        TextField nameField = new TextField();
-        nameField.setPromptText("Version name");
-        new Styles().apply(nameField, TextFieldTheme.NORMAL);
+        HBox versionContainer = new HBox();
+        versionContainer.setAlignment(Pos.CENTER_LEFT);
+        versionContainer.setSpacing(5);
+
+        Label vLabel = new Label("v");
+        new Styles().apply(vLabel, TextTheme.TEXT_MAIN);
+
+        TextField xField = new TextField();
+        xField.setPrefWidth(50);
+        xField.setPromptText("x");
+        new Styles().apply(xField, TextFieldTheme.NORMAL);
+
+        Label dot1 = new Label(".");
+        new Styles().apply(dot1, TextTheme.TEXT_MAIN);
+
+        TextField yField = new TextField();
+        yField.setPrefWidth(50);
+        yField.setPromptText("y");
+        new Styles().apply(yField, TextFieldTheme.NORMAL);
+
+        Label dot2 = new Label(".");
+        new Styles().apply(dot2, TextTheme.TEXT_MAIN);
+
+        TextField zField = new TextField();
+        zField.setPrefWidth(50);
+        zField.setPromptText("z");
+        new Styles().apply(zField, TextFieldTheme.NORMAL);
+
+        versionContainer.getChildren().addAll(vLabel, xField, dot1, yField, dot2, zField);
 
         ComboBox<String> comboBox = new ComboBox<>();
         new Styles().apply(comboBox, ComboBoxTheme.NORMAL);
@@ -47,13 +74,20 @@ public class EditVersionModal extends ModalTemplate {
         new Styles().apply(saveButton, ButtonTheme.NORMAL);
 
         saveButton.setOnAction(e -> {
-            if (!nameField.getText().isBlank()) {
+            String x = xField.getText();
+            String y = yField.getText();
+            String z = zField.getText();
+
+            if (!x.isBlank() && !y.isBlank() && !z.isBlank()) {
+                String versionName = "v" + x + "." + y + "." + z;
                 onSave.accept(new EditVersion(
                         HubModel.versionModel().getId().get(),
-                        nameField.getText(),
+                        versionName,
                         HubModel.projectModel().getName().get()));
             }
-            nameField.clear();
+            xField.clear();
+            yField.clear();
+            zField.clear();
             comboBox.getSelectionModel().clearSelection();
             onClose.run();
         });
@@ -61,15 +95,35 @@ public class EditVersionModal extends ModalTemplate {
         visibleProperty().addListener((obs, oldVal, newVal) -> {
             if (newVal) {
                 String currentName = HubModel.versionModel().getName().get();
-                nameField.setText(currentName != null ? currentName : "");
+                if (currentName != null && currentName.startsWith("v") && currentName.contains(".")) {
+                    String[] parts = currentName.substring(1).split("\\.");
+                    if (parts.length >= 1) xField.setText(parts[0]);
+                    if (parts.length >= 2) yField.setText(parts[1]);
+                    if (parts.length >= 3) zField.setText(parts[2]);
+                } else {
+                    xField.clear();
+                    yField.clear();
+                    zField.clear();
+                }
             } else {
-                nameField.clear();
+                xField.clear();
+                yField.clear();
+                zField.clear();
             }
         });
 
         HubModel.versionModel().getName().addListener((obs, oldVal, newVal) -> {
             if (isVisible()) {
-                nameField.setText(newVal != null ? newVal : "");
+                if (newVal != null && newVal.startsWith("v") && newVal.contains(".")) {
+                    String[] parts = newVal.substring(1).split("\\.");
+                    if (parts.length >= 1) xField.setText(parts[0]);
+                    if (parts.length >= 2) yField.setText(parts[1]);
+                    if (parts.length >= 3) zField.setText(parts[2]);
+                } else {
+                    xField.clear();
+                    yField.clear();
+                    zField.clear();
+                }
             }
         });
 
@@ -77,7 +131,7 @@ public class EditVersionModal extends ModalTemplate {
         managedProperty().bind(GlobalModel.getSwitchEditVersionProjectModal());
 
         getChildren().addAll(
-                nameField,
+                versionContainer,
                 comboBox
         );
 

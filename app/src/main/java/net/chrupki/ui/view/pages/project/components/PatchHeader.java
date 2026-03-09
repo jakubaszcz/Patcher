@@ -23,6 +23,11 @@ public class PatchHeader extends HBox {
     public PatchHeader() {
         Label title = new Label();
         title.textProperty().bind(HubModel.versionModel().getName());
+
+        HubModel.versionModel().getName().addListener(e -> {
+            title.setText(HubModel.versionModel().getName().get());
+        });
+
         new Styles().apply(title, TextTheme.SUBTITLE);
 
         Label meta = new Label("Patch");

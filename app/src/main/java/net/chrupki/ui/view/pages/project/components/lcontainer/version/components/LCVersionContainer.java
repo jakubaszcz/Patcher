@@ -33,7 +33,7 @@ public class LCVersionContainer extends HBox {
         new Styles().apply(trashIcon, IconTheme.EDIT);
         trashIcon.setPickOnBounds(true);
 
-        Label name = new Label("v" + version.getVersion());
+        Label name = new Label(version.getVersion());
         new Styles().apply(name, TextTheme.TEXT_ITEM);
 
         Label type = new Label(version.getType());
