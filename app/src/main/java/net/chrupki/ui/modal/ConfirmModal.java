@@ -114,8 +114,17 @@ public class ConfirmModal extends ModalTemplate {
 
         switch (t) {
             case Project -> {
-                Label title = new Label("To delete this project, you must also delete all associated data.\n" +
-                        "For security, please type the exact project name : \n\n" + HubModel.projectModel().getName().get() + "\n\nPut it in the field below, then click 'Confirm'.");
+                Label title = new Label();
+
+                Runnable updateTitle = () -> title.setText(
+                        "To delete this project, you must also delete all associated data.\n" +
+                                "For security, please type the exact project name : \n\n" +
+                                HubModel.projectModel().getName().get() +
+                                "\n\nPut it in the field below, then click 'Confirm'."
+                );
+
+                HubModel.projectModel().getName().addListener((obs, oldVal, newVal) -> updateTitle.run());
+                updateTitle.run();
                 title.setWrapText(true);
                 new Styles().apply(title, TextTheme.TEXT_MAIN);
 
