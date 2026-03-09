@@ -36,19 +36,39 @@ public class ExportModal extends ModalTemplate {
         ComboBox<String> comboBox = new ComboBox<>();
         comboBox.getStyleClass().add("modal-combobox");
         comboBox.setPromptText("Select a template");
+        comboBox.setItems(templates);
 
-        boolean hasTemplates = !templates.isEmpty();
+        Label noTemplatesLabel = new Label("No templates available, but don't worry, you can always create your own ! By now, you will have a default template.");
+        new Styles().apply(noTemplatesLabel, TextTheme.TEXT_MAIN);
+        noTemplatesLabel.setAlignment(Pos.CENTER);
+        noTemplatesLabel.setWrapText(true);
+        noTemplatesLabel.getStyleClass().add("modal-label");
 
-        if (hasTemplates) {
-            comboBox.setItems(templates);
+        // Update visibility and children based on templates presence
+        templates.addListener((javafx.collections.ListChangeListener<String>) c -> {
+            boolean has = !templates.isEmpty();
+            if (has) {
+                if (!getChildren().contains(comboBox)) {
+                    getChildren().add(comboBox);
+                    getChildren().remove(noTemplatesLabel);
+                }
+                if (comboBox.getSelectionModel().getSelectedIndex() < 0) {
+                    comboBox.getSelectionModel().selectFirst();
+                }
+            } else {
+                if (!getChildren().contains(noTemplatesLabel)) {
+                    getChildren().add(noTemplatesLabel);
+                    getChildren().remove(comboBox);
+                }
+            }
+        });
+
+        // Initial state
+        if (!templates.isEmpty()) {
+            getChildren().add(comboBox);
             comboBox.getSelectionModel().selectFirst();
         } else {
-            Label label = new Label("No templates available, but don't worry, you can always create your own ! By now, you will have a default template.");
-            new Styles().apply(label, TextTheme.TEXT_MAIN);
-            label.setAlignment(Pos.CENTER);
-            label.setWrapText(true);
-            label.getStyleClass().add("modal-label");
-            getChildren().add(label);
+            getChildren().add(noTemplatesLabel);
         }
 
         Button createButton = new Button("Export");
@@ -61,7 +81,7 @@ public class ExportModal extends ModalTemplate {
                 return;
             }
 
-            String template = hasTemplates
+            String template = !templates.isEmpty()
                     ? comboBox.getValue()
                     : "default";
 
@@ -86,10 +106,6 @@ public class ExportModal extends ModalTemplate {
 
         visibleProperty().bind(GlobalModel.getSwitchExportModal());
         managedProperty().bind(GlobalModel.getSwitchExportModal());
-
-        if (hasTemplates) {
-            getChildren().add(comboBox);
-        }
 
         setOnMouseClicked(Event::consume);
         addActions(createButton);

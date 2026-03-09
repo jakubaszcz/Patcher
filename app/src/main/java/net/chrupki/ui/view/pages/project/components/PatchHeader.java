@@ -9,6 +9,7 @@ import javafx.scene.layout.Priority;
 import javafx.scene.layout.Region;
 import javafx.scene.layout.VBox;
 import net.chrupki.model.HubModel;
+import net.chrupki.ui.controllers.HubController;
 import net.chrupki.ui.model.GlobalModel;
 import net.chrupki.ui.styles.Styles;
 import net.chrupki.ui.styles.theme.ButtonTheme;
@@ -52,6 +53,7 @@ public class PatchHeader extends HBox {
         });
 
         exportButton.setOnAction(e -> {
+            HubController.getTemplateController().loadTemplates();
             GlobalModel.setSwitchProjectsModal(true);
             GlobalModel.setSwitchExportModal(true);
         });

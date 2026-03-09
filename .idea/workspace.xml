@@ -4,11 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="c1aa160e-de6c-484d-8c28-5409cf16dc62" name="Changes" comment="fix(ui): the patch header is now the same size as tag/version header">
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/net/chrupki/ui/util/Browser.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/patcher.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/patcher.iml" afterDir="false" />
+    <list default="true" id="c1aa160e-de6c-484d-8c28-5409cf16dc62" name="Changes" comment="fix(ui): template button in header can now open on any OS">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/net/chrupki/ui/view/pages/projects/Header.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/net/chrupki/ui/view/pages/projects/Header.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/net/chrupki/ui/modal/project/export/ExportModal.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/net/chrupki/ui/modal/project/export/ExportModal.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/net/chrupki/ui/view/pages/project/components/PatchHeader.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/net/chrupki/ui/view/pages/project/components/PatchHeader.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -87,7 +86,7 @@
     &quot;git-widget-placeholder&quot;: &quot;main&quot;,
     &quot;junie.onboarding.icon.badge.shown&quot;: &quot;true&quot;,
     &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;/home/jakubaszcz/Documents/patcher&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/home/jakubaszcz/Downloads/devglobe-jetbrains-0.1.1.zip&quot;,
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
     &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
     &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
@@ -95,7 +94,7 @@
     &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
     &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
     &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;configurable.group.build&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;advanced.settings&quot;,
     &quot;to.speed.mode.migration.done&quot;: &quot;true&quot;,
     &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   },
@@ -176,14 +175,6 @@
       <workItem from="1770922101369" duration="5592000" />
       <workItem from="1772293333222" duration="3897000" />
       <workItem from="1772362352966" duration="1776000" />
-    </task>
-    <task id="LOCAL-00056" summary="add(model): create model for tag and for modal">
-      <option name="closed" value="true" />
-      <created>1769710712074</created>
-      <option name="number" value="00056" />
-      <option name="presentableId" value="LOCAL-00056" />
-      <option name="project" value="LOCAL" />
-      <updated>1769710712074</updated>
     </task>
     <task id="LOCAL-00057" summary="refactor(db): select everything for the tag dao">
       <option name="closed" value="true" />
@@ -569,14 +560,21 @@
       <option name="project" value="LOCAL" />
       <updated>1772363653818</updated>
     </task>
-    <option name="localTasksCounter" value="105" />
+    <task id="LOCAL-00105" summary="fix(ui): template button in header can now open on any OS">
+      <option name="closed" value="true" />
+      <created>1773048735582</created>
+      <option name="number" value="00105" />
+      <option name="presentableId" value="LOCAL-00105" />
+      <option name="project" value="LOCAL" />
+      <updated>1773048735583</updated>
+    </task>
+    <option name="localTasksCounter" value="106" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="add(style): create text field style" />
     <MESSAGE value="refactor(style): apply text field style" />
     <MESSAGE value="add(style): create card style" />
     <MESSAGE value="refactor(style): apply card style" />
@@ -601,7 +599,8 @@
     <MESSAGE value="feat(ui): create icon styling" />
     <MESSAGE value="feat(ui): add every icons needed" />
     <MESSAGE value="fix(ui): the patch header is now the same size as tag/version header" />
-    <option name="LAST_COMMIT_MESSAGE" value="fix(ui): the patch header is now the same size as tag/version header" />
+    <MESSAGE value="fix(ui): template button in header can now open on any OS" />
+    <option name="LAST_COMMIT_MESSAGE" value="fix(ui): template button in header can now open on any OS" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
