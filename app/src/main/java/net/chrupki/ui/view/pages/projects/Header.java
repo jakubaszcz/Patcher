@@ -14,8 +14,8 @@ import net.chrupki.ui.styles.Styles;
 import net.chrupki.ui.styles.theme.ButtonTheme;
 import net.chrupki.ui.styles.theme.ContainerTheme;
 import net.chrupki.ui.styles.theme.TextTheme;
+import net.chrupki.ui.util.Browser;
 
-import java.awt.*;
 import java.io.File;
 
 public class Header extends VBox {
@@ -53,16 +53,7 @@ public class Header extends VBox {
 
             openTemplate.setOnAction(e -> {
                 File directory = new File(AppPath.getDataDir().resolve("templates").toString());
-                try {
-                    if (Desktop.isDesktopSupported()) {
-                        Desktop.getDesktop().open(directory);
-                    }
-                    else {
-                        System.out.println("Desktop not supported");
-                    }
-                } catch (Exception ex) {
-                    System.out.println(ex.getMessage());
-                }
+                Browser.open(directory);
             });
         }
 
